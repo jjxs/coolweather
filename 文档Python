@@ -796,3 +796,29 @@ print('C:\some\"""..."""name')
 			占用空间小，浪费内存很少。
 			所以，dict是用空间来换取时间的一种方法
 '''
+
+'''
+安装python Django rest-formwork mysql
+	
+	全部安装后：
+		数据库安装：
+			压缩包解压安装：
+				1、配置环境变量 把压缩包bin路径放入环境变量PATH中
+				2、https://www.cnblogs.com/xuqp/p/9172254.html 安装过程网站
+				3、mysqld --initialize-insecure 或 mysqld –initialize 
+					1) 修改密码： mysql -uroot -p ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456'; 				1) 修改密码： mysql -uroot -p ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+				4、为Windows系统安装MySQL服务 mysqld install 
+				5、启动服务 net start mysql 
+				6、exit; 退出完成
+				7、因为python已经迁移数据 这时创建数据库 create database grocerdb; 会直接创建以迁移的表 
+				8、使用数据库 use grocerdb;
+				9、show tables; 查看表
+		全局
+			1、安装虚拟环境 pip install virtualenv-16.0.0-py2.py3-none-any.whl
+			2、pip list 查询命令
+		3、创建（选盘创建）python虚拟环境： virtualenv xxxxxx（名字自己起最好和项目名一致比如： grocervenv）
+		4、进入选盘创建目录：D:\www\grocervenv\Scripts>activate   启动
+		5、进入python目录 迁移数据到数据库  python manage.py makemigrations()
+		6、真正做迁移 python manage.py migrate
+		7、启动项目 python manage.py runserver
+'''
