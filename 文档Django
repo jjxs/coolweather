@@ -73,3 +73,7 @@
 		如果视图用到缓存( request.data or   request.query_params )就用到了 
 		解析器-->视图处理数据，用到了序列化(对数据进行序列化或验证) -->视图返回数据可以用到分页
 '''
+
+'''
+	django从1.9开始ForeignKey中的on_delete参数是必须的。
+'''
