@@ -110,4 +110,6 @@
 			ordering = ['order_date'] #根据order_date排序
 			
 			verbose_name= ‘xx’ # 可读名称
+			
+	@classmethod 遇到这个就是把当前类中的方法抛出去供大家使用
 '''
