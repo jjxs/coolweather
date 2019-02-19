@@ -76,4 +76,11 @@
 
 '''
 	django从1.9开始ForeignKey中的on_delete参数是必须的。
+	model.forignkey(字段，on_delete=DO_NOTHING);
+	CASCADE：删除作者信息一并删除作者名下的所有书的信息；
+	PROTECT：删除作者的信息时，采取保护机制，抛出错误：即不删除Books的内容；
+	SET_NULL：只有当null=True才将关联的内容置空；
+	SET_DEFAULT：设置为默认值；
+	SET( )：括号里可以是函数，设置为自己定义的东西；
+	DO_NOTHING：字面的意思，啥也不干，你删除你的干我毛线关系
 '''
