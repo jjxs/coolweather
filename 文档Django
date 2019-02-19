@@ -84,3 +84,24 @@
 	SET( )：括号里可以是函数，设置为自己定义的东西；
 	DO_NOTHING：字面的意思，啥也不干，你删除你的干我毛线关系
 '''
+
+'''
+	from django.db import models
+	class Person(models.Model):
+	    GENDER_CHOICES = (
+		(u'M', u'Male'),
+		(u'F', u'Female'),
+	    )
+	    name = models.CharField(max_length=60)
+	    gender = models.CharField(max_length=2, choices=GENDER_CHOICES)
+	choices 选择
+		如何取到带choices属性的gender字段的值
+		>>> p = Person(name="Fred Flinstone", gender="M")
+		>>> p.save()
+		>>> p.gender
+		u'M'
+		>>> p.get_gender_display()
+		u'Male'
+		可见gender字段中保存了两个信息，一个为value，一个display_name，我要取value时直接用p.gender即可，
+		如果要取display_name时用p.get_gender_display()这个函数即可
+'''
