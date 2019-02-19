@@ -104,4 +104,8 @@
 		u'Male'
 		可见gender字段中保存了两个信息，一个为value，一个display_name，我要取value时直接用p.gender即可，
 		如果要取display_name时用p.get_gender_display()这个函数即可
+		    class Meta:
+        		abstract = True #抽象类 可继承的基类等待子类继承的共通类
+			db_table = 'axf_wheel' #数据表名称
+			ordering = ['order_date'] #根据order_date排序
 '''
