@@ -108,4 +108,6 @@
         		abstract = True #抽象类 可继承的基类等待子类继承的共通类
 			db_table = 'axf_wheel' #数据表名称
 			ordering = ['order_date'] #根据order_date排序
+			
+			verbose_name= ‘xx’ # 可读名称
 '''
