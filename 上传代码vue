@@ -1,0 +1,48 @@
+ <el-upload
+                    class="upload-demo"
+                    action=""
+                    ref="upload"
+                    :show-file-list="false"
+                    :http-request="httpRequest"
+                    :before-upload="beforeAvatarUpload">
+                <el-button type="success">アップロード</el-button>
+            </el-upload>
+            
+            
+            uploadList: [],
+                param: [],
+            /**
+             * 覆盖默认的上传行为
+             */
+async httpRequest() {
+
+                try {
+
+                    this.loading = true;
+                    let result = await this.$axios.post(`/grocer/api/v1/parameters/issue/${this.$route.query.id}/uploads/`, this.param);
+
+                    if (result.data.code == 0) {
+                        this.$message.error('アップロード失敗！');
+                        return false;
+                    }
+                    this.$message.success('アップロード成功！');
+                    this.getUpload();
+                } catch (e) {
+
+                    console.log(e.message || e);
+                }
+
+            },
+           /**
+             * 上传之前的校验
+             *
+             * @param file
+             */
+            beforeAvatarUpload(file) {
+
+                this.param = new FormData();
+                this.param.append('attachment', file);
+                // 2019-02-27 新增
+                this.param.append('owner', this.$localStorage.getItem('account_user').id);
+            },
+           
