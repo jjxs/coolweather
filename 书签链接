@@ -19,3 +19,9 @@ https://www.cnblogs.com/pycode/p/db-middleware.html ### Django链接 .db.model
 https://www.cnblogs.com/wuqingzangyue/p/5749489.html ### Django 路由 (?P<path>.*)$ 写法的讲解
 https://blog.csdn.net/apple9005/article/details/54427902 ## Django 解决跨域问题  不同协议、域名、端口视为跨域
 https://www.cnblogs.com/pycode/p/6339834.html ###Django djangorestframework 详解
+https://blog.csdn.net/changhenshui1990/article/details/78663450 ###docker
+我从不推荐开发者在web开发过程中使用容器，如果你真的用过docker，你会知道启动web容器也是要花时间的，
+即使是1秒钟也是时间啊。加上web开发的项目何止是一个组件构成的，通常这个时候尝试docker compose搭建一套开发环境倒是可以试验一把。
+但是，试想你写了一行代码，这个时候需要实时编译并呈现出来如何做到呢？难道需要手工restart一遍docker compose?它并不能热加载奥？
+所以，别吹牛了。在开发环境，docker一点用都没有。请尽量用docker来构建测试环境比较合适。自动化测试方面尤其方便.
+--------------------- 
