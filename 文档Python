@@ -822,3 +822,17 @@ print('C:\some\"""..."""name')
 		6、真正做迁移 python manage.py migrate
 		7、启动项目 python manage.py runserver
 '''
+
+'''
+上传bulid代码
+
+	1、打开ftp 打开puTTY
+	2、进入ftp grocer debug 文件夹把build的dist/static放入back/static文件夹中 
+		把 index.html favicon.ico放入templete文件夹中
+	3、使用puTTy生成进python文件步骤:
+		1)grocer 登录 密码123456
+		2)cd venv（虚拟环境） source activate.csh
+		3)在venv环境下启动 python manage.py collectstatic
+		4)提示“Type yes to continue，or no to cancel：” yes 
+		5)完成
+'''
