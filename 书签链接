@@ -26,3 +26,11 @@ https://blog.csdn.net/changhenshui1990/article/details/78663450 ###docker
 所以，别吹牛了。在开发环境，docker一点用都没有。请尽量用docker来构建测试环境比较合适。自动化测试方面尤其方便.
 --------------------- 
 https://blog.csdn.net/sinat_35670989/article/details/78224214  ### nodejs 加密解密
+### 重置用户名密码  git
+查看用户名和邮箱地址：
+$ git config user.name
+$ git config user.email
+
+修改用户名和邮箱地址：
+$ git config --global user.name "username"
+$ git config --global user.email "email"
