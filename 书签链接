@@ -37,3 +37,4 @@ git config user.email
 git config --global user.name "username"
 //修改邮箱地址
 git config --global user.email "email@xxx.com"
+https://www.cnblogs.com/cpl9412290130/p/10101397.html ###django restframework status 状态码
