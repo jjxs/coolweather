@@ -39,3 +39,24 @@ git config --global user.name "username"
 git config --global user.email "email@xxx.com"
 https://www.cnblogs.com/cpl9412290130/p/10101397.html ###django restframework status 状态码
 https://www.jianshu.com/p/cb76310bc0e2 ###简书笔记Django
+
+
+https://www.uisdc.com/web-design-guideline-text ### 设计说明
+###
+  计算字体
+    行高：一般1.5~2倍最佳  以8为基础  字号+8
+    行间距： 1.2~2倍  计算 行高-字号
+    段间距： 行高+字号
+    设置有节奏感的文字遵循规律：段间距大于行高、行高大于行间距，行间距大于字间距。
+  字体选用原则（网页设计）：
+    1、字体优先选择系统默认自带字体；
+    2、有版权、笔画严谨、清晰可读、经典。
+    3、PC端 常用字体  微软雅黑、华文黑体、冬青黑体、苹方一简；
+    4、移动端 常用字体 黑体一简
+  优先选用字体：
+    中文：pc微软雅黑 、移动 苹方一简
+    英文：Helvetica Neue
+  备选字体：
+    中文：方正兰亭黑
+    英文：Helvetica 、Arial、DIN（特殊数字）
+###
