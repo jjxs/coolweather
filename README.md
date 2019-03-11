@@ -9,12 +9,12 @@
 - python manage.py collectstatic           收集静态文件
 - python manage.py createsuperuser         创建管理员
 
-###安装
+### 安装
 使用pip安装:
 
 `pip install -r requirements.txt`
 
-###配置
+### 配置
 配置都是在`setting.py`中
 #### 数据库
 修改`DjangoBlog/setting.py` 修改数据库配置，如下所示：
