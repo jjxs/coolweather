@@ -75,7 +75,7 @@ EMAIL_USE_SSL = False  # 与SMTP服务器通信时，是否启动TLS链接(安�
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 ```
-###开发流程
+### 开发流程
 
 前端发送请求首先会由`back`目录下的`urls.py`分发到各个View, 底层view实现了http的get, post, delete, patch, update, 等方法drf框架对这些方法进行了最基本的实现, 只需要继承相应的mixin就可以, 比如post方法要继承CreateModelMixin, serializer是用来序列化数据, 验证数据的, 下面是一个restful风格的api具体实现:
 
