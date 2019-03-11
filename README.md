@@ -1,5 +1,38 @@
 # Django框架使用指南
 基于python3.6 和 django2.1
+### 创建项目和应用
+新建一个项目
+```python
+django-admin.py startproject back
+cd back # 进入到该项目的文件夹
+django-admin.py startapp people # 新建一个 people 应用（app)
+```
+```python
+urls.py
+    网址入口，关联到对应的views.py中的一个函数（或者generic类），访问网址就对应一个函数。
+
+views.py
+    处理用户发出的请求，从urls.py中对应过来, 通过Response()将json格式数据返回给前端
+
+models.py
+    与数据库操作相关，存入或读取数据时用到这个，当然用不到数据库的时候 你可以不使用。
+
+serializer.py
+    用于序列化数据, 验证数据
+
+templates 
+    放置html模板, drf一般用不到
+
+filter.py
+    用于过滤, 有需求时候会用上
+    
+admin.py
+    后台，可以用很少量的代码就拥有一个强大的后台。
+
+settings.py
+    Django 的设置，配置文件，比如 DEBUG 的开关，静态文件的位置等。
+```
+
 ### django常用命令
 - python manage.py runserver 0.0.0.0:80000 启动服务器 
 - python manage.py makemigrations          生成迁移文件 
@@ -8,7 +41,7 @@
 - python manage.py inspectdb               反向生模型(models) 
 - python manage.py collectstatic           收集静态文件
 - python manage.py createsuperuser         创建管理员
-
+- python manage.py flush                   清空数据库
 ### 安装
 使用pip安装:
 
