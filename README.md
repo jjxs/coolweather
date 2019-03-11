@@ -166,6 +166,59 @@ class OpidFilter(django_filters.rest_framework.FilterSet):
         fields = ['englishstring', 'japanese', 'product']
 
 ```
+#### 分页
+前端可能发出这样的请求 opid/?pageNo=1&pageSize=10 pageNo是当前页码, pageSize是一页有多少条数据, drf自带的分页不是这种格式就需要自己重写方法
+##### view
+```python
+from .filters import OpidFilter
+from django_filters.rest_framework import DjangoFilterBackend
+
+
+class OpidViewSet(ModelViewSet):
+    serializer_class = OpidSerializer
+    queryset = Opid.objects.all()
+    filter_backends = (DjangoFilterBackend,)
+    filter_class = OpidFilter
+    pagination_class = Pagination
+```
+
+```python
+from collections import OrderedDict
+from rest_framework.response import Response
+from rest_framework.pagination import LimitOffsetPagination
+
+
+class Pagination(LimitOffsetPagination):
+    # 默认每页显示的数据条数
+    # default_limit = 20
+    # URL中传入的显示数据条数的参数
+    limit_query_param = 'pageSize'
+    # URL中传入的数据位置的参数
+    offset_query_param = 'pageNo'
+
+    def paginate_queryset(self, queryset, request, view=None):
+        self.count = self.get_count(queryset)
+        self.limit = self.get_limit(request)
+        if self.limit is None:
+            return queryset
+        _offset = self.get_offset(request)
+        if _offset == 1:
+            self.offset = 0
+        elif _offset == 0:
+            self.offset = _offset
+        else:
+            self.offset = (_offset - 1) * self.limit
+        self.request = request
+        if self.count > self.limit and self.template is not None:
+            self.display_page_controls = True
+
+        if self.count == 0 or self.offset > self.count:
+            return []
+        return list(queryset[self.offset:self.offset + self.limit])
+
+    def get_paginated_response(self, data):
+        return Response(OrderedDict([('count', self.count), ('results', data)]))
+```
 
 
 #### 更多功能请看这里
