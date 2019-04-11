@@ -1,3 +1,69 @@
 https://www.jianshu.com/p/f0f81a63cbcb ###angular7
 https://www.html.cn/study/manual/ ###文档教程
 https://www.cnblogs.com/edisonchou/p/5987827.html  ### TCP/IP 图解
+
+axios
+
+import Vue from 'vue';
+import axios from 'axios';
+import store from '../../store/index'
+import router from '@/router';
+
+//配置baseURL
+const serverAddress = {
+    // 生产环境服务器地址
+    production: 'https://10.215.3.44:443',
+    // 开发环境服务器地址
+    development: 'http://10.215.6.46:8000', //http://10.215.3.112:8000 3.112 6.4 16.63   10.215.6.46:8000
+};
+
+// 通过 process.env.NODE_ENV 来判断当前运行环境
+axios.defaults.baseURL = serverAddress[process.env.NODE_ENV];
+
+// 拦截所有请求
+axios.interceptors.request.use((request) => {
+    if (JSON.parse(localStorage.getItem('account_user')) && JSON.parse(localStorage.getItem('account_token'))) {
+        request.headers.Authorization = 'JWT ' + JSON.parse(localStorage.getItem('account_token'))
+    }
+
+    // 如果包含本地测试数据的请求地址
+    if ('test-json-data'.contains(request.url)) {
+        // 将本次请求的 baseURL 临时替换
+        request.baseURL = 'http://localhost:8080';
+        return request;
+    }
+
+    // 不拦截登录请求
+    if (request.url == '/login/') {
+        return request;
+    }
+
+    // 除登录的请求地址以外所有请求都添加 account_token;
+    // let tokenInfoJson = Vue.prototype.$localStorage.getItem('tokenInfoJson');
+    // request.headers.Authorization = `${tokenInfoJson.token_type} ${tokenInfoJson.access_token}`;
+    return request;
+}, (err) => {
+    return Promise.reject(err);
+});
+
+// 拦截所有响应
+axios.interceptors.response.use(response => {
+  return response
+}, error => {
+  if (error.response) {
+    switch (error.response.status) {
+      case 401:
+        store.commit('removeStorage')
+        router.push({
+          name: 'login',
+        })
+        break
+      default:
+        return Promise.reject(error)
+    }
+  }
+  return Promise.reject(error)
+})
+
+//添加到 Vue原型链
+Vue.prototype.$axios = axios;
