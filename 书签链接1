@@ -80,3 +80,4 @@ Vue.prototype.$axios = axios;
 https://www.awesomes.cn/repo/surmon-china/vue-quill-editor  ###富文本编辑器
 
 https://www.jianshu.com/p/49290a665976 ###富文本编辑器
+https://juejin.im/post/5cae0f616fb9a068a93f0613?spm=a2c4e.11153940.blogcont702178.16.33011d29q8XX7D ###webpack4
