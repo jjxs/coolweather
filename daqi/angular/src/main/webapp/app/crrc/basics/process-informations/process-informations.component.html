@@ -1,0 +1,230 @@
+<div style="width: 100%;top:0;left:0;position:fixed;background:rgba(0, 0, 0, 0.5);z-index: 10;height: 100%;"
+    *ngIf="maskingLayer">
+
+</div>
+<div style="width: 100%;top:0;left:0;position:fixed;background:rgba(0, 0, 0, 0.5);z-index: 10;height: 100%;"
+    *ngIf="maskingLayerLodding">
+    <p-progressSpinner [style]="{top: '45%', left: '46%', width: '30px', height: '30px'}"></p-progressSpinner>
+</div>
+
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<p-toast position="top-left" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" key="c"
+    (onClose)="onReject()" [modal]="true" [baseZIndex]="5000"
+    [style]="{marginTop: '80px',left:'30%',width:'50%',backgroundColor:'white',position:'fixed'}">
+    <ng-template let-message pTemplate="message" class="successInfo">
+        <div>
+            <!-- <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i> style="text-align: left;height: 141px;"-->
+            <div class="modal-header">
+                <h3>{{message.summary}}</h3>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                {{message.detail}}
+            </div>
+
+        </div>
+        <!-- ui-g ui-fluid style="height: 71px;margin-top: 1rem;" style="height: 72px;line-height: 36px;" style="height: 69px;line-height: 34px;"-->
+        <div class=" modal-footer ">
+            <div class="creatOreditCssButton">
+
+                <button type="button" (click)="onConfirm()"
+                    class="btn btn-secondary float-right search_button_darkblue search_button Acolor_Delete">
+
+                    <span jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+
+                <button type="button" (click)="onReject()"
+                    class="btn btn-primary float-right search_button_blue search_button Acolor_SeeNoWidth">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+            </div>
+        </div>
+    </ng-template>
+</p-toast>
+
+<div style="width:100%;">
+    <div style="width: 40%;float: left; border-right: 1px black solid;padding-right: 5%;">
+        <h2 id="page-heading">
+            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.home.title" class="title_class">Qms Organization
+                Infos</span>
+
+        </h2>
+        <div style="height: 160px;margin-top:0.5%;width: 100%;">
+            <div class="common_div-head">
+                <div class="search_styleOne">
+                    <span jhiTranslate="fccApp.qmsBomTechnologyInfo.vehicleType">车型名称：</span>
+                </div>
+                <div class="search_styleTwo">
+                    <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                        [(ngModel)]="vagueOrganizationCd" />
+                </div>
+
+            </div>
+            <div class="common_div-head">
+                <div class="search_styleOne">
+                    <span jhiTranslate="fccApp.qmsBomTechnologyInfo.materielId">物料名称:</span>
+                </div>
+                <div class="search_styleTwo">
+                    <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                        [(ngModel)]="vagueOrganizationName" />
+                </div>
+            </div>
+
+        </div>
+        <div style="width: 100%;float:left;">
+
+            <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                (click)="clearInfo()">
+                <span jhiTranslate="fccApp.bomInformation.home.query">
+                    查询
+                </span>
+            </button>
+        </div>
+        <div style="width: 100%;float:left;height:20px;"></div>
+        <div style="height: 80px;border-top: 1px black solid;padding-top:20px;display: inline-block;width: 100%;">
+
+            <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                style="width: 114px;" (click)="processSelect()">
+                <span jhiTranslate="fccApp.qmsBomTechnologyInfo.home.processSelect">
+                    工艺选择
+                </span>
+            </button>
+        </div>
+        <div style="width: 100%;float:left;">
+            <p-treeTable [value]="files4" [columns]="cols" selectionMode="single" [(selection)]="selectedNode2"
+                dataKey="id" (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
+
+                <ng-template pTemplate="header" let-columns>
+
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                    <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                        <td *ngFor="let col of columns; let i = index">
+                            <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-treeTable>
+        </div>
+    </div>
+    <div style="width: 58%; float: left;margin-left: 2%;">
+        <!-- 新增或编辑 -->
+        <div>
+            <div style="height: 100px;margin-top:0.5%;width: 100%;display: inline-flex;">
+
+                <div class="common_div-head" style="width:50%;">
+                    <div class="div_left" style="padding:3.5% 2%;">
+                        <span jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyCd">工艺编码</span>
+                    </div>
+                    <div class="div_right">
+                        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                            readonly [(ngModel)]="technologyCd" />
+                    </div>
+
+                </div>
+                <div class="common_div-head" style="width:50%;">
+                    <div class="div_left" style="padding:3.5% 2%;">
+                        <span jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyName">工艺名称:</span>
+                    </div>
+                    <div class="div_right">
+                        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                            readonly [(ngModel)]="technologyName" />
+                    </div>
+                </div>
+
+            </div>
+            <div style="height: 58px;width: 100%;">
+
+                <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                    [disabled]="!technologyCd"
+                    class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                    [routerLink]="['/process-informations/new']"
+                    [queryParams]="{MId:hiddenRightMaterielId,MCd:hiddenRightMaterielCd,MName:hiddenRightMaterielName,Tcd:technologyCd,TName:technologyName,Code:'0'}">
+                    <span jhiTranslate="fccApp.qmsBomTechnologyInfo.home.createLabel">
+                        添加
+                    </span>
+                </button>
+                <button id="jh-create-entity" (click)="changeDefaultProcess()"
+                    [disabled]="!qmsProcessInfosRight ? !qmsProcessInfosRight : hiddendefaultProcess ==='1'"
+                    class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                    style="width: 114px;">
+                    <span jhiTranslate="fccApp.qmsBomTechnologyInfo.home.defaultProcess">
+                        默认工艺
+                    </span>
+                </button>
+            </div>
+            <p-table [value]="qmsProcessInfosRight" [paginator]="true" [rows]="itemsPerPage" [lazy]="true"
+                [totalRecords]="queryCount" [resizableColumns]="true" [loading]="loading"
+                (onLazyLoad)="loadCarsLazy($event)">
+
+                <ng-template pTemplate="header">
+
+                    <tr class="common_trStyle">
+                        <th class="common_thStyle" style="width: 15% !important;">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.serialNumber">序号</span>
+
+                        </th>
+                        <th class="common_thStyle" style="width: 20% !important;">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.processCd">工序编号</span>
+                        </th>
+
+                        <th class="common_thStyle" style="width: 25% !important;">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.processName">工序名称</span>
+                        </th>
+
+                        <th class="common_thStyle" style="width: 40% !important;">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.operation">操作</span>
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+                    <tr>
+                        <td class="common_tdStyle" style="width: 15% !important;justify-content: center ">
+                            {{rowData.orderNo}}</td>
+                        <td class="common_tdStyle text-left" style="width: 20% !important">
+                            {{rowData.processCd}}
+                        </td>
+                        <td class="common_tdStyle text-left" style="width: 25% !important">
+                            {{rowData.processName}}
+                        </td>
+                        <td class="common_tdStyle" style="width: 40% !important;">
+                            <button id="jh-create-entity" replaceUrl="true"
+                                class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+                                [routerLink]="['/process-informations/detail']"
+                                [queryParams]="{MId:hiddenRightMaterielId,MCd:hiddenRightMaterielCd,MName:hiddenRightMaterielName,Tcd:technologyCd,TName:technologyName,Code:'1',BomId:rowData.id}">
+                                <span jhiTranslate="entity.action.view">
+                                    查看
+                                </span>
+                            </button>
+                            <button id="jh-create-entity" replaceUrl="true"
+                                class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+                                [routerLink]="['/process-informations/new']"
+                                [queryParams]="{MId:hiddenRightMaterielId,MCd:hiddenRightMaterielCd,MName:hiddenRightMaterielName,Tcd:technologyCd,TName:technologyName,Code:'1',BomId:rowData.id}">
+                                <span jhiTranslate="entity.action.edit">
+                                    编辑
+                                </span>
+                            </button>
+
+                            <button id="jh-create-entity"
+                                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+                                style="width: 30%;" (click)="delete(rowData.id,rowData.processName)">
+                                <span jhiTranslate="entity.action.delete">
+                                    删除
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

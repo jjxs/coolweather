@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsMaterielSupplier">
+            <h2><span jhiTranslate="fccApp.qmsMaterielSupplier.detail.title">Qms Materiel Supplier</span> {{qmsMaterielSupplier.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.supplierId">Supplier Id</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.supplierId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielSupplier.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielSupplier.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-materiel-supplier', qmsMaterielSupplier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsCarRecordbookMain.home.title">Qms Car Recordbook Mains</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-car-recordbook-main" [routerLink]="['/qms-car-recordbook-main/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsCarRecordbookMain.home.createLabel">
+            Create new Qms Car Recordbook Main
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsCarRecordbookMains">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="recordbookSeq"><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookSeq">Recordbook Seq</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="recordbookName"><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookName">Recordbook Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="recordbookNum"><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookNum">Recordbook Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="recordbookCheck"><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookCheck">Recordbook Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="filecodepre"><span jhiTranslate="fccApp.qmsCarRecordbookMain.filecodepre">Filecodepre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="editUser"><span jhiTranslate="fccApp.qmsCarRecordbookMain.editUser">Edit User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="checkUser"><span jhiTranslate="fccApp.qmsCarRecordbookMain.checkUser">Check User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="standardUser"><span jhiTranslate="fccApp.qmsCarRecordbookMain.standardUser">Standard User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsCarRecordbookMain.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsCarRecordbookMain.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsCarRecordbookMain.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsCarRecordbookMain.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsCarRecordbookMain.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsCarRecordbookMain.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsCarRecordbookMain.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsCarRecordbookMain of qmsCarRecordbookMains ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-car-recordbook-main', qmsCarRecordbookMain.id, 'view' ]">{{qmsCarRecordbookMain.id}}</a></td>
+                <td>{{qmsCarRecordbookMain.recordbookSeq}}</td>
+                <td>{{qmsCarRecordbookMain.recordbookName}}</td>
+                <td>{{qmsCarRecordbookMain.recordbookNum}}</td>
+                <td>{{qmsCarRecordbookMain.recordbookCheck}}</td>
+                <td>{{qmsCarRecordbookMain.filecodepre}}</td>
+                <td>{{qmsCarRecordbookMain.editUser}}</td>
+                <td>{{qmsCarRecordbookMain.checkUser}}</td>
+                <td>{{qmsCarRecordbookMain.standardUser}}</td>
+                <td>{{qmsCarRecordbookMain.flagStatus}}</td>
+                <td>{{qmsCarRecordbookMain.compPkid}}</td>
+                <td>{{qmsCarRecordbookMain.remark}}</td>
+                <td>{{qmsCarRecordbookMain.reserveFirst}}</td>
+                <td>{{qmsCarRecordbookMain.reserveSecond}}</td>
+                <td>{{qmsCarRecordbookMain.reserveThird}}</td>
+                <td>{{qmsCarRecordbookMain.makeUser}}</td>
+                <td>{{qmsCarRecordbookMain.makeTime | date:'medium'}}</td>
+                <td>{{qmsCarRecordbookMain.modifyUser}}</td>
+                <td>{{qmsCarRecordbookMain.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-car-recordbook-main', qmsCarRecordbookMain.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-car-recordbook-main', qmsCarRecordbookMain.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-car-recordbook-main/'+ qmsCarRecordbookMain.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsCarRecordbookMains && qmsCarRecordbookMains.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

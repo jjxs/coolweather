@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsUnqualifiedProductDetails">
+            <h2><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.detail.title">Qms Unqualified Product Details</span> {{qmsUnqualifiedProductDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.unqualifiedProductId">Unqualified Product Id</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.unqualifiedProductId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.inspectionItem">Inspection Item</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.inspectionItem}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.technicalRequirement">Technical Requirement</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.technicalRequirement}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.inspectionInstrument">Inspection Instrument</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.inspectionInstrument}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.standard">Standard</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.standard}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.upperDeviation">Upper Deviation</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.upperDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.lowerDeviation">Lower Deviation</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.lowerDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.controlLevel">Control Level</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.controlLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.checkResult">Check Result</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.checkResult}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedProductDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedProductDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-unqualified-product-details', qmsUnqualifiedProductDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

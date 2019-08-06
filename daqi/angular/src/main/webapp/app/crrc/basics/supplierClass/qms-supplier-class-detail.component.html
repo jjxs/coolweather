@@ -1,0 +1,37 @@
+<div *ngIf="qmsSupplierClass">
+    <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">供应商分类维护</h2>
+    <div class="lookBtn">
+        <button type="submit" (click)="previousState()" class="btn btn-info float-right search_button_darkblue search_button">
+            <span>返回</span>
+        </button>
+
+        <!-- <button type="button" [routerLink]="['/qms-supplier', qmsSupplier.id, 'edit']" class="btn btn-primary">
+            <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> 保存</span>
+        </button> -->
+    </div>
+    <!-- 左侧文字的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+            <span>供应商分类编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>供应商分类名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>备注</span>
+        </div>
+        
+    </div>
+    <!-- 左侧输入框的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:30px;">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplierClass.suppkierClass [disabled]=qmsSupplierClass.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplierClass.suppkierClassName [disabled]=qmsSupplierClass.id />
+        </div>
+        <div class="lookLeftDiv">
+            <textarea class="form-control" [(ngModel)]=qmsSupplierClass.remark style="width: 500px;margin-left: 120px;height: 210px;" [disabled]=qmsSupplierClass.id></textarea>
+        </div>
+    </div>
+</div>

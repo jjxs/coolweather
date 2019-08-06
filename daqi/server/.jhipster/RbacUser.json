@@ -1,0 +1,143 @@
+{
+    "name": "RbacUser",
+    "fields": [
+        {
+            "fieldName": "appId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "userCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "userPassword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "userMobile",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "userMail",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "userLastLoginTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "userLoginCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stopFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "delFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "insProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "insOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "insDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "updOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "updDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "delProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "delOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "delDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "triggerDateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190504064105",
+    "entityTableName": "rbac_user",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

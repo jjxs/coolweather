@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064103_added_entity_RbacElement.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064104_added_entity_RbacUserRightRelation.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064105_added_entity_RbacUser.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064106_added_entity_RbacRoleRightRelation.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064107_added_entity_RbacRole.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064108_added_entity_RbacRight.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064109_added_entity_RbacMenuRightRelation.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064110_added_entity_RbacMenu.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190504064111_added_entity_PapiToken.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190513005208_added_entity_HstServerInfo.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190513005209_added_entity_HstServerInfoDetails.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190514033208_added_entity_PapiTokenSlave.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085707_added_entity_QmsProcessRoute.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085709_added_entity_QmsEquipment.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085710_added_entity_QmsOrganizationInfo.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085712_added_entity_QmsUnit.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085713_added_entity_QmsMaterielType.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085717_added_entity_QmsEnclosure.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190620085723_added_entity_QmsInspectionInfo.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190624123654_added_entity_QmsProcess.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190625125613_added_entity_QmsInspectionDetails.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190625125614_added_entity_QmsNrvTelation.xml" relativeToChangelogFile="false"/>
+     <include file="config/liquibase/changelog/20190704032016_added_entity_QmsNotice.xml" relativeToChangelogFile="false"/>
+
+<include file="config/liquibase/changelog/20190709085513_added_entity_QmsMateriel.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085514_added_entity_QmsMaterielSupplier.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085515_added_entity_QmsEntryControlDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085516_added_entity_QmsMaterielEntry.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085517_added_entity_QmsMaterielDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085518_added_entity_QmsEntryInspection.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085519_added_entity_QmsBom.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085520_added_entity_QmsBomTechnology.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085521_added_entity_QmsProduct.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085522_added_entity_QmsProductionInspection.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085523_added_entity_QmsProductionRelation.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190709085524_added_entity_QmsPartsAssemblyRelation.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710015308_added_entity_QmsMaster.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710015309_added_entity_QmsVehicleTypeClass.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710015310_added_entity_QmsVehicleTypeInfo.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710015311_added_entity_QmsSupplierClass.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710015312_added_entity_QmsSupplier.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190710022601_added_entity_QmsEntryControlCriterion.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190711085034_added_entity_QmsQualityControlDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190711085037_added_entity_QmsControlDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190715064600_added_entity_QmsEntryInspectionResult.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190715082902_added_entity_QmsCarRecordbookDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190715082827_added_entity_QmsProductionTask.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190715082829_added_entity_QmsProductionInspectionResult.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190715082830_added_entity_QmsCarRecordbookMain.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190718102109_added_entity_QmsBogiepressureTonTest.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190718102110_added_entity_QmsBogiepressurePositiveTest.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190718102111_added_entity_QmsIntelligentTriggerTest.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190718102112_added_entity_QmsMicSwicthRegulattoTest.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190718102113_added_entity_QmsBreathingSafetyTest.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053329_added_entity_QmsDefect.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053330_added_entity_QmsUnhealthy.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053334_added_entity_QmsApproveFlow.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053335_added_entity_QmsApproveResult.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053336_added_entity_QmsUnqualifiedMateriel.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053337_added_entity_QmsUnqualifiedProduct.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190722053338_added_entity_QmsUnqualifiedProductDetails.xml" relativeToChangelogFile="false"/>
+<include file="config/liquibase/changelog/20190724065309_added_entity_QmsProductionInspectionValue.xml" relativeToChangelogFile="false"/>
+<!--      jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here     -->
+
+<!--      jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+
+</databaseChangeLog>

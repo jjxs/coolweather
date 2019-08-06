@@ -1,0 +1,41 @@
+{
+    "fccApp": {
+        "qmsProductionRelation": {
+            "home": {
+                "title": "Qms Production Relations",
+                "createLabel": "创建新 Qms Production Relation",
+                "createOrEditLabel": "创建或编辑 Qms Production Relation"
+            },
+            "created": "Qms Production Relation {{ param }} 创建成功",
+            "updated": "Qms Production Relation {{ param }} 更新成功",
+            "deleted": "Qms Production Relation {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Production Relation {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Production Relation"
+            },
+            "productionInspectionId": "Production Inspection Id",
+            "assemblyId": "Assembly Id",
+            "doProductId": "Do Product Id",
+            "actualUseLocation": "Actual Use Location",
+            "assemblyMaterielId": "Assembly Materiel Id",
+            "useProductId": "Use Product Id",
+            "fromDiff": "From Diff",
+            "confirmUser1": "Confirm User 1",
+            "confirmTime1": "Confirm Time 1",
+            "confirmUser2": "Confirm User 2",
+            "confirmTime2": "Confirm Time 2",
+            "remark": "Remark",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

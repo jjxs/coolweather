@@ -1,0 +1,37 @@
+{
+    "fccApp": {
+        "rbacElement": {
+            "home": {
+                "title": "Rbac Elements",
+                "createLabel": "创建新 Rbac Element",
+                "createOrEditLabel": "创建或编辑 Rbac Element"
+            },
+            "created": "Rbac Element {{ param }} 创建成功",
+            "updated": "Rbac Element {{ param }} 更新成功",
+            "deleted": "Rbac Element {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Rbac Element {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Rbac Element"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "elementCode": "Element Code",
+            "menuId": "Menu Id",
+            "isDis": "Is Dis",
+            "stopFlag": "Stop Flag",
+            "delFlage": "Del Flage",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

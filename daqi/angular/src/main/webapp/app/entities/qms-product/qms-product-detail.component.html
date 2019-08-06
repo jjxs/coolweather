@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProduct">
+            <h2><span jhiTranslate="fccApp.qmsProduct.detail.title">Qms Product</span> {{qmsProduct.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProduct.productBatch">Product Batch</span></dt>
+                <dd>
+                    <span>{{qmsProduct.productBatch}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.productNum">Product Num</span></dt>
+                <dd>
+                    <span>{{qmsProduct.productNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsProduct.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.productDiff">Product Diff</span></dt>
+                <dd>
+                    <span>{{qmsProduct.productDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.isUse">Is Use</span></dt>
+                <dd>
+                    <span>{{qmsProduct.isUse}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.isOk">Is Ok</span></dt>
+                <dd>
+                    <span>{{qmsProduct.isOk}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProduct.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProduct.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProduct.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsProduct.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsProduct.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsProduct.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProduct.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProduct.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProduct.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProduct.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProduct.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-product', qmsProduct.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

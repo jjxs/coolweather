@@ -1,0 +1,45 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<p-table #dt [value]="rbacRights" [paginator]="true" [rows]="itemsPerPage"  [totalRecords]="queryCount"  [scrollable]="true"  scrollHeight="520px"  [lazy]="true" (onLazyLoad)="loadRoleLazy($event)" >
+    <ng-template pTemplate="caption">
+        <div class="cnc-user-common-top">
+                <button pButton class="float-left" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                    label="{{'rbacRight.home.createLabel'| translate}}" [routerLink]="['/rbac-right/new']"></button>
+                <div class="cnc-user-common-title">
+                    <span jhiTranslate="rbacRight.home.title"></span>
+                </div>   
+        </div>
+        <div class="cnc-user-common-search">
+            <div class="cnc-user-common-search-input input-group-sm">
+                <input class="form-control" pInputText type="text" placeholder="{{'rbacRight.help.rightName'| translate}}" maxlength="30"[(ngModel)]="rightName">
+            </div>
+            <p-button (onClick)="rightsSearch()" label="{{'rbacUser.home.Search'| translate}}" class="cnc-user-common-button"></p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+                <th class="cnc-user-common-th-operate">
+                    <span jhiTranslate="rbacRight.operation">操作</span>
+                </th>
+                <!-- <th class="cnc-user-common-th">
+                    <span jhiTranslate="rbacRight.help.storeName">门店名称</span>
+                    <span class="fa fa-sort"></span>
+                </th> -->
+                <th class="cnc-user-common-th" jhiSortBy="rightName">
+                    <span  jhiTranslate="rbacRight.help.rightName">权限名称</span>
+                    <span class="fa fa-sort"></span>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rbacRight>
+            <tr>
+                <td class="cnc-user-common-td-operate">
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.view" queryParamsHandling="merge" [routerLink]="['/rbac-right', rbacRight.id, 'view']"></a>
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.edit"  *ngIf="!(rbacRight.id === 1)"  queryParamsHandling="merge" [routerLink]="['/rbac-right', rbacRight.id, 'edit']"></a>
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.delete"  *ngIf="!(rbacRight.id === 1)"  queryParamsHandling="merge" style="color: #0096ff;" (click)="delete(rbacRight.id)"></a>
+                </td>
+                <!-- <td class="cnc-user-common-td text-left">{{rbacRight.storeId}}</td> -->
+                <td class="cnc-user-common-td text-left">{{rbacRight.rightName}}</td>
+               
+            </tr>
+        </ng-template>
+</p-table>

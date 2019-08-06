@@ -1,0 +1,140 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsMateriel.home.title">Qms Materiels</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-materiel" [routerLink]="['/qms-materiel/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsMateriel.home.createLabel">
+            Create new Qms Materiel
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsMateriels">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielCd"><span jhiTranslate="fccApp.qmsMateriel.materielCd">Materiel Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielName"><span jhiTranslate="fccApp.qmsMateriel.materielName">Materiel Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="figureNumber"><span jhiTranslate="fccApp.qmsMateriel.figureNumber">Figure Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="innerCd"><span jhiTranslate="fccApp.qmsMateriel.innerCd">Inner Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="abcNumber"><span jhiTranslate="fccApp.qmsMateriel.abcNumber">Abc Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productMode"><span jhiTranslate="fccApp.qmsMateriel.productMode">Product Mode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielTypeId"><span jhiTranslate="fccApp.qmsMateriel.materielTypeId">Materiel Type Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="propertyType"><span jhiTranslate="fccApp.qmsMateriel.propertyType">Property Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="packgeUnitId"><span jhiTranslate="fccApp.qmsMateriel.packgeUnitId">Packge Unit Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="useUnitId"><span jhiTranslate="fccApp.qmsMateriel.useUnitId">Use Unit Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="conversion"><span jhiTranslate="fccApp.qmsMateriel.conversion">Conversion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="specificationType"><span jhiTranslate="fccApp.qmsMateriel.specificationType">Specification Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="weight"><span jhiTranslate="fccApp.qmsMateriel.weight">Weight</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="density"><span jhiTranslate="fccApp.qmsMateriel.density">Density</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workHours"><span jhiTranslate="fccApp.qmsMateriel.workHours">Work Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="taredHours"><span jhiTranslate="fccApp.qmsMateriel.taredHours">Tared Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="schedulerRoleId"><span jhiTranslate="fccApp.qmsMateriel.schedulerRoleId">Scheduler Role Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationCd"><span jhiTranslate="fccApp.qmsMateriel.organizationCd">Organization Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inHouseType"><span jhiTranslate="fccApp.qmsMateriel.inHouseType">In House Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vesselAmount"><span jhiTranslate="fccApp.qmsMateriel.vesselAmount">Vessel Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="qualityLevel"><span jhiTranslate="fccApp.qmsMateriel.qualityLevel">Quality Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="texTure"><span jhiTranslate="fccApp.qmsMateriel.texTure">Tex Ture</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mhandlerRoleId"><span jhiTranslate="fccApp.qmsMateriel.mhandlerRoleId">Mhandler Role Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eightPrevention"><span jhiTranslate="fccApp.qmsMateriel.eightPrevention">Eight Prevention</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ifKey"><span jhiTranslate="fccApp.qmsMateriel.ifKey">If Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ubiety"><span jhiTranslate="fccApp.qmsMateriel.ubiety">Ubiety</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sapCd"><span jhiTranslate="fccApp.qmsMateriel.sapCd">Sap Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isCheck"><span jhiTranslate="fccApp.qmsMateriel.isCheck">Is Check</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="checkType"><span jhiTranslate="fccApp.qmsMateriel.checkType">Check Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="checkRate"><span jhiTranslate="fccApp.qmsMateriel.checkRate">Check Rate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsMateriel.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsMateriel.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsMateriel.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsMateriel.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsMateriel.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsMateriel.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsMateriel.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsMateriel.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsMateriel.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsMateriel.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsMateriel of qmsMateriels ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-materiel', qmsMateriel.id, 'view' ]">{{qmsMateriel.id}}</a></td>
+                <td>{{qmsMateriel.materielCd}}</td>
+                <td>{{qmsMateriel.materielName}}</td>
+                <td>{{qmsMateriel.figureNumber}}</td>
+                <td>{{qmsMateriel.innerCd}}</td>
+                <td>{{qmsMateriel.abcNumber}}</td>
+                <td>{{qmsMateriel.productMode}}</td>
+                <td>{{qmsMateriel.materielTypeId}}</td>
+                <td>{{qmsMateriel.propertyType}}</td>
+                <td>{{qmsMateriel.packgeUnitId}}</td>
+                <td>{{qmsMateriel.useUnitId}}</td>
+                <td>{{qmsMateriel.conversion}}</td>
+                <td>{{qmsMateriel.specificationType}}</td>
+                <td>{{qmsMateriel.weight}}</td>
+                <td>{{qmsMateriel.density}}</td>
+                <td>{{qmsMateriel.workHours}}</td>
+                <td>{{qmsMateriel.taredHours}}</td>
+                <td>{{qmsMateriel.schedulerRoleId}}</td>
+                <td>{{qmsMateriel.organizationCd}}</td>
+                <td>{{qmsMateriel.inHouseType}}</td>
+                <td>{{qmsMateriel.vesselAmount}}</td>
+                <td>{{qmsMateriel.qualityLevel}}</td>
+                <td>{{qmsMateriel.texTure}}</td>
+                <td>{{qmsMateriel.mhandlerRoleId}}</td>
+                <td>{{qmsMateriel.eightPrevention}}</td>
+                <td>{{qmsMateriel.ifKey}}</td>
+                <td>{{qmsMateriel.ubiety}}</td>
+                <td>{{qmsMateriel.sapCd}}</td>
+                <td>{{qmsMateriel.isCheck}}</td>
+                <td>{{qmsMateriel.checkType}}</td>
+                <td>{{qmsMateriel.checkRate}}</td>
+                <td>{{qmsMateriel.flagStatus}}</td>
+                <td>{{qmsMateriel.compPkid}}</td>
+                <td>{{qmsMateriel.remark}}</td>
+                <td>{{qmsMateriel.reserveFirst}}</td>
+                <td>{{qmsMateriel.reserveSecond}}</td>
+                <td>{{qmsMateriel.reserveThird}}</td>
+                <td>{{qmsMateriel.makeUser}}</td>
+                <td>{{qmsMateriel.makeTime | date:'medium'}}</td>
+                <td>{{qmsMateriel.modifyUser}}</td>
+                <td>{{qmsMateriel.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel', qmsMateriel.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel', qmsMateriel.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-materiel/'+ qmsMateriel.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsMateriels && qmsMateriels.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+{
+    "name": "AuthRight",
+    "fields": [
+        {
+            "fieldName": "appId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rightCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rightName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stopFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "delFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "insProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "delProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "triggerDateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190202075304",
+    "entityTableName": "auth_right",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

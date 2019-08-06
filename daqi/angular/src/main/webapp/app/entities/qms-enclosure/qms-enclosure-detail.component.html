@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsEnclosure">
+            <h2><span jhiTranslate="fccApp.qmsEnclosure.detail.title">Qms Enclosure</span> {{qmsEnclosure.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.inspectionInfoId">Inspection Info Id</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.inspectionInfoId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.inspectionKbn">Inspection Kbn</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.inspectionKbn}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.enclosureAddress">Enclosure Address</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.enclosureAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEnclosure.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsEnclosure.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-enclosure', qmsEnclosure.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

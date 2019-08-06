@@ -1,0 +1,103 @@
+::ng-deep {
+    .jh-card {
+        margin-top: 1px!important;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.cnc-main-nav-div-none {
+    display: none;
+}
+
+.cnc-main-nav-div-show {
+    display: block;
+}
+
+.cnc-main-div-center {  
+    width:100%;
+}
+
+.cnc-main-nav-div-menu-none {
+    display: none;
+}
+
+.cnc-main-nav-div-menu-show {
+    display: block;
+    width: 200px;
+    height: 100%;    
+    transition: all .3s;
+    position: fixed;
+    margin-top:0px;
+    left: 0;
+    z-index:10;
+}
+
+.cnc-main-nav {
+    padding-left: 210px;
+}
+
+.cnc-main-panelmenu {
+    display: block;
+}
+
+@media screen and (max-width: 1023px) {
+    .cnc-main-nav {
+        padding-left: 15px;
+    }
+
+    .cnc-main-panelmenu {
+        display: none;
+        overflow: auto;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cnc-main-div-center {  
+        width:100%;
+    }
+
+    .cnc-main-div-left {  
+        float: left;
+        width: 12%;
+        background-color: red;
+    }
+
+    .cnc-main-div-right {  
+        margin-left: 12%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cnc-main-div-center {  
+        width:600px;
+    }
+
+    .cnc-main-div-left {  
+        float: left;
+        width: 12%;
+        background-color: red;
+    }
+
+    .cnc-main-div-right {  
+        margin-left: 12%;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .cnc-main-div-center {  
+        width:720px;
+    }
+
+    .cnc-main-div-left {  
+        float: left;
+        width: 12%;
+        background-color: red;
+    }
+
+    .cnc-main-div-right {  
+        margin-left: 12%;
+    }
+}

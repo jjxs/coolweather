@@ -1,0 +1,105 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+<p-panel> 
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem" jhiTranslate="fccApp.qmsVehicleTypeInfo.home.popTitle">车型分类选择</span>
+            <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                icon="fa fa-fw fa-close"></button>
+        </div>
+    </p-header>
+    <div style="height:39rem;margin: 0;">
+        <p-table #dt [value]="qmsVehicleType" [(selection)]="qmsVehicleTypeBack"
+            scrollHeight="20rem" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount" [lazy]="true"
+            [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+            <ng-template pTemplate="caption" style="padding-left:0px" >
+                <div style="height: 50px;margin-top:0.5%;width: 100%;">
+                    <div class="common_div-head">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleType"></span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="vehicleType" />
+                        </div>
+                    </div>
+                    <div class="common_div-head" style="margin-left: 3%;">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleTypeName"></span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                                [(ngModel)]="vehicleTypeName" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="height: 46px">
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                        (click)="emptyInfo()">
+                        <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.empty">
+                            清空
+                        </span>
+                    </button>
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                        (click)="searchInfo()">
+                        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.query">
+                            查询
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+                  <!-- 选择 -->
+                  <th class="common_thStyle" style="width: 10% !important;">
+                    <span jhiTranslate="fccApp.qmsVehicleTypeInfo.choice">选择</span>
+                  </th>
+                  <!-- 车型分类名称 -->
+                  <th class="common_thStyle" style="width: 20% !important;">
+                    <span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleClassName">车型分类名称</span>
+                  </th>
+                  <!-- 车型编码 -->
+                  <th class="common_thStyle" style="width: 20% !important;">
+                    <span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleType">车型编码</span>
+                  </th> 
+                  <!-- 车型名称 -->
+                  <th class="common_thStyle" style="width: 20% !important;">
+                    <span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleTypeName">车型名称</span>
+                  </th> 
+                  <!-- 备注 -->
+                  <th class="common_thStyle" style="width: 30% !important;">
+                    <span jhiTranslate="fccApp.qmsVehicleTypeInfo.remark">备注</span>
+                  </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-vtc let-i="rowIndex">
+                <tr>
+                    <!-- 选择 -->
+                    <td class="common_tdStyle text-center">
+                        <p-tableRadioButton [value]="vti" [checked]="i === 0 ? true : ''"></p-tableRadioButton>
+                    </td>
+                    <!-- 供应商编码 -->
+                    <td class="common_tdStyle text-left" style="width: 20% !important"><p>{{vti.vehicleClass}}</p></td>
+                    <!-- 供应商名称 -->
+                    <td class="common_tdStyle text-left" style="width: 20% !important"><p>{{vti.vehicleClassName}}</p></td>
+                    <!-- 地址 -->
+                    <td class="common_tdStyle text-left" style="width: 30% !important"><p>{{vti.remark}}</p></td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <div style="margin-top:10px;margin-bottom:10px;">
+            <button pButton type="button" (click)="goBack()" label="取消"
+                class="common_pop_font ui-button-secondary float-right search_button"></button>
+            <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+                style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+        </div>
+    </div>
+</p-panel>
+</div>

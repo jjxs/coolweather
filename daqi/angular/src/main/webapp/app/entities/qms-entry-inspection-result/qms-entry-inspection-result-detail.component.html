@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsEntryInspectionResult">
+            <h2><span jhiTranslate="fccApp.qmsEntryInspectionResult.detail.title">Qms Entry Inspection Result</span> {{qmsEntryInspectionResult.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.entryControlDetailId">Entry Control Detail Id</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.entryControlDetailId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.goodsCd">Goods Cd</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.goodsCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.controlId">Control Id</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.controlId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.placeDiff">Place Diff</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.placeDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.testValue">Test Value</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.testValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.recordNum">Record Num</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.recordNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.checkResult">Check Result</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.checkResult}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.groupCd">Group Cd</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.groupCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryInspectionResult.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsEntryInspectionResult.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-entry-inspection-result', qmsEntryInspectionResult.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+    <p-panel>
+        <p-header>
+            <div class="ui-helper-clearfix">
+                <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem">工艺选择</span>
+                <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                    icon="fa fa-fw fa-close"></button>
+            </div>
+        </p-header>
+        <div style="height:39rem;margin: 0;">
+            <h3 class="first"></h3>
+            <div class="ui-g" style="width:100%;margin-bottom:10px">
+                <!-- 追加工艺 -->
+                <div class="ui-g-12">
+                    <div style="width: 30%;float:left;font-size: 23px;">
+                        <p-radioButton name="group1" value="1" label="追加工艺" [(ngModel)]="val1" inputId="opt1">
+                        </p-radioButton>
+                    </div>
+                    <div style="width: 70%;float:left;">
+                        <div style="width: 100%;float:left;">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyCd">工艺编码</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="technologyCd" [(ngModel)]="technologyCd"
+                                    [disabled]="val1 === '2' || val1 === '3'" maxlength="10" />
+                            </div>
+                        </div>
+
+                        <div style="width: 100%;float:left;">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyName">工艺名称</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="technologyName" [disabled]="val1 === '2' || val1 === '3'"
+                                    [(ngModel)]="technologyName" maxlength="100" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- 选择工艺 -->
+                <div class="ui-g-12">
+                    <div style="width: 30%;float:left;font-size: 23px;">
+                        <p-radioButton name="group1" value="2" label="选择工艺" [(ngModel)]="val1" inputId="opt2"
+                            (click)="clearInfo()" [disabled]="readonlySelect">
+                        </p-radioButton>
+                    </div>
+                    <div style="width: 70%;float:left;text-align: left">
+                        <p-dropdown #dd [style]="{'width':'60%','height':'40px','border':'1px solid #ced4da'}"
+                            [disabled]="readonlySelect || val1 === '1' || val1 === '3'" [options]="selectTechnology"
+                            name="inspectionProcedure" [(ngModel)]="selectTechnologyCd">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <!-- 复制工艺 -->
+                <div class="ui-g-12">
+                    <div style="width: 30%;float:left;font-size: 23px;">
+                        <p-radioButton name="group1" value="3" label="复制工艺" [(ngModel)]="val1" inputId="opt3"
+                            (click)="clearInfo()" [disabled]="readonlySelect">
+                        </p-radioButton>
+                    </div>
+                    <div style="width: 70%;float:left;text-align: left">
+                        <p-dropdown #dd [style]="{'width':'60%','height':'40px','border':'1px solid #ced4da'}"
+                        [disabled]="readonlySelect || val1 === '1' || val1 === '2'" [options]="copySelectTechnology" name="copyInspectionProcedure"
+                            [(ngModel)]="copySelectTechnologyCd">
+                        </p-dropdown>
+
+                        <div style="width: 100%;float:left;">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyCd">工艺编码</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="technologyCdCopy" [(ngModel)]="technologyCdCopy"
+                                    [disabled]="val1 === '2' || val1 === '1'" maxlength="10" />
+                            </div>
+                        </div>
+
+                        <div style="width: 100%;float:left;">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyName">工艺名称</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="technologyNameCopy" [disabled]="val1 === '2' || val1 === '1'"
+                                    [(ngModel)]="technologyNameCopy" maxlength="100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Selected Value = {{val1||'none'}} -->
+            <div style="margin-top:10px;margin-bottom:10px;">
+                <button pButton type="button" (click)="goBack()" label="取消"
+                    class="common_pop_font ui-button-secondary float-right search_button"></button>
+                <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+                    style="margin-right: 15px;" label="确定" (click)="selected()"></button>
+            </div>
+        </div>
+    </p-panel>
+</div>

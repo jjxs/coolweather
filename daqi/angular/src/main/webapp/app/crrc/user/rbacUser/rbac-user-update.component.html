@@ -1,0 +1,100 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">用户维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>用户</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>用户名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>用户密码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>角色</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>组织</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>电话</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>邮箱</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 权限编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="UserCode" id="field_userCode" *ngIf="this.thisflag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userCode" maxlength="20"
+                    required />
+
+                <input type="text" class="form-control" name="UserCode" id="field_userCode" *ngIf="this.thisflag==1"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userCode" maxlength="20"
+                     [disabled]="true" required />
+            </div>
+            <!-- 用户名 -->
+            <!-- <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="userCode" id="field_userCode" required="true" *ngIf="this.thisflag==1"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userCode"
+                    maxlength="100" />
+            </div> -->
+            <!-- 用户名称  -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="userName" id="field_userName" required="true"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userName"
+                    maxlength="64" />
+            </div>
+            <!-- 用户密码 -->
+            <div class="lookLeftDiv">
+                <input type="password" class="form-control" name="userPassword" id="field_userPassword" required="true"
+                    style="width: 300px;margin-left: 120px;" pPassword [(ngModel)]="rbacUser.userPassword"
+                    maxlength="64" />
+            </div>
+            <!-- 角色 -->
+            <div class="lookLeftDiv">
+                <p-dropdown [options]="rolesList" class="cnc-user-creat-dropdown"
+                    [style]="{'width':'300px','height':'38px','margin-left' : '120px'}" name="rbacRight"
+                    [(ngModel)]="selectListVal" [showClear]="true" placeholder="请选择"></p-dropdown>
+            </div>
+            <!-- 组织 -->
+            <div class="lookLeftDiv">
+                <p-dropdown [options]="orzList" class="cnc-user-creat-dropdown"
+                    [style]="{'width':'300px','height':'38px','margin-left' : '120px'}" name="organizationCd"
+                    [(ngModel)]="rbacUser.organizationCd" [showClear]="true" placeholder="请选择"></p-dropdown>
+            </div>
+            <!-- 电话  -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="userMobile" id="field_userMobile"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userMobile"
+                    maxlength="20" />
+            </div>
+            <!-- 邮箱  -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="userMail" id="field_userMail"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacUser.userMail"
+                    maxlength="64" />
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

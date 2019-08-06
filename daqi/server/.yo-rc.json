@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "cn.com.cnc.fcc",
+      "nativeLanguage": "zh-cn"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "FCC",
+    "packageName": "cn.com.cnc.fcc",
+    "packageFolder": "cn/com/cnc/fcc",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTU5MjNkODVkMWRmNjU5ZDJjNDgxNDBmZjAxNmViODA1OTdkOGQ2MTk3YzEwOTI4ZTAxOGEyMDYzNDgxMzY4ZGNiZjE0NDRiMjJkNmU1NjhmNzA3NmY3ZGNlMzAzNWQ3OGI1YTZlMmI4YzdiOGQ4NWRjNjRjZjFkNWM3NjkxODI=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "zh-cn",
+    "languages": [
+      "zh-cn"
+    ],
+    "skipClient": true
+  }
+}

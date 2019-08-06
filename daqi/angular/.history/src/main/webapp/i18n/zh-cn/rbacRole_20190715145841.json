@@ -1,0 +1,49 @@
+{
+        "rbacRole": {
+            "home": {
+                "title": "角色管理",
+                "createLabel": "创建新 角色",
+                "editLabel": "编辑 角色",
+                "createOrEditLabel": "创建或编辑 Rbac Role",
+                "popTitle": "角色选择",
+                "choice": "选择"
+            },
+            "created": "Rbac Role {{ param }} 创建成功",
+            "updated": "Rbac Role {{ param }} 更新成功",
+            "deleted": "Rbac Role {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除角色 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "角色"
+            },
+            "no": "序号",
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "roleCode": "角色编码",
+            "roleName": "角色名称",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "操作",
+            "help": {
+                "appId": "商户id",
+                "storeId": "门店id",
+                "storeName": "门店名称",
+                "roleName": "角色名称",
+                "rightName": "权限名称",
+                "roleCode": "角色编号",
+                "actionList":"权限列表"
+            }
+        }
+    }
+

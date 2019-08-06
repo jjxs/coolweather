@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.papiToken.home.title">Papi Tokens</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-papi-token" [routerLink]="['/papi-token/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.papiToken.home.createLabel">
+            Create new Papi Token
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="papiTokens">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.appId">App Id</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.storeId">Store Id</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.apiCode">Api Code</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.apiPassword">Api Password</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.apiToken">Api Token</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.apiCount">Api Count</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.apiDate">Api Date</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.stopFlag">Stop Flag</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.delFlag">Del Flag</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.insProgarmCd">Ins Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.insOperCd">Ins Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.insDateTime">Ins Date Time</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.updProgarmCd">Upd Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.updOperCd">Upd Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.updDateTime">Upd Date Time</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.delProgarmCd">Del Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.delOperCd">Del Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.delDateTime">Del Date Time</span></th>
+            <th><span jhiTranslate="fccApp.papiToken.triggerDateTime">Trigger Date Time</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let papiToken of papiTokens ;trackBy: trackId">
+                <td><a [routerLink]="['/papi-token', papiToken.id, 'view' ]">{{papiToken.id}}</a></td>
+                <td>{{papiToken.appId}}</td>
+                <td>{{papiToken.storeId}}</td>
+                <td>{{papiToken.apiCode}}</td>
+                <td>{{papiToken.apiPassword}}</td>
+                <td>{{papiToken.apiToken}}</td>
+                <td>{{papiToken.apiCount}}</td>
+                <td>{{papiToken.apiDate | date:'medium'}}</td>
+                <td>{{papiToken.stopFlag}}</td>
+                <td>{{papiToken.delFlag}}</td>
+                <td>{{papiToken.insProgarmCd}}</td>
+                <td>{{papiToken.insOperCd}}</td>
+                <td>{{papiToken.insDateTime | date:'medium'}}</td>
+                <td>{{papiToken.updProgarmCd}}</td>
+                <td>{{papiToken.updOperCd}}</td>
+                <td>{{papiToken.updDateTime | date:'medium'}}</td>
+                <td>{{papiToken.delProgarmCd}}</td>
+                <td>{{papiToken.delOperCd}}</td>
+                <td>{{papiToken.delDateTime | date:'medium'}}</td>
+                <td>{{papiToken.triggerDateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/papi-token', papiToken.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/papi-token', papiToken.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'papi-token/'+ papiToken.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

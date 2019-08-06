@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsPartsAssemblyRelation.home.title">Qms Parts Assembly Relations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-parts-assembly-relation" [routerLink]="['/qms-parts-assembly-relation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsPartsAssemblyRelation.home.createLabel">
+            Create new Qms Parts Assembly Relation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsPartsAssemblyRelations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bomTechnologyId"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.bomTechnologyId">Bom Technology Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assemblyNum"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyNum">Assembly Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assemblyMaterielId"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyMaterielId">Assembly Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assemblyCount"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyCount">Assembly Count</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsPartsAssemblyRelation of qmsPartsAssemblyRelations ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-parts-assembly-relation', qmsPartsAssemblyRelation.id, 'view' ]">{{qmsPartsAssemblyRelation.id}}</a></td>
+                <td>{{qmsPartsAssemblyRelation.bomTechnologyId}}</td>
+                <td>{{qmsPartsAssemblyRelation.assemblyNum}}</td>
+                <td>{{qmsPartsAssemblyRelation.assemblyMaterielId}}</td>
+                <td>{{qmsPartsAssemblyRelation.assemblyCount}}</td>
+                <td>{{qmsPartsAssemblyRelation.remark}}</td>
+                <td>{{qmsPartsAssemblyRelation.flagStatus}}</td>
+                <td>{{qmsPartsAssemblyRelation.compPkid}}</td>
+                <td>{{qmsPartsAssemblyRelation.reserveFirst}}</td>
+                <td>{{qmsPartsAssemblyRelation.reserveSecond}}</td>
+                <td>{{qmsPartsAssemblyRelation.reserveThird}}</td>
+                <td>{{qmsPartsAssemblyRelation.makeUser}}</td>
+                <td>{{qmsPartsAssemblyRelation.makeTime | date:'medium'}}</td>
+                <td>{{qmsPartsAssemblyRelation.modifyUser}}</td>
+                <td>{{qmsPartsAssemblyRelation.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-parts-assembly-relation', qmsPartsAssemblyRelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-parts-assembly-relation', qmsPartsAssemblyRelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-parts-assembly-relation/'+ qmsPartsAssemblyRelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsPartsAssemblyRelations && qmsPartsAssemblyRelations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

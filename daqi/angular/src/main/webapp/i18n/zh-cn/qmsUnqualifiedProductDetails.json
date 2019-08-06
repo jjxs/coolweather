@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "qmsUnqualifiedProductDetails": {
+            "home": {
+                "title": "Qms Unqualified Product Details",
+                "createLabel": "创建新 Qms Unqualified Product Details",
+                "createOrEditLabel": "创建或编辑 Qms Unqualified Product Details"
+            },
+            "created": "Qms Unqualified Product Details {{ param }} 创建成功",
+            "updated": "Qms Unqualified Product Details {{ param }} 更新成功",
+            "deleted": "Qms Unqualified Product Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Unqualified Product Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Unqualified Product Details"
+            },
+            "unqualifiedProductId": "Unqualified Product Id",
+            "inspectionItem": "Inspection Item",
+            "technicalRequirement": "Technical Requirement",
+            "inspectionInstrument": "Inspection Instrument",
+            "standard": "Standard",
+            "upperDeviation": "Upper Deviation",
+            "lowerDeviation": "Lower Deviation",
+            "controlLevel": "Control Level",
+            "checkResult": "Check Result",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "fccApp": {
+        "qmsBreathingSafetyTest": {
+            "home": {
+                "title": "Qms Breathing Safety Tests",
+                "createLabel": "创建新 Qms Breathing Safety Test",
+                "createOrEditLabel": "创建或编辑 Qms Breathing Safety Test"
+            },
+            "created": "Qms Breathing Safety Test {{ param }} 创建成功",
+            "updated": "Qms Breathing Safety Test {{ param }} 更新成功",
+            "deleted": "Qms Breathing Safety Test {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Breathing Safety Test {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Breathing Safety Test"
+            },
+            "mcgsTime": "Mcgs Time",
+            "mcgsTimems": "Mcgs Timems",
+            "mcgsDate": "Mcgs Date",
+            "ctype": "Ctype",
+            "safetyValve": "Safety Valve",
+            "respiratoryPressure": "Respiratory Pressure",
+            "pinspl": "Pinspl",
+            "checkUser": "Check User",
+            "mfyl": "Mfyl",
+            "mfyc": "Mfyc",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

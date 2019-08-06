@@ -1,0 +1,63 @@
+{
+    "fccApp": {
+        "qmsBomTechnology": {
+            "home": {
+                "title": "Qms Bom Technologies",
+                "createLabel": "创建新 Qms Bom Technology",
+                "createOrEditLabel": "创建或编辑 Qms Bom Technology"
+            },
+            "created": "Qms Bom Technology {{ param }} 创建成功",
+            "updated": "Qms Bom Technology {{ param }} 更新成功",
+            "deleted": "Qms Bom Technology {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Bom Technology {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Bom Technology"
+            },
+            "materielId": "Materiel Id",
+            "technologyCd": "Technology Cd",
+            "technologyName": "Technology Name",
+            "orderNo": "Order No",
+            "beforeProcessId": "Before Process Id",
+            "processId": "Process Id",
+            "organizationCd": "Organization Cd",
+            "schedulerRole": "Scheduler Role",
+            "workUnit": "Work Unit",
+            "workHours": "Work Hours",
+            "qcType": "Qc Type",
+            "specialRole": "Special Role",
+            "proprety": "Proprety",
+            "machineCenterCd": "Machine Center Cd",
+            "workCd": "Work Cd",
+            "deliverTime": "Deliver Time",
+            "integerNum": "Integer Num",
+            "integerTimeUnit": "Integer Time Unit",
+            "integerTime": "Integer Time",
+            "operationVersion": "Operation Version",
+            "workFactor": "Work Factor",
+            "operationType": "Operation Type",
+            "mutualinRole": "Mutualin Role",
+            "describe": "Describe",
+            "randomRole": "Random Role",
+            "controlRole": "Control Role",
+            "isMain": "Is Main",
+            "isNewCd": "Is New Cd",
+            "newCdMaterielId": "New Cd Materiel Id",
+            "workGroupCd": "Work Group Cd",
+            "isControlPoint": "Is Control Point",
+            "isTest": "Is Test",
+            "isDefault": "Is Default",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

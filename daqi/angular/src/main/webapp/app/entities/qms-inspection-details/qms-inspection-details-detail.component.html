@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsInspectionDetails">
+            <h2><span jhiTranslate="fccApp.qmsInspectionDetails.detail.title">Qms Inspection Details</span> {{qmsInspectionDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.inspectionId">Inspection Id</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.inspectionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.inspectionDiff">Inspection Diff</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.inspectionDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.placeDiff">Place Diff</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.placeDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.testValue">Test Value</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.testValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsInspectionDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-inspection-details', qmsInspectionDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

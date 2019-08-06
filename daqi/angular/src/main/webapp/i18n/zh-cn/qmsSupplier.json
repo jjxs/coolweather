@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "qmsSupplier": {
+            "home": {
+                "title": "Qms Suppliers",
+                "createLabel": "创建新 Qms Supplier",
+                "createOrEditLabel": "创建或编辑 Qms Supplier"
+            },
+            "created": "Qms Supplier {{ param }} 创建成功",
+            "updated": "Qms Supplier {{ param }} 更新成功",
+            "deleted": "Qms Supplier {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Supplier {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Supplier"
+            },
+            "supplierClassId": "Supplier Class Id",
+            "supplierCd": "Supplier Cd",
+            "supplierName": "Supplier Name",
+            "address": "Address",
+            "telNum1": "Tel Num 1",
+            "telNum2": "Tel Num 2",
+            "faxNum": "Fax Num",
+            "urlAddress": "Url Address",
+            "mailAddress": "Mail Address",
+            "linkMan": "Link Man",
+            "department": "Department",
+            "assRecord": "Ass Record",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

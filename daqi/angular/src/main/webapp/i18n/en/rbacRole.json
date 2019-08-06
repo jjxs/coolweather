@@ -1,0 +1,46 @@
+{
+        "rbacRole": {
+            "home": {
+                "title": "Role management",
+                "createLabel": "Create new roles",
+                "editLabel": "Editorial role",
+                "createOrEditLabel": "Create or edit Rbac Role"
+            },
+            "created": "Rbac Role {{ param }} Create success",
+            "updated": "Rbac Role {{ param }} Update success",
+            "deleted": "Rbac Role {{ param }} Delete successful",
+            "delete": {
+                "question": "You're sure you want to delete roles {{ id }}？"
+            },
+            "detail": {
+                "title": "role"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "roleCode": "Role Code",
+            "roleName": "Role Name",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "operation",
+            "help": {
+                "appId": "appId",
+                "storeId": "storeId",
+                "storeName": "Name of store",
+                "roleName": "Role name",
+                "rightName": "Right name",
+                "roleCode": "Role number",
+                "actionList":"Permission list"
+            }
+        }
+    }
+

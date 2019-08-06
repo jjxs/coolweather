@@ -1,0 +1,50 @@
+::ng-deep {
+    body .ui-panelmenu .ui-panelmenu-header > a {
+        background-color: white;
+        color: black;
+    }
+
+    body .ui-panelmenu .ui-panelmenu-header > a:hover {
+        background-color: #f4f4f4;
+        border: 1px solid white;
+        color: black;
+    }
+
+    body .ui-panelmenu .ui-panelmenu-header > a .ui-panelmenu-icon {
+        color: black;
+        float: right;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header:not(.ui-state-active) > a:hover {
+        background-color: #f4f4f4;
+        border: 1px solid #c8c8c8;
+        color: black;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header:not(.ui-state-active) > a:hover .ui-panelmenu-icon {
+        color: black;
+        float: right;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header.ui-state-active > a {
+        background-color: white;
+        border: 1px solid #c8c8c8;
+        color: black;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header.ui-state-active > a .ui-panelmenu-icon {
+        color: black;
+        float: right;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header.ui-state-active > a:hover {
+        background-color: #f4f4f4;
+        border: 1px solid white;
+        color: black;
+    }
+    
+    body .ui-panelmenu .ui-panelmenu-header.ui-state-active > a:hover .ui-panelmenu-icon {
+        color: black;
+        float: right;
+    }
+}

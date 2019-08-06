@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity QmsMateriel.
+    -->
+    <changeSet id="20190620085708-1" author="jhipster">
+        <createTable tableName="qms_materiel">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="materiel_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="materiel_name" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="figure_number" type="varchar(30)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="inner_cd" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="abc_number" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="product_mode" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="materiel_type_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="property_type" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="packge_unit_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="use_unit_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="conversion" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="specification_type" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="weight" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="density" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="work_hours" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tared_hours" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="scheduler_role" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="organization_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="in_house_type" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="vessel_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="quality_level" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tex_ture" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mhandler_role" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="eight_prevention" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="if_key" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ubiety" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sap_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supplier_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supplier_cd" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supplier_name" type="varchar(100)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_check" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="flag_status" type="varchar(1)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="comp_pkid" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remark" type="varchar(200)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="make_user" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="make_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_user" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="modify_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="qms_materiel" columnName="make_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="qms_materiel" columnName="modify_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

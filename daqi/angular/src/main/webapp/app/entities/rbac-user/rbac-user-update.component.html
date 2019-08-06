@@ -1,0 +1,184 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+        <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+        <div class="cnc-user-creat-title">
+            <span *ngIf="!rbacUser.id"  jhiTranslate="rbacUser.home.createLabel" class="cnc-user-common-title"></span>
+            <span *ngIf="rbacUser.id" jhiTranslate="rbacUser.home.editLabel" class="cnc-user-common-title"></span>
+        </div>
+        <div>
+            <div class="row">
+                <!--门店名称  -->
+                <!-- <div class="cnc-user-creat-body col-md-4">
+                        
+                         <div class="col-md-3">
+                            <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.storeName">Goods Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="input-group input-group-sm">
+                                    <select class="cnc-user-creat-input form-control">
+                                        <option ></option>
+                                        <option ></option>
+                                    </select>
+                            </div>
+                        </div>   
+                        
+                </div> -->
+                <div class="cnc-user-creat-body col-md-4">
+                        <!--角色名称  -->
+                        <div class="col-md-3">
+                                <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.roleName" >roleName</label>
+                        </div>
+                        <!-- <div class="col-md-8">
+                            <div class="input-group input-group-sm">
+                                <select class="cnc-user-creat-input form-control" name="roleId" id="field_roleId" required>
+                                    <option [ngValue]=""></option>
+                                    <option [ngValue]="iRbacRole.id" *ngFor="let iRbacRole of iRbacRoles">{{iRbacRole.roleName}}</option>
+                                </select>    
+                            </div>
+                        </div> -->
+                        <div class="col-md-8">
+                            <p-dropdown [options]="rolesList" class="cnc-user-creat-dropdown" [style]="{'width' : '100%'}"  name="rbacRole"  [(ngModel)]="selectListVal" required="true"></p-dropdown>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cnc-user-creat-body col-md-4">
+                        <!--用户名  -->
+                        <div class="col-md-3">
+                            <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userCode"  >Goods Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="cnc-user-creat-input form-control" [disabled]="rbacUser.id" name="userCode" id="field_userCode"
+                                    [(ngModel)]="rbacUser.userCode"  required maxlength="18"  />
+                            </div>
+                        </div>
+                </div>
+                <div class="cnc-user-creat-body col-md-4">
+                        <!-- 用户密码 -->
+                       <div class="col-md-3">
+                           <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userPassword" >Goods Sn</label>
+                       </div>
+                       <div class="col-md-8">
+                           <div class="input-group input-group-sm">
+                               <input *ngIf="!rbacUser.id" type="text" pPassword  class="cnc-user-creat-input form-control" name="userPassword" id="field_userPassword" [(ngModel)]="rbacUser.userPassword"
+                                   required maxlength="10" (keyup)="password()" (blur)="password()"/> 
+                               <input *ngIf="rbacUser.id" type="password" pPassword  [disabled]="rbacUser.id"  class="cnc-user-creat-input form-control" name="userPassword" id="field_userPassword" [(ngModel)]="rbacUser.userPassword"
+                                   required maxlength="60" /> 
+                           </div>
+                       </div>  
+                </div>
+            </div>
+            <div class="row">
+                    <div class="cnc-user-creat-body col-md-4" *ngIf="rbacUser.id">
+                            <!-- 新密码 -->
+                            <div class="col-md-3">
+                                <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userPasswordn" for="field_password" >Password</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="cnc-user-creat-input form-control" name="passwordO"
+                                        [(ngModel)]="passwordNew.passwordO" maxlength="18" (keyup)="password()" (blur)="password()"/>
+                                </div>
+                                <div [hidden]="passwordCheck && passwordLength">
+                                        <small class="form-text text-danger"
+                                            [hidden]="passwordCheck" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: ('rbacUser.message.passwordPattern' | translate) }">
+                                        </small>
+                                        <small class="form-text text-danger"
+                                            [hidden]="passwordLength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 6 }">
+                                        </small>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="cnc-user-creat-body col-md-4" *ngIf="rbacUser.id">
+                            <!-- 确认密码 -->
+                            <div class="col-md-3">
+                                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userPasswordc" for="field_password">Password</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="cnc-user-creat-input form-control" name="passwordN"
+                                        [required]="passwordcFlag"   [(ngModel)]="passwordNew.passwordN" maxlength="18" (keyup)="passwordes()" (blur)="passwordes()"/>
+                                    </div>
+                                    <div [hidden]="passwordcCheck">
+                                            <small class="form-text text-danger"
+                                                [hidden]="passwordcCheck" jhiTranslate="rbacUser.message.unsame">
+                                            </small>
+                                    </div>
+                                </div>
+                    </div> 
+            </div>    
+            <div class="row">
+                    <div class="cnc-user-creat-body col-md-4">
+                            <!--用户姓名  -->
+                            <div class="col-md-3">
+                                <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userName"  >Goods Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="cnc-user-creat-input form-control" name="userName" id="field_userName"
+                                        [(ngModel)]="rbacUser.userName"  required maxlength="30"  />
+                                </div>
+                            </div>
+                    </div>
+                    <div class="cnc-user-creat-body col-md-4">
+                            <!--用户电话  -->
+                            <div class="col-md-3">
+                                <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userMobile"  >Goods Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="cnc-user-creat-input form-control" name="userMobile" id="field_userMobile"
+                                        [(ngModel)]="rbacUser.userMobile"  required maxlength="18" (keyup)="tel()" (blur)="tel()" />
+                                    
+                                </div>
+                                <div [hidden]="!(editForm.controls.userMobile?.dirty && editForm.controls.userMobile?.invalid) && telCheck">
+                                        <small class="form-text text-danger"
+                                            [hidden]="!editForm.controls.userMobile?.errors?.required" jhiTranslate="entity.validation.required">
+                                        </small>
+                                        <small class="form-text text-danger"
+                                            [hidden]="!editForm.controls.userMobile?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 11 }">
+                                        </small>
+                                        <small class="form-text text-danger"
+                                            [hidden]="telCheck" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: ('rbacUser.message.telPattern' | translate) }">
+                                        </small>
+                                </div>
+                            </div> 
+                    </div>
+            </div>          
+            <div class="row">
+                    <div class="cnc-user-creat-body col-md-4">
+                            <!--用户邮箱  -->
+                            <div class="col-md-3">
+                                <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacUser.help.userMail"  >Goods Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="cnc-user-creat-input form-control" name="userMail" id="field_userMail"
+                                        [(ngModel)]="rbacUser.userMail"  maxlength="30" (keyup)="mail()" (blur)="mail()" (onValueChange)="mail()" />
+                                    
+                                </div>
+                                <div [hidden]="!(editForm.controls.userMail?.dirty && editForm.controls.userMobile?.invalid) && mailCheck">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.userMail?.errors?.required" jhiTranslate="entity.validation.required">
+                                    </small>
+                                    <small class="form-text text-danger"
+                                        [hidden]="mailCheck" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: ('rbacUser.message.mailPattern' | translate) }">
+                                    </small>
+                                </div>
+                            </div>
+                            
+                            
+                    </div>
+            </div>
+            
+        <div class="modal-footer">
+            <button type="button" id="cancel-save"  class="common_pop_font btn btn-secondary" data-dismiss="modal" (click)="previousState()">
+                <span class="fa fa-ban"></span>&nbsp;
+                <span jhiTranslate="entity.action.cancel">Cancel</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="common_pop_font btn btn-primary">
+                <span class="fa fa-save"></span>&nbsp;
+                <span jhiTranslate="entity.action.save">Save</span>
+            </button>
+        </div>
+    </form>

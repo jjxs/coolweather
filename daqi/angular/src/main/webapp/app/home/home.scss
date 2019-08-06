@@ -1,0 +1,173 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+.hipster {
+    display: inline-block;
+    width: 347px;
+    height: 497px;
+    background: url('../../content/images/hipster.png') no-repeat center top;
+    background-size: contain;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .hipster {
+        background: url('../../content/images/hipster2x.png') no-repeat center top;
+        background-size: contain;
+    }
+}
+
+.cnc-home-submitbutton {
+    width: 100%
+}
+
+.cnc-home-logo .cnc-home-logo-img {
+    height: 45px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+}
+
+.cnc-home-logo-img {
+    height: 100%;
+    background: url("../../content/images/logo.png") no-repeat center center;
+    background-size: contain;
+    width: 100%;
+}
+
+.cnc-home-col-xs-4, .cnc-home-col-xs-5, .cnc-home-col-xs-7, .cnc-home-col-xs-8, .cnc-home-col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    float: left;
+}
+
+.cnc-home-col-xs-4 {
+    width: 47.66666667%;
+    margin-left: 10px;
+}
+
+.cnc-home-col-xs-5 {
+    width: 41.66666667%;
+}
+
+.cnc-home-col-xs-7 {
+    width: 58.33333333%;
+}
+
+.cnc-home-col-xs-8 {
+    width: 47.33333333%;
+    text-align: right;
+}
+
+.cnc-home-col-md-12 {
+    width:100%;
+}
+
+.cnc-home-card {
+    border-radius: 6px;
+    box-shadow: 0 0 5px #b3b2b2;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.cnc-home-card .cnc-home-content {
+    padding: 15px 15px 10px 15px; 
+}
+
+.cnc-home-chart {
+    width: 100%; 
+}
+
+.cnc-home-card .cnc-home-icon-big {
+    font-size: 3em;
+    min-height: 64px;
+}
+
+.cnc-home-card .cnc-home-numbers {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.cnc-home-card .cnc-home-numbers .cnc-home-p {
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+.cnc-home-card .cnc-home-numbers p {
+    margin: 0;
+}
+
+.cnc-home-card .cnc-home-header {
+    padding: 20px 20px 0;
+}
+
+.cnc-home-card .cnc-home-footer {
+    padding: 0;
+    line-height: 30px;
+}
+
+.cnc-home-color-1 {
+    color: #D1E870;
+}
+
+.cnc-home-color-2 {
+    color: #7CAEE0;
+}
+
+.cnc-home-color-3 {
+    color: #F599BE;
+}
+
+.cnc-home-color-4 {
+    color: #FABD87;
+}
+
+.cnc-home-text-center {
+    text-align: center;
+}
+
+.cnc-home-foot-text-right {
+    text-align: right;
+    width: 50%;
+}
+
+.cnc-home-foot-text-left {
+    float: left;
+    margin-left: 10px;
+    width: 50%;
+}
+
+.cnc-home-p-lg-3 {
+    padding: 0.5em;
+}
+
+@media screen and (min-width: 992px) {
+    .cnc-home-p-lg-3 {
+        // -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+::ng-deep {
+    .modal-dialog {
+        margin: auto !important;
+        width: 100%;
+    }
+    .d-block {
+        display: flex !important;
+        text-align: center;
+    }
+    button.close:focus {
+        outline: none;
+    }
+}

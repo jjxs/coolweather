@@ -1,0 +1,20 @@
+<form name="deleteForm" (ngSubmit)="confirm()">
+    <div class="modal-header">
+        <h4 class="modal-title">提示</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <p *ngIf="!leave" id="jhi-delete-qmsProcess-heading">是否保存</p>
+        <p *ngIf="leave" id="jhi-delete-qmsProcess-heading">页面未保存,是否离开页面!</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span>取消</span>
+        </button>
+        <button id="jhi-confirm-delete-qmsProcess" type="submit" class="btn btn-danger">
+            <span>确认</span>
+        </button>
+    </div>
+</form>

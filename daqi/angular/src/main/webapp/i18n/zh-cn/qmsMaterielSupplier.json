@@ -1,0 +1,32 @@
+{
+    "fccApp": {
+        "qmsMaterielSupplier": {
+            "home": {
+                "title": "Qms Materiel Suppliers",
+                "createLabel": "创建新 Qms Materiel Supplier",
+                "createOrEditLabel": "创建或编辑 Qms Materiel Supplier"
+            },
+            "created": "Qms Materiel Supplier {{ param }} 创建成功",
+            "updated": "Qms Materiel Supplier {{ param }} 更新成功",
+            "deleted": "Qms Materiel Supplier {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除物料供应商关联信息吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel Supplier"
+            },
+            "materielId": "Materiel Id",
+            "supplierId": "Supplier Id",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

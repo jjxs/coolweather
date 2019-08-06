@@ -1,0 +1,98 @@
+/* ==========================================================================
+Navbar
+========================================================================== */
+
+.navbar-version {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.jh-navbar {
+  // background-color: #353d47;
+  background: url(../../../content/images/bg5.jpg) no-repeat;
+  background-size: 100% 100%;
+  padding: 0.2em 1em;
+  .profile-image {
+    margin: -10px 0px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  .dropdown-item.active,
+  .dropdown-item.active:focus,
+  .dropdown-item.active:hover {
+    background-color: #353d47;
+  }
+  .dropdown-toggle::after {
+    margin-left: 0.15em;
+  }
+  ul.navbar-nav {
+    padding: 0.5em;
+    .nav-item {
+      margin-left: 1.5rem;
+    }
+  }
+  a.nav-link {
+    font-weight: 400;
+  }
+  .jh-navbar-toggler {
+    color: #ccc;
+    background: url(../../../content/images/logo-crrc.png) no-repeat;
+    background-size: 100%;
+    width: 95px;
+    height: 42px;
+    font-size: 1.25rem;
+    padding: 0.2em 1em;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .jh-logo-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cnc-lg-none {
+    display: none;
+  }
+}
+
+.navbar-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cnc-navbar-nav-div-none {
+  display: none;
+}
+
+/* ==========================================================================
+Logo styles
+========================================================================== */
+.cnc-navbar-brand {
+  display: inline-block;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.navbar-brand {
+  &.logo {
+    padding: 5px 15px;
+    .logo-img {
+      height: 45px;
+      width: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      background-size: contain;
+    }
+  }
+}

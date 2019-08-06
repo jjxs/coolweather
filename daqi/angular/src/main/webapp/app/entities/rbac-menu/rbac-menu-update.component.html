@@ -1,0 +1,208 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-rbac-menu-heading" jhiTranslate="fccApp.rbacMenu.home.createOrEditLabel">Create or edit a Rbac Menu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!rbacMenu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="rbacMenu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.appId" for="field_appId">App Id</label>
+                    <input type="number" class="form-control" name="appId" id="field_appId"
+                        [(ngModel)]="rbacMenu.appId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.storeId" for="field_storeId">Store Id</label>
+                    <input type="number" class="form-control" name="storeId" id="field_storeId"
+                        [(ngModel)]="rbacMenu.storeId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.pMenuId" for="field_pMenuId">P Menu Id</label>
+                    <input type="number" class="form-control" name="pMenuId" id="field_pMenuId"
+                        [(ngModel)]="rbacMenu.pMenuId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuCode" for="field_menuCode">Menu Code</label>
+                    <input type="text" class="form-control" name="menuCode" id="field_menuCode"
+                        [(ngModel)]="rbacMenu.menuCode" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.menuCode?.dirty && editForm.controls.menuCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.menuCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuName" for="field_menuName">Menu Name</label>
+                    <input type="text" class="form-control" name="menuName" id="field_menuName"
+                        [(ngModel)]="rbacMenu.menuName" maxlength="64"/>
+                    <div [hidden]="!(editForm.controls.menuName?.dirty && editForm.controls.menuName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.menuName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 64 }">
+                        This field cannot be longer than 64 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuUrl" for="field_menuUrl">Menu Url</label>
+                    <input type="text" class="form-control" name="menuUrl" id="field_menuUrl"
+                        [(ngModel)]="rbacMenu.menuUrl" maxlength="128"/>
+                    <div [hidden]="!(editForm.controls.menuUrl?.dirty && editForm.controls.menuUrl?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.menuUrl?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 128 }">
+                        This field cannot be longer than 128 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuIcon" for="field_menuIcon">Menu Icon</label>
+                    <input type="text" class="form-control" name="menuIcon" id="field_menuIcon"
+                        [(ngModel)]="rbacMenu.menuIcon" maxlength="64"/>
+                    <div [hidden]="!(editForm.controls.menuIcon?.dirty && editForm.controls.menuIcon?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.menuIcon?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 64 }">
+                        This field cannot be longer than 64 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuLable" for="field_menuLable">Menu Lable</label>
+                    <input type="text" class="form-control" name="menuLable" id="field_menuLable"
+                        [(ngModel)]="rbacMenu.menuLable" maxlength="64"/>
+                    <div [hidden]="!(editForm.controls.menuLable?.dirty && editForm.controls.menuLable?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.menuLable?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 64 }">
+                        This field cannot be longer than 64 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuMobileFlag" for="field_menuMobileFlag">Menu Mobile Flag</label>
+                    <input type="number" class="form-control" name="menuMobileFlag" id="field_menuMobileFlag"
+                        [(ngModel)]="rbacMenu.menuMobileFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.menuHostSlaveFlag" for="field_menuHostSlaveFlag">Menu Host Slave Flag</label>
+                    <input type="number" class="form-control" name="menuHostSlaveFlag" id="field_menuHostSlaveFlag"
+                        [(ngModel)]="rbacMenu.menuHostSlaveFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.stopFlag" for="field_stopFlag">Stop Flag</label>
+                    <input type="number" class="form-control" name="stopFlag" id="field_stopFlag"
+                        [(ngModel)]="rbacMenu.stopFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.delFlag" for="field_delFlag">Del Flag</label>
+                    <input type="number" class="form-control" name="delFlag" id="field_delFlag"
+                        [(ngModel)]="rbacMenu.delFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.insProgarmCd" for="field_insProgarmCd">Ins Progarm Cd</label>
+                    <input type="text" class="form-control" name="insProgarmCd" id="field_insProgarmCd"
+                        [(ngModel)]="rbacMenu.insProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.insProgarmCd?.dirty && editForm.controls.insProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.insProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.insOperCd" for="field_insOperCd">Ins Oper Cd</label>
+                    <input type="text" class="form-control" name="insOperCd" id="field_insOperCd"
+                        [(ngModel)]="rbacMenu.insOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.insOperCd?.dirty && editForm.controls.insOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.insOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.insDateTime" for="field_insDateTime">Ins Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_insDateTime" type="datetime-local" class="form-control" name="insDateTime" [(ngModel)]="insDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.updProgarmCd" for="field_updProgarmCd">Upd Progarm Cd</label>
+                    <input type="text" class="form-control" name="updProgarmCd" id="field_updProgarmCd"
+                        [(ngModel)]="rbacMenu.updProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.updProgarmCd?.dirty && editForm.controls.updProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.updProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.updOperCd" for="field_updOperCd">Upd Oper Cd</label>
+                    <input type="text" class="form-control" name="updOperCd" id="field_updOperCd"
+                        [(ngModel)]="rbacMenu.updOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.updOperCd?.dirty && editForm.controls.updOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.updOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.updDateTime" for="field_updDateTime">Upd Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_updDateTime" type="datetime-local" class="form-control" name="updDateTime" [(ngModel)]="updDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.delProgarmCd" for="field_delProgarmCd">Del Progarm Cd</label>
+                    <input type="text" class="form-control" name="delProgarmCd" id="field_delProgarmCd"
+                        [(ngModel)]="rbacMenu.delProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.delProgarmCd?.dirty && editForm.controls.delProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.delProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.delOperCd" for="field_delOperCd">Del Oper Cd</label>
+                    <input type="text" class="form-control" name="delOperCd" id="field_delOperCd"
+                        [(ngModel)]="rbacMenu.delOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.delOperCd?.dirty && editForm.controls.delOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.delOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.delDateTime" for="field_delDateTime">Del Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_delDateTime" type="datetime-local" class="form-control" name="delDateTime" [(ngModel)]="delDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.rbacMenu.triggerDateTime" for="field_triggerDateTime">Trigger Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_triggerDateTime" type="datetime-local" class="form-control" name="triggerDateTime" [(ngModel)]="triggerDateTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

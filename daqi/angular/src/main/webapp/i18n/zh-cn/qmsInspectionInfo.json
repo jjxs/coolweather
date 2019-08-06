@@ -1,0 +1,34 @@
+{
+    "fccApp": {
+        "qmsInspectionInfo": {
+            "home": {
+                "title": "Qms Inspection Infos",
+                "createLabel": "创建新 Qms Inspection Info",
+                "createOrEditLabel": "创建或编辑 Qms Inspection Info"
+            },
+            "created": "Qms Inspection Info {{ param }} 创建成功",
+            "updated": "Qms Inspection Info {{ param }} 更新成功",
+            "deleted": "Qms Inspection Info {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Inspection Info {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Inspection Info"
+            },
+            "vehicleType": "Vehicle Type",
+            "no": "No",
+            "vehicleTypeName": "Vehicle Type Name",
+            "constitutiveCoding": "Constitutive Coding",
+            "constitutiveName": "Constitutive Name",
+            "constitutiveCodingName": "Constitutive Coding Name",
+            "vehicleNumber": "Vehicle Number",
+            "componentNumber": "Component Number",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "fccApp": {
+        "rbacMenu": {
+            "home": {
+                "title": "Rbac Menus",
+                "createLabel": "创建新 Rbac Menu",
+                "createOrEditLabel": "创建或编辑 Rbac Menu"
+            },
+            "created": "Rbac Menu {{ param }} 创建成功",
+            "updated": "Rbac Menu {{ param }} 更新成功",
+            "deleted": "Rbac Menu {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Rbac Menu {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Rbac Menu"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "pMenuId": "P Menu Id",
+            "menuCode": "Menu Code",
+            "menuName": "Menu Name",
+            "menuUrl": "Menu Url",
+            "menuIcon": "Menu Icon",
+            "menuLable": "Menu Lable",
+            "menuMobileFlag": "Menu Mobile Flag",
+            "menuHostSlaveFlag": "Menu Host Slave Flag",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

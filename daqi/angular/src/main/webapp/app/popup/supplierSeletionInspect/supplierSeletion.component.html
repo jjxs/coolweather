@@ -1,0 +1,104 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+<p-panel> 
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem" jhiTranslate="supplierSelect.title">供应商选择</span>
+            <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                icon="fa fa-fw fa-close"></button>
+        </div>
+    </p-header>
+    <div style="height:39rem;margin: 0;">
+        <p-table #dt [value]="qmsSuppliers" [(selection)]="supplierSelect"
+            scrollHeight="20rem" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount" [lazy]="true"
+            [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+            <ng-template pTemplate="caption" style="padding-left:0px" >
+                <div style="height: 50px;margin-top:0.5%;width: 100%;">
+                    <div class="common_div-head">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="supplierSelect.condition.code">供应商编码</span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                            [(ngModel)]="supplierCd" />
+                    </div>
+                    </div>
+                    <div class="common_div-head" style="margin-left: 3%;">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="supplierSelect.condition.name">供应商名称</span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                                [(ngModel)]="supplierName" />
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 46px">
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                        (click)="emptyInfo()">
+                        <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.empty">
+                            清空
+                        </span>
+                    </button>
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                        (click)="loadAll()">
+                        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.query">
+                            查询
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr class="common_trStyle">
+                    <th class="common_thStyle" style="width: 5% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.select">选择</span>
+
+                    </th>
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.supplierCd">供应商编码</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.supplierName">供应商名称</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.supplierType">供应商分类</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 15% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.record">评定记录</span>
+                    </th>
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="supplierSelect.selection.remark">备注</span>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowDate let-i="rowIndex">
+                <tr style="line-height: 34px">
+                    <td class="common_tdStyle text-center" style="width: 5% !important; ">
+                        <p-tableRadioButton [value]="rowDate" [checked]="i === 0 ? true : ''"></p-tableRadioButton>
+                    </td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.supplierCd}}</td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.supplierName}}
+                    </td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.supplierClassName}}</td>
+                    <td class="common_tdStyle text-left" style="width: 15% !important; ">{{rowDate.assRecord}}</td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.remark}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <div style="margin-top:10px;margin-bottom:10px;">
+            <button pButton type="button" (click)="goBack()" label="取消"
+                class="common_pop_font ui-button-secondary float-right search_button"></button>
+            <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+                style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+        </div>
+    </div>
+</p-panel>
+</div>

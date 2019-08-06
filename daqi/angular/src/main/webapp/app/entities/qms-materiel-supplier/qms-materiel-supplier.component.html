@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsMaterielSupplier.home.title">Qms Materiel Suppliers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-materiel-supplier" [routerLink]="['/qms-materiel-supplier/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsMaterielSupplier.home.createLabel">
+            Create new Qms Materiel Supplier
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsMaterielSuppliers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsMaterielSupplier.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="supplierId"><span jhiTranslate="fccApp.qmsMaterielSupplier.supplierId">Supplier Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsMaterielSupplier.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsMaterielSupplier.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsMaterielSupplier.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsMaterielSupplier.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsMaterielSupplier.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsMaterielSupplier.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsMaterielSupplier.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsMaterielSupplier.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsMaterielSupplier of qmsMaterielSuppliers ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-materiel-supplier', qmsMaterielSupplier.id, 'view' ]">{{qmsMaterielSupplier.id}}</a></td>
+                <td>{{qmsMaterielSupplier.materielId}}</td>
+                <td>{{qmsMaterielSupplier.supplierId}}</td>
+                <td>{{qmsMaterielSupplier.flagStatus}}</td>
+                <td>{{qmsMaterielSupplier.compPkid}}</td>
+                <td>{{qmsMaterielSupplier.remark}}</td>
+                <td>{{qmsMaterielSupplier.reserveFirst}}</td>
+                <td>{{qmsMaterielSupplier.reserveSecond}}</td>
+                <td>{{qmsMaterielSupplier.reserveThird}}</td>
+                <td>{{qmsMaterielSupplier.makeUser}}</td>
+                <td>{{qmsMaterielSupplier.makeTime | date:'medium'}}</td>
+                <td>{{qmsMaterielSupplier.modifyUser}}</td>
+                <td>{{qmsMaterielSupplier.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel-supplier', qmsMaterielSupplier.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel-supplier', qmsMaterielSupplier.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-materiel-supplier/'+ qmsMaterielSupplier.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsMaterielSuppliers && qmsMaterielSuppliers.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

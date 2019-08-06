@@ -1,0 +1,223 @@
+<div *ngIf="qmsMateriel">
+    <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">物料维护</h2>
+    <div class="lookBtn">
+        <button type="submit" (click)="previousState()"
+            class="btn btn-info float-right search_button_darkblue search_button">
+            <span>返回</span>
+        </button>
+
+
+    </div>
+    <!-- 左侧文字的div -->
+    <div style="float: left;">
+        <div style="margin-top:52px;margin-left:45px;font-size:18px;font-weight: bold">
+            <span>物料编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>物料名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>图号</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>ABC码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>生产方式</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>物料分类</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>物料分类名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>物料属性</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>检验类型</span>
+        </div>
+    </div>
+    <!-- 左侧输入框的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:20px;">
+            <input type="text" class="form-control" style="width: 260px;" pInputText [(ngModel)]=qmsMateriel.materielCd
+                [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 260px;" pInputText
+                [(ngModel)]=qmsMateriel.materielName [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 260px;" pInputText
+                [(ngModel)]=qmsMateriel.figureNumber [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 260px;" pInputText [(ngModel)]=qmsMateriel.abcNumber
+                [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookLeftDiv">
+            <p-dropdown [options]="sheng" [(ngModel)]=qmsMateriel.productMode placeholder="请选择" [showClear]="true"
+                [style]="{'width':'260px','height':'38px'}" [disabled]=qmsMateriel.id></p-dropdown>
+        </div>
+        <div class="lookLeftDiv">
+            <!-- 物料分类id 隐藏  -->
+            <input type="text" class="form-control" pInputText maxlength="100" [(ngModel)]=qmsMateriel.materielTypeId
+                [hidden]=true name=qmsMateriel.materielTypeId id="field_materielTypeId" />
+            <input type="text" class="form-control" style="width: 260px;" pInputText maxlength="100"
+                [(ngModel)]=this.materTypeCd name=this.materTypeCd [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookLeftDiv">
+            <!-- 物料分类名称 -->
+            <input type="text" class="form-control" style="width: 260px;" pInputText maxlength="100"
+                [(ngModel)]=this.materTypeName name=this.materTypeName [disabled]=true />
+        </div>
+        <div class="lookLeftDiv">
+            <p-dropdown [options]="shuxing" [(ngModel)]=qmsMateriel.propertyType placeholder="请选择" [showClear]="true"
+                [disabled]=qmsMateriel.id [style]="{'width':'260px','height':'38px'}" id="field_propertyType"
+                name="propertyType"></p-dropdown>
+        </div>
+        <div class="lookLeftDiv">
+            <p-dropdown [options]="checkType" [(ngModel)]=qmsMateriel.checkType placeholder="请选择" [showClear]="true"
+                [disabled]=qmsMateriel.id [style]="{'width':'260px','height':'38px'}" id="field_checkType"
+                name="checkType"></p-dropdown>
+        </div>
+    </div>
+    <!-- 右侧文字 -->
+    <div style="float: left;">
+        <div style="margin-top:52px;margin-left:50px;font-size:18px;font-weight: bold">
+            <span>使用单位</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>使用单位名称</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>规格</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>重量</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>密度</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>质量等级</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>八防</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>材质</span>
+        </div>
+
+        <div class="lookrightSpan">
+            <span>抽检比例</span>
+        </div>
+    </div>
+    <!-- 右侧输入框 -->
+    <div style="float: left;">
+        <!-- 单位id 隐藏  -->
+        <input type="text" class="form-control" pInputText maxlength="100" [(ngModel)]=qmsMateriel.useUnitId
+            [hidden]=true name=qmsMateriel.useUnitId id="field_useUnitId" [disabled]=qmsMateriel.id />
+        <!-- 单位编码 -->
+        <div style="margin-top:48px;">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=this.unitCd name=this.unitCd [disabled]=qmsMateriel.id />
+            <!-- <i style="font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search" (click)="goToUnit()"></i> -->
+        </div>
+        <!-- 单位名称 -->
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=this.unitName [disabled]=true name=this.unitName />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=qmsMateriel.specificationType id="field_specificationType" name="specificationType"
+                [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText
+                [(ngModel)]=qmsMateriel.weight id="field_weight" name="weight" [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText
+                [(ngModel)]=qmsMateriel.density id="field_density" name="density" [disabled]=qmsMateriel.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText
+                [disabled]=qmsMateriel.id maxlength="100" [(ngModel)]=qmsMateriel.qualityLevel id="field_qualityLevel"
+                name="qualityLevel" />
+        </div>
+        <div class="lookRightDiv">
+            <p-dropdown [options]="eight" [(ngModel)]=qmsMateriel.eightPrevention placeholder="请选择" [showClear]="true"
+                [style]="{'width':'260px','height':'38px','margin-left':'18px'}" id="field_eightPrevention"
+                name="eightPrevention" [disabled]=qmsMateriel.id>
+            </p-dropdown>
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=qmsMateriel.texTure id="field_texTure" name="texTure" [disabled]=qmsMateriel.id />
+        </div>
+
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=qmsMateriel.checkRate id="field_checkRate" name="checkRate" [disabled]=qmsMateriel.id />
+        </div>
+    </div>
+    <!-- 右侧文字 -->
+    <div style="float: left;">
+        <div style="margin-top:52px;margin-left:50px;font-size:18px;font-weight: bold">
+            <span>物料员角色</span>
+        </div>
+        <div class="addrightSpan">
+            <span>物料员角色名称</span>
+        </div>
+        <div class="addrightSpan">
+            <span>质检关键</span>
+        </div>
+        <div class="addrightSpan">
+            <span>SAP码</span>
+        </div>
+        <div class="addrightSpan">
+            <span>是否试验</span>
+        </div>
+        <div class="addrightSpan">
+            <span>备注</span>
+        </div>
+    </div>
+    <!-- 右侧输入框 -->
+    <div style="float: left;margin-top: 50px">
+        <!-- 角色id 隐藏  -->
+        <input type="text" class="form-control" pInputText maxlength="100" [(ngModel)]=qmsMateriel.MhandlerRoleId
+            [hidden]=true name=qmsMateriel.MhandlerRoleId id="field_MhandlerRoleId" />
+        <!-- 角色 -->
+        <div style="margin-top:2px;">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText
+                maxlength="100" [(ngModel)]=this.roleCode name=this.roleCode [disabled]=qmsMateriel.id />
+            <!-- <i style="font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search" (click)="goToRabcUser()"></i> -->
+        </div>
+        <div class="addRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="100"
+                [(ngModel)]=this.roleName name=this.roleName [disabled]=true />
+        </div>
+        <div class="addRightDiv">
+            <p-dropdown [options]="zhijian" [(ngModel)]=qmsMateriel.ifKey placeholder="请选择" [showClear]="true" [disabled]=qmsMateriel.id
+                [style]="{'width':'260px','height':'38px','margin-left':'18px'}" id="field_ifKey" name="ifKey">
+            </p-dropdown>
+        </div>
+        <div class="addRightDiv">
+            <input type="text" class="form-control" style="width: 260px;margin-left: 18px;" pInputText maxlength="20"
+                [(ngModel)]=qmsMateriel.sapCd id="field_sapCd" name="sapCd" [disabled]=qmsMateriel.id />
+        </div>
+        <div class="addRightDiv">
+            <p-dropdown [options]="isCheck" [(ngModel)]=qmsMateriel.isCheck placeholder="请选择" [showClear]="true" [disabled]=qmsMateriel.id
+                [style]="{'width':'260px','height':'38px','margin-left':'18px'}" id="field_isCheck" name="isCheck">
+            </p-dropdown>
+        </div>
+        <div class="addRightDiv">
+            <textarea pInputTextarea [(ngModel)]="qmsMateriel.remark" maxlength="200" [disabled]=qmsMateriel.id
+                style="width: 500px;margin-left: 18px;height: 210px;" name="remark" id="field_remark"
+                class="form-control" id="field_remark" name="remark"></textarea>
+        </div>
+    </div>
+</div>

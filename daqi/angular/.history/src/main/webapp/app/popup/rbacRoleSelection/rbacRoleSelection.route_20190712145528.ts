@@ -1,0 +1,37 @@
+import { Injectable } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { VehicleTypeClassSelectionService } from './rbacRoleSelection.service';
+import { VehicleTypeClassSelectionComponent } from './rbacRoleSelection.component';
+import { QmsVehicleTypeClass } from 'app/shared/model/qms-vehicle-type-class.model';
+
+import { IQmsVehicleTypeInfo } from 'app/shared/model/qms-vehicle-type-info.model';
+@Injectable({ providedIn: 'root' })
+export class VehicleTypeClassSelectionResolve implements Resolve<IQmsVehicleTypeInfo> {
+    constructor(private service: VehicleTypeClassSelectionService) { }
+
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<QmsVehicleTypeClass> {
+        const id = route.params['id'] ? route.params['id'] : null;
+        if (id) {
+            return this.service.find(id).pipe(
+                filter((response: HttpResponse<QmsVehicleTypeClass>) => response.ok),
+                map((qmsVehicleTypeClass: HttpResponse<QmsVehicleTypeClass>) => qmsVehicleTypeClass.body)
+            );
+        }
+        return of(new QmsVehicleTypeClass());
+    }
+}
+
+
+export const VehicleTypeClassSelectionRoute: Routes = [
+    {
+        path: 'vehicleTypeClassSelection',
+        component: VehicleTypeClassSelectionComponent,
+        data: {
+            authorities: [],
+            pageTitle: 'fccApp.qmsVehicleTypeClass.home.title'
+        }
+    }
+];

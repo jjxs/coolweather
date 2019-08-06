@@ -1,0 +1,28 @@
+{
+  "menu": {
+    "home": "首页",
+    "account": {
+      "main": "账号",
+      "logout": "退出"
+    },
+    "language": "语言",
+    "NRV": {
+      "main": "国铁车",
+      "ms": {
+        "title": "MS"
+      }
+    },
+    "productProcess": "生产过程检验信息",
+    "purchase": "采购检验",
+    "vehicleTypeInfo": "车型分类信息",
+    "purchaseInfo": "采购检验信息查看",
+    "BomManager": "制造BOM管理",
+    "prodRelation": "生产关系生成",
+    "vehicleTypInfo":"车型信息",
+    "organizationInfo":"组织信息",
+    "unhealthyInfo":"不良现象信息",
+    "materielType":"物料分类",
+    "bominfromation":"BOM信息",
+    "defectInformation":"缺陷信息"
+  }
+}

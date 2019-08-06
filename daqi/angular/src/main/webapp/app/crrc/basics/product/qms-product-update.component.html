@@ -1,0 +1,77 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">产品维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>产品编号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>物料编号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>物料名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>生产批号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>备注</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 供应商编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="productNum" id="field_productNum" *ngIf="this.flag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsProduct.productNum" maxlength="10"
+                    required />
+
+                <input type="text" class="form-control" name="productNum" id="field_productNum"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsProduct.productNum" maxlength="10"
+                    *ngIf="this.flag==1" [disabled]=qmsProduct.id required />
+            </div>
+            <!-- 物料编码 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control float-left" name=this.materielCd 
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=this.materielCd
+                    maxlength="100" required  (blur)=blurMateriel() />
+                    <i style="font-size:2em;cursor:pointer;color:#1F89CE;padding-left: 30px;" class="fa fa-search"
+                    (click)="goToMaterial()"></i>
+            </div>
+            <!-- 物料名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name=this.materielName
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=this.materielName
+                    maxlength="100" disabled=true />
+            </div>
+            <!-- 生产批号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="productBatch"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsProduct.productBatch"
+                    maxlength="20"  />
+            </div>
+            <!-- 备注 -->
+            <div class="lookLeftDiv">
+                <textarea class="form-control" [(ngModel)]=qmsProduct.remark maxlength="200"
+                    style="width: 500px;margin-left: 120px;height: 210px;" name="remark" id="field_remark"></textarea>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

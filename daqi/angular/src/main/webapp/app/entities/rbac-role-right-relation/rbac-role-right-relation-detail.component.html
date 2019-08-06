@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rbacRoleRightRelation">
+            <h2><span jhiTranslate="fccApp.rbacRoleRightRelation.detail.title">Rbac Role Right Relation</span> {{rbacRoleRightRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.appId">App Id</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.roleId">Role Id</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.roleId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.rightId">Right Id</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.rightId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacRoleRightRelation.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{rbacRoleRightRelation.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rbac-role-right-relation', rbacRoleRightRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

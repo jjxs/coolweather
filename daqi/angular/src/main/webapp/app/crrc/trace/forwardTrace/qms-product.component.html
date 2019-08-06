@@ -1,0 +1,536 @@
+<div style="  display: block; width: 100%;height: 140px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+        <span>产品质量正向追溯</span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span>生产批号</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="productNumIn" />
+            </div>
+            <div style="float: left;margin-top: 5px;width: 24px;padding-left: 24px;">
+                <i style="font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search"
+                    (click)="goToBatch(this.materielCdIn,'sp2')"></i>
+            </div>
+
+        </div>
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span>产品编号</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="materielCdIn" />
+            </div>
+            <div style="float: left;margin-top: 5px;width: 24px;padding-left: 24px;">
+                <i style="font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search"
+                    (click)="goToNo(this.productNumIn,'sp3')"></i>
+            </div>
+        </div>
+
+
+    </div>
+    <div style="height: 58px;">
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+            (click)="emptyInfo()">
+            <span>
+                清空
+            </span>
+        </button>
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            (click)="loadAll()">
+            <span>
+                查询
+            </span>
+        </button>
+
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+</div>
+<!-- 下方显示的主要数据 -->
+<div>
+    <div style="float: left;height: 700px;width: 30%;">
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            (click)="test()">
+            <span>
+                测试
+            </span>
+        </button>
+    </div>
+    <!-- 表格部分 -->
+    <div style="float: left;height: 700px;width: 70%;">
+        <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+
+        <p-tabView>
+            <div style="height: 40rem;">
+                <p-tabPanel header="产品信息">
+                    <!-- 左侧文字的div -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                            <span>生产批号</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>物料编码</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>图号</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>重量</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>材质</span>
+                        </div>
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 生产批号 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.productBatch" />
+                        </div>
+                        <!-- 物料编码 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.materielCd" />
+
+                        </div>
+
+                        <!-- 图号 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.figureNumber" />
+                        </div>
+                        <!-- 重量 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.weight" />
+                        </div>
+                        <!-- 材质 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.texTure" />
+
+                        </div>
+                    </div>
+                    <!-- 右侧文字 -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:80px;font-size:18px;font-weight: bold">
+                            <span>生产方式</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>物料名称</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>规格型号</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>密度</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>使用数量</span>
+                        </div>
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 生产方式 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.prjName" />
+                        </div>
+                        <!-- 物料名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.materielName" />
+
+                        </div>
+
+                        <!-- 规格型号 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true
+                                [(ngModel)]="tabDataProduct.specificationType" />
+                        </div>
+                        <!-- 密度 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.density" />
+                        </div>
+                        <!-- 使用数量 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataProduct.assemblyCount" />
+
+                        </div>
+                    </div>
+                </p-tabPanel>
+
+                <p-tabPanel header="生产信息">
+                    <!-- 左侧文字的div -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                            <span>隶属单位</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>工艺编码</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>工序编码</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>工序特征</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>工序序号</span>
+                        </div>
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 供应商编码 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.organizationName" />
+                        </div>
+                        <!-- 供应商名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.technologyCd" />
+
+                        </div>
+
+                        <!-- 供应商分类编码 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.processCd" />
+                        </div>
+                        <!-- 供应商分类编码名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.prjName" />
+                        </div>
+                        <!-- 供应商名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.orderNo" />
+
+                        </div>
+                    </div>
+                    <!-- 右侧文字 -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:80px;font-size:18px;font-weight: bold">
+                            <span>作业班组</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>工艺名称</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>工序名称</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>试验工序</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>检验工序</span>
+                        </div>
+                        <!-- <div class="lookrightSpan">
+                            <span>使用数量</span>
+                        </div> -->
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 作业班组 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.workGroupCd" />
+                        </div>
+                        <!-- 工艺名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.technologyName" />
+
+                        </div>
+
+                        <!-- 工序名称 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 60px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataTwoProduct.processName" />
+                        </div>
+                        <!-- 试验工序 -->
+                        <div class="lookLeftDiv">
+                            <p-dropdown [options]="testList" [(ngModel)]="tabDataTwoProduct.isControlPoint" placeholder="请选择"
+                                [showClear]="true" [style]="{'width':'300px','height':'38px','margin-left':'60px'}" id="field_productMode"
+                                name="productMode" [disabled]=true ></p-dropdown>
+                        </div>
+                        <!-- 检验工序 -->
+                        <div class="lookLeftDiv">
+                            <p-dropdown [options]="testList" [(ngModel)]="tabDataTwoProduct.isTest" placeholder="请选择"
+                                [showClear]="true" [style]="{'width':'300px','height':'38px','margin-left':'60px'}" id="field_productMode"
+                                name="productMode" [disabled]=true ></p-dropdown>
+
+                        </div>
+                    </div>
+                </p-tabPanel>
+                <p-tabPanel header="到货信息">
+                    <!-- 左侧文字的div -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                            <span>供应商编码</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>到货类型</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>采购单号</span>
+                        </div>
+                        <div class="lookleftSpan">
+                            <span>制造年月</span>
+                        </div>
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 供应商编码 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 42px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.supplierCd" />
+                        </div>
+                        <!-- 到货类型 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 42px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.prjName" />
+
+                        </div>
+
+                        <!-- 采购单号 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 42px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.purchaseOrderNumber" />
+                        </div>
+                        <!-- 制造年月 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 42px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.madeYmd" />
+                        </div>
+
+                    </div>
+                    <!-- 右侧文字 -->
+                    <div style="float: left;">
+                        <div style="margin-top:50px;margin-left:80px;font-size:18px;font-weight: bold">
+                            <span>供应商名称</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>到货数量</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>原始批号/编号</span>
+                        </div>
+                        <div class="lookrightSpan">
+                            <span>制造厂代号</span>
+                        </div>
+
+                    </div>
+                    <!-- 左侧输入框的div -->
+                    <div style="float: left;">
+                        <!-- 供应商名称 -->
+                        <div style="margin-top:46px;margin-left:30px;">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 16px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.supplierName" />
+                        </div>
+                        <!-- 到货数量 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 16px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.entryQuantity" />
+
+                        </div>
+
+                        <!-- 原始批号/编号 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 16px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.batchNumber" />
+                        </div>
+                        <!-- 制造厂代号 -->
+                        <div class="lookLeftDiv">
+                            <input type="text" class="form-control" style="width: 300px;margin-left: 16px;" pInputText
+                                maxlength="10" required [disabled]=true [(ngModel)]="tabDataThreeProduct.madeFactoryCd" />
+                        </div>
+
+                    </div>
+                </p-tabPanel>
+
+
+                <p-tabPanel header="检验信息">
+                    <!-- 如果是到货，则显示第一个画面 -->
+                    <div style="  display: block; width: 100%;height: 140px;">
+
+                        <h2 id="page-heading" class="text-left title_class">
+                          <span>检验信息</span>
+                        </h2>
+                        <div style="height: 40px;margin-top:0.5%;">
+                          <div class="common_div-head">
+                            <div class="search_styleOne">
+                              <span>单位/批号</span>
+                            </div>
+                            <div class="search_styleTwo">
+                              <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="bianMa" [disabled]=true />
+                            </div>
+                      
+                          </div>
+                          <div class="common_div-head">
+                            <div class="search_styleOne">
+                              <span>检验类型</span>
+                            </div>
+                            <div class="search_styleTwo">
+                              <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="gongName" [disabled]=true />
+                            </div>
+                          </div>
+                      
+                        </div>
+                        <div style="height: 58px;">
+                         
+                          
+                         
+                        </div>
+                        <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+                      </div>
+                      <p-table [value]="qmsUnits"  [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+                        [resizableColumns]="true" [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+                      
+                      
+                        <ng-template pTemplate="header">
+                          <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+                            <!-- 序号 -->
+                            <th class="common_thStyle" style="width: 10% !important;">
+                              <span>序号</span>
+                            </th>
+                            <!-- 检验业务 -->
+                            <th class="common_thStyle" style="width: 30% !important;">
+                              <span>检验业务</span>
+                            </th>
+                            <!-- 入厂检验编号 -->
+                            <th class="common_thStyle" style="width: 30% !important;">
+                              <span>入厂检验编号</span>
+                            </th>
+                            <!-- 不合格处理 -->
+                            <th class="common_thStyle" style="width: 30% !important;">
+                              <span>不合格处理</span>
+                            </th>
+                          </tr>
+                        </ng-template>
+                      
+                        <ng-template pTemplate="body" let-qmsUnit let-i="rowIndex">
+                          <tr>
+                            <!-- 序号 -->
+                            <td class="common_tdStyle text-center" style="width: 10% !important"><p>{{i+1}}</p></td>
+                            <!-- 供应商编码 -->
+                            <td class="common_tdStyle text-left" style="width: 30% !important"><p>{{qmsUnit.unitCd}}</p></td>
+                            <!-- 供应商名称 -->
+                            <td class="common_tdStyle text-left" style="width: 30% !important"><p>{{qmsUnit.unitName}}</p></td>
+                            <!-- 地址 -->
+                            <td class="common_tdStyle text-left" style="width: 30% !important"><p>{{qmsUnit.remark}}</p></td>
+                          </tr>
+                        </ng-template>
+                      </p-table>
+                </p-tabPanel>
+                <p-tabPanel header="检验信息">
+                    <!-- 如果是生产，则显示第二个画面 -->
+
+                </p-tabPanel>
+            </div>
+        </p-tabView>
+    </div>
+</div>
+<!-- <p-table [value]="qmsProducts" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+        [resizableColumns]="true" [loading]=this.loading (onLazyLoad)="loadCarsLazy($event)">
+    
+    
+        <ng-template pTemplate="header">
+            <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+                
+                <th class="common_thStyle" style="width: 10% !important;">
+                    <span>序号</span>
+                </th>
+                
+                <th class="common_thStyle" style="width: 15% !important;">
+                    <span>产品编号</span>
+                </th>
+                
+                <th class="common_thStyle" style="width: 15% !important;">
+                    <span>物料编码</span>
+                </th>
+               
+                <th class="common_thStyle" style="width: 20% !important;">
+                    <span>物料名称</span>
+                </th>
+                
+                <th class="common_thStyle" style="width: 20% !important;">
+                    <span>备注</span>
+                </th>
+    
+                <th class="common_thStyle">
+                    <span>操作</span>
+                </th>
+            </tr>
+        </ng-template>
+    
+        <ng-template pTemplate="body" let-qmsProduct let-i="rowIndex">
+            <tr>
+            
+                <td class="common_tdStyle text-center" style="width: 10% !important">
+                    <p>{{i+1}}</p>
+                </td>
+                
+                <td class="common_tdStyle text-left" style="width: 15% !important">
+                    <p>{{qmsProduct.productNum}}</p>
+                </td>
+                
+                <td class="common_tdStyle text-left" style="width: 15% !important">
+                    <p>{{qmsProduct.materielCd}}</p>
+                </td>
+                
+                <td class="common_tdStyle text-left" style="width: 20% !important">
+                    <p>{{qmsProduct.materielName}}</p>
+                </td>
+                
+                <td class="common_tdStyle text-left" style="width: 20% !important">
+                    <p>{{qmsProduct.remark}}</p>
+                </td>
+    
+               
+                <td class="common_tdStyle">
+                    <button id="jh-create-entity" replaceUrl="true"
+                        class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+                        [routerLink]="['/product/qms-product', qmsProduct.id, 'view' ]">
+                        <span>
+                            查看
+                        </span>
+                    </button>
+                    <button id="jh-create-entity" replaceUrl="true"
+                        class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+                        [routerLink]="['/product/qms-product', qmsProduct.id, 'edit' ]">
+                        <span>
+                            编辑
+                        </span>
+                    </button>
+    
+                    <button id="jh-create-entity"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+                        (click)="delete(qmsProduct.id,qmsProduct.materielId,qmsProduct.productNum)">
+                        <span>
+                            删除
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table> -->
+<p-growl [(value)]="msgs" [immutable]="false" life="300000"></p-growl>
+<p-growl [(value)]="msgs1" [immutable]="false" life="3000"></p-growl>

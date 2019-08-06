@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "qmsProductionTask": {
+            "home": {
+                "title": "Qms Production Tasks",
+                "createLabel": "创建新 Qms Production Task",
+                "createOrEditLabel": "创建或编辑 Qms Production Task"
+            },
+            "created": "Qms Production Task {{ param }} 创建成功",
+            "updated": "Qms Production Task {{ param }} 更新成功",
+            "deleted": "Qms Production Task {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Production Task {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Production Task"
+            },
+            "bomTechnologyId": "Bom Technology Id",
+            "materielId": "Materiel Id",
+            "serialNumber": "Serial Number",
+            "furnace": "Furnace",
+            "saleNumber": "Sale Number",
+            "productorderNumber": "Productorder Number",
+            "finishNumber": "Finish Number",
+            "quailfiedNumber": "Quailfied Number",
+            "deffectiveNumber": "Deffective Number",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

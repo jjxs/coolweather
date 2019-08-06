@@ -1,0 +1,38 @@
+{
+    "fccApp": {
+        "qmsUnqualifiedMateriel": {
+            "home": {
+                "title": "Qms Unqualified Materiels",
+                "createLabel": "创建新 Qms Unqualified Materiel",
+                "createOrEditLabel": "创建或编辑 Qms Unqualified Materiel"
+            },
+            "created": "Qms Unqualified Materiel {{ param }} 创建成功",
+            "updated": "Qms Unqualified Materiel {{ param }} 更新成功",
+            "deleted": "Qms Unqualified Materiel {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Unqualified Materiel {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Unqualified Materiel"
+            },
+            "materielDetailsId": "Materiel Details Id",
+            "bomTechnologyId": "Bom Technology Id",
+            "processId": "Process Id",
+            "discoverUserId": "Discover User Id",
+            "discoverTime": "Discover Time",
+            "problemDescription": "Problem Description",
+            "dealWith": "Deal With",
+            "useDiff": "Use Diff",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

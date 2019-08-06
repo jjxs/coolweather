@@ -1,0 +1,121 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div>
+    <div>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+            <div style="width: 80%;float: left;">
+
+                <div class="creatOreditCss">
+                    <!-- 编号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.serialNumber"
+                                >编号</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="serialNumber"
+                                [disabled]="true" [(ngModel)]="qmsProductionInspection.serialNumber"
+                                 />
+                        </div>
+                    </div>
+                    <!-- 中梁号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                             [(ngModel)]="qmsProductionInspection.materialCd" />
+                        </div>
+                    </div>
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.processCd"
+                                for="field_vehicleTypeName">工序编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="vehicleTypeName" id="field_vehicleTypeName"
+                                required [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" />
+
+                            <div
+                                [hidden]="!(editForm.controls.vehicleTypeName?.dirty && editForm.controls.vehicleTypeName?.invalid)">
+                                <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.vehicleTypeName?.errors?.maxlength"
+                                    jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                                    This field cannot be longer than 100 characters.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="selsectIonc"><i style="font-size:2em;cursor:pointer;color:#1F89CE;"
+                                class="fa fa-search" (click)="typeVehicleClass()"></i></div>
+                    </div>
+
+                </div>
+                <!-- 物料名称和工序名称 -->
+                <div class="creatOreditCss">
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.materielId"
+                                for="field_vehicleType">Vehicle Type</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="vehicleClass" id="field_vehicleType" readonly
+                                (blur)="getVehicleClassNameInfo()" [(ngModel)]="vehicleClass" maxlength="20" />
+
+                            <input type="text" class="form-control" name="vehicleClassId" id="field_vehicleType" hidden
+                                [(ngModel)]="qmsVehicleTypeInfo.vehicleClassId" maxlength="20" />
+
+                        </div>
+
+                    </div>
+                    <!-- 工艺名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.technologyName">工艺名称:</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                                readonly [(ngModel)]="vagueOrganizationName" />
+                        </div>
+                    </div>
+                    <!-- 工序名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.processName"
+                                for="field_vehicleType">Vehicle Type</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="vehicleClassName" id="field_vehicleType"
+                                readonly [(ngModel)]="vehicleClassName" maxlength="20" />
+
+                            <div
+                                [hidden]="!(editForm.controls.vehicleType?.dirty && editForm.controls.vehicleType?.invalid)">
+                                <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.vehicleType?.errors?.maxlength"
+                                    jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                                    This field cannot be longer than 20 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="creatOreditCssButton">
+                <button type="button" id="cancel-save"
+                    class="btn btn-secondary float-right search_button_darkblue search_button"
+                    (click)="previousState()">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                    class="btn btn-primary float-right search_button_blue search_button">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+            
+
+        </form>
+    </div>
+</div>

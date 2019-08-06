@@ -1,0 +1,46 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<p-table #dt [value]="rbacRoles" [paginator]="true" [rows]="itemsPerPage"  [totalRecords]="queryCount"  [scrollable]="true"  scrollHeight="520px"  [lazy]="true" (onLazyLoad)="loadRoleLazy($event)" >
+    <ng-template pTemplate="caption">
+        <div class="cnc-user-common-top">
+                <button pButton class="float-left" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                    label="{{'rbacRole.home.createLabel'| translate}}" [routerLink]="['/rbac-role/new']"></button>
+                <div class="cnc-user-common-title">
+                    <span jhiTranslate="rbacRole.home.title"></span>
+                </div>   
+        </div>
+        <div class="cnc-user-common-search">
+            <div class="cnc-user-common-search-input input-group-sm">
+                        <input class="form-control" pInputText type="text" placeholder="{{'rbacRole.help.roleName'| translate}}" maxlength="30"
+                            [(ngModel)]="roleName">
+            </div>
+            <p-button (onClick)="rolesSearch()" label="{{'rbacUser.home.Search'| translate}}" class="cnc-user-common-button"></p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+                <th class="cnc-user-common-th-operate">
+                    <span jhiTranslate="rbacRole.operation">操作</span>
+                </th>
+                <!-- <th class="cnc-user-common-th">
+                    <span jhiTranslate="rbacRole.help.storeName">门店名称</span>
+                    <span class="fa fa-sort"></span>
+                </th> -->
+                <th class="cnc-user-common-th" jhiSortBy="roleName">
+                    <span  jhiTranslate="rbacRole.help.roleName">角色名称</span>
+                    <span class="fa fa-sort"></span>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rbacRole>
+            <tr>
+                <td class="cnc-user-common-td-operate">
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.view" queryParamsHandling="merge" [routerLink]="['/rbac-role', rbacRole.id, 'view']"></a>
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.edit" *ngIf="!(rbacRole.id === 1)" queryParamsHandling="merge" [routerLink]="['/rbac-role', rbacRole.id, 'edit']"></a>
+                    <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.delete" *ngIf="!(rbacRole.id === 1)" queryParamsHandling="merge" style="color: #0096ff;" (click)="delete(rbacRole.id)"></a>
+                </td>
+                <!-- <td class="cnc-user-common-td text-left">{{rbacRole.storeId}}</td> -->
+                <td class="cnc-user-common-td text-left">{{rbacRole.roleName}}</td>
+               
+            </tr>
+        </ng-template>
+</p-table>

@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsSupplier">
+            <h2><span jhiTranslate="fccApp.qmsSupplier.detail.title">Qms Supplier</span> {{qmsSupplier.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsSupplier.supplierClassId">Supplier Class Id</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.supplierClassId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.supplierCd">Supplier Cd</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.supplierCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.supplierName">Supplier Name</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.supplierName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.address">Address</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.telNum1">Tel Num 1</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.telNum1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.telNum2">Tel Num 2</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.telNum2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.faxNum">Fax Num</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.faxNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.urlAddress">Url Address</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.urlAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.mailAddress">Mail Address</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.mailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.linkMan">Link Man</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.linkMan}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.department">Department</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.department}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.assRecord">Ass Record</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.assRecord}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplier.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsSupplier.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-supplier', qmsSupplier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

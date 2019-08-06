@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsProcessRoute.home.title">Qms Process Routes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-process-route" [routerLink]="['/qms-process-route/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsProcessRoute.home.createLabel">
+            Create new Qms Process Route
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsProcessRoutes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsProcessRoute.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="orderNumber"><span jhiTranslate="fccApp.qmsProcessRoute.orderNumber">Order Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processNumber"><span jhiTranslate="fccApp.qmsProcessRoute.processNumber">Process Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processName"><span jhiTranslate="fccApp.qmsProcessRoute.processName">Process Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="timeQuota"><span jhiTranslate="fccApp.qmsProcessRoute.timeQuota">Time Quota</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="equipmentCd"><span jhiTranslate="fccApp.qmsProcessRoute.equipmentCd">Equipment Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processEquipment"><span jhiTranslate="fccApp.qmsProcessRoute.processEquipment">Process Equipment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationCd"><span jhiTranslate="fccApp.qmsProcessRoute.organizationCd">Organization Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsProcessRoute.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsProcessRoute.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsProcessRoute.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsProcessRoute.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsProcessRoute.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsProcessRoute.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsProcessRoute.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsProcessRoute of qmsProcessRoutes ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-process-route', qmsProcessRoute.id, 'view' ]">{{qmsProcessRoute.id}}</a></td>
+                <td>{{qmsProcessRoute.materielId}}</td>
+                <td>{{qmsProcessRoute.orderNumber}}</td>
+                <td>{{qmsProcessRoute.processNumber}}</td>
+                <td>{{qmsProcessRoute.processName}}</td>
+                <td>{{qmsProcessRoute.timeQuota}}</td>
+                <td>{{qmsProcessRoute.equipmentCd}}</td>
+                <td>{{qmsProcessRoute.processEquipment}}</td>
+                <td>{{qmsProcessRoute.organizationCd}}</td>
+                <td>{{qmsProcessRoute.flagStatus}}</td>
+                <td>{{qmsProcessRoute.compPkid}}</td>
+                <td>{{qmsProcessRoute.remark}}</td>
+                <td>{{qmsProcessRoute.makeUser}}</td>
+                <td>{{qmsProcessRoute.makeTime | date:'medium'}}</td>
+                <td>{{qmsProcessRoute.modifyUser}}</td>
+                <td>{{qmsProcessRoute.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-process-route', qmsProcessRoute.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-process-route', qmsProcessRoute.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-process-route/'+ qmsProcessRoute.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsProcessRoutes && qmsProcessRoutes.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

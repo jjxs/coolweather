@@ -1,0 +1,29 @@
+{
+    "fccApp": {
+        "qmsUnit": {
+            "home": {
+                "title": "Qms Units",
+                "createLabel": "创建新 Qms Unit",
+                "createOrEditLabel": "创建或编辑 Qms Unit"
+            },
+            "created": "Qms Unit {{ param }} 创建成功",
+            "updated": "Qms Unit {{ param }} 更新成功",
+            "deleted": "Qms Unit {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Unit {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Unit"
+            },
+            "unitCd": "Unit Cd",
+            "unitName": "Unit Name",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rbacMenu">
+            <h2><span jhiTranslate="fccApp.rbacMenu.detail.title">Rbac Menu</span> {{rbacMenu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.rbacMenu.appId">App Id</span></dt>
+                <dd>
+                    <span>{{rbacMenu.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{rbacMenu.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.pMenuId">P Menu Id</span></dt>
+                <dd>
+                    <span>{{rbacMenu.pMenuId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuCode">Menu Code</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuName">Menu Name</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuUrl">Menu Url</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuIcon">Menu Icon</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuIcon}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuLable">Menu Lable</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuLable}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuMobileFlag">Menu Mobile Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuMobileFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.menuHostSlaveFlag">Menu Host Slave Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenu.menuHostSlaveFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenu.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenu.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenu.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenu.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenu.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenu.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenu.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenu.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rbac-menu', rbacMenu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

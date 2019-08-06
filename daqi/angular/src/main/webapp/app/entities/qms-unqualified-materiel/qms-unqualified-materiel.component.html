@@ -1,0 +1,96 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsUnqualifiedMateriel.home.title">Qms Unqualified Materiels</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-unqualified-materiel" [routerLink]="['/qms-unqualified-materiel/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsUnqualifiedMateriel.home.createLabel">
+            Create new Qms Unqualified Materiel
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsUnqualifiedMateriels">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielDetailsId"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.materielDetailsId">Materiel Details Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bomTechnologyId"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.bomTechnologyId">Bom Technology Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processId"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.processId">Process Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="discoverUserId"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.discoverUserId">Discover User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="discoverTime"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.discoverTime">Discover Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="problemDescription"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.problemDescription">Problem Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dealWith"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.dealWith">Deal With</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="useDiff"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.useDiff">Use Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsUnqualifiedMateriel of qmsUnqualifiedMateriels ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-unqualified-materiel', qmsUnqualifiedMateriel.id, 'view' ]">{{qmsUnqualifiedMateriel.id}}</a></td>
+                <td>{{qmsUnqualifiedMateriel.materielDetailsId}}</td>
+                <td>{{qmsUnqualifiedMateriel.bomTechnologyId}}</td>
+                <td>{{qmsUnqualifiedMateriel.processId}}</td>
+                <td>{{qmsUnqualifiedMateriel.discoverUserId}}</td>
+                <td>{{qmsUnqualifiedMateriel.discoverTime | date:'medium'}}</td>
+                <td>{{qmsUnqualifiedMateriel.problemDescription}}</td>
+                <td>{{qmsUnqualifiedMateriel.dealWith}}</td>
+                <td>{{qmsUnqualifiedMateriel.useDiff}}</td>
+                <td>{{qmsUnqualifiedMateriel.flagStatus}}</td>
+                <td>{{qmsUnqualifiedMateriel.compPkid}}</td>
+                <td>{{qmsUnqualifiedMateriel.remark}}</td>
+                <td>{{qmsUnqualifiedMateriel.reserveFirst}}</td>
+                <td>{{qmsUnqualifiedMateriel.reserveSecond}}</td>
+                <td>{{qmsUnqualifiedMateriel.reserveThird}}</td>
+                <td>{{qmsUnqualifiedMateriel.makeUser}}</td>
+                <td>{{qmsUnqualifiedMateriel.makeTime | date:'medium'}}</td>
+                <td>{{qmsUnqualifiedMateriel.modifyUser}}</td>
+                <td>{{qmsUnqualifiedMateriel.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-unqualified-materiel', qmsUnqualifiedMateriel.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-unqualified-materiel', qmsUnqualifiedMateriel.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-unqualified-materiel/'+ qmsUnqualifiedMateriel.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsUnqualifiedMateriels && qmsUnqualifiedMateriels.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

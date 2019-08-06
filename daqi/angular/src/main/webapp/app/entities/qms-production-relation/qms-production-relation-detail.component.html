@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProductionRelation">
+            <h2><span jhiTranslate="fccApp.qmsProductionRelation.detail.title">Qms Production Relation</span> {{qmsProductionRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.productionInspectionId">Production Inspection Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.productionInspectionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.assemblyId">Assembly Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.assemblyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.doProductId">Do Product Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.doProductId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.actualUseLocation">Actual Use Location</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.actualUseLocation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.assemblyMaterielId">Assembly Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.assemblyMaterielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.useProductId">Use Product Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.useProductId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.fromDiff">From Diff</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.fromDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.confirmUser1">Confirm User 1</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.confirmUser1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.confirmTime1">Confirm Time 1</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.confirmTime1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.confirmUser2">Confirm User 2</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.confirmUser2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.confirmTime2">Confirm Time 2</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.confirmTime2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionRelation.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionRelation.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-production-relation', qmsProductionRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

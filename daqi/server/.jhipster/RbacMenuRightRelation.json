@@ -1,0 +1,103 @@
+{
+    "name": "RbacMenuRightRelation",
+    "fields": [
+        {
+            "fieldName": "appId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "menuId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rightId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stopFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "delFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "insProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "insOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "insDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "updOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "updDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "delProgarmCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "delOperCd",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "delDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "triggerDateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190504064109",
+    "entityTableName": "rbac_menu_right_relation",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

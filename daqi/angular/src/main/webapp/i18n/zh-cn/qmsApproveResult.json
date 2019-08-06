@@ -1,0 +1,37 @@
+{
+    "fccApp": {
+        "qmsApproveResult": {
+            "home": {
+                "title": "Qms Approve Results",
+                "createLabel": "创建新 Qms Approve Result",
+                "createOrEditLabel": "创建或编辑 Qms Approve Result"
+            },
+            "created": "Qms Approve Result {{ param }} 创建成功",
+            "updated": "Qms Approve Result {{ param }} 更新成功",
+            "deleted": "Qms Approve Result {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Approve Result {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Approve Result"
+            },
+            "approveFlowId": "Approve Flow Id",
+            "unqualifiedProductId": "Unqualified Product Id",
+            "stepNum": "Step Num",
+            "principalUserId": "Principal User Id",
+            "approveTime": "Approve Time",
+            "approveResult": "Approve Result",
+            "approveStatus": "Approve Status",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

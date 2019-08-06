@@ -1,0 +1,43 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class" jhiTranslate="fccApp.qmsVehicleTypeClass.home.childTitle"></h2>
+        <div class="lookBtn">
+            <button type="submit" (click)="previousState()" class="btn btn-info float-right search_button_darkblue search_button">
+                <span jhiTranslate="fccApp.qmsVehicleTypeClass.home.back">返回</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">车型分类编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClassName">车型分类名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsVehicleTypeClass.remark">备注</span>
+            </div>
+            
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" type="number" class="form-control" name="vehicleClass" maxlength=20 style="width: 300px;margin-left: 120px;" 
+                    pInputText [(ngModel)]=qmsVehicleTypeClass.vehicleClass [disabled]=flag />
+            </div>
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="vehicleClassName" maxlength=100 style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsVehicleTypeClass.vehicleClassName />
+            </div>
+            <div class="lookLeftDiv">
+                <textarea class="form-control" name="remark" maxlength=200 [(ngModel)]=qmsVehicleTypeClass.remark style="width: 500px;margin-left: 120px;height: 210px;"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

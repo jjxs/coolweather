@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsCarRecordbookMain">
+            <h2><span jhiTranslate="fccApp.qmsCarRecordbookMain.detail.title">Qms Car Recordbook Main</span> {{qmsCarRecordbookMain.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookSeq">Recordbook Seq</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.recordbookSeq}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookName">Recordbook Name</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.recordbookName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookNum">Recordbook Num</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.recordbookNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.recordbookCheck">Recordbook Check</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.recordbookCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.filecodepre">Filecodepre</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.filecodepre}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.editUser">Edit User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.editUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.checkUser">Check User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.checkUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.standardUser">Standard User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.standardUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookMain.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookMain.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-car-recordbook-main', qmsCarRecordbookMain.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">物料供应商对照维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>物料编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>物料名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>备注</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 物料编码 -->
+            <div style="margin-top:50px;margin-left:20px;">
+                <input type="text" class="form-control" name="materielCd" id="field_unitCd"
+                    style="width: 300px;margin-left: 120px;" disabled pInputText [(ngModel)]="qmsMaterielSupplier.materielCd" maxlength="10"
+                    required />
+            </div>
+            <!-- 物料名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="materielName" id="field_unitName"
+                    style="width: 300px;margin-left: 120px;" disabled pInputText [(ngModel)]="qmsMaterielSupplier.materielName"
+                    maxlength="100" />
+            </div>
+            <!-- 供应商编码 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="supplierCd" id="field_unitName"
+                    style="width: 300px;margin-left: 120px;" disabled pInputText [(ngModel)]="qmsMaterielSupplier.supplierCd"
+                    maxlength="100" />
+            </div>
+            <!-- 供应商名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="supplierName" id="field_unitName"
+                    style="width: 300px;margin-left: 120px;" disabled pInputText [(ngModel)]="qmsMaterielSupplier.supplierName"
+                    maxlength="100" />
+            </div>
+            <!-- 备注 -->
+            <div class="lookLeftDiv">
+                <textarea class="form-control" [(ngModel)]=qmsMaterielSupplier.remark maxlength="200"
+                    style="width: 500px;margin-left: 120px;height: 210px;" disabled name="remark" id="field_remark"></textarea>
+            </div>
+        </div>
+
+
+    </form>
+</div>

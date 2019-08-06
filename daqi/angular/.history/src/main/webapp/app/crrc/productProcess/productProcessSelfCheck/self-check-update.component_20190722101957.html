@@ -1,0 +1,324 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div>
+    <div>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+            <div style="width: 80%;float: left;">
+
+                <div class="creatOreditCss">
+                    <!-- 编号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.serialNumber"
+                                >编号</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="serialNumber"
+                                [disabled]=true [(ngModel)]="qmsProductionInspection.serialNumber"
+                                 />
+                        </div>
+                    </div>
+                    <!-- 中梁号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true class="form-control" name="workno" style="width: 100%;margin-left: 0px;" pInputText
+                             [(ngModel)]="qmsProductionInspection.workno" />
+                        </div>
+                    </div>
+                    <!-- 工序名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.processName"
+                                >工序名称</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="processName"
+                                disabled=true [(ngModel)]="qmsProductionInspection.processName" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="creatOreditCss">
+                    <!-- 物料编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.materialCd"
+                                >物料编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="materialCd"
+                            disabled=true [(ngModel)]="qmsProductionInspection.materielCd" />
+                        </div>
+                    </div>
+
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称:</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true name="materialName" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                             [(ngModel)]="qmsProductionInspection.materielName" />
+                        </div>
+                    </div>
+
+                    <!-- 检验状态 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.isOK"
+                                >检验状态</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="isOK" [(ngModel)]="isOkName" disabled=true />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="creatOreditCssButton">
+                <button type="button" id="cancel-save"
+                    class="btn btn-secondary float-right search_button_darkblue search_button"
+                    (click)="previousState()">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                    class="btn btn-primary float-right search_button_blue search_button">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+            
+            <div style="width: 100%;display: inline-block;height: 100%;">
+                <p-tabView>
+                    <!-- 基本信息 -->
+                    <p-tabPanel [header]="质量检验项目">
+                        <div style="width: 100%;display: inline-block;">
+                            <div class="creatOreditCss">
+                                <!-- 工作序号 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.testValue"
+                                            for="field_vehicleType">工作序号</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control" name="workNumber" id="field_workNumber"
+                                            readonly [(ngModel)]="qmsVehicleTypeInfo.workNumber" maxlength="20" />
+                                    </div>
+                                </div>
+                                <!-- 隶属单位 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.inspectionItem"
+                                            for="field_vehicleTypeName">隶属单位</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectSubordinateUnits" name="subordinateUnits"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 工时定额单位 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.manHourQuotaUnit"
+                                            for="field_vehicleTypeName">工时定额单位</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="workTime" name="manHourQuotaUnit"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 工时定额 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.manHourQuota"
+                                            for="field_vehicleTypeName">工时定额</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" />
+                                    </div>
+                                </div>
+                                <!-- 质检类型 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.qualityTestingType"
+                                            for="field_vehicleTypeName">质检类型</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" />
+                                    </div>
+                                </div>
+                                <!-- 专检角色 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.inspectionRole"
+                                            for="field_vehicleTypeName">专检角色</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectInspectionRole" name="inspectionRole"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 是否试验工序 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.testProcedure"
+                                            for="field_vehicleTypeName">是否试验工序</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectTest" name="testProcedure"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 是否检验工序 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.inspectionProcedure"
+                                            for="field_vehicleTypeName">是否试验工序</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectInspection" name="inspectionProcedure"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 右半部分 -->
+                            <div class="creatOreditCss">
+                                <!-- 工序特征 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.processCharacteristics"
+                                            for="field_vehicleType">工序特征</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleClass"
+                                            id="field_vehicleType" readonly (blur)="getVehicleClassNameInfo()"
+                                            [(ngModel)]="vehicleClass" maxlength="20" />
+
+                                        <input type="text" class="form-control" name="vehicleClassId"
+                                            id="field_vehicleType" hidden
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleClassId" maxlength="20" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectProcesssPecific" name="processCharacteristics"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- 互检角色 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.mutualCheckRoles"
+                                            for="field_vehicleType">互检角色</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleClassName"
+                                            id="field_vehicleType" readonly [(ngModel)]="vehicleClassName"
+                                            maxlength="20" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectMutualRoles" name="mutualCheckRoles"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+
+                                <!-- 作业班组 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.workTeam"
+                                            for="field_vehicleType">作业班组</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleClassName"
+                                            id="field_vehicleType" readonly [(ngModel)]="vehicleClassName"
+                                            maxlength="20" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectAllWorkTeam" name="workTeam"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" placeholder="请选择"
+                                            (onChange)="selectVehicle($event)" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 备注 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsProductionInspection.remarks"
+                                            for="field_vehicleType">备注</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control" name="vehicleClassName"
+                                            id="field_vehicleType" readonly [(ngModel)]="vehicleClassName"
+                                            maxlength="20" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </div>
+
+        </form>
+    </div>
+</div>

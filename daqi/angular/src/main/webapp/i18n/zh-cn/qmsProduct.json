@@ -1,0 +1,36 @@
+{
+    "fccApp": {
+        "qmsProduct": {
+            "home": {
+                "title": "Qms Products",
+                "createLabel": "创建新 Qms Product",
+                "createOrEditLabel": "创建或编辑 Qms Product"
+            },
+            "created": "Qms Product {{ param }} 创建成功",
+            "updated": "Qms Product {{ param }} 更新成功",
+            "deleted": "Qms Product {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Product {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Product"
+            },
+            "productBatch": "Product Batch",
+            "productNum": "Product Num",
+            "materielId": "Materiel Id",
+            "productDiff": "Product Diff",
+            "isUse": "Is Use",
+            "isOk": "Is Ok",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

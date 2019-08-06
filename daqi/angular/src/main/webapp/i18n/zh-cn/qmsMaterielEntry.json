@@ -1,0 +1,50 @@
+{
+    "fccApp": {
+        "qmsMaterielEntry": {
+            "home": {
+                "title": "Qms Materiel Entries",
+                "createLabel": "创建新 Qms Materiel Entry",
+                "createOrEditLabel": "创建或编辑 Qms Materiel Entry"
+            },
+            "created": "Qms Materiel Entry {{ param }} 创建成功",
+            "updated": "Qms Materiel Entry {{ param }} 更新成功",
+            "deleted": "Qms Materiel Entry {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Materiel Entry {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel Entry"
+            },
+            "materielEntryCd": "Materiel Entry Cd",
+            "materielId": "Materiel Id",
+            "specificationType": "Specification Type",
+            "figureNumber": "Figure Number",
+            "packingQuantity": "Packing Quantity",
+            "supplierId": "Supplier Id",
+            "entryQuantity": "Entry Quantity",
+            "entryType": "Entry Type",
+            "purchaseOrderNumber": "Purchase Order Number",
+            "batchNumber": "Batch Number",
+            "isUse": "Is Use",
+            "madeYmd": "Made Ymd",
+            "madeFactoryCd": "Made Factory Cd",
+            "texTure": "Tex Ture",
+            "castingNum": "Casting Num",
+            "entryDate": "Entry Date",
+            "flagInspect": "Flag Inspect",
+            "inspectionTime": "Inspection Time",
+            "inspectionCompletedTime": "Inspection Completed Time",
+            "inspectionUserId": "Inspection User Id",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

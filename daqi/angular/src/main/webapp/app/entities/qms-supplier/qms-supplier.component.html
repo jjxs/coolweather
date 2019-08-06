@@ -1,0 +1,98 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsSupplier.home.title">Qms Suppliers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-supplier" [routerLink]="['/qms-supplier/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsSupplier.home.createLabel">
+            Create new Qms Supplier
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsSuppliers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="supplierClassId"><span jhiTranslate="fccApp.qmsSupplier.supplierClassId">Supplier Class Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="supplierCd"><span jhiTranslate="fccApp.qmsSupplier.supplierCd">Supplier Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="supplierName"><span jhiTranslate="fccApp.qmsSupplier.supplierName">Supplier Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address"><span jhiTranslate="fccApp.qmsSupplier.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="telNum1"><span jhiTranslate="fccApp.qmsSupplier.telNum1">Tel Num 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="telNum2"><span jhiTranslate="fccApp.qmsSupplier.telNum2">Tel Num 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="faxNum"><span jhiTranslate="fccApp.qmsSupplier.faxNum">Fax Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="urlAddress"><span jhiTranslate="fccApp.qmsSupplier.urlAddress">Url Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mailAddress"><span jhiTranslate="fccApp.qmsSupplier.mailAddress">Mail Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="linkMan"><span jhiTranslate="fccApp.qmsSupplier.linkMan">Link Man</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="department"><span jhiTranslate="fccApp.qmsSupplier.department">Department</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assRecord"><span jhiTranslate="fccApp.qmsSupplier.assRecord">Ass Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsSupplier.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsSupplier.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsSupplier.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsSupplier.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsSupplier.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsSupplier.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsSupplier.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsSupplier of qmsSuppliers ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-supplier', qmsSupplier.id, 'view' ]">{{qmsSupplier.id}}</a></td>
+                <td>{{qmsSupplier.supplierClassId}}</td>
+                <td>{{qmsSupplier.supplierCd}}</td>
+                <td>{{qmsSupplier.supplierName}}</td>
+                <td>{{qmsSupplier.address}}</td>
+                <td>{{qmsSupplier.telNum1}}</td>
+                <td>{{qmsSupplier.telNum2}}</td>
+                <td>{{qmsSupplier.faxNum}}</td>
+                <td>{{qmsSupplier.urlAddress}}</td>
+                <td>{{qmsSupplier.mailAddress}}</td>
+                <td>{{qmsSupplier.linkMan}}</td>
+                <td>{{qmsSupplier.department}}</td>
+                <td>{{qmsSupplier.assRecord}}</td>
+                <td>{{qmsSupplier.flagStatus}}</td>
+                <td>{{qmsSupplier.compPkid}}</td>
+                <td>{{qmsSupplier.remark}}</td>
+                <td>{{qmsSupplier.makeUser}}</td>
+                <td>{{qmsSupplier.makeTime | date:'medium'}}</td>
+                <td>{{qmsSupplier.modifyUser}}</td>
+                <td>{{qmsSupplier.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-supplier', qmsSupplier.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-supplier', qmsSupplier.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-supplier/'+ qmsSupplier.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsSuppliers && qmsSuppliers.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

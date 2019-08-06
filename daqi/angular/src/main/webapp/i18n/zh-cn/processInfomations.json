@@ -1,0 +1,71 @@
+{
+    "fccApp": {
+        "qmsBomTechnologyInfo": {
+            "home": {
+                "title": "工艺信息",
+                "createLabel": "添加",
+                "createLabelInfo": "工艺维护",
+                "EditLabelInfo": "工艺维护",
+                "query": "查询",
+                "empty": "清空",
+                "popTitle": "车型选择",
+                "defaultProcess":"默认工艺",
+                "processSelect":"工艺选择",
+                "choice": "选择"
+            },
+            "created": "工艺 {{ param }} 创建成功",
+            "updated": "工艺 {{ param }} 更新成功",
+            "deleted": "工艺 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 工艺 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "工艺信息"
+            },
+            "tab":{
+                "wssentialInformation":"基本信息",
+                "qualituConItemPoint":"质量控制项点",
+                "assemblyRelationship":"装配关系",
+                "processDocuments":"工艺文件"
+            },
+            "vehicleType": "车型名称",
+            "serialNumber": "序号",
+            "materielId": "物料名称",
+            "materielCd": "物料编码",
+            "processCd": "工序编码",
+            "processName": "工序名称",
+            "operation": "操作",
+            "vehicleTypeNoTrim": "车型",
+            "workNumber":"工序号",
+            "subordinateUnits":"隶属单位",
+            "manHourQuotaUnit":"工时定额单位",
+            "manHourQuota":"工时定额",
+            "qualityTestingType":"质检类型",
+            "inspectionRole":"专检角色",
+            "testProcedure":"是否试验工序",
+            "inspectionProcedure":"是否检验工序",
+            "processCharacteristics":"工序特征",
+            "mutualCheckRoles":"互检角色",
+            "workTeam":"作业班组",
+            "technologyCd":"工艺编码",
+            "technologyName":"工艺名称",
+            
+            "whetherToDetect":"是否检测",
+            "inspectionItem":"检查项目",
+            "technicalRequirement":"技术要求",
+            "inspectionInstrument":"检查器具",
+            "placeDiff":"位别",
+            "resultDiff":"结果区分",
+            "abcType":"ABC分类",
+            "standard":"标准值",
+            "upperDeviation":"上偏差",
+            "lowerDeviation":"下偏差",
+            "anAdditionalLine":"追加一行",
+            "selectionOfTestItems":"检验项选择",
+            "assemblyNum":"装配序号",
+            "assemblyCount":"数量",
+            "addMateriel":"追加物料",
+            "remarks":"备注"
+        }
+    }
+}

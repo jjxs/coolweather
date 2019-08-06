@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProductionTask">
+            <h2><span jhiTranslate="fccApp.qmsProductionTask.detail.title">Qms Production Task</span> {{qmsProductionTask.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.bomTechnologyId">Bom Technology Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.bomTechnologyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.serialNumber">Serial Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.serialNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.furnace">Furnace</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.furnace}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.saleNumber">Sale Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.saleNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.productorderNumber">Productorder Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.productorderNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.finishNumber">Finish Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.finishNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.quailfiedNumber">Quailfied Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.quailfiedNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.deffectiveNumber">Deffective Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.deffectiveNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionTask.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionTask.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-production-task', qmsProductionTask.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

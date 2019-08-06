@@ -1,0 +1,38 @@
+{
+    "fccApp": {
+        "qmsEntryInspectionResult": {
+            "home": {
+                "title": "Qms Entry Inspection Results",
+                "createLabel": "创建新 Qms Entry Inspection Result",
+                "createOrEditLabel": "创建或编辑 Qms Entry Inspection Result"
+            },
+            "created": "Qms Entry Inspection Result {{ param }} 创建成功",
+            "updated": "Qms Entry Inspection Result {{ param }} 更新成功",
+            "deleted": "Qms Entry Inspection Result {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Entry Inspection Result {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Entry Inspection Result"
+            },
+            "entryControlDetailId": "Entry Control Detail Id",
+            "goodsCd": "Goods Cd",
+            "controlId": "Control Id",
+            "placeDiff": "Place Diff",
+            "testValue": "Test Value",
+            "recordNum": "Record Num",
+            "checkResult": "Check Result",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "groupCd": "Group Cd",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

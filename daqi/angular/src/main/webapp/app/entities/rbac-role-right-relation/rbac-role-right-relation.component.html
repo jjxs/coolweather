@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.rbacRoleRightRelation.home.title">Rbac Role Right Relations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rbac-role-right-relation" [routerLink]="['/rbac-role-right-relation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.rbacRoleRightRelation.home.createLabel">
+            Create new Rbac Role Right Relation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="rbacRoleRightRelations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="appId"><span jhiTranslate="fccApp.rbacRoleRightRelation.appId">App Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="storeId"><span jhiTranslate="fccApp.rbacRoleRightRelation.storeId">Store Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roleId"><span jhiTranslate="fccApp.rbacRoleRightRelation.roleId">Role Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rightId"><span jhiTranslate="fccApp.rbacRoleRightRelation.rightId">Right Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stopFlag"><span jhiTranslate="fccApp.rbacRoleRightRelation.stopFlag">Stop Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delFlag"><span jhiTranslate="fccApp.rbacRoleRightRelation.delFlag">Del Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insProgarmCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.insProgarmCd">Ins Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insOperCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.insOperCd">Ins Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insDateTime"><span jhiTranslate="fccApp.rbacRoleRightRelation.insDateTime">Ins Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updProgarmCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.updProgarmCd">Upd Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updOperCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.updOperCd">Upd Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updDateTime"><span jhiTranslate="fccApp.rbacRoleRightRelation.updDateTime">Upd Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delProgarmCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.delProgarmCd">Del Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delOperCd"><span jhiTranslate="fccApp.rbacRoleRightRelation.delOperCd">Del Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delDateTime"><span jhiTranslate="fccApp.rbacRoleRightRelation.delDateTime">Del Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="triggerDateTime"><span jhiTranslate="fccApp.rbacRoleRightRelation.triggerDateTime">Trigger Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rbacRoleRightRelation of rbacRoleRightRelations ;trackBy: trackId">
+                <td><a [routerLink]="['/rbac-role-right-relation', rbacRoleRightRelation.id, 'view' ]">{{rbacRoleRightRelation.id}}</a></td>
+                <td>{{rbacRoleRightRelation.appId}}</td>
+                <td>{{rbacRoleRightRelation.storeId}}</td>
+                <td>{{rbacRoleRightRelation.roleId}}</td>
+                <td>{{rbacRoleRightRelation.rightId}}</td>
+                <td>{{rbacRoleRightRelation.stopFlag}}</td>
+                <td>{{rbacRoleRightRelation.delFlag}}</td>
+                <td>{{rbacRoleRightRelation.insProgarmCd}}</td>
+                <td>{{rbacRoleRightRelation.insOperCd}}</td>
+                <td>{{rbacRoleRightRelation.insDateTime | date:'medium'}}</td>
+                <td>{{rbacRoleRightRelation.updProgarmCd}}</td>
+                <td>{{rbacRoleRightRelation.updOperCd}}</td>
+                <td>{{rbacRoleRightRelation.updDateTime | date:'medium'}}</td>
+                <td>{{rbacRoleRightRelation.delProgarmCd}}</td>
+                <td>{{rbacRoleRightRelation.delOperCd}}</td>
+                <td>{{rbacRoleRightRelation.delDateTime | date:'medium'}}</td>
+                <td>{{rbacRoleRightRelation.triggerDateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rbac-role-right-relation', rbacRoleRightRelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rbac-role-right-relation', rbacRoleRightRelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rbac-role-right-relation/'+ rbacRoleRightRelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="rbacRoleRightRelations && rbacRoleRightRelations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

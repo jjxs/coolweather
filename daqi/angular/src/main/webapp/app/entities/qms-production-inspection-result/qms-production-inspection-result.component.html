@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsProductionInspectionResult.home.title">Qms Production Inspection Results</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-production-inspection-result" [routerLink]="['/qms-production-inspection-result/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsProductionInspectionResult.home.createLabel">
+            Create new Qms Production Inspection Result
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsProductionInspectionResults">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionValueId"><span jhiTranslate="fccApp.qmsProductionInspectionResult.inspectionValueId">Inspection Value Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionId"><span jhiTranslate="fccApp.qmsProductionInspectionResult.inspectionId">Inspection Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="controlId"><span jhiTranslate="fccApp.qmsProductionInspectionResult.controlId">Control Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionDiff"><span jhiTranslate="fccApp.qmsProductionInspectionResult.inspectionDiff">Inspection Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="placeDiff"><span jhiTranslate="fccApp.qmsProductionInspectionResult.placeDiff">Place Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="testValue"><span jhiTranslate="fccApp.qmsProductionInspectionResult.testValue">Test Value</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsProductionInspectionResult.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsProductionInspectionResult.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsProductionInspectionResult.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsProductionInspectionResult.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsProductionInspectionResult.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsProductionInspectionResult.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsProductionInspectionResult.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsProductionInspectionResult.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsProductionInspectionResult.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsProductionInspectionResult.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsProductionInspectionResult of qmsProductionInspectionResults ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-production-inspection-result', qmsProductionInspectionResult.id, 'view' ]">{{qmsProductionInspectionResult.id}}</a></td>
+                <td>{{qmsProductionInspectionResult.inspectionValueId}}</td>
+                <td>{{qmsProductionInspectionResult.inspectionId}}</td>
+                <td>{{qmsProductionInspectionResult.controlId}}</td>
+                <td>{{qmsProductionInspectionResult.inspectionDiff}}</td>
+                <td>{{qmsProductionInspectionResult.placeDiff}}</td>
+                <td>{{qmsProductionInspectionResult.testValue}}</td>
+                <td>{{qmsProductionInspectionResult.flagStatus}}</td>
+                <td>{{qmsProductionInspectionResult.compPkid}}</td>
+                <td>{{qmsProductionInspectionResult.remark}}</td>
+                <td>{{qmsProductionInspectionResult.reserveFirst}}</td>
+                <td>{{qmsProductionInspectionResult.reserveSecond}}</td>
+                <td>{{qmsProductionInspectionResult.reserveThird}}</td>
+                <td>{{qmsProductionInspectionResult.makeUser}}</td>
+                <td>{{qmsProductionInspectionResult.makeTime | date:'medium'}}</td>
+                <td>{{qmsProductionInspectionResult.modifyUser}}</td>
+                <td>{{qmsProductionInspectionResult.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-production-inspection-result', qmsProductionInspectionResult.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-production-inspection-result', qmsProductionInspectionResult.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-production-inspection-result/'+ qmsProductionInspectionResult.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsProductionInspectionResults && qmsProductionInspectionResults.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

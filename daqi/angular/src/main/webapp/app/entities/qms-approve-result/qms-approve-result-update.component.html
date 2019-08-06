@@ -1,0 +1,175 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-approve-result-heading" jhiTranslate="fccApp.qmsApproveResult.home.createOrEditLabel">Create or edit a Qms Approve Result</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qmsApproveResult.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qmsApproveResult.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.approveFlowId" for="field_approveFlowId">Approve Flow Id</label>
+                    <input type="number" class="form-control" name="approveFlowId" id="field_approveFlowId"
+                        [(ngModel)]="qmsApproveResult.approveFlowId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.unqualifiedProductId" for="field_unqualifiedProductId">Unqualified Product Id</label>
+                    <input type="number" class="form-control" name="unqualifiedProductId" id="field_unqualifiedProductId"
+                        [(ngModel)]="qmsApproveResult.unqualifiedProductId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.stepNum" for="field_stepNum">Step Num</label>
+                    <input type="number" class="form-control" name="stepNum" id="field_stepNum"
+                        [(ngModel)]="qmsApproveResult.stepNum" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.principalUserId" for="field_principalUserId">Principal User Id</label>
+                    <input type="number" class="form-control" name="principalUserId" id="field_principalUserId"
+                        [(ngModel)]="qmsApproveResult.principalUserId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.approveTime" for="field_approveTime">Approve Time</label>
+                    <div class="d-flex">
+                        <input id="field_approveTime" type="datetime-local" class="form-control" name="approveTime" [(ngModel)]="approveTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.approveResult" for="field_approveResult">Approve Result</label>
+                    <input type="text" class="form-control" name="approveResult" id="field_approveResult"
+                        [(ngModel)]="qmsApproveResult.approveResult" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.approveResult?.dirty && editForm.controls.approveResult?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.approveResult?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.approveStatus" for="field_approveStatus">Approve Status</label>
+                    <input type="text" class="form-control" name="approveStatus" id="field_approveStatus"
+                        [(ngModel)]="qmsApproveResult.approveStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.approveStatus?.dirty && editForm.controls.approveStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.approveStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.flagStatus" for="field_flagStatus">Flag Status</label>
+                    <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                        [(ngModel)]="qmsApproveResult.flagStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagStatus?.dirty && editForm.controls.flagStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.compPkid" for="field_compPkid">Comp Pkid</label>
+                    <input type="text" class="form-control" name="compPkid" id="field_compPkid"
+                        [(ngModel)]="qmsApproveResult.compPkid" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.compPkid?.dirty && editForm.controls.compPkid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.compPkid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                        [(ngModel)]="qmsApproveResult.remark" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.reserveFirst" for="field_reserveFirst">Reserve First</label>
+                    <input type="text" class="form-control" name="reserveFirst" id="field_reserveFirst"
+                        [(ngModel)]="qmsApproveResult.reserveFirst" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveFirst?.dirty && editForm.controls.reserveFirst?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveFirst?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.reserveSecond" for="field_reserveSecond">Reserve Second</label>
+                    <input type="text" class="form-control" name="reserveSecond" id="field_reserveSecond"
+                        [(ngModel)]="qmsApproveResult.reserveSecond" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveSecond?.dirty && editForm.controls.reserveSecond?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveSecond?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.reserveThird" for="field_reserveThird">Reserve Third</label>
+                    <input type="text" class="form-control" name="reserveThird" id="field_reserveThird"
+                        [(ngModel)]="qmsApproveResult.reserveThird" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveThird?.dirty && editForm.controls.reserveThird?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveThird?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.makeUser" for="field_makeUser">Make User</label>
+                    <input type="text" class="form-control" name="makeUser" id="field_makeUser"
+                        [(ngModel)]="qmsApproveResult.makeUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.makeUser?.dirty && editForm.controls.makeUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.makeUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.makeTime" for="field_makeTime">Make Time</label>
+                    <div class="d-flex">
+                        <input id="field_makeTime" type="datetime-local" class="form-control" name="makeTime" [(ngModel)]="makeTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.modifyUser" for="field_modifyUser">Modify User</label>
+                    <input type="text" class="form-control" name="modifyUser" id="field_modifyUser"
+                        [(ngModel)]="qmsApproveResult.modifyUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.modifyUser?.dirty && editForm.controls.modifyUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifyUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsApproveResult.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

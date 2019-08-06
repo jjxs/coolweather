@@ -1,0 +1,35 @@
+{
+    "fccApp": {
+        "qmsProcessRoute": {
+            "home": {
+                "title": "Qms Process Routes",
+                "createLabel": "创建新 Qms Process Route",
+                "createOrEditLabel": "创建或编辑 Qms Process Route"
+            },
+            "created": "Qms Process Route {{ param }} 创建成功",
+            "updated": "Qms Process Route {{ param }} 更新成功",
+            "deleted": "Qms Process Route {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Process Route {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Process Route"
+            },
+            "materielId": "Materiel Id",
+            "orderNumber": "Order Number",
+            "processNumber": "Process Number",
+            "processName": "Process Name",
+            "timeQuota": "Time Quota",
+            "equipmentCd": "Equipment Cd",
+            "processEquipment": "Process Equipment",
+            "organizationCd": "Organization Cd",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

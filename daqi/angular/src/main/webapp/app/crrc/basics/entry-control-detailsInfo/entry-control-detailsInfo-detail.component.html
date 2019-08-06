@@ -1,0 +1,207 @@
+<div>
+    <div>
+        <div *ngIf="qmsEntryControlDetails">
+
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+                <h2 id="jhi-qms-entry-control-details-heading"
+                    jhiTranslate="fccApp.qmsEntryControlDetails.detail.title">Qms Entry Control
+                    Details</h2>
+                <div style="width: 80%;float: left;">
+                    <div class="form-group" hidden>
+                        <label for="id" jhiTranslate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                            [(ngModel)]="qmsEntryControlDetails.id" readonly />
+                    </div>
+                    <!-- 左半部 -->
+                    <div class="creatOreditCss">
+                        <!-- 物料编码 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.materielId"
+                                    for="field_materielCd">materiel Cd</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="materielId" id="field_materielCd" readonly
+                                    (blur)="getMaterielNameInfo()" [(ngModel)]="qmsEntryControlDetails.materielId"
+                                    maxlength="10" />
+                                <div
+                                    [hidden]="!(editForm.controls.materielId?.dirty && editForm.controls.materielId?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.materielId?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                                        This field cannot be longer than 10 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 物料名称 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.materielName"
+                                    for="fieldmaterielName">materiel Name</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="materielName" id="field_materielName"
+                                    readonly [(ngModel)]="materielName" maxlength="10" />
+                            </div>
+                        </div>
+                        <!-- 检查项目 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.inspectionItem"
+                                    for="field_inspectionItem">Inspection Item</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="inspectionItem" id="field_inspectionItem"
+                                    readonly [(ngModel)]="qmsEntryControlDetails.inspectionItem" maxlength="100" />
+                                <div
+                                    [hidden]="!(editForm.controls.inspectionItem?.dirty && editForm.controls.inspectionItem?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.inspectionItem?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                                        This field cannot be longer than 100 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 检查器具 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.inspectionInstrument"
+                                    for="field_inspectionInstrument">Inspection Instrument</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="inspectionInstrument" readonly
+                                    id="field_inspectionInstrument"
+                                    [(ngModel)]="qmsEntryControlDetails.inspectionInstrument" maxlength="100" />
+                                <div
+                                    [hidden]="!(editForm.controls.inspectionInstrument?.dirty && editForm.controls.inspectionInstrument?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.inspectionInstrument?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                                        This field cannot be longer than 100 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 标准值 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label" jhiTranslate="fccApp.qmsEntryControlDetails.standard"
+                                    for="field_standard">Standard</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="number" class="form-control" name="standard" id="field_standard" readonly
+                                    [(ngModel)]="qmsEntryControlDetails.standard" />
+                            </div>
+                        </div>
+                        <!-- 上偏差 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.upperDeviation"
+                                    for="field_upperDeviation">Upper Deviation</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="number" class="form-control" name="upperDeviation"
+                                    id="field_upperDeviation" readonly
+                                    [(ngModel)]="qmsEntryControlDetails.upperDeviation" />
+                            </div>
+                        </div>
+                        <!-- 下偏差 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.lowerDeviation"
+                                    for="field_lowerDeviation">Lower Deviation</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="number" class="form-control" name="lowerDeviation"
+                                    id="field_lowerDeviation" readonly
+                                    [(ngModel)]="qmsEntryControlDetails.lowerDeviation" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右半部 -->
+                    <div class="creatOreditCss">
+                        <!-- 检查结果区分 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.inspectionResultDiff"
+                                    for="field_inspectionResultDiff">Inspection Result Diff</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="inspectionResultDiff" readonly
+                                    id="field_inspectionResultDiff"
+                                    [(ngModel)]="qmsEntryControlDetails.inspectionResultDiff" maxlength="1" />
+                                <div
+                                    [hidden]="!(editForm.controls.inspectionResultDiff?.dirty && editForm.controls.inspectionResultDiff?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.inspectionResultDiff?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                                        This field cannot be longer than 1 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 技术要求 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsEntryControlDetails.technicalRequirement"
+                                    for="field_technicalRequirement">Technical Requirement</label>
+                            </div>
+                            <div class="div_right">
+                                <textarea type="text" class="form-control" name="technicalRequirement" readonly
+                                    style="width: 500px;height:210px;" id="field_technicalRequirement"
+                                    [(ngModel)]="qmsEntryControlDetails.technicalRequirement" maxlength="200">
+                                    </textarea>
+                                <div
+                                    [hidden]="!(editForm.controls.technicalRequirement?.dirty && editForm.controls.technicalRequirement?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.technicalRequirement?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                                        This field cannot be longer than 200 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 备注 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label" jhiTranslate="fccApp.qmsEntryControlDetails.remark"
+                                    for="field_remark">Remark</label>
+                            </div>
+                            <div class="div_right">
+                                <textarea type="text" class="form-control" name="remark" id="field_remark" readonly
+                                    style="width: 500px;height:210px;" [(ngModel)]="qmsEntryControlDetails.remark"
+                                    maxlength="200"></textarea>
+                                <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                                    <small class="form-text text-danger"
+                                        [hidden]="!editForm.controls.remark?.errors?.maxlength"
+                                        jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                                        This field cannot be longer than 200 characters.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="creatOreditCssButton">
+                    <button type="button" id="cancel-save"
+                        class="btn btn-secondary search_button_darkblue search_button" (click)="previousState()">
+                        <span jhiTranslate="entity.action.back">Cancel</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

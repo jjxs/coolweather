@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsQualityControlDetailsRelation">
+            <h2><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.detail.title">Qms Quality Control Details Relation</span> {{qmsQualityControlDetailsRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.vehicleType">Vehicle Type</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.vehicleType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.qualityControlNumber">Quality Control Number</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.qualityControlNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.assemblyCd">Assembly Cd</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.assemblyCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.assemblyMaterielCd">Assembly Materiel Cd</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.assemblyMaterielCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.assemblyMaterielName">Assembly Materiel Name</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.assemblyMaterielName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetailsRelation.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetailsRelation.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-quality-control-details-relation', qmsQualityControlDetailsRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

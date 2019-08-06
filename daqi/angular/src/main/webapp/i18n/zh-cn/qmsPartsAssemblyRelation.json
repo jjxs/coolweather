@@ -1,0 +1,34 @@
+{
+    "fccApp": {
+        "qmsPartsAssemblyRelation": {
+            "home": {
+                "title": "Qms Parts Assembly Relations",
+                "createLabel": "创建新 Qms Parts Assembly Relation",
+                "createOrEditLabel": "创建或编辑 Qms Parts Assembly Relation"
+            },
+            "created": "Qms Parts Assembly Relation {{ param }} 创建成功",
+            "updated": "Qms Parts Assembly Relation {{ param }} 更新成功",
+            "deleted": "Qms Parts Assembly Relation {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Parts Assembly Relation {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Parts Assembly Relation"
+            },
+            "bomTechnologyId": "Bom Technology Id",
+            "assemblyNum": "Assembly Num",
+            "assemblyMaterielId": "Assembly Materiel Id",
+            "assemblyCount": "Assembly Count",
+            "remark": "Remark",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

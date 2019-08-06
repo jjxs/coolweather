@@ -1,0 +1,32 @@
+{
+    "fccApp": {
+        "qmsVehicleTypeClass": {
+            "home": {
+                "title": "车型分类信息",
+                "createLabel": "创建新 Qms Vehicle Type Class",
+                "createOrEditLabel": "创建或编辑 Qms Vehicle Type Class"
+            },
+            "created": "Qms Vehicle Type Class {{ param }} 创建成功",
+            "updated": "Qms Vehicle Type Class {{ param }} 更新成功",
+            "deleted": "Qms Vehicle Type Class {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Vehicle Type Class {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Vehicle Type Class"
+            },
+            "vehicleClass": "Vehicle Class",
+            "vehicleClassName": "Vehicle Class Name",
+            "remark": "Remark",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

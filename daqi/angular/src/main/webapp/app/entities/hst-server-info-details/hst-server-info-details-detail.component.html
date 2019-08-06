@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="hstServerInfoDetails">
+            <h2><span jhiTranslate="fccApp.hstServerInfoDetails.detail.title">Hst Server Info Details</span> {{hstServerInfoDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.appId">App Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.infoId">Info Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.infoId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.hostName">Host Name</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.hostName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.ipAddress">Ip Address</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.ipAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.osUser">Os User</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.osUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.osName">Os Name</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.osName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.osVersion">Os Version</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.osVersion}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.osArch">Os Arch</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.osArch}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfoDetails.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfoDetails.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/hst-server-info-details', hstServerInfoDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

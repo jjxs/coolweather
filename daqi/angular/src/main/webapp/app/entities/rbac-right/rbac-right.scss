@@ -1,0 +1,134 @@
+.cnc-user-common-title span {
+    font-size: 26px;
+}
+
+.cnc-user-common-top {
+    height: 40px;
+    .float-left {
+        margin-top: 7px;
+    }
+}
+
+.cnc-user-common-search {
+    height: 50px;
+    .form-control {
+        width: 252px;
+        margin-left: 0px;
+        border-radius: 0.3rem;
+    }
+}
+
+.cnc-user-common-button {
+    float: left;
+    line-height:3.5em;
+    font-size:15px;
+}
+
+.cnc-user-common-td, .cnc-user-common-th {
+    padding: 0.2em;
+    background-color:#e2e9ef;
+    text-align: center;
+    font-size: 12px;
+    width:100px;
+    height:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom:0 none;
+   
+}
+
+.cnc-user-common-td-operate, .cnc-user-common-th-operate {
+    padding: 0.2em;
+    background-color:#e2e9ef;
+    text-align: center;
+    font-size: 12px;
+    width:100px;
+    height:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom:0 none;
+    width:5%;
+   
+}
+
+.cnc-user-common-a {
+    color:#0096ff;
+    padding: 1px 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.cnc-user-common-search-input {
+    float: left;
+    height:32px;
+    margin-right: 8px;
+    font-size: 13px;
+    font-weight:bold;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    line-height: 23px;
+}
+
+.cnc-user-creat-lable {
+    font-size:12px;
+}
+
+.cnc-user-creat-input {
+    font-size:12px;
+    border-radius: 0.3rem;
+}
+
+.cnc-user-creat-title {
+    font-size:26px;
+    padding-left: 15px;
+}
+
+.cnc-user-creat-body {
+    font-size: 15px;
+    padding-top: 20px;
+    .col-md-3 {
+        font-weight:bold;
+    }
+}
+
+.cnc-user-detail-title {
+    font-weight:bold;
+}
+
+.cnc-user-detail-body {
+    .cnc-user-detail-row {
+        border-bottom:1px solid rgb(209, 207, 207);
+        font-size: 15px;
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        .col-md-2 {
+            font-weight:bold;margin-bottom:10px;
+        };
+        .col-md-4 {
+            margin-bottom:10px;
+        };
+    }
+}
+.cnc-role-creat-body {
+    margin: 5px 0 0 30px;
+}
+.cnc-role-creat-list {
+    margin: 5px 0 0 12%;
+    .cnc-role-creat-mullist {
+        height: 200px;
+    }
+}
+
+:host ::ng-deep {
+    .modal-footer {
+        margin-top: 50px;
+    }  
+  
+}
+

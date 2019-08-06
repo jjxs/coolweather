@@ -1,0 +1,104 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.rbacMenu.home.title">Rbac Menus</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rbac-menu" [routerLink]="['/rbac-menu/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.rbacMenu.home.createLabel">
+            Create new Rbac Menu
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="rbacMenus">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="appId"><span jhiTranslate="fccApp.rbacMenu.appId">App Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="storeId"><span jhiTranslate="fccApp.rbacMenu.storeId">Store Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pMenuId"><span jhiTranslate="fccApp.rbacMenu.pMenuId">P Menu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuCode"><span jhiTranslate="fccApp.rbacMenu.menuCode">Menu Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuName"><span jhiTranslate="fccApp.rbacMenu.menuName">Menu Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuUrl"><span jhiTranslate="fccApp.rbacMenu.menuUrl">Menu Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuIcon"><span jhiTranslate="fccApp.rbacMenu.menuIcon">Menu Icon</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuLable"><span jhiTranslate="fccApp.rbacMenu.menuLable">Menu Lable</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuMobileFlag"><span jhiTranslate="fccApp.rbacMenu.menuMobileFlag">Menu Mobile Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuHostSlaveFlag"><span jhiTranslate="fccApp.rbacMenu.menuHostSlaveFlag">Menu Host Slave Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stopFlag"><span jhiTranslate="fccApp.rbacMenu.stopFlag">Stop Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delFlag"><span jhiTranslate="fccApp.rbacMenu.delFlag">Del Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insProgarmCd"><span jhiTranslate="fccApp.rbacMenu.insProgarmCd">Ins Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insOperCd"><span jhiTranslate="fccApp.rbacMenu.insOperCd">Ins Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insDateTime"><span jhiTranslate="fccApp.rbacMenu.insDateTime">Ins Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updProgarmCd"><span jhiTranslate="fccApp.rbacMenu.updProgarmCd">Upd Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updOperCd"><span jhiTranslate="fccApp.rbacMenu.updOperCd">Upd Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updDateTime"><span jhiTranslate="fccApp.rbacMenu.updDateTime">Upd Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delProgarmCd"><span jhiTranslate="fccApp.rbacMenu.delProgarmCd">Del Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delOperCd"><span jhiTranslate="fccApp.rbacMenu.delOperCd">Del Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delDateTime"><span jhiTranslate="fccApp.rbacMenu.delDateTime">Del Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="triggerDateTime"><span jhiTranslate="fccApp.rbacMenu.triggerDateTime">Trigger Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rbacMenu of rbacMenus ;trackBy: trackId">
+                <td><a [routerLink]="['/rbac-menu', rbacMenu.id, 'view' ]">{{rbacMenu.id}}</a></td>
+                <td>{{rbacMenu.appId}}</td>
+                <td>{{rbacMenu.storeId}}</td>
+                <td>{{rbacMenu.pMenuId}}</td>
+                <td>{{rbacMenu.menuCode}}</td>
+                <td>{{rbacMenu.menuName}}</td>
+                <td>{{rbacMenu.menuUrl}}</td>
+                <td>{{rbacMenu.menuIcon}}</td>
+                <td>{{rbacMenu.menuLable}}</td>
+                <td>{{rbacMenu.menuMobileFlag}}</td>
+                <td>{{rbacMenu.menuHostSlaveFlag}}</td>
+                <td>{{rbacMenu.stopFlag}}</td>
+                <td>{{rbacMenu.delFlag}}</td>
+                <td>{{rbacMenu.insProgarmCd}}</td>
+                <td>{{rbacMenu.insOperCd}}</td>
+                <td>{{rbacMenu.insDateTime | date:'medium'}}</td>
+                <td>{{rbacMenu.updProgarmCd}}</td>
+                <td>{{rbacMenu.updOperCd}}</td>
+                <td>{{rbacMenu.updDateTime | date:'medium'}}</td>
+                <td>{{rbacMenu.delProgarmCd}}</td>
+                <td>{{rbacMenu.delOperCd}}</td>
+                <td>{{rbacMenu.delDateTime | date:'medium'}}</td>
+                <td>{{rbacMenu.triggerDateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rbac-menu', rbacMenu.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rbac-menu', rbacMenu.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rbac-menu/'+ rbacMenu.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="rbacMenus && rbacMenus.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div *ngIf="qmsUnit">
+    <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class" jhiTranslate="fccApp.qmsVehicleTypeClass.home.childTitle"></h2>
+    <div class="lookBtn">
+        <button type="submit" (click)="previousState()" class="btn btn-info float-right search_button_darkblue search_button">
+            <span jhiTranslate="fccApp.qmsVehicleTypeClass.home.back">返回</span>
+        </button>
+
+    </div>
+    <!-- 左侧文字的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+            <span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">车型分类编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClassName">车型分类名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span jhiTranslate="fccApp.qmsVehicleTypeClass.remark"></span>
+        </div>
+        
+    </div>
+    <!-- 左侧输入框的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:30px;">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsUnit.unitCd [disabled]=qmsUnit.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsUnit.unitName [disabled]=qmsUnit.id />
+        </div>
+        <div class="lookLeftDiv">
+            <textarea class="form-control" [(ngModel)]=qmsUnit.remark style="width: 500px;margin-left: 120px;height: 210px;" [disabled]=qmsUnit.id></textarea>
+        </div>
+    </div>
+</div>

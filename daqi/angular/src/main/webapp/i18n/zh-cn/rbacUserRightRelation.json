@@ -1,0 +1,36 @@
+{
+    "fccApp": {
+        "rbacUserRightRelation": {
+            "home": {
+                "title": "Rbac User Right Relations",
+                "createLabel": "创建新 Rbac User Right Relation",
+                "createOrEditLabel": "创建或编辑 Rbac User Right Relation"
+            },
+            "created": "Rbac User Right Relation {{ param }} 创建成功",
+            "updated": "Rbac User Right Relation {{ param }} 更新成功",
+            "deleted": "Rbac User Right Relation {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Rbac User Right Relation {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Rbac User Right Relation"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "roleId": "Role Id",
+            "userId": "User Id",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

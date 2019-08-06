@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "papiToken": {
+            "home": {
+                "title": "Papi Tokens",
+                "createLabel": "创建新 Papi Token",
+                "createOrEditLabel": "创建或编辑 Papi Token"
+            },
+            "created": "Papi Token {{ param }} 创建成功",
+            "updated": "Papi Token {{ param }} 更新成功",
+            "deleted": "Papi Token {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Papi Token {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Papi Token"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "apiCode": "Api Code",
+            "apiPassword": "Api Password",
+            "apiToken": "Api Token",
+            "apiCount": "Api Count",
+            "apiDate": "Api Date",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

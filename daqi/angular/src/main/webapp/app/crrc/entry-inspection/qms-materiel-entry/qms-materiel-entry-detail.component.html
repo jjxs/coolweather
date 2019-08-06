@@ -1,0 +1,269 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">采购到货信息维护</h2>
+
+        <div class="creatOreditCssButton">
+
+
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>物料编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>原始批号/编号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>铸号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>规格型号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>图号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>采购单号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>制造年月</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>制造厂代号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>进场日期</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>到货类型</span>
+            </div>
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 物料编码 -->
+            <div style="margin-top:50px;margin-left:20px;">
+                <input type="text" class="form-control" name="name1" id="materielCd"
+                    style="width: 300px;margin-left: 120px;margin-right: 30px;" pInputText [(ngModel)]="materielCd"
+                    maxlength="10" required (blur)="searchMateriel()" disabled />
+            </div>
+            <!-- 供应商编码 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name2" id="materielName"
+                    style="width: 300px;margin-left: 120px;margin-right: 30px;" disabled pInputText
+                    [(ngModel)]="supplierCd" maxlength="100" disabled />
+            </div>
+            <!-- 原始批号/编号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name3" id="supplierCd"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="batchNumber" maxlength="100"
+                    (blur)="searchSupplier()" disabled/>
+            </div>
+            <!-- 铸号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name4" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="castingNum" maxlength="50" disabled/>
+            </div>
+            <!-- 规格型号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name5" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="specificationType"
+                    maxlength="100" disabled/>
+            </div>
+            <!-- 图号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name6" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="figureNumber" maxlength="100" disabled/>
+            </div>
+            <!-- 采购单号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name7" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="purchaseOrderNumber"
+                    maxlength="100" disabled/>
+            </div>
+            <!-- 制造年月 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name8" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="madeYmd" maxlength="100" disabled/>
+            </div>
+            <!-- 制造厂代号 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="name9" id="supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="madeFactoryCd" maxlength="100" disabled/>
+            </div>
+            <!-- 进场日期 -->
+            <div class="lookLeftDiv">
+                <p-calendar [(ngModel)]="entryDate"
+                    [style]="{'margin-left': '120px','border-color': '#ced4da'}" [ngModelOptions]="{standalone: true}"
+                    [inputStyle]="{'background-color': '#e9ecef', 'width': '268px','border-color': '#ced4da', 'color': '#495057', 'opacity': '1'}" dateFormat="yy-mm-dd" [showIcon]="true" disabled>
+                </p-calendar>
+            </div>
+            <!-- 到货类型 -->
+            <div class="lookLeftDiv" style="margin-top: 54.6px">
+                <p-radioButton [style]="{'margin-left': '8.5em'}" name="group1" value="0" label="单件"
+                    [(ngModel)]="entryType" inputId="opt1" disabled></p-radioButton>
+                <p-radioButton [style]="{'margin-left': '8.5em'}" name="group1" value="1" label="批次"
+                    [(ngModel)]="entryType" inputId="opt1" disabled></p-radioButton>
+            </div>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="display: inline-block;">
+            <div>
+                <div style="float: left;">
+                    <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                        <span>物料名称</span>
+                    </div>
+                    <div class="lookleftSpan">
+                        <span>供应商名称</span>
+                    </div>
+                    <div class="lookleftSpan">
+                        <span>材质</span>
+                    </div>
+                    <div class="lookleftSpan">
+                        <span>包装数量</span>
+                    </div>
+                    <div class="lookleftSpan">
+                        <span>到货数量</span>
+                    </div>
+                </div>
+                <!-- 左侧文字的div -->
+                <div style="float: left;">
+                    <!-- 物料名称 -->
+                    <div class="lookLeftDiv">
+                        <input type="text" class="form-control" name="name11" id="supplierName"
+                            style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="materielName"
+                            maxlength="100" disabled />
+                    </div>
+                    <!-- 供应商名称 -->
+                    <div class="lookLeftDiv">
+                        <input type="text" class="form-control" name="name12" id="supplierName"
+                            style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="supplierName"
+                            maxlength="100" disabled />
+                    </div>
+                    <!-- 材质 -->
+                    <div class="lookLeftDiv">
+                        <input type="text" class="form-control" name="name13" id="supplierName"
+                            style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="texTure" maxlength="50" disabled/>
+                    </div>
+                    <!-- 包装数量 -->
+                    <div class="lookLeftDiv">
+                        <input type="text" class="form-control" name="name14" id="supplierName"
+                            style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="packingQuantity"
+                            maxlength="100" disabled/>
+                    </div>
+                    <!-- 到货数量 -->
+                    <div class="lookLeftDiv">
+                        <input type="text" class="form-control" name="name15" id="supplierName"
+                            style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="entryQuantity"
+                            maxlength="100" disabled />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form name="enclosure" class="float-right" style="width: 32.9%;margin-right:24.1em;margin-top:33px;" role="form"
+        novalidate (ngSubmit)="save()" #editForm="ngForm">
+        <div style="height: 5em;">
+        </div>
+        <p-table [value]="enclosures" [scrollable]="true" scrollHeight="370px">
+            <ng-template pTemplate="body" let-enclosure let-i='rowIndex'>
+                <tr>
+                    <td class="common_tdStyle" style="width: 10% !important">
+                        {{i+1}}
+                    </td>
+                    <td class="common_tdStyle" style="width: 90% !important">
+                        <a title="click to view"
+                            (click)="viewFile(enclosures[i].enclosureAddress, i)">{{(enclosures[i].enclosureAddress !== undefined&& enclosures[i].enclosureAddress !== null)? enclosures[i].enclosureAddress.substr(enclosures[i].enclosureAddress.lastIndexOf('/') + 1) : ''}}</a>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </form>
+    <div class="button_div">
+        <button type="button" id="cancel-save" class="btn btn-secondary float-left search_button_darkblue search_button"
+            (click)="previousState()">
+            <span>取消</span>
+        </button>
+    </div>
+    <form name="enclosure" class="float-right" style="width: 74.7em;margin-right: 24.1em;margin-top: 1em;" role="form"
+        novalidate (ngSubmit)="save()" #editForm="ngForm">
+        <p-table>
+            <ng-template pTemplate="header">
+                <tr class="common_trStyle">
+                    <!-- 序号 -->
+                    <th class="common_thStyle" style="width: 10% !important;padding-right: 0;padding-left: 0;">
+                        <span>序号</span>
+                    </th>
+                    <!-- 单件号/批号 -->
+                    <th class="common_thStyle" style="width: 45% !important;padding-right: 0;padding-left: 0;">
+                        <span *ngIf="entryType === '0'">单件号</span>
+                        <span *ngIf="entryType === '1'">批号</span>
+                    </th>
+                    <!-- 数量 -->
+                    <th class="common_thStyle" style="width: 45% !important;padding-right: 0;padding-left: 0;">
+                        <span>数量</span>
+                    </th>
+                </tr>
+            </ng-template>
+        </p-table>
+        <p-table [value]="qmsMaterielDetails" [loading]="loading" [scrollable]="true" scrollHeight="292px">
+            <ng-template pTemplate="body" let-qmsMaterielDetail let-i='rowIndex'>
+                <tr style="line-height: 40px;">
+                    <!-- 附件 -->
+                    <td class="common_tdStyle text-center" style="width: 10% !important">
+                        <p>{{i+1}}</p>
+                    </td>
+                    <!-- 单件号/批号 -->
+                    <td *ngIf="flag !== '2' && diff !== '1'" class="common_tdStyle text-left"
+                        style="width: 45% !important">
+                        <p>{{qmsMaterielDetail.goodsCd}}</p>
+                    </td>
+                    <td *ngIf="flag === '2' || diff === '1'" class="common_tdStyle text-left"
+                        style="width: 45% !important" pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText name="goodsCd" type="text"
+                                    style="font-size: 23px;font-weight: bold; width: 98%; float: left; margin: 0.49em 0.2em"
+                                    [(ngModel)]="qmsMaterielDetail.goodsCd" maxlength="200">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{qmsMaterielDetail.goodsCd}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <!-- 数量 -->
+                    <td *ngIf="flag !== '2' && diff !== '1'" class="common_tdStyle text-left"
+                        style="width: 45% !important">
+                        <p>{{qmsMaterielDetail.goodsQuantity}}</p>
+                    </td>
+                    <td *ngIf="flag === '2' || diff === '1'" class="common_tdStyle text-left"
+                        style="width: 45% !important" pEditableColumn>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText name="goodsQuantity" type="text"
+                                    style="font-size: 23px;font-weight: bold; width: 98%; float: left; margin: 0.49em 0.2em"
+                                    [(ngModel)]="qmsMaterielDetail.goodsQuantity" maxlength="200"
+                                    (blur)="countCheck(qmsMaterielDetail, i)">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{qmsMaterielDetail.goodsQuantity}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                </tr>
+            </ng-template>
+    </form>
+    <div class="file-modal" id="file-modal" [hidden]="!showModal">
+        <div class="preview">
+            <i class="pi pi-times close" (click)="closePreview()"></i>
+            <h3 class="previewTitle" id="previewTitle">title</h3>
+            <div class="previewContent" id="previewContent"></div>
+        </div>
+    </div>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

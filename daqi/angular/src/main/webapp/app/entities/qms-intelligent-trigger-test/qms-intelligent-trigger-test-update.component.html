@@ -1,0 +1,225 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-intelligent-trigger-test-heading" jhiTranslate="fccApp.qmsIntelligentTriggerTest.home.createOrEditLabel">Create or edit a Qms Intelligent Trigger Test</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qmsIntelligentTriggerTest.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qmsIntelligentTriggerTest.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.num" for="field_num">Num</label>
+                    <input type="text" class="form-control" name="num" id="field_num"
+                        [(ngModel)]="qmsIntelligentTriggerTest.num" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.num?.dirty && editForm.controls.num?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.num?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeLeft" for="field_sideframeLeft">Sideframe Left</label>
+                    <input type="text" class="form-control" name="sideframeLeft" id="field_sideframeLeft"
+                        [(ngModel)]="qmsIntelligentTriggerTest.sideframeLeft" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sideframeLeft?.dirty && editForm.controls.sideframeLeft?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sideframeLeft?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue1" for="field_leftValue1">Left Value 1</label>
+                    <input type="text" class="form-control" name="leftValue1" id="field_leftValue1"
+                        [(ngModel)]="qmsIntelligentTriggerTest.leftValue1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.leftValue1?.dirty && editForm.controls.leftValue1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.leftValue1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue2" for="field_leftValue2">Left Value 2</label>
+                    <input type="text" class="form-control" name="leftValue2" id="field_leftValue2"
+                        [(ngModel)]="qmsIntelligentTriggerTest.leftValue2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.leftValue2?.dirty && editForm.controls.leftValue2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.leftValue2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeRight" for="field_sideframeRight">Sideframe Right</label>
+                    <input type="text" class="form-control" name="sideframeRight" id="field_sideframeRight"
+                        [(ngModel)]="qmsIntelligentTriggerTest.sideframeRight" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sideframeRight?.dirty && editForm.controls.sideframeRight?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sideframeRight?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue1" for="field_rightValue1">Right Value 1</label>
+                    <input type="text" class="form-control" name="rightValue1" id="field_rightValue1"
+                        [(ngModel)]="qmsIntelligentTriggerTest.rightValue1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.rightValue1?.dirty && editForm.controls.rightValue1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rightValue1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue2" for="field_rightValue2">Right Value 2</label>
+                    <input type="text" class="form-control" name="rightValue2" id="field_rightValue2"
+                        [(ngModel)]="qmsIntelligentTriggerTest.rightValue2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.rightValue2?.dirty && editForm.controls.rightValue2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rightValue2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftUser" for="field_leftUser">Left User</label>
+                    <input type="text" class="form-control" name="leftUser" id="field_leftUser"
+                        [(ngModel)]="qmsIntelligentTriggerTest.leftUser" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.leftUser?.dirty && editForm.controls.leftUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.leftUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightUser" for="field_rightUser">Right User</label>
+                    <input type="text" class="form-control" name="rightUser" id="field_rightUser"
+                        [(ngModel)]="qmsIntelligentTriggerTest.rightUser" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.rightUser?.dirty && editForm.controls.rightUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rightUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.flagStatus" for="field_flagStatus">Flag Status</label>
+                    <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                        [(ngModel)]="qmsIntelligentTriggerTest.flagStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagStatus?.dirty && editForm.controls.flagStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.compPkid" for="field_compPkid">Comp Pkid</label>
+                    <input type="text" class="form-control" name="compPkid" id="field_compPkid"
+                        [(ngModel)]="qmsIntelligentTriggerTest.compPkid" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.compPkid?.dirty && editForm.controls.compPkid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.compPkid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                        [(ngModel)]="qmsIntelligentTriggerTest.remark" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveFirst" for="field_reserveFirst">Reserve First</label>
+                    <input type="text" class="form-control" name="reserveFirst" id="field_reserveFirst"
+                        [(ngModel)]="qmsIntelligentTriggerTest.reserveFirst" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveFirst?.dirty && editForm.controls.reserveFirst?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveFirst?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveSecond" for="field_reserveSecond">Reserve Second</label>
+                    <input type="text" class="form-control" name="reserveSecond" id="field_reserveSecond"
+                        [(ngModel)]="qmsIntelligentTriggerTest.reserveSecond" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveSecond?.dirty && editForm.controls.reserveSecond?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveSecond?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveThird" for="field_reserveThird">Reserve Third</label>
+                    <input type="text" class="form-control" name="reserveThird" id="field_reserveThird"
+                        [(ngModel)]="qmsIntelligentTriggerTest.reserveThird" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveThird?.dirty && editForm.controls.reserveThird?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveThird?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeUser" for="field_makeUser">Make User</label>
+                    <input type="text" class="form-control" name="makeUser" id="field_makeUser"
+                        [(ngModel)]="qmsIntelligentTriggerTest.makeUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.makeUser?.dirty && editForm.controls.makeUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.makeUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeTime" for="field_makeTime">Make Time</label>
+                    <div class="d-flex">
+                        <input id="field_makeTime" type="datetime-local" class="form-control" name="makeTime" [(ngModel)]="makeTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyUser" for="field_modifyUser">Modify User</label>
+                    <input type="text" class="form-control" name="modifyUser" id="field_modifyUser"
+                        [(ngModel)]="qmsIntelligentTriggerTest.modifyUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.modifyUser?.dirty && editForm.controls.modifyUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifyUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

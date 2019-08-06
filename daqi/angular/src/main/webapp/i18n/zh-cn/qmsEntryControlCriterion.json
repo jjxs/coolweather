@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "qmsEntryControlCriterion": {
+            "home": {
+                "title": "Qms Entry Control Criteria",
+                "createLabel": "创建新 Qms Entry Control Criterion",
+                "createOrEditLabel": "创建或编辑 Qms Entry Control Criterion"
+            },
+            "created": "Qms Entry Control Criterion {{ param }} 创建成功",
+            "updated": "Qms Entry Control Criterion {{ param }} 更新成功",
+            "deleted": "Qms Entry Control Criterion {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Entry Control Criterion {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Entry Control Criterion"
+            },
+            "materielId": "Materiel Id",
+            "inspectionItem": "Inspection Item",
+            "technicalRequirement": "Technical Requirement",
+            "inspectionInstrument": "Inspection Instrument",
+            "standard": "Standard",
+            "upperDeviation": "Upper Deviation",
+            "lowerDeviation": "Lower Deviation",
+            "itemNumber": "Item Number",
+            "inspectionResultDiff": "Inspection Result Diff",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

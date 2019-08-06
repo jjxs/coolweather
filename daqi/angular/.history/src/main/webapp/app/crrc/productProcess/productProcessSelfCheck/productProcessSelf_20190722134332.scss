@@ -1,0 +1,240 @@
+/* 搜索框样式 作者：DL0733*/
+.search_styleOne{
+  width:35%;
+  float:left;
+  padding-top:3px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+.search_styleTwo{
+  width:60%;
+  float:left;
+}
+.common_inputK{
+  width: 196px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.common_div-head{
+  float: left;
+  height:32px;
+  width: 30%;
+  margin-right: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
+  font-weight:bold;
+  text-align: center;
+  align-items: center;
+}
+/* 检索部按钮样式*/
+
+.search_button_blue{
+  color: white;
+  background-color: #1d75b3;
+  border: 1px solid #1d75b3;
+  border-radius: 5px;
+}
+.search_button_darkblue{
+  color: white;
+  background-color: #465f8c;
+  border: 1px solid #465f8c;
+  border-radius: 5px;
+}
+.search_button_red{
+  color: white;
+  background-color: #d81518;
+  border: 1px solid #d81518;
+  border-radius: 5px;
+}
+.check_button {
+  width: 180px;
+  font-size:18px;
+  margin-right:5px;
+  height: 47px;
+}
+
+/* 表格td、tr样式 */
+.common_trStyle{
+ 
+background: url(../../../../content/images/bg1.jpg) no-repeat;
+background-size: 100% 100%;
+width: 100%
+} 
+// th{
+//   border: none !important;
+//   border-collapse:collapse !important;
+  
+// }
+.common_thStyle{
+  padding: 0.2em;
+  color: white !important;
+  // width: 20% !important;
+  // height: 60px !important;
+  text-align: center;
+  // float: left;
+  font-size: 23px;
+  font-weight: bold;
+  // width:125px;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+   background-color: transparent !important;
+   border: none !important;
+}
+.common_tdStyle{
+  padding: 0.2em;
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  // float: left;
+  // width: 20% !important;
+  // height:73px !important;
+  // align-items: center;
+  // display: flex;
+  border-color: #65afd0 !important;
+  border-width: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap;
+  p {
+    overflow: hidden !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: inherit;
+  }
+}
+/* tr 隔行换色*/
+
+/*设置偶数数行颜色*/
+tr:nth-child(even)
+{
+background-color: #e1f1f3 !important;
+}
+
+/* 表格序号大小设定*/
+.serial_number{
+  width:30px !important;
+}
+/* 页面字段隐藏不显示*/
+.page_hidden{
+  display: none;
+}
+
+/* 新增和编辑页面显示宽度*/
+.creatOreditCss{
+  width: 45%;
+  float: left;
+  padding: 0 2%
+}
+.creatOreditCssButton{
+  width: 20%;
+  float: left;
+}
+.bodyLeft{
+  width: 80%;
+  float: left;
+}
+.creatOreditCssButton{
+  /* width: 10%; */
+  float: right;
+}
+/* 页面文字和文本输入样式*/
+.div_left{
+  width: 30%;
+  float: left;
+  padding: 2% 2%;
+  margin:30px 0 0 0px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.div_right{
+  width: 45%;
+  float: left;
+  padding: 2% 2%;
+  font-weight: bold;
+  margin:30px 0 0 0px;
+  font-size: 18px;
+}
+/* 标题信息样式*/
+.title_class{
+  font-size: 23px;
+  font-weight: bold;
+  color: #13245c;
+}
+/* 操作按钮样式 作者：DL0733*/
+.Acolor_See{
+  width: 30%;
+  color: white;
+  background-color: #1d75b3;
+  border: 1px solid #1d75b3;
+  border-radius: 5px;
+}
+.Acolor_Edit{
+  width: 30%;
+  color: white;
+  background-color: #ED7011;
+  border: 1px solid #ED7011;
+  border-radius: 5px;
+}
+.Acolor_Delete{
+  width: 30%;
+  color: white;
+  background-color: #D81518;
+  border: 1px solid #D81518;
+  border-radius: 5px;
+}
+
+.common_tdStyle p{
+  overflow: hidden !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: inherit;
+  
+}
+.search_button{
+  font-size:18px;
+  margin-right:5px;
+  width: 85px;
+  height: 47px;
+}
+
+
+// 供应商维护画面的css
+.lookTilte{
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 30px;
+}
+
+.lookBtn{
+  float: right;
+}
+.lookleftSpan{
+  margin-top: 54.6px;
+  margin-left: 45px;
+  font-size: 18px;
+  font-weight: bold
+}
+
+.lookLeftDiv{
+  margin-top: 43px;
+  margin-left: 30px;
+}
+.lookrightSpan{
+  margin-top: 54.6px;
+  margin-left: 150px;
+  font-size: 18px;
+  font-weight: bold
+}
+.lookRightDiv{
+  margin-top: 43px;
+}
+/* 选择图标样式*/
+.selsectIonc{
+  width: 25%;
+  float:left;
+  padding: 2% 2%; 
+  font-weight: bold; 
+  margin: 33px 0 0 0px;
+}

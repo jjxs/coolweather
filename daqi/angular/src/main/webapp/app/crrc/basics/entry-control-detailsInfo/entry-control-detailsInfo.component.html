@@ -1,0 +1,156 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div style="  display: block; width: 100%;height: 150px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+        <span jhiTranslate="fccApp.qmsEntryControlDetails.home.title">Entry Control DetailsInfo</span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.materielId">物料编码:</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="materielCdVague" />
+            </div>
+
+        </div>
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.materielName">物料名称:</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="materielNameVague" />
+            </div>
+        </div>
+
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.inspectionItem">检查项目:</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="inspectionItemVague" />
+            </div>
+        </div>
+
+    </div>
+    <div style="height: 58px;margin-top: 8px;">
+        <input hidden id="file" type="file" (change)="upload($event)" accept=".xls" />
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue" replaceUrl="true"
+            (click)="ImportCSV()">
+            <span jhiTranslate="fccApp.qmsEntryControlDetails.home.importInfo">
+                导入
+            </span>
+        </button>
+        <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+            [routerLink]="['/entry-control-detailsInfo/new']">
+            <span jhiTranslate="fccApp.qmsEntryControlDetails.home.createLabel">
+                添加
+            </span>
+        </button>
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+            (click)="emptyInfo()">
+            <span jhiTranslate="fccApp.qmsEntryControlDetails.home.empty">
+                清空
+            </span>
+        </button>
+        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            (click)="loadAll()">
+            <span jhiTranslate="fccApp.qmsEntryControlDetails.home.query">
+                查询
+            </span>
+        </button>
+
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+</div>
+<p-table [value]="qmsEntryControlDetails" [paginator]="true" [rows]="itemsPerPage" [lazy]="true"
+    [totalRecords]="queryCount" [resizableColumns]="true" [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+
+    <ng-template pTemplate="header">
+        <tr class="common_trStyle">
+            <th class="common_thStyle" style="width: 7.5% !important ">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.serialNumber">序号</span>
+
+            </th>
+            <th class="common_thStyle">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.materielId">物料编码</span>
+            </th>
+
+            <th class="common_thStyle">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.materielName">物料名称</span>
+            </th>
+
+            <th class="common_thStyle">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.inspectionItem">检查项目</span>
+            </th>
+
+            <th class="common_thStyle">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.technicalRequirement">技术要求</span>
+            </th>
+            <th class="common_thStyle" style="width: 10% !important">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.standard">标准值</span>
+            </th>
+            <th class="common_thStyle">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.remark">备注</span>
+            </th>
+
+            <th class="common_thStyle" style="width: 20% !important">
+                <span jhiTranslate="fccApp.qmsEntryControlDetails.operation">操作</span>
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+        <tr>
+            <td class="common_tdStyle" style="justify-content: center;width: 7.5% !important ">{{i+1}}</td>
+            <td class="common_tdStyle text-left">
+                <p>{{rowData.materielId}}</p>
+            </td>
+            <td class="common_tdStyle text-left">
+                <p>{{rowData.materielName}}</p>
+            </td>
+            <td class="common_tdStyle text-left">
+                <p>{{rowData.inspectionItem}}</p>
+            </td>
+            <td class="common_tdStyle text-left">
+                <p>{{rowData.technicalRequirement}}</p>
+            </td>
+            <td class="common_tdStyle text-left" style="width: 10% !important">
+                <p>{{rowData.standard}}</p>
+            </td>
+            <td class="common_tdStyle text-left">
+                <p>{{rowData.remark}}</p>
+            </td>
+            <td class="common_tdStyle" style="width: 20% !important">
+                <button id="jh-create-entity" replaceUrl="true"
+                    class="btn btn-primary float-left search_button Acolor_See"
+                    [routerLink]="['/entry-control-detailsInfo', rowData.id, 'view' ]">
+                    <span jhiTranslate="entity.action.view">
+                        查看
+                    </span>
+                </button>
+                <button id="jh-create-entity" replaceUrl="true"
+                    class="btn btn-primary float-center search_button Acolor_Edit"
+                    [routerLink]="['/entry-control-detailsInfo', rowData.id, 'edit']">
+                    <span jhiTranslate="entity.action.edit">
+                        编辑
+                    </span>
+                </button>
+
+                <button id="jh-create-entity" class="btn btn-primary float-right search_button Acolor_Delete"
+                    (click)="delete(rowData.id)">
+                    <span jhiTranslate="entity.action.delete">
+                        删除
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

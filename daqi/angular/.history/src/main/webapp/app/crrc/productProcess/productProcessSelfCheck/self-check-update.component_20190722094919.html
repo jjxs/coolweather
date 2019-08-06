@@ -1,0 +1,97 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div>
+    <div>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+            <div style="width: 80%;float: left;">
+
+                <div class="creatOreditCss">
+                    <!-- 编号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.serialNumber"
+                                >编号</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="serialNumber"
+                                [disabled]=true [(ngModel)]="qmsProductionInspection.serialNumber"
+                                 />
+                        </div>
+                    </div>
+                    <!-- 中梁号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true class="form-control" name="workno" style="width: 100%;margin-left: 0px;" pInputText
+                             [(ngModel)]="qmsProductionInspection.workno" />
+                        </div>
+                    </div>
+                    <!-- 工序名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.processName"
+                                >工序名称</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="processName"
+                                disabled=true [(ngModel)]="qmsProductionInspection.processName" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="creatOreditCss">
+                    <!-- 物料编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.materialCd"
+                                >物料编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="materialCd"
+                            disabled=true [(ngModel)]="qmsProductionInspection.materielCd" />
+                        </div>
+                    </div>
+
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称:</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true name="materialName" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                             [(ngModel)]="qmsProductionInspection.materielName" />
+                        </div>
+                    </div>
+
+                    <!-- 检验状态 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsProductionInspection.isOK"
+                                >检验状态</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="isOK" [(ngModel)]="isOkName" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="creatOreditCssButton">
+                <button type="button" id="cancel-save"
+                    class="btn btn-secondary float-right search_button_darkblue search_button"
+                    (click)="previousState()">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                    class="btn btn-primary float-right search_button_blue search_button">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+            
+
+        </form>
+    </div>
+</div>

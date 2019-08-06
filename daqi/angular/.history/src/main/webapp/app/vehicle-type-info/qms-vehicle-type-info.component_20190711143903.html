@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsVehicleTypeInfo.home.title">Qms Vehicle Type Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info" [routerLink]="['/qms-vehicle-type-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsVehicleTypeInfo.home.createLabel">
+            Create new Qms Vehicle Type Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsVehicleTypeInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleClassId"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleClassId">Vehicle Class Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleType"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleType">Vehicle Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleTypeName"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleTypeName">Vehicle Type Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsVehicleTypeInfo.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsVehicleTypeInfo of qmsVehicleTypeInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-vehicle-type-info', qmsVehicleTypeInfo.id, 'view' ]">{{qmsVehicleTypeInfo.id}}</a></td>
+                <td>{{qmsVehicleTypeInfo.vehicleClassId}}</td>
+                <td>{{qmsVehicleTypeInfo.vehicleType}}</td>
+                <td>{{qmsVehicleTypeInfo.vehicleTypeName}}</td>
+                <td>{{qmsVehicleTypeInfo.remark}}</td>
+                <td>{{qmsVehicleTypeInfo.flagStatus}}</td>
+                <td>{{qmsVehicleTypeInfo.compPkid}}</td>
+                <td>{{qmsVehicleTypeInfo.reserveFirst}}</td>
+                <td>{{qmsVehicleTypeInfo.reserveSecond}}</td>
+                <td>{{qmsVehicleTypeInfo.reserveThird}}</td>
+                <td>{{qmsVehicleTypeInfo.makeUser}}</td>
+                <td>{{qmsVehicleTypeInfo.makeTime | date:'medium'}}</td>
+                <td>{{qmsVehicleTypeInfo.modifyUser}}</td>
+                <td>{{qmsVehicleTypeInfo.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/vehicle-type-info/qms-vehicle-type-info', qmsVehicleTypeInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/vehicle-type-info/qms-vehicle-type-info', qmsVehicleTypeInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-vehicle-type-info/'+ qmsVehicleTypeInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsVehicleTypeInfos && qmsVehicleTypeInfos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

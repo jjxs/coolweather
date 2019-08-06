@@ -1,0 +1,83 @@
+{
+    "name": "AuthElement",
+    "fields": [
+        {
+            "fieldName": "appId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "elementCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isDis",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stopFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "delFlage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "insProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "delProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "triggerDateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190202075301",
+    "entityTableName": "auth_element",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

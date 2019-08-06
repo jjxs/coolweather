@@ -1,0 +1,36 @@
+
+<div *ngIf="rbacUser">
+    <h2><span class="cnc-user-detail-title" jhiTranslate="rbacUser.detail.title"></span>:{{rbacUser.userName}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="cnc-user-detail-body">
+        <div class="cnc-user-detail-row">
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.storeName" [ngbTooltip]="'rbacUser.help.storeName' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacUser.storeId}}</span></div>
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.roleName" [ngbTooltip]="'rbacUser.help.roleName' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{roleName}}</span></div>
+        </div>
+        <div class="cnc-user-detail-row">
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userCode" [ngbTooltip]="'rbacUser.help.userCode' | translate">userCode</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userCode}}</span></div>
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userName" [ngbTooltip]="'rbacUser.help.userName' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userName}}</span></div>
+        </div>
+        <div class="cnc-user-detail-row">
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userMobile" [ngbTooltip]="'rbacUser.help.userMobile' | translate">userCode</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userMobile}}</span></div>
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userMail" [ngbTooltip]="'rbacUser.help.userMail' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userMail}}</span></div>
+        </div>
+        <div class="cnc-user-detail-row">
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userLastLoginTime" [ngbTooltip]="'rbacUser.help.userLastLoginTime' | translate">userCode</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userLastLoginTime| date:'yyyy-MM-dd HH:mm:ss'}}</span></div>
+            <div class="col-md-2"><span jhiTranslate="rbacUser.help.userLoginCount" [ngbTooltip]="'rbacUser.help.userLoginCount' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacUser.userLoginCount}}</span></div>
+        </div>
+    </dl>
+    <button pButton class="ui-button-secondary" (click)="previousState()" type="submit" icon="fa fa-arrow-left" iconPos="left"
+    label="{{'entity.action.back'| translate}}"></button>
+    <button pButton queryParamsHandling="merge" [routerLink]="['/rbac-user', rbacUser.id, 'edit']" icon="fa fa-pencil"
+    iconPos="left" label="{{'entity.action.edit'| translate}}" *ngIf="!(rbacUser.id === 1)" [hidden]="updateFlag"></button>
+</div>

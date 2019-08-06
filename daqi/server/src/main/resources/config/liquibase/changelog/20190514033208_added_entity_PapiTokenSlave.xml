@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity PapiTokenSlave.
+    -->
+    <changeSet id="20190514033208-1" author="jhipster">
+        <createTable tableName="papi_token_slave">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="app_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="store_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dis_type" type="varchar(3)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="api_code" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="api_password" type="varchar(64)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="api_token" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="memo_info" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="stop_flag" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="del_flag" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ins_progarm_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ins_oper_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ins_date_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upd_progarm_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upd_oper_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="upd_date_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="del_progarm_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="del_oper_cd" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="del_date_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="trigger_date_time" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="papi_token_slave" columnName="ins_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="papi_token_slave" columnName="upd_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="papi_token_slave" columnName="del_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="papi_token_slave" columnName="trigger_date_time" columnDataType="datetime"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/initdata/papi/token_slave.csv"
+                  separator=","
+                  tableName="papi_token_slave"/>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

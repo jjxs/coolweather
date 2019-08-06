@@ -1,0 +1,14 @@
+{
+    "qualityControlM": {
+        "title": "质量控制点维护",
+        "materielCd": "物料编码",
+        "materielName": "物料名称",
+        "TechnologyCd": "工艺编码",
+        "TechnologyName": "工艺名称",
+        "assemblyRelation": "装配关系",
+        "remark": "备注",
+        "save": "保存",
+        "close": "关闭",
+        "add": "追加一行"
+    }
+}

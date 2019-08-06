@@ -1,0 +1,94 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.hstServerInfoDetails.home.title">Hst Server Info Details</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-hst-server-info-details" [routerLink]="['/hst-server-info-details/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.hstServerInfoDetails.home.createLabel">
+            Create new Hst Server Info Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="hstServerInfoDetails">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.appId">App Id</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.storeId">Store Id</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.infoId">Info Id</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.hostName">Host Name</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.ipAddress">Ip Address</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.osUser">Os User</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.osName">Os Name</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.osVersion">Os Version</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.osArch">Os Arch</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.stopFlag">Stop Flag</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.delFlag">Del Flag</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.insProgarmCd">Ins Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.insOperCd">Ins Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.insDateTime">Ins Date Time</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.updProgarmCd">Upd Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.updOperCd">Upd Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.updDateTime">Upd Date Time</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.delProgarmCd">Del Progarm Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.delOperCd">Del Oper Cd</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.delDateTime">Del Date Time</span></th>
+            <th><span jhiTranslate="fccApp.hstServerInfoDetails.triggerDateTime">Trigger Date Time</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let hstServerInfoDetails of hstServerInfoDetails ;trackBy: trackId">
+                <td><a [routerLink]="['/hst-server-info-details', hstServerInfoDetails.id, 'view' ]">{{hstServerInfoDetails.id}}</a></td>
+                <td>{{hstServerInfoDetails.appId}}</td>
+                <td>{{hstServerInfoDetails.storeId}}</td>
+                <td>{{hstServerInfoDetails.infoId}}</td>
+                <td>{{hstServerInfoDetails.hostName}}</td>
+                <td>{{hstServerInfoDetails.ipAddress}}</td>
+                <td>{{hstServerInfoDetails.osUser}}</td>
+                <td>{{hstServerInfoDetails.osName}}</td>
+                <td>{{hstServerInfoDetails.osVersion}}</td>
+                <td>{{hstServerInfoDetails.osArch}}</td>
+                <td>{{hstServerInfoDetails.stopFlag}}</td>
+                <td>{{hstServerInfoDetails.delFlag}}</td>
+                <td>{{hstServerInfoDetails.insProgarmCd}}</td>
+                <td>{{hstServerInfoDetails.insOperCd}}</td>
+                <td>{{hstServerInfoDetails.insDateTime | date:'medium'}}</td>
+                <td>{{hstServerInfoDetails.updProgarmCd}}</td>
+                <td>{{hstServerInfoDetails.updOperCd}}</td>
+                <td>{{hstServerInfoDetails.updDateTime | date:'medium'}}</td>
+                <td>{{hstServerInfoDetails.delProgarmCd}}</td>
+                <td>{{hstServerInfoDetails.delOperCd}}</td>
+                <td>{{hstServerInfoDetails.delDateTime | date:'medium'}}</td>
+                <td>{{hstServerInfoDetails.triggerDateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/hst-server-info-details', hstServerInfoDetails.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/hst-server-info-details', hstServerInfoDetails.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'hst-server-info-details/'+ hstServerInfoDetails.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

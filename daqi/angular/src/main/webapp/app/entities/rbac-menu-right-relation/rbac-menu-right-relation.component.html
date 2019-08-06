@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.rbacMenuRightRelation.home.title">Rbac Menu Right Relations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rbac-menu-right-relation" [routerLink]="['/rbac-menu-right-relation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.rbacMenuRightRelation.home.createLabel">
+            Create new Rbac Menu Right Relation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="rbacMenuRightRelations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="appId"><span jhiTranslate="fccApp.rbacMenuRightRelation.appId">App Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="storeId"><span jhiTranslate="fccApp.rbacMenuRightRelation.storeId">Store Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="menuId"><span jhiTranslate="fccApp.rbacMenuRightRelation.menuId">Menu Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rightId"><span jhiTranslate="fccApp.rbacMenuRightRelation.rightId">Right Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stopFlag"><span jhiTranslate="fccApp.rbacMenuRightRelation.stopFlag">Stop Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delFlag"><span jhiTranslate="fccApp.rbacMenuRightRelation.delFlag">Del Flag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insProgarmCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.insProgarmCd">Ins Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insOperCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.insOperCd">Ins Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="insDateTime"><span jhiTranslate="fccApp.rbacMenuRightRelation.insDateTime">Ins Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updProgarmCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.updProgarmCd">Upd Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updOperCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.updOperCd">Upd Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updDateTime"><span jhiTranslate="fccApp.rbacMenuRightRelation.updDateTime">Upd Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delProgarmCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.delProgarmCd">Del Progarm Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delOperCd"><span jhiTranslate="fccApp.rbacMenuRightRelation.delOperCd">Del Oper Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="delDateTime"><span jhiTranslate="fccApp.rbacMenuRightRelation.delDateTime">Del Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="triggerDateTime"><span jhiTranslate="fccApp.rbacMenuRightRelation.triggerDateTime">Trigger Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rbacMenuRightRelation of rbacMenuRightRelations ;trackBy: trackId">
+                <td><a [routerLink]="['/rbac-menu-right-relation', rbacMenuRightRelation.id, 'view' ]">{{rbacMenuRightRelation.id}}</a></td>
+                <td>{{rbacMenuRightRelation.appId}}</td>
+                <td>{{rbacMenuRightRelation.storeId}}</td>
+                <td>{{rbacMenuRightRelation.menuId}}</td>
+                <td>{{rbacMenuRightRelation.rightId}}</td>
+                <td>{{rbacMenuRightRelation.stopFlag}}</td>
+                <td>{{rbacMenuRightRelation.delFlag}}</td>
+                <td>{{rbacMenuRightRelation.insProgarmCd}}</td>
+                <td>{{rbacMenuRightRelation.insOperCd}}</td>
+                <td>{{rbacMenuRightRelation.insDateTime | date:'medium'}}</td>
+                <td>{{rbacMenuRightRelation.updProgarmCd}}</td>
+                <td>{{rbacMenuRightRelation.updOperCd}}</td>
+                <td>{{rbacMenuRightRelation.updDateTime | date:'medium'}}</td>
+                <td>{{rbacMenuRightRelation.delProgarmCd}}</td>
+                <td>{{rbacMenuRightRelation.delOperCd}}</td>
+                <td>{{rbacMenuRightRelation.delDateTime | date:'medium'}}</td>
+                <td>{{rbacMenuRightRelation.triggerDateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rbac-menu-right-relation', rbacMenuRightRelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rbac-menu-right-relation', rbacMenuRightRelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rbac-menu-right-relation/'+ rbacMenuRightRelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="rbacMenuRightRelations && rbacMenuRightRelations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

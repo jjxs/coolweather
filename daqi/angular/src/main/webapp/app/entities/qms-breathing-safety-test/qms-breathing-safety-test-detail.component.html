@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsBreathingSafetyTest">
+            <h2><span jhiTranslate="fccApp.qmsBreathingSafetyTest.detail.title">Qms Breathing Safety Test</span> {{qmsBreathingSafetyTest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.mcgsTime">Mcgs Time</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.mcgsTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.mcgsTimems">Mcgs Timems</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.mcgsTimems}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.mcgsDate">Mcgs Date</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.mcgsDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.ctype">Ctype</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.ctype}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.safetyValve">Safety Valve</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.safetyValve}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.respiratoryPressure">Respiratory Pressure</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.respiratoryPressure}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.pinspl">Pinspl</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.pinspl}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.checkUser">Check User</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.checkUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.mfyl">Mfyl</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.mfyl}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.mfyc">Mfyc</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.mfyc}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBreathingSafetyTest.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsBreathingSafetyTest.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-breathing-safety-test', qmsBreathingSafetyTest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

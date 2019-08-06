@@ -1,0 +1,2 @@
+id,app_id,store_id,dis_type,api_code,api_password,api_token,memo_info,stop_flag,del_flag,ins_progarm_cd,ins_oper_cd,ins_date_time,upd_progarm_cd,upd_oper_cd,upd_date_time,del_progarm_cd,del_oper_cd,del_date_time,trigger_date_time
+1,null,null,00,001,522c00c68bce436d2694f5b3bef82b58,null,系统同步数据,0,0,InitData,System,2019/3/16 14:56:49,null,null,null,null,null,null,2019/3/16 14:56:49

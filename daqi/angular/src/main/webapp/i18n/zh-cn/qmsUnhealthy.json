@@ -1,0 +1,31 @@
+{
+    "fccApp": {
+        "qmsUnhealthy": {
+            "home": {
+                "title": "不良现象信息",
+                "createLabel": "创建新 Qms Unhealthy",
+                "createOrEditLabel": "创建或编辑 Qms Unhealthy"
+            },
+            "created": "Qms Unhealthy {{ param }} 创建成功",
+            "updated": "Qms Unhealthy {{ param }} 更新成功",
+            "deleted": "Qms Unhealthy {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Unhealthy {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Unhealthy"
+            },
+            "unhealthyCd": "现象编码",
+            "unhealthyName": "现象名称",
+            "isUse": "生效",
+            "parentCd": "上级现象",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "备注",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

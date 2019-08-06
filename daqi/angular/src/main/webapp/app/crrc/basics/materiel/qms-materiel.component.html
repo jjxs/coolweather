@@ -1,0 +1,208 @@
+<div style="  display: block; width: 100%;height: 140px;height: 205px;">
+
+  <h2 id="page-heading" class="text-left title_class">
+    <span>物料信息</span>
+  </h2>
+  <div style="height: 40px;margin-top:0.5%;">
+    <!-- 物料编码 -->
+    <div class="common_div-head">
+      <div class="search_styleOne">
+        <span>物料编码</span>
+      </div>
+      <div class="search_styleTwo">
+        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+          [(ngModel)]="bianMa" />
+      </div>
+    </div>
+    <!-- 物料名称 -->
+    <div class="common_div-head">
+      <div class="search_styleOne">
+        <span>物料名称</span>
+      </div>
+      <div class="search_styleTwo">
+        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+          [(ngModel)]="gongName" />
+      </div>
+    </div>
+    <!-- 图号 -->
+    <div class="common_div-head">
+      <div class="search_styleOne" style="padding-left: 50px;text-align: left">
+        <span>图号</span>
+      </div>
+      <div class="search_styleTwo">
+        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+          [(ngModel)]="tuhao" />
+      </div>
+    </div>
+    <!-- 规格 -->
+    <div class="common_div-head">
+      <div class="search_styleOne" style="text-align: left;padding-left: 50px;margin-top: 20px">
+        <span>规格型号</span>
+      </div>
+      <div class="search_styleTwo" style="margin-top: 20px;">
+        <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+          [(ngModel)]="guige" />
+      </div>
+    </div>
+    <!-- 生产方式 -->
+    <div class="common_div-head">
+      <div class="search_styleOne" style="text-align: left;padding-left: 50px;margin-top: 20px">
+        <span>生产方式</span>
+      </div>
+      <div class="search_styleTwo" style="margin-top: 20px;text-align: left">
+        <p-dropdown  [(ngModel)]="shengValue" [options]="scfs" placeholder="请选择"  [showClear]="true" [style]="{'width':'296px','height':'38px'}"></p-dropdown>
+      </div>
+    </div>
+    <!-- 物料属性 -->
+    <div class="common_div-head">
+      <div class="search_styleOne" style="text-align: left;padding-left: 50px;margin-top: 20px">
+        <span>物料属性</span>
+      </div>
+      <div class="search_styleTwo" style="margin-top: 20px;text-align: left">
+        <p-dropdown  [(ngModel)]="shuxingValue" [options]="shuxing" placeholder="请选择" [showClear]="true" [style]="{'width':'296px','height':'38px'}"></p-dropdown>
+      </div>
+    </div>
+
+  </div>
+  <div style="height: 58px;margin-top: 65px">
+    <button icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+        (click)="openFile()" style="padding-left: 6px">
+        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+        <span>
+          模板下载
+        </span>
+      </button>
+      <input hidden id="file" type="file" (change)="upload($event)" accept=".xls" />
+      <button icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+        (click)="ImportExcel()">
+        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+        <span>
+          导入
+        </span>
+      </button>
+    <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+      class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+      [routerLink]="['/materiel/qms-materiel/new']">
+      <span>
+        添加
+      </span>
+    </button>
+    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+      class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+      (click)="emptyInfo()">
+      <span>
+        清空
+      </span>
+    </button>
+    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+      class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+      (click)="loadAll()">
+      <span>
+        查询
+      </span>
+    </button>
+    <!-- <button id="jh-create-entity"  icon="fa fa-plus"  iconPos="left"
+          class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue" (click)="supplierPopup()">
+              <span >
+              跳转
+              </span>
+          </button> -->
+  </div>
+  <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+</div>
+<p-table [value]="qmsMateriels" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+  [resizableColumns]="true" [loading]=this.loading (onLazyLoad)="loadCarsLazy($event)">
+
+
+  <ng-template pTemplate="header">
+    <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+      <!-- 序号 -->
+      <th class="common_thStyle" style="width: 10% !important;">
+        <span>序号</span>
+      </th>
+      <!-- 物料编码 -->
+      <th class="common_thStyle" style="width: 10% !important;">
+        <span>物料编码</span>
+      </th>
+      <!-- 物料名称 -->
+      <th class="common_thStyle" style="width: 10% !important;">
+        <span>物料名称</span>
+      </th>
+      <!-- 图号 -->
+      <th class="common_thStyle" style="width: 15% !important;">
+        <span>图号</span>
+      </th>
+      <!-- 规格 -->
+      <th class="common_thStyle" style="width: 15% !important;">
+        <span>规格型号</span>
+      </th>
+      <!-- 生产方式 -->
+      <th class="common_thStyle" style="width: 10% !important;">
+        <span>生产方式</span>
+      </th>
+      <!-- 物料属性 -->
+      <th class="common_thStyle" style="width: 10% !important;">
+        <span>物料属性</span>
+      </th>
+      
+      <th class="common_thStyle">
+        <span>操作</span>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-qmsMateriel let-i="rowIndex">
+    <tr>
+      <!-- 序号 -->
+      <td class="common_tdStyle text-center" style="width: 10% !important"><p>{{i+1}}</p></td>
+      <!-- 物料编码 -->
+      <td class="common_tdStyle text-left" style="width: 10% !important"><p>{{qmsMateriel.materielCd}}</p></td>
+      <!-- 物料名称 -->
+      <td class="common_tdStyle text-left" style="width: 10% !important"><p>{{qmsMateriel.materielName}}</p></td>
+      <!-- 图号 -->
+      <td class="common_tdStyle text-left" style="width: 15% !important"><p>{{qmsMateriel.figureNumber}}</p></td>
+      <!-- 规格 -->
+      <td class="common_tdStyle text-left" style="width: 15% !important"><p>{{qmsMateriel.specificationType}}</p></td>
+      <!-- 生产方式 -->
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.productMode=='M'"><p>自制</p></td>
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.productMode=='P'"><p>外购</p></td>
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.productMode=='O'"><p>外协</p></td>
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.productMode==null||qmsMateriel.productMode==''"><p></p></td>
+      <!-- 物料属性 -->
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.propertyType=='V'"><p>虚拟件</p></td>
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.propertyType=='P'"><p>产品</p></td>
+      <td class="common_tdStyle text-left" style="width: 10% !important" *ngIf="qmsMateriel.propertyType==null||qmsMateriel.propertyType==''"><p></p></td>
+      <!-- <td class="common_tdStyle text-left" style="width: 10% !important"><p>{{qmsMateriel.propertyType}}</p></td> -->
+      
+      <!-- 操作 -->
+      <td class="common_tdStyle">
+        <button id="jh-create-entity" replaceUrl="true"
+          class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+          [routerLink]="['/materiel/qms-materiel', qmsMateriel.id, 'view' ]">
+          <span>
+            查看
+          </span>
+        </button>
+        <button id="jh-create-entity" replaceUrl="true"
+          class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+          [routerLink]="['/materiel/qms-materiel', qmsMateriel.id, 'edit' ]">
+          <span>
+            编辑
+          </span>
+        </button>
+
+        <button id="jh-create-entity"
+          class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+          (click)="delete(qmsMateriel.id,qmsMateriel.materielCd)">
+          <span>
+            删除
+          </span>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-growl [(value)]="msgs" [immutable]="false" life="300000"></p-growl>
+<p-growl [(value)]="msgs1" [immutable]="false" life="3000"></p-growl>

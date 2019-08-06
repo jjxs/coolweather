@@ -1,0 +1,50 @@
+{
+    "fccApp": {
+        "qmsUnqualifiedProduct": {
+            "home": {
+                "title": "Qms Unqualified Products",
+                "createLabel": "创建新 Qms Unqualified Product",
+                "createOrEditLabel": "创建或编辑 Qms Unqualified Product"
+            },
+            "created": "Qms Unqualified Product {{ param }} 创建成功",
+            "updated": "Qms Unqualified Product {{ param }} 更新成功",
+            "deleted": "Qms Unqualified Product {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Unqualified Product {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Unqualified Product"
+            },
+            "inspectionValueId": "Inspection Value Id",
+            "bomTechnologyId": "Bom Technology Id",
+            "processId": "Process Id",
+            "materielId": "Materiel Id",
+            "approveResultId": "Approve Result Id",
+            "unhealthyId": "Unhealthy Id",
+            "defectId": "Defect Id",
+            "controlLevel": "Control Level",
+            "approvePrincipalUserId": "Approve Principal User Id",
+            "approveStepNum": "Approve Step Num",
+            "approveStepUserId": "Approve Step User Id",
+            "seriNumber": "Seri Number",
+            "furnace": "Furnace",
+            "saleNumber": "Sale Number",
+            "productorderNumber": "Productorder Number",
+            "inspectionDiff": "Inspection Diff",
+            "isApprove": "Is Approve",
+            "approveResultDiff": "Approve Result Diff",
+            "approveUserId": "Approve User Id",
+            "approveTime": "Approve Time",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

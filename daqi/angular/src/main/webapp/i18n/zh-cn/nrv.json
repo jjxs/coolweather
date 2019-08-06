@@ -1,0 +1,14 @@
+{
+  "nrv": {
+    "main": "国铁车",
+    "materialSelect": {
+      "title": "物料选择"
+    },
+    "purchaseCheck": {
+      "title": "采购检验"
+    },
+    "prodProcessCheck": {
+      "title": "生产过程检验"
+    }
+  }
+}

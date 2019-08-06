@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsApproveResult">
+            <h2><span jhiTranslate="fccApp.qmsApproveResult.detail.title">Qms Approve Result</span> {{qmsApproveResult.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.approveFlowId">Approve Flow Id</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.approveFlowId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.unqualifiedProductId">Unqualified Product Id</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.unqualifiedProductId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.stepNum">Step Num</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.stepNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.principalUserId">Principal User Id</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.principalUserId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.approveTime">Approve Time</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.approveTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.approveResult">Approve Result</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.approveResult}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.approveStatus">Approve Status</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.approveStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveResult.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsApproveResult.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-approve-result', qmsApproveResult.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

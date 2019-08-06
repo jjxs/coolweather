@@ -1,0 +1,41 @@
+{
+    "fccApp": {
+        "qmsBogiepressurePositiveTest": {
+            "home": {
+                "title": "Qms Bogiepressure Positive Tests",
+                "createLabel": "创建新 Qms Bogiepressure Positive Test",
+                "createOrEditLabel": "创建或编辑 Qms Bogiepressure Positive Test"
+            },
+            "created": "Qms Bogiepressure Positive Test {{ param }} 创建成功",
+            "updated": "Qms Bogiepressure Positive Test {{ param }} 更新成功",
+            "deleted": "Qms Bogiepressure Positive Test {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Bogiepressure Positive Test {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Bogiepressure Positive Test"
+            },
+            "place": "Place",
+            "bolster": "Bolster",
+            "sideframeLeft": "Sideframe Left",
+            "sideframeRight": "Sideframe Right",
+            "crossstaffLeft": "Crossstaff Left",
+            "crossstaffRight": "Crossstaff Right",
+            "checkdate": "Checkdate",
+            "checktime": "Checktime",
+            "workno": "Workno",
+            "checkvalue1": "Checkvalue 1",
+            "checkvalue2": "Checkvalue 2",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

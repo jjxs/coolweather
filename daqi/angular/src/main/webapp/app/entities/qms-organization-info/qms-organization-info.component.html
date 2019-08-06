@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsOrganizationInfo.home.title">Qms Organization Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-organization-info" [routerLink]="['/qms-organization-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsOrganizationInfo.home.createLabel">
+            Create new Qms Organization Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsOrganizationInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentCd"><span jhiTranslate="fccApp.qmsOrganizationInfo.parentCd">Parent Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationCd"><span jhiTranslate="fccApp.qmsOrganizationInfo.organizationCd">Organization Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationName"><span jhiTranslate="fccApp.qmsOrganizationInfo.organizationName">Organization Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="attribute"><span jhiTranslate="fccApp.qmsOrganizationInfo.attribute">Attribute</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsOrganizationInfo.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsOrganizationInfo.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsOrganizationInfo.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsOrganizationInfo.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsOrganizationInfo.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsOrganizationInfo.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsOrganizationInfo.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsOrganizationInfo of qmsOrganizationInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-organization-info', qmsOrganizationInfo.id, 'view' ]">{{qmsOrganizationInfo.id}}</a></td>
+                <td>{{qmsOrganizationInfo.parentCd}}</td>
+                <td>{{qmsOrganizationInfo.organizationCd}}</td>
+                <td>{{qmsOrganizationInfo.organizationName}}</td>
+                <td>{{qmsOrganizationInfo.attribute}}</td>
+                <td>{{qmsOrganizationInfo.flagStatus}}</td>
+                <td>{{qmsOrganizationInfo.compPkid}}</td>
+                <td>{{qmsOrganizationInfo.remark}}</td>
+                <td>{{qmsOrganizationInfo.makeUser}}</td>
+                <td>{{qmsOrganizationInfo.makeTime | date:'medium'}}</td>
+                <td>{{qmsOrganizationInfo.modifyUser}}</td>
+                <td>{{qmsOrganizationInfo.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-organization-info', qmsOrganizationInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-organization-info', qmsOrganizationInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-organization-info/'+ qmsOrganizationInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsOrganizationInfos && qmsOrganizationInfos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

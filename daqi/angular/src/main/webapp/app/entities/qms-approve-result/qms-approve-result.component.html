@@ -1,0 +1,94 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsApproveResult.home.title">Qms Approve Results</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-approve-result" [routerLink]="['/qms-approve-result/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsApproveResult.home.createLabel">
+            Create new Qms Approve Result
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsApproveResults">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveFlowId"><span jhiTranslate="fccApp.qmsApproveResult.approveFlowId">Approve Flow Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="unqualifiedProductId"><span jhiTranslate="fccApp.qmsApproveResult.unqualifiedProductId">Unqualified Product Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stepNum"><span jhiTranslate="fccApp.qmsApproveResult.stepNum">Step Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="principalUserId"><span jhiTranslate="fccApp.qmsApproveResult.principalUserId">Principal User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveTime"><span jhiTranslate="fccApp.qmsApproveResult.approveTime">Approve Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveResult"><span jhiTranslate="fccApp.qmsApproveResult.approveResult">Approve Result</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveStatus"><span jhiTranslate="fccApp.qmsApproveResult.approveStatus">Approve Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsApproveResult.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsApproveResult.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsApproveResult.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsApproveResult.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsApproveResult.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsApproveResult.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsApproveResult.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsApproveResult.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsApproveResult.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsApproveResult.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsApproveResult of qmsApproveResults ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-approve-result', qmsApproveResult.id, 'view' ]">{{qmsApproveResult.id}}</a></td>
+                <td>{{qmsApproveResult.approveFlowId}}</td>
+                <td>{{qmsApproveResult.unqualifiedProductId}}</td>
+                <td>{{qmsApproveResult.stepNum}}</td>
+                <td>{{qmsApproveResult.principalUserId}}</td>
+                <td>{{qmsApproveResult.approveTime | date:'medium'}}</td>
+                <td>{{qmsApproveResult.approveResult}}</td>
+                <td>{{qmsApproveResult.approveStatus}}</td>
+                <td>{{qmsApproveResult.flagStatus}}</td>
+                <td>{{qmsApproveResult.compPkid}}</td>
+                <td>{{qmsApproveResult.remark}}</td>
+                <td>{{qmsApproveResult.reserveFirst}}</td>
+                <td>{{qmsApproveResult.reserveSecond}}</td>
+                <td>{{qmsApproveResult.reserveThird}}</td>
+                <td>{{qmsApproveResult.makeUser}}</td>
+                <td>{{qmsApproveResult.makeTime | date:'medium'}}</td>
+                <td>{{qmsApproveResult.modifyUser}}</td>
+                <td>{{qmsApproveResult.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-approve-result', qmsApproveResult.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-approve-result', qmsApproveResult.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-approve-result/'+ qmsApproveResult.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsApproveResults && qmsApproveResults.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

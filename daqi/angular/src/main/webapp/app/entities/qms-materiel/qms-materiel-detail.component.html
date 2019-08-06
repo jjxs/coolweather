@@ -1,0 +1,183 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsMateriel">
+            <h2><span jhiTranslate="fccApp.qmsMateriel.detail.title">Qms Materiel</span> {{qmsMateriel.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsMateriel.materielCd">Materiel Cd</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.materielCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.materielName">Materiel Name</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.materielName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.figureNumber">Figure Number</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.figureNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.innerCd">Inner Cd</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.innerCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.abcNumber">Abc Number</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.abcNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.productMode">Product Mode</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.productMode}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.materielTypeId">Materiel Type Id</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.materielTypeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.propertyType">Property Type</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.propertyType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.packgeUnitId">Packge Unit Id</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.packgeUnitId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.useUnitId">Use Unit Id</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.useUnitId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.conversion">Conversion</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.conversion}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.specificationType">Specification Type</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.specificationType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.weight">Weight</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.weight}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.density">Density</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.density}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.workHours">Work Hours</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.workHours}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.taredHours">Tared Hours</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.taredHours}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.schedulerRoleId">Scheduler Role Id</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.schedulerRoleId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.organizationCd">Organization Cd</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.organizationCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.inHouseType">In House Type</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.inHouseType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.vesselAmount">Vessel Amount</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.vesselAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.qualityLevel">Quality Level</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.qualityLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.texTure">Tex Ture</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.texTure}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.mhandlerRoleId">Mhandler Role Id</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.mhandlerRoleId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.eightPrevention">Eight Prevention</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.eightPrevention}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.ifKey">If Key</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.ifKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.ubiety">Ubiety</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.ubiety}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.sapCd">Sap Cd</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.sapCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.isCheck">Is Check</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.isCheck}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.checkType">Check Type</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.checkType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.checkRate">Check Rate</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.checkRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMateriel.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsMateriel.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-materiel', qmsMateriel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

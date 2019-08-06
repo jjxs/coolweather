@@ -1,0 +1,828 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div>
+    <div>
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class"
+                jhiTranslate="fccApp.qmsBomTechnologyInfo.home.EditLabelInfo">Create a Qms Vehicle Type Info</h2>
+            <!-- <h2 *ngIf="qmsVehicleTypeInfo.id" id="jhi-qms-vehicle-type-info-heading" class="title_class"
+                jhiTranslate="fccApp.qmsBomTechnologyInfo.home.createLabelInfo"> Edit a Qms Vehicle Type Info</h2> -->
+            <div style="width: 80%;float: left;">
+
+                <!-- <div class="form-group page_hidden" [hidden]="!qmsVehicleTypeInfo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" [(ngModel)]="qmsVehicleTypeInfo.id"
+                        readonly />
+                </div> -->
+                <!-- 物料编码和工序编码 -->
+                <div class="creatOreditCss">
+                    <!-- 物料编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsBomTechnologyInfo.materielCd"
+                                for="field_vehicleType">物料编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="materielId" id="field_vehicleType" hidden
+                                [(ngModel)]="qmsVehicleTypeInfo.materielId" />
+                            <input type="text" class="form-control" name="materielCd" id="field_vehicleType" disabled
+                                [(ngModel)]="materielCd" />
+                        </div>
+                    </div>
+                    <!-- 工艺编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyCd">工艺编码</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" style="width: 100%;margin-left: 0px;"
+                                name="technologyCd" disabled [(ngModel)]="qmsVehicleTypeInfo.technologyCd" />
+                        </div>
+                    </div>
+                    <!-- 工序编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsBomTechnologyInfo.processCd"
+                                for="field_vehicleTypeName">工序编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="processId" id="field_vehicleTypeName"
+                                [(ngModel)]="qmsVehicleTypeInfo.processId" hidden />
+
+                            <input type="text" class="form-control" name="processCd" id="field_vehicleTypeName" required
+                                (blur)="getprocessCdNameInfo()" [disabled]="editDistinguish" [(ngModel)]="processCd"
+                                maxlength="100" />
+                        </div>
+                        <div class="selsectIonc"><i style="font-size:2em;cursor:pointer;color:#1F89CE;"
+                                *ngIf="!editDistinguish" class="fa fa-search" (click)="typeVehicleClass()"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 物料名称和工序名称 -->
+                <div class="creatOreditCss">
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsBomTechnologyInfo.materielId"
+                                for="field_vehicleType"> 物料名称 </label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="materielName" id="field_vehicleType" disabled
+                                [(ngModel)]="materielName" />
+
+                        </div>
+
+                    </div>
+                    <!-- 工艺名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.technologyName">工艺名称:</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" style="width: 100%;margin-left: 0px;"
+                                name="technologyName" disabled [(ngModel)]="qmsVehicleTypeInfo.technologyName" />
+                        </div>
+                    </div>
+                    <!-- 工序名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsBomTechnologyInfo.processName"
+                                for="field_processName">工序名称</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="processName" id="field_processName" disabled
+                                [(ngModel)]="processName" />
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="creatOreditCssButton">
+                <button type="button" id="cancel-save"
+                    class="btn btn-secondary float-right search_button_darkblue search_button"
+                    replaceUrl="true"
+                    [routerLink]="['/process-informations']"
+                    [queryParams]="{MId:qmsVehicleTypeInfo.materielId,MCd:materielCd,MName:materielName,Tcd:qmsVehicleTypeInfo.technologyCd,TName:qmsVehicleTypeInfo.technologyName,Code:'1',BomId:qmsVehicleTypeInfo.processId}"
+                    >
+                    <!-- (click)="previousState()" -->
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                    class="btn btn-primary float-right search_button_blue search_button">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+            <div style="width: 100%;display: inline-block;height: 100%;">
+                <p-tabView>
+                    <!-- 基本信息 -->
+                    <p-tabPanel [header]="labelTitle.tab1">
+                        <div style="width: 100%;display: inline-block;height: 35.7rem;">
+                            <div class="creatOreditCss">
+                                <!-- 工序号 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.workNumber"
+                                            for="field_vehicleType">工序号</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control text-right" name="orderNo"
+                                            id="field_processId" (input)="integerCheck($event)" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.orderNo" maxlength="11" />
+                                    </div>
+                                </div>
+                                <!-- 隶属单位 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.subordinateUnits"
+                                            for="field_vehicleTypeName">隶属单位</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required (onChange)="selectVehicle($event)"
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectSubordinateUnits" name="organizationCd"
+                                            [(ngModel)]="qmsVehicleTypeInfo.organizationCd" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 工时定额单位 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.manHourQuotaUnit"
+                                            for="field_vehicleTypeName">工时定额单位</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="workTime" name="workUnit"
+                                            [(ngModel)]="qmsVehicleTypeInfo.workUnit" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 工时定额 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.manHourQuota"
+                                            for="field_workHours">工时定额</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <input type="text" class="form-control text-right" name="workHours"
+                                            id="field_workHours" (input)="integerCheck($event)" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.workHours" maxlength="11" />
+                                    </div>
+                                </div>
+                                <!-- 质检类型 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.qualityTestingType"
+                                            for="field_qcType">质检类型</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="qcType" id="field_qcType" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.qcType" maxlength="100" /> -->
+                                        <!-- <p-checkbox name="group1" value="C" label="自检" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox>
+                                            <p-checkbox name="group1" value="M" label="互检" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox>
+                                            <p-checkbox name="group1" value="S" label="专检" [(ngModel)]="selectedCities" inputId="la"></p-checkbox> -->
+                                        <div class="ui-g-12" style="width: 33%;">
+                                            <p-checkbox name="checkedC" label="自检" [(ngModel)]="checkedC" binary="true" disabled="true">
+                                            </p-checkbox>
+                                        </div>
+                                        <div class="ui-g-12" style="width: 33%;">
+                                            <p-checkbox name="checkedM" label="互检" [(ngModel)]="checkedM" binary="true" (click)="checkTrueM()">
+                                            </p-checkbox>
+                                        </div>
+                                        <div class="ui-g-12" style="width: 33%;">
+                                            <p-checkbox name="checkedS" label="专检" [(ngModel)]="checkedS" binary="true" (click)="checkTrue()">
+                                            </p-checkbox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 专检角色 -->
+                                <!-- <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.inspectionRole"
+                                            for="field_specialRole">专检角色</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectInspectionRole" name="specialRole"
+                                            [(ngModel)]="qmsVehicleTypeInfo.specialRole" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div> -->
+                                <!-- 是否试验工序 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.testProcedure"
+                                            for="field_isTest">是否试验工序</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectTest" name="isTest" [(ngModel)]="qmsVehicleTypeInfo.isTest"
+                                            placeholder="请选择" [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 是否检验工序 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.inspectionProcedure"
+                                            for="field_isControlPoint">是否试验工序</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleTypeName"
+                                            id="field_vehicleTypeName" required
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName" maxlength="100" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectInspection" name="isControlPoint"
+                                            [(ngModel)]="qmsVehicleTypeInfo.isControlPoint" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 右半部分 -->
+                            <div class="creatOreditCss">
+                                <!-- 工序特征 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.processCharacteristics"
+                                            for="field_operationType">工序特征</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleClass"
+                                            id="field_vehicleType" readonly (blur)="getVehicleClassNameInfo()"
+                                            [(ngModel)]="vehicleClass" maxlength="20" />
+
+                                        <input type="text" class="form-control" name="vehicleClassId"
+                                            id="field_vehicleType" hidden
+                                            [(ngModel)]="qmsVehicleTypeInfo.vehicleClassId" maxlength="20" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectProcesssPecific" name="operationType"
+                                            [(ngModel)]="qmsVehicleTypeInfo.operationType" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- 互检角色 -->
+                                <!-- <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.mutualCheckRoles"
+                                            for="field_mutualinRole">互检角色</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectMutualRoles" name="mutualinRole"
+                                            [(ngModel)]="qmsVehicleTypeInfo.mutualinRole" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div> -->
+
+                                <!-- 作业班组 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.workTeam"
+                                            for="field_vehicleType">作业班组</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <!-- <input type="text" class="form-control" name="vehicleClassName"
+                                            id="field_vehicleType" readonly [(ngModel)]="vehicleClassName"
+                                            maxlength="20" /> -->
+                                        <p-dropdown #dd
+                                            [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                            [options]="selectAllWorkTeam" name="workGroupCd"
+                                            [(ngModel)]="qmsVehicleTypeInfo.workGroupCd" placeholder="请选择"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </div>
+                                </div>
+                                <!-- 备注 -->
+                                <div class="form-group">
+                                    <div class="div_left">
+                                        <label class="form-control-label"
+                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.remarks"
+                                            for="field_vehicleType">备注</label>
+                                    </div>
+                                    <div class="div_right">
+                                        <textarea type="text" class="form-control" name="remark" id="field_vehicleType"
+                                            style="height: 260px" [(ngModel)]="qmsVehicleTypeInfo.remark"
+                                            maxlength="200">
+                                            </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                    <!-- 质量控制项点 -->
+                    <p-tabPanel [header]="labelTitle.tab2">
+                        <div style="height: 36rem;">
+                            <p-table [value]="qualityControlDetails" scrollHeight="26rem" [scrollable]="true"
+                                [style]="{width:'100%'}">
+                                <ng-template pTemplate="caption">
+                                    <div style="height: 46px">
+
+                                        <button id="jh-create-entity" type="button"
+                                            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                                            style="width: 114px;" (click)="selectionOfTestItemsBUT()">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.selectionOfTestItems">
+                                                检验项选择
+                                            </span>
+                                        </button>
+
+                                        <button id="jh-create-entity" type="button"
+                                            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                                            style="width: 114px;" (click)="add()">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.anAdditionalLine">
+                                                追加一行
+                                            </span>
+                                        </button>
+                                    </div>
+                                </ng-template>
+                                <ng-template pTemplate="colgroup">
+                                    <colgroup>
+                                        <col style="width:5%" />
+                                        <col style="width:8%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                        <col style="width:14%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                        <col style="width:9%" />
+                                    </colgroup>
+                                </ng-template>
+
+                                <ng-template pTemplate="header">
+                                    <tr class="common_trStyle">
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.serialNumber">序号</span>
+
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.whetherToDetect">是否检测</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.inspectionItem">检查项目</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span
+                                                jhiTranslate="fccApp.qmsBomTechnologyInfo.technicalRequirement">技术要求</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span
+                                                jhiTranslate="fccApp.qmsBomTechnologyInfo.inspectionInstrument">检查器具</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.placeDiff">位别</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.abcType">ABC分类</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.standard">标准值</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.upperDeviation">上偏差</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.lowerDeviation">下偏差</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.operation">操作</span>
+                                        </th>
+                                    </tr>
+                                </ng-template>
+
+                                <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+                                    <tr>
+                                        <td class="common_tdStyle" style="justify-content: center ">
+                                            {{i+1}}</td>
+                                        <!-- 是否检测 -->
+                                        <td class="common_tdStyle text-center">
+                                            <!-- <p-checkbox name="inspectionType" [(ngModel)]="rowData['inspectionType']"
+                                            binary="true"></p-checkbox> -->
+                                            <p-checkbox name="isCheckObj{{i+1}}" (click)="checkInfo(i)" binary="true"
+                                                [(ngModel)]="rowData['isCheckObj']" inputId="sf{{i+1}}"></p-checkbox>
+                                        </td>
+                                        <!-- 检查项目 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="inspectionItem"
+                                                        [(ngModel)]="rowData['inspectionItem']" maxlength="400"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['inspectionItem']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+                                        <!-- 技术要求 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <textarea type="text" name="technicalRequirement"
+                                                        [(ngModel)]="rowData['technicalRequirement']" maxlength="1000"
+                                                        style="width:100%;float: left;"></textarea>
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['technicalRequirement']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+                                        <!-- 检查器具 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="inspectionInstrument"
+                                                        [(ngModel)]="rowData['inspectionInstrument']" maxlength="100"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['inspectionInstrument']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+                                        <!-- 位别 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="placeDiff"
+                                                        [(ngModel)]="rowData['placeDiff']" maxlength="100"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['placeDiff']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+                                        <!-- 结果区分 -->
+                                        <!-- <td class="common_tdStyle text-left" pEditableColumn>
+                                        <p-cellEditor>
+                                            <ng-template pTemplate="input">
+                                              
+                                                <p-dropdown #dd
+                                                    [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da'}"
+                                                    [options]="selectResultDifferentiation" name="inspectionResultDiff" placeholder="请选择"
+                                                    (onChange)="changeInfoInspectionResultDiff($event,i)"
+                                                    [(ngModel)]="rowData['inspectionResultDiff']" [showClear]="true">
+                                                </p-dropdown>
+                                            </ng-template>
+                                            <ng-template pTemplate="output">
+                                                {{rowData['inspectionResultDiff']}}
+                                            </ng-template>
+                                        </p-cellEditor>
+                                    
+                                    </td> -->
+                                        <!-- ABC分类 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+
+                                            <p-radioButton name="group1{{i}}" value="A" label="A"
+                                                [(ngModel)]="rowData['abcType']"></p-radioButton>
+                                            <p-radioButton name="group1{{i}}" value="B" label="B"
+                                                [(ngModel)]="rowData['abcType']"></p-radioButton>
+                                            <p-radioButton name="group1{{i}}" value="C" label="C"
+                                                [(ngModel)]="rowData['abcType']"></p-radioButton>
+
+                                        </td>
+                                        <!-- 标准值 -->
+                                        <td class="common_tdStyle text-right" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="standard" [(ngModel)]="rowData['standard']"
+                                                        (input)="integerCheck($event)" maxlength="14"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['standard']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+                                            <!-- <p>{{qmsVehicleTypeInfo.remark}}</p> -->
+                                        </td>
+                                        <!-- 上偏差 -->
+                                        <td class="common_tdStyle text-right" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="upperDeviation"
+                                                        (input)="integerCheck($event)" maxlength="14"
+                                                        [(ngModel)]="rowData['upperDeviation']"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['upperDeviation']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+                                            <!-- <p>{{qmsVehicleTypeInfo.remark}}</p> -->
+                                        </td>
+                                        <!-- 下偏差 -->
+                                        <td class="common_tdStyle text-right" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="lowerDeviation"
+                                                        (input)="integerCheck($event)" maxlength="14"
+                                                        [(ngModel)]="rowData['lowerDeviation']"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['lowerDeviation']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+                                            <!-- <p>{{qmsVehicleTypeInfo.remark}}</p> -->
+                                        </td>
+                                        <!-- 备注 -->
+                                        <!-- <td class="common_tdStyle text-left" pEditableColumn>
+                                        <p-cellEditor>
+                                            <ng-template pTemplate="input">
+                                                <input type="text" name="remark" [(ngModel)]="rowData['remark']"
+                                                    style="width:100%;float: left;" />
+                                            </ng-template>
+                                            <ng-template pTemplate="output">
+                                                {{rowData['remark']}}
+                                            </ng-template>
+                                        </p-cellEditor>
+                                        
+                                    </td> -->
+                                        <!-- 操作 -->
+                                        <td class="common_tdStyle">
+                                            <button id="jh-create-entity" type="button"
+                                                class="btn btn-primary  jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+                                                (click)="close(i)">
+                                                <!--  delete(qmsVehicleTypeInfo.id)-->
+                                                <span jhiTranslate="entity.action.delete">
+                                                    删除
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </p-tabPanel>
+                    <!-- 装配关系 -->
+                    <p-tabPanel [header]="labelTitle.tab3">
+                        <div style="height: 36rem;">
+                            <p-table [value]="qmsPartsAssemblyRelationOwner" scrollHeight="26rem" [scrollable]="true"
+                                [style]="{width:'100%'}">
+                                <ng-template pTemplate="caption">
+                                    <div style="height: 46px">
+
+                                        <button id="jh-create-entity" type="button"
+                                            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                                            style="width: 114px;" (click)="additionalMaterials()">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.addMateriel">
+                                                追加物料
+                                            </span>
+                                        </button>
+                                    </div>
+                                </ng-template>
+                                <ng-template pTemplate="colgroup">
+                                    <colgroup>
+                                        <col style="width:8%" />
+                                        <col style="width:10%" />
+                                        <col style="width:10%" />
+                                        <col style="width:18%" />
+                                        <col style="width:18%" />
+                                        <col style="width:26%" />
+                                        <col style="width:10%" />
+                                    </colgroup>
+                                </ng-template>
+
+                                <ng-template pTemplate="header">
+                                    <tr class="common_trStyle">
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.serialNumber">序号</span>
+                                        </th>
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.assemblyNum">装配序号</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.materielCd">物料编码</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.materielId">物料名称</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.assemblyCount">数量</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.remarks">备注</span>
+                                        </th>
+
+                                        <th class="common_thStyle">
+                                            <span jhiTranslate="fccApp.qmsBomTechnologyInfo.operation">操作</span>
+                                        </th>
+                                    </tr>
+                                </ng-template>
+
+                                <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+                                    <tr>
+                                        <td class="common_tdStyle" style="justify-content: center ">
+                                            {{i+1}}</td>
+                                        <!-- 装配序号 -->
+                                        <td class="common_tdStyle text-right" pEditableColumn>
+                                            <!-- <p>{{rowData.assemblyNum}}</p> -->
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="assemblyNum" (input)="integerCheck($event)"
+                                                        maxlength="10" (blur)="checkAssemblyNum(i)"
+                                                        [(ngModel)]="rowData['assemblyNum']"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['assemblyNum']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+                                        </td>
+                                        <!-- 物料编码 -->
+                                        <td class="common_tdStyle text-left">
+
+                                            {{rowData.assemblyMaterielCd}}
+
+                                        </td>
+                                        <!-- 物料名称 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <!-- <p-cellEditor>
+                                            <ng-template pTemplate="input">
+                                                <input type="text" name="assemblyMaterielName"
+                                                    [(ngModel)]="rowData['assemblyMaterielName']"
+                                                    style="width:100%;float: left;" />
+                                            </ng-template>
+                                            <ng-template pTemplate="output">
+                                                {{rowData['assemblyMaterielName']}}
+                                            </ng-template>
+                                        </p-cellEditor> -->
+                                            {{rowData.assemblyMaterielName}}
+                                        </td>
+
+                                        <!-- 数量 -->
+                                        <td class="common_tdStyle text-right" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="assemblyCount"
+                                                        (input)="integerCheck($event)" maxlength="10"
+                                                        [(ngModel)]="rowData['assemblyCount']"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['assemblyCount']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+
+                                        <!-- 备注 -->
+                                        <td class="common_tdStyle text-left" pEditableColumn>
+                                            <p-cellEditor>
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="assemblyremark"
+                                                        [(ngModel)]="rowData['remark']" maxlength="200"
+                                                        style="width:100%;float: left;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData['remark']}}
+                                                </ng-template>
+                                            </p-cellEditor>
+
+                                        </td>
+                                        <!-- 操作 -->
+                                        <td class="common_tdStyle">
+                                            <button id="jh-create-entity" type="button"
+                                                class="btn btn-primary  jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+                                                (click)="closeMaterials(i)">
+                                                <!--  delete(qmsVehicleTypeInfo.id)-->
+                                                <span jhiTranslate="entity.action.delete">
+                                                    删除
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </p-tabPanel>
+                    <!-- 工艺文件 -->
+                    <p-tabPanel [header]="labelTitle.tab4">
+
+                        <div class="content" style="height: 36rem;">
+
+                            <div class="file_right">
+                                <div class="digiFiles">
+                                    <div class="fheader">
+                                        <span jhiTranslate="prodProcessCheck.content.digiFile"
+                                            style="font-size: 20px;font-weight: bold;color:#13245c;">Digital
+                                            Files</span>
+                                        <p-messages [(value)]="msgs"></p-messages>
+                                        <span
+                                            class="ng-star-inserted ui-button ui-fileupload-choose ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+                                            style="float:right;font-size: 18px;width: 120px;height: 47px;margin-bottom: 10px;">
+                                            <span class="ui-button-text ui-clickable"
+                                                jhiTranslate="prodProcessCheck.content.choose"
+                                                style="padding: 9px 21px;">Choose</span>
+                                                <!-- multiple="multiple" -->
+                                            <input type="file" multiple="multiple" [accept]="acceptFile" 
+                                                class="ng-star-inserted" (change)="tmpSaveFile($event)" />
+                                    </div>
+                                    <div class="file-ul" style="margin-top:2%;">
+                                        <p-table [value]="digiFiles" scrollHeight="29rem" [scrollable]="true">
+
+                                            <ng-template pTemplate="header">
+                                                <tr class="common_trStyle">
+                                                    <th class="common_thStyle" style="width: 16%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.serialNumber">序号</span>
+                                                    </th>
+
+
+                                                    <th class="common_thStyle" style="width: 64%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.tab.processDocuments">工艺文件</span>
+                                                    </th>
+                                                    <th class="common_thStyle" style="width: 20%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.operation">操作</span>
+                                                    </th>
+                                                </tr>
+                                            </ng-template>
+
+                                            <ng-template pTemplate="body" let-i="rowIndex">
+                                                <tr style="height: 66px">
+                                                    <td
+                                                        style="width: 16%;text-align:center;font-size: 23px; font-weight: bold;">
+                                                        {{i + 1}}</td>
+                                                    <td style="width: 64%;font-size: 23px; font-weight: bold;"
+                                                        class="filename"><a title="click to view"
+                                                            (click)="viewFile(digiFiles[i%itemsPerPage].enclosureAddress, i)">{{digiFiles[i%itemsPerPage].enclosureAddress.substr(digiFiles[i%itemsPerPage]['enclosureAddress'].lastIndexOf('/') + 1)}}</a>
+                                                    </td>
+                                                    <td style="width: 20%;text-align:center;"><button pButton
+                                                            type="button" class="ui-button-danger"
+                                                            [label]="translate.get('prodProcessCheck.button.delete')['value']"
+                                                            (click)="deleteReady(digiFiles[i%itemsPerPage].enclosureAddress, i)"></button>
+                                                    </td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-modal" id="file-modal" [hidden]="!showModal">
+                            <div class="preview">
+                                <i class="pi pi-times close" (click)="closePreview()"></i>
+                                <h3 class="previewTitle" id="previewTitle">title</h3>
+                                <div class="previewContent" id="previewContent"></div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
+
+            </div>
+        </form>
+
+
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div style="  display: block; width: 100%;height: 140px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+      <span>权限信息</span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span>权限编码</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="rightCode" />
+        </div>
+  
+      </div>
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span>权限名称</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+          [(ngModel)]="rightName" />
+        </div>
+      </div>
+  
+    </div>
+    <div style="height: 58px;">
+      <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+        [routerLink]="['/rbacRight/new']">
+        <span>
+          添加
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+        (click)="emptyInfo()">
+        <span>
+          清空
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+        (click)="loadAll()">
+        <span>
+          查询
+        </span>
+      </button>
+      <!-- <button id="jh-create-entity"  icon="fa fa-plus"  iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue" (click)="supplierPopup()">
+                <span >
+                跳转
+                </span>
+            </button> -->
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+  </div>
+  <p-table [value]="rbacRights" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+    [resizableColumns]="true" [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+  
+  
+    <ng-template pTemplate="header">
+      <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+        <!-- 序号 -->
+        <th class="common_thStyle" style="width: 10% !important;">
+          <span>序号</span>
+        </th>
+        <!-- 权限编码 -->
+        <th class="common_thStyle" style="width: 20% !important;">
+          <span>权限编码</span>
+        </th>
+        <!-- 权限名称 -->
+        <th class="common_thStyle" style="width: 50% !important;">
+          <span>权限名称</span>
+        </th>
+        
+        <th class="common_thStyle">
+          <span>操作</span>
+        </th>
+      </tr>
+    </ng-template>
+  
+    <ng-template pTemplate="body" let-rbacRight let-i="rowIndex">
+      <tr>
+        <!-- 序号 -->
+        <td class="common_tdStyle text-center" style="width: 10% !important"><p>{{i+1}}</p></td>
+        <!-- 权限编码 -->
+        <td class="common_tdStyle text-left" style="width: 20% !important"><p>{{rbacRight.rightCode}}</p></td>
+        <!-- 权限名称 -->
+        <td class="common_tdStyle text-left" style="width: 50% !important"><p>{{rbacRight.rightName}}</p></td>
+        <!-- 操作 -->
+        <td class="common_tdStyle">
+          <!-- 如何为特殊权限的话按钮不能点击 -->
+          <button id="jh-create-entity" replaceUrl="true" *ngIf="rbacRight.id==1||rbacRight.id==2"
+            class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See" [disabled]="true">
+            <span>
+              查看
+            </span>
+          </button>
+
+          <button id="jh-create-entity" replaceUrl="true" *ngIf="rbacRight.id!=1&&rbacRight.id!=2"
+            class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+            [routerLink]="['/rbacRight', rbacRight.id, 'view']">
+            <span>
+              查看
+            </span>
+          </button>
+          <!-- 如何为特殊权限的话按钮不能点击 -->
+          <button id="jh-create-entity" replaceUrl="true" *ngIf="rbacRight.id==1||rbacRight.id==2"
+            class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+            [disabled]="true">
+            <span>
+              编辑
+            </span>
+          </button>
+
+          <button id="jh-create-entity" replaceUrl="true" *ngIf="rbacRight.id!=1&&rbacRight.id!=2"
+            class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+            [routerLink]="['/rbacRight', rbacRight.id, 'edit']">
+            <span>
+              编辑
+            </span>
+          </button>
+          <!-- 如何为特殊权限的话按钮不能点击 -->
+          <button id="jh-create-entity" *ngIf="rbacRight.id==1||rbacRight.id==2"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+            [disabled]="true">
+            <span>
+              删除
+            </span>
+          </button>
+
+          <button id="jh-create-entity" *ngIf="rbacRight.id!=1&&rbacRight.id!=2"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+            (click)="delete(rbacRight.id)">
+            <span>
+              删除
+            </span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

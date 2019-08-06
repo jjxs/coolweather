@@ -1,0 +1,47 @@
+{
+
+        "rbacRight": {
+            "home": {
+                "title": "Right management",
+                "createLabel": "Create new right",
+                "editLabel": "Editorial right",
+                "createOrEditLabel": "Create or edit Rbac Right"
+            },
+            "created": "Rbac Right {{ param }} Create success",
+            "updated": "Rbac Right {{ param }} Update success",
+            "deleted": "Rbac Right {{ param }} Delete successful",
+            "delete": {
+                "question": "You're sure you want to delete right {{ id }} ？"
+            },
+            "detail": {
+                "title": "Right"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "rightCode": "Right Code",
+            "rightName": "Right Name",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "operation",
+            "help": {
+                "appId": "appId",
+                "storeName": "Store name",
+                "rightName": "Right name",
+                "rightCode": "Right number",
+                "roleName":"Role name",
+                "roleCode":"Role number",
+                "actionList":"Menu list"
+            }
+        }
+    }
+

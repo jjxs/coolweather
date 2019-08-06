@@ -1,0 +1,76 @@
+{
+   
+        "rbacUser": {
+            "home": {
+                "title": "Staff management",
+                "createLabel": "create User",
+                "editLabel": "edit User",
+                "createOrEditLabel": "createOrEdit Rbac User",
+                "Search": "Search"
+            },
+            "created": "Rbac User {{ param }} create success",
+            "updated": "Rbac User {{ param }} update success",
+            "deleted": "Rbac User {{ param }} delete successful",
+            "delete": {
+                "question": "Are you sure you want to delete employees {{ id }}？"
+            },
+            "detail": {
+                "title": "User"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "userCode": "User Code",
+            "userPassword": "User Password",
+            "userName": "User Name",
+            "userMobile": "User Mobile",
+            "userMail": "User Mail",
+            "userLastLoginTime": "User Last Login Time",
+            "userLoginCount": "User Login Count",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "operation",
+            "help": {
+                "appId": "appId",
+                "storeId": "storeId",
+                "storeName": "storeName",
+                "roleName": "roleName",
+                "userCode": "userCode",
+                "userPassword": "Password",
+                "userPasswordo": "old Password",
+                "userPasswordn": "new Password",
+                "userPasswordc": "confirm Password",
+                "userName": "userName",
+                "userMobile": "userMobile",
+                "userMail": "userMail",
+                "userLastLoginTime": "userLastLoginTime",
+                "userLoginCount": "userLoginCount",
+                "stopFlag": "stopFlag",
+                "delFlag": "delFlag",
+                "search": "search",
+                "users": "User username/Name"
+            },
+            "message":{
+                "unsame": "Confirm that the password is inconsistent with the new password",
+                "passwordPattern" : "Letters and numbers",
+                "telPattern" : "Cell-phone number",
+                "mailPattern" : "mailbox"
+            }
+        },
+            "alertInfo": {
+                "addfail":"create fail",
+                "error":"error",
+                "usercoderepeat":"repeat of user name",
+                "selectMenuRight":"Please select menu permissions"
+        }
+    }
+

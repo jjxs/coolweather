@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsQualityControlDetails">
+            <h2><span jhiTranslate="fccApp.qmsQualityControlDetails.detail.title">Qms Quality Control Details</span> {{qmsQualityControlDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.bomTechnologyId">Bom Technology Id</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.bomTechnologyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.inspectionItem">Inspection Item</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.inspectionItem}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.technicalRequirement">Technical Requirement</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.technicalRequirement}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.inspectionInstrument">Inspection Instrument</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.inspectionInstrument}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.placeDiff">Place Diff</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.placeDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.standard">Standard</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.standard}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.upperDeviation">Upper Deviation</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.upperDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.lowerDeviation">Lower Deviation</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.lowerDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.inspectionResultDiff">Inspection Result Diff</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.inspectionResultDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.inspectionType">Inspection Type</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.inspectionType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.isCheckObj">Is Check Obj</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.isCheckObj}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.abcType">Abc Type</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.abcType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControlDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControlDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-quality-control-details', qmsQualityControlDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

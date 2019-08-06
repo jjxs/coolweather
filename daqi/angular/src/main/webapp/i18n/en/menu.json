@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "home": "Home",
+        "account": {
+            "main": "Account",
+            "logout": "Sign out"
+        },
+        "language": "Language"
+    }
+}

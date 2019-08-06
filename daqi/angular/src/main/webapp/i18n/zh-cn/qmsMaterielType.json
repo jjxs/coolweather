@@ -1,0 +1,33 @@
+{
+    "fccApp": {
+        "qmsMaterielType": {
+            "home": {
+                "title": "物料分类信息",
+                "createLabel": "添加",
+                "query":"查询",
+                "deleteInfo":"删除",
+                "import":"导入",
+                "createOrEditLabel": "创建或编辑 Qms Materiel Type"
+            },
+            "created": "Qms Materiel Type {{ param }} 创建成功",
+            "updated": "Qms Materiel Type {{ param }} 更新成功",
+            "deleted": "Qms Materiel Type {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Materiel Type {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel Type"
+            },
+            "materielTypeCd": "分类编号",
+            "materielTypeName": "分类名称",
+            "parentCd": "上级分类",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "备注",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

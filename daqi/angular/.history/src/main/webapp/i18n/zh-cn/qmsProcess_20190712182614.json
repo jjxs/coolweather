@@ -1,0 +1,30 @@
+{
+    "fccApp": {
+        "qmsProcess": {
+            "home": {
+                "title": "Qms Processes",
+                "createLabel": "创建新 Qms Process",
+                "createOrEditLabel": "创建或编辑 Qms Process",
+                "popTitle": "工序选择"
+            },
+            "created": "Qms Process {{ param }} 创建成功",
+            "updated": "Qms Process {{ param }} 更新成功",
+            "deleted": "Qms Process {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Process {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Process"
+            },
+            "processCd": "工序编码",
+            "processName": "Process Name",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

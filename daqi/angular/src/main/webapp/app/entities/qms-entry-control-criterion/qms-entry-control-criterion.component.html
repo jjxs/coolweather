@@ -1,0 +1,98 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsEntryControlCriterion.home.title">Qms Entry Control Criteria</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-entry-control-criterion" [routerLink]="['/qms-entry-control-criterion/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsEntryControlCriterion.home.createLabel">
+            Create new Qms Entry Control Criterion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsEntryControlCriteria">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsEntryControlCriterion.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionItem"><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionItem">Inspection Item</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="technicalRequirement"><span jhiTranslate="fccApp.qmsEntryControlCriterion.technicalRequirement">Technical Requirement</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionInstrument"><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionInstrument">Inspection Instrument</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="standard"><span jhiTranslate="fccApp.qmsEntryControlCriterion.standard">Standard</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="upperDeviation"><span jhiTranslate="fccApp.qmsEntryControlCriterion.upperDeviation">Upper Deviation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lowerDeviation"><span jhiTranslate="fccApp.qmsEntryControlCriterion.lowerDeviation">Lower Deviation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="itemNumber"><span jhiTranslate="fccApp.qmsEntryControlCriterion.itemNumber">Item Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionResultDiff"><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionResultDiff">Inspection Result Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsEntryControlCriterion.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsEntryControlCriterion.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsEntryControlCriterion.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsEntryControlCriterion.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsEntryControlCriterion.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsEntryControlCriterion.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsEntryControlCriterion.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsEntryControlCriterion of qmsEntryControlCriteria ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-entry-control-criterion', qmsEntryControlCriterion.id, 'view' ]">{{qmsEntryControlCriterion.id}}</a></td>
+                <td>{{qmsEntryControlCriterion.materielId}}</td>
+                <td>{{qmsEntryControlCriterion.inspectionItem}}</td>
+                <td>{{qmsEntryControlCriterion.technicalRequirement}}</td>
+                <td>{{qmsEntryControlCriterion.inspectionInstrument}}</td>
+                <td>{{qmsEntryControlCriterion.standard}}</td>
+                <td>{{qmsEntryControlCriterion.upperDeviation}}</td>
+                <td>{{qmsEntryControlCriterion.lowerDeviation}}</td>
+                <td>{{qmsEntryControlCriterion.itemNumber}}</td>
+                <td>{{qmsEntryControlCriterion.inspectionResultDiff}}</td>
+                <td>{{qmsEntryControlCriterion.flagStatus}}</td>
+                <td>{{qmsEntryControlCriterion.compPkid}}</td>
+                <td>{{qmsEntryControlCriterion.remark}}</td>
+                <td>{{qmsEntryControlCriterion.reserveFirst}}</td>
+                <td>{{qmsEntryControlCriterion.reserveSecond}}</td>
+                <td>{{qmsEntryControlCriterion.reserveThird}}</td>
+                <td>{{qmsEntryControlCriterion.makeUser}}</td>
+                <td>{{qmsEntryControlCriterion.makeTime | date:'medium'}}</td>
+                <td>{{qmsEntryControlCriterion.modifyUser}}</td>
+                <td>{{qmsEntryControlCriterion.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-entry-control-criterion', qmsEntryControlCriterion.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-entry-control-criterion', qmsEntryControlCriterion.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-entry-control-criterion/'+ qmsEntryControlCriterion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsEntryControlCriteria && qmsEntryControlCriteria.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

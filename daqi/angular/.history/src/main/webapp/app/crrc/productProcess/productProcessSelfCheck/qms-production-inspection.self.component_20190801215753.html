@@ -1,0 +1,170 @@
+<div style="  display: block; width: 100%;height: 198px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+      <span>生产过程自检一览</span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="materielCd" />
+        </div>
+  
+      </div>
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="materielName" />
+        </div>
+      </div>
+
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.processName">工序名称</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="processName" />
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 40px;margin-top:0.5%;">
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.serialNumber">编号</span>
+          </div>
+          <div class="search_styleTwo">
+            <input type="text" class="form-control" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+              [(ngModel)]="serialNumber" />
+          </div>
+        </div>
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+          </div>
+          <div class="search_styleTwo">
+            <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+              [(ngModel)]="workno" />
+          </div>
+        </div>
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.selfIsOk">自检状态</span>
+          </div>
+          <div class="search_styleTwo">
+            <p-dropdown #dd (onChange)=choiceSupplier($event) [options]="checkStatus"
+                        [(ngModel)]="isOk" [style]="{'width':'100%'}" placeholder="请选择">
+            </p-dropdown>
+          </div>
+        </div>
+    </div>
+
+    <div style="height: 58px;">
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+        (click)="emptyInfo()">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.empty">
+          清空
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+        (click)="loadAll()">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.query">
+          查询
+        </span>
+      </button>
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+  </div>
+  <p-table [value]="qmsProductionInspections" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+    [resizableColumns]="true" [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+  
+  
+    <ng-template pTemplate="header">
+      <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+        <!-- 序号 -->
+        <th class="common_thStyle" style="width: 7% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.no">序号</span>
+        </th>
+        <!-- 编号 -->
+        <th class="common_thStyle" style="width: 9% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.serialNumber">编号</span>
+        </th>
+        <!-- 中梁号 -->
+        <th class="common_thStyle" style="width: 9% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+        </th>
+        <!-- 物料编码 -->
+        <th class="common_thStyle" style="width: 9% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</span>
+        </th>
+        <!-- 物料名称 -->
+        <th class="common_thStyle" style="width: 12% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称</span>
+        </th> 
+        <!-- 工序名称 -->
+        <th class="common_thStyle" style="width: 15% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.processName">工序名称</span>
+        </th>
+        <!-- 备注 -->
+        <th class="common_thStyle" style="width: 18% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.remark">备注</span>
+        </th>
+        <!-- 检验状态 -->
+        <th class="common_thStyle" style="width: 9% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.isOK">检验状态</span>
+        </th>
+        <!-- 检验状态 -->
+        <th class="common_thStyle" style="width: 12% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.do">操作</span>
+        </th>
+      </tr>
+    </ng-template>
+  
+    <ng-template pTemplate="body" let-ppc let-i="rowIndex">
+      <tr>
+        <!-- 序号 -->
+        <td class="common_tdStyle text-center" style="width: 7% !important;justify-content: center"><p>{{i+1}}</p></td>
+        <!-- 编号 -->
+        <td class="common_tdStyle text-left" style="width: 9% !important"><p>{{ppc.serialNumber}}</p></td>
+        <!-- 中梁号 -->
+        <td class="common_tdStyle text-left" style="width: 9% !important"><p>{{ppc.workno}}</p></td>
+        <!-- 物料编码 -->
+        <td class="common_tdStyle text-left" style="width: 9% !important"><p>{{ppc.materielCd}}</p></td>
+        <!-- 物料名称 -->
+        <td class="common_tdStyle text-left" style="width: 12% !important"><p>{{ppc.materielName}}</p></td>
+        <!-- 工序名称 -->
+        <td class="common_tdStyle text-left" style="width: 15% !important"><p>{{ppc.processName}}</p></td>
+        <!-- 备注 -->
+        <td class="common_tdStyle text-left" style="width: 18% !important"><p>{{ppc.remark}}</p></td>
+        <!-- 检验状态 -->
+        <td class="common_tdStyle text-left" style="width: 9% !important"><p>{{checkStatusFormat(ppc.isOk)}}</p></td>
+        <!-- 操作 -->
+        <td class="common_tdStyle" style="width: 12% !important;">
+          <button id="jh-create-entity"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+            (click)="check(ppc)">
+            <span>
+              检验
+            </span>
+          </button>
+          <button id="jh-create-entity" replaceUrl="true"
+            class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+            [routerLink]="['/productProcessSelfCheck/qms-production-inspection-self', ppc.id, 'detail' ]">
+            <span>
+              查看
+            </span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

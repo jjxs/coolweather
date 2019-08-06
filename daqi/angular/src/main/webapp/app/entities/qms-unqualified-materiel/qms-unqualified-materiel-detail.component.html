@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsUnqualifiedMateriel">
+            <h2><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.detail.title">Qms Unqualified Materiel</span> {{qmsUnqualifiedMateriel.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.materielDetailsId">Materiel Details Id</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.materielDetailsId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.bomTechnologyId">Bom Technology Id</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.bomTechnologyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.processId">Process Id</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.processId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.discoverUserId">Discover User Id</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.discoverUserId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.discoverTime">Discover Time</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.discoverTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.problemDescription">Problem Description</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.problemDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.dealWith">Deal With</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.dealWith}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.useDiff">Use Diff</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.useDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnqualifiedMateriel.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsUnqualifiedMateriel.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-unqualified-materiel', qmsUnqualifiedMateriel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

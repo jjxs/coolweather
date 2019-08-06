@@ -1,0 +1,201 @@
+/* 文件上传样式*/
+.preview {
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
+    left: 15vw;
+    top: 10vh;
+    width: 70vw;
+    height: 70vh;
+    padding: 15px 20px;
+    .previewTitle {
+      width: 100%;
+      height: 10%;
+      padding: 0px 10px 10px 10px;
+      border-bottom: 1px solid #a6a6a6;
+    }
+    .previewContent {
+      border: 1px solid #a6a6a6;
+      width: 100%;
+      height: 90%;
+      overflow-y: scroll;
+    }
+    .previewContent::-webkit-scrollbar {
+      display: none;
+    }
+    .close {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+  }
+  .ppc-modal {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+  }
+  .ppc {
+    background-color: #fff;
+    // position: absolute;
+    width: 100%;
+    height: calc(92vh - 20px);
+    padding: 0.571em 1em;
+    border-radius: 2px;
+    .condition {
+      width: 100%;
+      // height: 30%;
+      border-bottom: 1px solid #a6a6a6;
+      padding: 0px 0px 15px 0px;
+      .cdt:last-child {
+        margin-right: 0px;
+      }
+      .cdt {
+        display: inline-block;
+        margin-right: 4.3%;
+        width: 30%;
+        div:first-child {
+          margin-bottom: 10px;
+        }
+        label {
+          width: 104px;
+          font-weight: bold;
+          font-size: 18px;
+        }
+        input {
+          width: 60%;
+        }
+      }
+    }
+    .content {
+      width: 100%;
+      height: 70%;
+      padding: 10px 0px 0px 0px;
+      display: flex;
+      .file_left {
+        width: 30%;
+        margin-right: 100px;
+        label {
+          width: 104px;
+          font-weight: bold;
+          font-size: 18px;
+        }
+        input {
+          width: 60%;
+        }
+      }
+  
+      .file_right {
+        width: 50%;
+        float: right;
+        .digiFiles {
+          width: 70%;
+          height: 100%;
+          .fheader {
+            position: relative;
+            .uploadFile {
+              width: auto;
+              text-align: right;
+              align-items: center;
+              display: inline-block;
+            }
+          }
+          .file-ul {
+            overflow-y: scroll;
+            width: 100%;
+            margin-top: 15px;
+            padding: 0px;
+            height: 89%;
+            .filename {
+              overflow-x: scroll;
+            }
+            .filename::-webkit-scrollbar {
+              display: none;
+            }
+          }
+          .file-ul::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+    .custom-file-input {
+      position: absolute;
+      width: 31%;
+      height: calc(2.25rem - 3px);
+      right: 0px;
+    }
+  }
+  
+  .loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    padding: 48vh 45vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5000;
+    .loadingPanel {
+      width: 200px;
+      height: 85px;
+      background-color: #fff;
+      border-radius: 3px;
+      text-align: center;
+      span {
+        display: block;
+      }
+    }
+  }
+  
+  :host ::ng-deep button {
+    margin-right: 0.25em;
+  }
+  
+  :host ::ng-deep .custom-toast .ui-toast-message {
+    color: #ffffff;
+    background: #fc466b;
+    background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
+    background: linear-gradient(to right, #3f5efb, #fc466b);
+  }
+  
+  :host ::ng-deep .custom-toast .ui-toast-close-icon {
+    color: #ffffff;
+  }
+  
+  body .ui-widget-overlay {
+    z-index: 3000;
+  }
+  
+  .file-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .confirmModal {
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    top: 0;
+    right: 0;
+    z-index: 2800;
+    overflow: hidden;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: initial;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #e1f1f3 !important;
+  }
+  
+  button {
+    font-size: 18px;
+    width: 85px;
+    height: 47px;
+  }

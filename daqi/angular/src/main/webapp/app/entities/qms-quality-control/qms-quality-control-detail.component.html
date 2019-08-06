@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsQualityControl">
+            <h2><span jhiTranslate="fccApp.qmsQualityControl.detail.title">Qms Quality Control</span> {{qmsQualityControl.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.vehicleType">Vehicle Type</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.vehicleType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.qualityControlNumber">Quality Control Number</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.qualityControlNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.qualityControlName">Quality Control Name</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.qualityControlName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsQualityControl.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsQualityControl.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-quality-control', qmsQualityControl.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

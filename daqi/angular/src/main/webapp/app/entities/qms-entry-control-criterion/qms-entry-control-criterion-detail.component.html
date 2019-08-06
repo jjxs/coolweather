@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsEntryControlCriterion">
+            <h2><span jhiTranslate="fccApp.qmsEntryControlCriterion.detail.title">Qms Entry Control Criterion</span> {{qmsEntryControlCriterion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionItem">Inspection Item</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.inspectionItem}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.technicalRequirement">Technical Requirement</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.technicalRequirement}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionInstrument">Inspection Instrument</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.inspectionInstrument}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.standard">Standard</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.standard}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.upperDeviation">Upper Deviation</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.upperDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.lowerDeviation">Lower Deviation</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.lowerDeviation}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.itemNumber">Item Number</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.itemNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.inspectionResultDiff">Inspection Result Diff</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.inspectionResultDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEntryControlCriterion.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsEntryControlCriterion.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-entry-control-criterion', qmsEntryControlCriterion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

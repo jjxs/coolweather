@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsEquipment">
+            <h2><span jhiTranslate="fccApp.qmsEquipment.detail.title">Qms Equipment</span> {{qmsEquipment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsEquipment.equipmentCd">Equipment Cd</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.equipmentCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.equipmentName">Equipment Name</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.equipmentName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsEquipment.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsEquipment.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-equipment', qmsEquipment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

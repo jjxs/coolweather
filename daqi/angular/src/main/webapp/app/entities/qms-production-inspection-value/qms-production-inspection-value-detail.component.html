@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProductionInspectionValue">
+            <h2><span jhiTranslate="fccApp.qmsProductionInspectionValue.detail.title">Qms Production Inspection Value</span> {{qmsProductionInspectionValue.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.inspectionId">Inspection Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.inspectionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.checkNumber">Check Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.checkNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.inspectionDiff">Inspection Diff</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.inspectionDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.isOk">Is Ok</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.isOk}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspectionValue.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspectionValue.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-production-inspection-value', qmsProductionInspectionValue.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

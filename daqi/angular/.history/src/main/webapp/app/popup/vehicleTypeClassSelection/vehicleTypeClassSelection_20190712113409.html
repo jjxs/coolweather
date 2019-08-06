@@ -1,0 +1,111 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+<p-panel> 
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem" jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">车型分类编码</span>
+            <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                icon="fa fa-fw fa-close"></button>
+        </div>
+    </p-header>
+    <div style="height:39rem;margin: 0;">
+        <p-table #dt [value]="qmsVehicleTypeClass" [(selection)]="qmsVehicleTypeClassBack"
+            scrollHeight="20rem" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount" [lazy]="true"
+            [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+            <ng-template pTemplate="caption" style="padding-left:0px" >
+                <div style="height: 50px;margin-top:0.5%;width: 100%;">
+                    <div class="common_div-head">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="fccApp.qmsVehicleTypeClass.home.title"></span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" (click)="goToMPS()" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="vehicleClass" />
+                        </div>
+                    </div>
+                    <div class="common_div-head" style="margin-left: 3%;">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">车型分类编码</span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                                [(ngModel)]="vehicleClassName" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="height: 46px">
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                        (click)="emptyInfo()">
+                        <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.empty">
+                            清空
+                        </span>
+                    </button>
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                        (click)="searchInfo()">
+                        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.query">
+                            查询
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr class="common_trStyle">
+                    <th class="common_thStyle">
+                        <span jhiTranslate="global.field.id">序号</span>
+
+                    </th>
+                    <th class="common_thStyle">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.vehicleType">车型</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.vehicleTypeName">车型名称</span>
+                    </th>
+
+                    <th class="common_thStyle">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.materialBianma">物料编码</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.materialName">物料名称</span>
+                    </th>
+                    <th class="common_thStyle">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.processCoding">工艺编码</span>
+                    </th>
+                    <th class="common_thStyle" style="width: 20% !important; ">
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.processName">工艺名称</span>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowDate let-i="rowIndex">
+                <tr>
+                    <td class="common_tdStyle text-center">
+                        <p-tableRadioButton [value]="rowDate" [checked]="i === 0 ? true : ''"></p-tableRadioButton>
+                    </td>
+                    <td class="common_tdStyle text-left">{{rowDate.vehicleType}}</td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.vehicleTypeName}}
+                    </td>
+                    <td class="common_tdStyle text-left">{{rowDate.materielCd}}</td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.materielName}}</td>
+                    <td class="common_tdStyle text-left">{{rowDate.technologyCd}}</td>
+                    <td class="common_tdStyle text-left" style="width: 20% !important; ">{{rowDate.technologyName}}</td>
+
+                </tr>
+            </ng-template>
+        </p-table>
+        <div style="margin-top:10px;margin-bottom:10px;">
+            <button pButton type="button" (click)="goBack()" label="取消"
+                class="common_pop_font ui-button-secondary float-right search_button"></button>
+            <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+                style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+        </div>
+    </div>
+</p-panel>
+</div>

@@ -1,0 +1,6 @@
+export * from './process-informations.component'
+export * from './process-informations.route'
+export * from './process-informations.service'
+export * from './process-informations-update.component'
+export * from './process-select-popup-component'
+export * from './process-informations-detail.component'

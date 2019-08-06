@@ -1,0 +1,65 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class"
+            jhiTranslate="fccApp.qmsProductionInspection.editTitle"></h2>
+        <div class="lookBtn">
+            <button type="submit" (click)="previousState()"
+                class="btn btn-info float-right search_button_darkblue search_button">
+                <span jhiTranslate="fccApp.qmsProductionInspection.home.back">返回</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsProductionInspection.describe">工序名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsProductionInspection.serialNumber">编号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsProductionInspection.furnace">炉批号</span>
+            </div>
+            <div class="lookleftSpan">
+                <span jhiTranslate="fccApp.qmsProductionInspection.remark">备注</span>
+            </div>
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" maxlength=10 name="materielCd" style="width: 300px;margin-left: 120px;" pInputText
+                    [(ngModel)]=qmsProductionInspection.materielCd />
+            </div>
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" maxlength=100 name="materielName" style="width: 300px;margin-left: 120px;" pInputText
+                    [(ngModel)]=qmsProductionInspection.materielName disabled=true/>
+            </div>
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" maxlength=200 name="jhiDescribe" style="width: 300px;margin-left: 120px;" pInputText
+                    [(ngModel)]=qmsProductionInspection.jhiDescribe disabled=true/>
+            </div>
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" maxlength=10 name="serialNumber" style="width: 300px;margin-left: 120px;" pInputText
+                    [(ngModel)]=qmsProductionInspection.serialNumber />
+            </div>
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" maxlength=20 name="furnace" style="width: 300px;margin-left: 120px;" pInputText
+                    [(ngModel)]=qmsProductionInspection.furnace />
+            </div>
+            <div class="lookLeftDiv">
+                <textarea class="form-control" name="remark" maxlength=200 [(ngModel)]=qmsProductionInspection.remark
+                    style="width: 500px;margin-left: 120px;height: 210px;"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

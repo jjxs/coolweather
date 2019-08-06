@@ -1,0 +1,44 @@
+{
+    "fccApp": {
+        "bomInformation": {
+            "home": {
+                "title": "BOM信息",
+                "createLabel": "添加",
+                "query":"查询",
+                "deleteInfo":"删除",
+                "import":"导入",
+                "createOrEditLabel": "创建或编辑 Qms Bom"
+            },
+            "created": "Qms Bom {{ param }} 创建成功",
+            "updated": "Qms Bom {{ param }} 更新成功",
+            "deleted": "Qms Bom {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Bom {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Bom"
+            },
+            "search": "查询",
+            "import": "BOM导入",
+            "vehicleType": "车型",
+            "vehicleTypeName": "车型名称",
+            "materielCd": "物料编码",
+            "parentMaterielCd": "上级物料",
+            "productMode": "生产方式",
+            "materielName": "物料名称",
+            "quantity": "Quantity",
+            "isMust": "Is Must",
+            "supplyType": "Supply Type",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "备注",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

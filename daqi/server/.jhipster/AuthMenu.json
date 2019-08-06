@@ -1,0 +1,99 @@
+{
+    "name": "AuthMenu",
+    "fields": [
+        {
+            "fieldName": "appId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "storeId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pMenuId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "menuCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuIcon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuLable",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "menuMobileFlage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "stopFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "delFlag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "insProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "insDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "delProgarmCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delOperCd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delDateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "triggerDateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190202075302",
+    "entityTableName": "auth_menu",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

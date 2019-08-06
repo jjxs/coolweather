@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsCarRecordbookDetails">
+            <h2><span jhiTranslate="fccApp.qmsCarRecordbookDetails.detail.title">Qms Car Recordbook Details</span> {{qmsCarRecordbookDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.recordbookMainId">Recordbook Main Id</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.recordbookMainId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.productId">Product Id</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.productId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.assemblyCd">Assembly Cd</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.assemblyCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.fileupload">Fileupload</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.fileupload}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsCarRecordbookDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsCarRecordbookDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-car-recordbook-details', qmsCarRecordbookDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

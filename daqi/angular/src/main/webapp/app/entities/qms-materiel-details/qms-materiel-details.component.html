@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsMaterielDetails.home.title">Qms Materiel Details</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-materiel-details" [routerLink]="['/qms-materiel-details/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsMaterielDetails.home.createLabel">
+            Create new Qms Materiel Details
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsMaterielDetails">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="entryId"><span jhiTranslate="fccApp.qmsMaterielDetails.entryId">Entry Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goodsCd"><span jhiTranslate="fccApp.qmsMaterielDetails.goodsCd">Goods Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagInspect"><span jhiTranslate="fccApp.qmsMaterielDetails.flagInspect">Flag Inspect</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isCheckOk"><span jhiTranslate="fccApp.qmsMaterielDetails.isCheckOk">Is Check Ok</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="goodsQuantity"><span jhiTranslate="fccApp.qmsMaterielDetails.goodsQuantity">Goods Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsMaterielDetails.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsMaterielDetails.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsMaterielDetails.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsMaterielDetails.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsMaterielDetails.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsMaterielDetails.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsMaterielDetails.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsMaterielDetails.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsMaterielDetails.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsMaterielDetails.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsMaterielDetails of qmsMaterielDetails ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-materiel-details', qmsMaterielDetails.id, 'view' ]">{{qmsMaterielDetails.id}}</a></td>
+                <td>{{qmsMaterielDetails.entryId}}</td>
+                <td>{{qmsMaterielDetails.goodsCd}}</td>
+                <td>{{qmsMaterielDetails.flagInspect}}</td>
+                <td>{{qmsMaterielDetails.isCheckOk}}</td>
+                <td>{{qmsMaterielDetails.goodsQuantity}}</td>
+                <td>{{qmsMaterielDetails.flagStatus}}</td>
+                <td>{{qmsMaterielDetails.compPkid}}</td>
+                <td>{{qmsMaterielDetails.remark}}</td>
+                <td>{{qmsMaterielDetails.reserveFirst}}</td>
+                <td>{{qmsMaterielDetails.reserveSecond}}</td>
+                <td>{{qmsMaterielDetails.reserveThird}}</td>
+                <td>{{qmsMaterielDetails.makeUser}}</td>
+                <td>{{qmsMaterielDetails.makeTime | date:'medium'}}</td>
+                <td>{{qmsMaterielDetails.modifyUser}}</td>
+                <td>{{qmsMaterielDetails.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel-details', qmsMaterielDetails.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-materiel-details', qmsMaterielDetails.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-materiel-details/'+ qmsMaterielDetails.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsMaterielDetails && qmsMaterielDetails.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

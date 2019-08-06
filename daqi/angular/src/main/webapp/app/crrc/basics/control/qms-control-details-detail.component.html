@@ -1,0 +1,70 @@
+<div *ngIf="qmsControlDetails">
+    <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">生产检验项目维护</h2>
+    <div class="lookBtn">
+        <button type="submit" (click)="previousState()" class="btn btn-info float-right search_button_darkblue search_button">
+            <span>返回</span>
+        </button>
+
+        
+    </div>
+    <!-- 左侧文字的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+            <span>项目编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>检查项目</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>技术要求</span>
+        </div>
+        <div style="margin-top: 230px;margin-left: 45px;font-size: 18px;font-weight: bold">
+            <span>备注</span>
+        </div>
+    </div>
+    <!-- 左侧输入框的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:30px;">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsControlDetails.inspectionCd [disabled]=qmsControlDetails.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsControlDetails.inspectionItem [disabled]=qmsControlDetails.id />
+        </div>
+        <!-- <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsControlDetails.technicalRequirement [disabled]=qmsControlDetails.id />
+        </div> -->
+        <div class="lookRightDiv">
+            <textarea class="form-control" [(ngModel)]=qmsControlDetails.technicalRequirement style="width: 500px;margin-left: 150px;height: 210px;" [disabled]=qmsControlDetails.id></textarea>
+        </div>
+        <!-- <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsControlDetails.remark [disabled]=qmsControlDetails.id />
+        </div> -->
+        <div class="lookRightDiv">
+            <textarea class="form-control" [(ngModel)]=qmsControlDetails.remark style="width: 500px;margin-left: 150px;height: 210px;" [disabled]=qmsControlDetails.id></textarea>
+        </div>
+    </div>
+    <!-- 右侧文字 -->
+    <div style="float: left;">
+        <div style="margin-top:50px;font-size:18px;font-weight: bold">
+            <span>检查器具</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>结果区分</span>
+        </div>
+    </div>
+    <!-- 右侧输入框 -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left: 120px;">
+            <input type="text" class="form-control" style="width: 300px;" pInputText [(ngModel)]=qmsControlDetails.inspectionInstrument [disabled]=qmsControlDetails.id />
+        </div>
+        <div style="margin-left: 120px;margin-top: 43px">
+            <!-- <input type="text" class="form-control" style="width: 300px;" pInputText [(ngModel)]=qmsControlDetails.inspectionResultDiff [disabled]=qmsControlDetails.id /> -->
+            <p-dropdown [options]="result" [(ngModel)]=qmsControlDetails.inspectionResultDiff placeholder="请选择"
+                [showClear]="true" [style]="{'width':'300px','height':'38px'}"
+                [disabled]=qmsControlDetails.id></p-dropdown>
+        </div>
+        <!-- <div class="lookRightDiv">
+            <textarea class="form-control" [(ngModel)]=qmsSupplier.remark style="width: 500px;margin-left: 120px;height: 210px;" [disabled]=qmsSupplier.id></textarea>
+        </div> -->
+    </div>
+</div>

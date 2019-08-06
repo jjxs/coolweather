@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsVehicleTypeClass">
+            <h2><span jhiTranslate="fccApp.qmsVehicleTypeClass.detail.title">Qms Vehicle Type Class</span> {{qmsVehicleTypeClass.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">Vehicle Class</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.vehicleClass}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClassName">Vehicle Class Name</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.vehicleClassName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsVehicleTypeClass.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsVehicleTypeClass.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-vehicle-type-class', qmsVehicleTypeClass.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsIntelligentTriggerTest">
+            <h2><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.detail.title">Qms Intelligent Trigger Test</span> {{qmsIntelligentTriggerTest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.num">Num</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.num}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeLeft">Sideframe Left</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.sideframeLeft}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue1">Left Value 1</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.leftValue1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue2">Left Value 2</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.leftValue2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeRight">Sideframe Right</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.sideframeRight}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue1">Right Value 1</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.rightValue1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue2">Right Value 2</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.rightValue2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftUser">Left User</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.leftUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightUser">Right User</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.rightUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsIntelligentTriggerTest.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-intelligent-trigger-test', qmsIntelligentTriggerTest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

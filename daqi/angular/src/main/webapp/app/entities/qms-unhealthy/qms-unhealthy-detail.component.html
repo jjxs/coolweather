@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsUnhealthy">
+            <h2><span jhiTranslate="fccApp.qmsUnhealthy.detail.title">Qms Unhealthy</span> {{qmsUnhealthy.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.unhealthyCd">Unhealthy Cd</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.unhealthyCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.unhealthyName">Unhealthy Name</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.unhealthyName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.parentCd">Parent Cd</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.parentCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.isUse">Is Use</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.isUse}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnhealthy.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsUnhealthy.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-unhealthy', qmsUnhealthy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProductionInspection">
+            <h2><span jhiTranslate="fccApp.qmsProductionInspection.detail.title">Qms Production Inspection</span> {{qmsProductionInspection.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.inspectionStep">Inspection Step</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.inspectionStep}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.bomTechnologyId">Bom Technology Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.bomTechnologyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.serialNumber">Serial Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.serialNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.fileNumber">File Number</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.fileNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.objId">Obj Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.objId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.virObjId">Vir Obj Id</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.virObjId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.isOk">Is Ok</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.isOk}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProductionInspection.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProductionInspection.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-production-inspection', qmsProductionInspection.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

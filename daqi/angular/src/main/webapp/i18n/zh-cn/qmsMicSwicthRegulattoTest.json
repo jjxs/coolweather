@@ -1,0 +1,69 @@
+{
+    "fccApp": {
+        "qmsMicSwicthRegulattoTest": {
+            "home": {
+                "title": "Qms Mic Swicth Regulatto Tests",
+                "createLabel": "创建新 Qms Mic Swicth Regulatto Test",
+                "createOrEditLabel": "创建或编辑 Qms Mic Swicth Regulatto Test"
+            },
+            "created": "Qms Mic Swicth Regulatto Test {{ param }} 创建成功",
+            "updated": "Qms Mic Swicth Regulatto Test {{ param }} 更新成功",
+            "deleted": "Qms Mic Swicth Regulatto Test {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Mic Swicth Regulatto Test {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Mic Swicth Regulatto Test"
+            },
+            "sname": "Sname",
+            "stype": "Stype",
+            "scode": "Scode",
+            "ddate": "Ddate",
+            "il0": "Il 0",
+            "izdgS": "Izdg S",
+            "sworker": "Sworker",
+            "ssumup": "Ssumup",
+            "sneworold": "Sneworold",
+            "idian": "Idian",
+            "izdg0": "Izdg 0",
+            "izdg1": "Izdg 1",
+            "izdg2": "Izdg 2",
+            "izdg3": "Izdg 3",
+            "izdg4": "Izdg 4",
+            "izdg5": "Izdg 5",
+            "izdg6": "Izdg 6",
+            "izdg7": "Izdg 7",
+            "iztq0": "Iztq 0",
+            "iztq1": "Iztq 1",
+            "iztq2": "Iztq 2",
+            "iztq3": "Iztq 3",
+            "iztq4": "Iztq 4",
+            "iztq5": "Iztq 5",
+            "iztq6": "Iztq 6",
+            "iztq7": "Iztq 7",
+            "iztq8": "Iztq 8",
+            "iztq9": "Iztq 9",
+            "iztq10": "Iztq 10",
+            "iztq11": "Iztq 11",
+            "iqdl": "Iqdl",
+            "sresult0": "Sresult 0",
+            "sresult1": "Sresult 1",
+            "sresult2": "Sresult 2",
+            "sresult3": "Sresult 3",
+            "sresult4": "Sresult 4",
+            "sresult5": "Sresult 5",
+            "sresult6": "Sresult 6",
+            "sresult": "Sresult",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

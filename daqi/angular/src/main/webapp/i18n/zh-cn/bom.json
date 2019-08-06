@@ -1,0 +1,25 @@
+{
+    "bom": {
+        "vehicle": "车型",
+        "select": "请选择",
+        "no": "序号",
+        "technology_cd": "工艺编号",
+        "technology_name": "工艺名称",
+        "operation": "操作",
+        "warning": "注意",
+        "confirm": "确认删除么？",
+        "confirmSave": "确认保存么？",
+        "using": "正在使用",
+        "success": "操作成功",
+        "modify": "数据更新，请重新操作",
+        "exist": "工艺编码已经存在,请重新输入",
+        "yes": "是",
+        "No": "否",
+        "technologyCd": "工艺编码",
+        "noEmpty": "不能为空",
+        "choose": "请从左侧选择一条数据",
+        "cancel": "取消",
+        "delete": "删除",
+        "deleteMsg": "确定删除工艺{{ param }}吗？"
+    }
+}

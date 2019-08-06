@@ -1,0 +1,102 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsProductionRelation.home.title">Qms Production Relations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-production-relation" [routerLink]="['/qms-production-relation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsProductionRelation.home.createLabel">
+            Create new Qms Production Relation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsProductionRelations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productionInspectionId"><span jhiTranslate="fccApp.qmsProductionRelation.productionInspectionId">Production Inspection Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assemblyId"><span jhiTranslate="fccApp.qmsProductionRelation.assemblyId">Assembly Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="doProductId"><span jhiTranslate="fccApp.qmsProductionRelation.doProductId">Do Product Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="actualUseLocation"><span jhiTranslate="fccApp.qmsProductionRelation.actualUseLocation">Actual Use Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="assemblyMaterielId"><span jhiTranslate="fccApp.qmsProductionRelation.assemblyMaterielId">Assembly Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="useProductId"><span jhiTranslate="fccApp.qmsProductionRelation.useProductId">Use Product Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fromDiff"><span jhiTranslate="fccApp.qmsProductionRelation.fromDiff">From Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="confirmUser1"><span jhiTranslate="fccApp.qmsProductionRelation.confirmUser1">Confirm User 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="confirmTime1"><span jhiTranslate="fccApp.qmsProductionRelation.confirmTime1">Confirm Time 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="confirmUser2"><span jhiTranslate="fccApp.qmsProductionRelation.confirmUser2">Confirm User 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="confirmTime2"><span jhiTranslate="fccApp.qmsProductionRelation.confirmTime2">Confirm Time 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsProductionRelation.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsProductionRelation.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsProductionRelation.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsProductionRelation.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsProductionRelation.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsProductionRelation.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsProductionRelation.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsProductionRelation.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsProductionRelation.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsProductionRelation.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsProductionRelation of qmsProductionRelations ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-production-relation', qmsProductionRelation.id, 'view' ]">{{qmsProductionRelation.id}}</a></td>
+                <td>{{qmsProductionRelation.productionInspectionId}}</td>
+                <td>{{qmsProductionRelation.assemblyId}}</td>
+                <td>{{qmsProductionRelation.doProductId}}</td>
+                <td>{{qmsProductionRelation.actualUseLocation}}</td>
+                <td>{{qmsProductionRelation.assemblyMaterielId}}</td>
+                <td>{{qmsProductionRelation.useProductId}}</td>
+                <td>{{qmsProductionRelation.fromDiff}}</td>
+                <td>{{qmsProductionRelation.confirmUser1}}</td>
+                <td>{{qmsProductionRelation.confirmTime1 | date:'medium'}}</td>
+                <td>{{qmsProductionRelation.confirmUser2}}</td>
+                <td>{{qmsProductionRelation.confirmTime2 | date:'medium'}}</td>
+                <td>{{qmsProductionRelation.remark}}</td>
+                <td>{{qmsProductionRelation.flagStatus}}</td>
+                <td>{{qmsProductionRelation.compPkid}}</td>
+                <td>{{qmsProductionRelation.reserveFirst}}</td>
+                <td>{{qmsProductionRelation.reserveSecond}}</td>
+                <td>{{qmsProductionRelation.reserveThird}}</td>
+                <td>{{qmsProductionRelation.makeUser}}</td>
+                <td>{{qmsProductionRelation.makeTime | date:'medium'}}</td>
+                <td>{{qmsProductionRelation.modifyUser}}</td>
+                <td>{{qmsProductionRelation.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-production-relation', qmsProductionRelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-production-relation', qmsProductionRelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-production-relation/'+ qmsProductionRelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsProductionRelations && qmsProductionRelations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

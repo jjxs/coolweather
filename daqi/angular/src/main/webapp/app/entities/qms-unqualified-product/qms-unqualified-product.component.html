@@ -1,0 +1,120 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsUnqualifiedProduct.home.title">Qms Unqualified Products</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-unqualified-product" [routerLink]="['/qms-unqualified-product/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsUnqualifiedProduct.home.createLabel">
+            Create new Qms Unqualified Product
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsUnqualifiedProducts">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionValueId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.inspectionValueId">Inspection Value Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bomTechnologyId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.bomTechnologyId">Bom Technology Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.processId">Process Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveResultId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveResultId">Approve Result Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="unhealthyId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.unhealthyId">Unhealthy Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="defectId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.defectId">Defect Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="controlLevel"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.controlLevel">Control Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approvePrincipalUserId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approvePrincipalUserId">Approve Principal User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveStepNum"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveStepNum">Approve Step Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveStepUserId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveStepUserId">Approve Step User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="seriNumber"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.seriNumber">Seri Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="furnace"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.furnace">Furnace</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="saleNumber"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.saleNumber">Sale Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productorderNumber"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.productorderNumber">Productorder Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionDiff"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.inspectionDiff">Inspection Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isApprove"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.isApprove">Is Approve</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveResultDiff"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveResultDiff">Approve Result Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveUserId"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveUserId">Approve User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveTime"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.approveTime">Approve Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsUnqualifiedProduct.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsUnqualifiedProduct of qmsUnqualifiedProducts ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-unqualified-product', qmsUnqualifiedProduct.id, 'view' ]">{{qmsUnqualifiedProduct.id}}</a></td>
+                <td>{{qmsUnqualifiedProduct.inspectionValueId}}</td>
+                <td>{{qmsUnqualifiedProduct.bomTechnologyId}}</td>
+                <td>{{qmsUnqualifiedProduct.processId}}</td>
+                <td>{{qmsUnqualifiedProduct.materielId}}</td>
+                <td>{{qmsUnqualifiedProduct.approveResultId}}</td>
+                <td>{{qmsUnqualifiedProduct.unhealthyId}}</td>
+                <td>{{qmsUnqualifiedProduct.defectId}}</td>
+                <td>{{qmsUnqualifiedProduct.controlLevel}}</td>
+                <td>{{qmsUnqualifiedProduct.approvePrincipalUserId}}</td>
+                <td>{{qmsUnqualifiedProduct.approveStepNum}}</td>
+                <td>{{qmsUnqualifiedProduct.approveStepUserId}}</td>
+                <td>{{qmsUnqualifiedProduct.seriNumber}}</td>
+                <td>{{qmsUnqualifiedProduct.furnace}}</td>
+                <td>{{qmsUnqualifiedProduct.saleNumber}}</td>
+                <td>{{qmsUnqualifiedProduct.productorderNumber}}</td>
+                <td>{{qmsUnqualifiedProduct.inspectionDiff}}</td>
+                <td>{{qmsUnqualifiedProduct.isApprove}}</td>
+                <td>{{qmsUnqualifiedProduct.approveResultDiff}}</td>
+                <td>{{qmsUnqualifiedProduct.approveUserId}}</td>
+                <td>{{qmsUnqualifiedProduct.approveTime | date:'medium'}}</td>
+                <td>{{qmsUnqualifiedProduct.flagStatus}}</td>
+                <td>{{qmsUnqualifiedProduct.compPkid}}</td>
+                <td>{{qmsUnqualifiedProduct.remark}}</td>
+                <td>{{qmsUnqualifiedProduct.reserveFirst}}</td>
+                <td>{{qmsUnqualifiedProduct.reserveSecond}}</td>
+                <td>{{qmsUnqualifiedProduct.reserveThird}}</td>
+                <td>{{qmsUnqualifiedProduct.makeUser}}</td>
+                <td>{{qmsUnqualifiedProduct.makeTime | date:'medium'}}</td>
+                <td>{{qmsUnqualifiedProduct.modifyUser}}</td>
+                <td>{{qmsUnqualifiedProduct.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-unqualified-product', qmsUnqualifiedProduct.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-unqualified-product', qmsUnqualifiedProduct.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-unqualified-product/'+ qmsUnqualifiedProduct.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsUnqualifiedProducts && qmsUnqualifiedProducts.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

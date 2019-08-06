@@ -1,0 +1,105 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+<p-panel> 
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title text-left" style="font-weight: bold;font-size:1.2rem" jhiTranslate="userSelect.title">用户选择</span>
+            <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                icon="fa fa-fw fa-close"></button>
+        </div>
+    </p-header>
+    <div style="height:39rem;margin: 0;">
+        <p-table #dt [value]="qmsUsers" [(selection)]="userSelect"
+            scrollHeight="20rem" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount" [lazy]="true"
+            [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+            <ng-template pTemplate="caption" style="padding-left:0px" >
+                <div style="height: 50px;margin-top:0.5%;width: 100%;">
+                    <div class="common_div-head">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="userSelect.condition.userName">用户名:</span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <div class="search_styleTwo">
+                                <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                                    [(ngModel)]="userName" />
+                            </div>
+                    </div>
+
+                    </div>
+                    <div class="common_div-head" style="margin-left: 3%;">
+                        <div class="search_styleOne">
+                            <span jhiTranslate="userSelect.condition.name">用户姓名:</span>
+                        </div>
+                        <div class="search_styleTwo">
+                            <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                                [(ngModel)]="name" />
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 38px;margin-top:1%;">
+                </div>
+                <div style="height: 46px">
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                        (click)="emptyInfo()">
+                        <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.empty">
+                            清空
+                        </span>
+                    </button>
+                    <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                        (click)="loadAll()">
+                        <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+                        <span jhiTranslate="fccApp.qmsMaterialProcedureSelection.home.query">
+                            查询
+                        </span>
+                    </button>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr class="common_trStyle">
+                    <th class="common_thStyle" style="width: 5% !important; ">
+                        <span jhiTranslate="userSelect.selection.select">选择</span>
+
+                    </th>
+                    <th class="common_thStyle" style="width: 14% !important; ">
+                        <span jhiTranslate="userSelect.selection.userName">用户名</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 27% !important; ">
+                        <span jhiTranslate="userSelect.selection.name">用户姓名</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 27% !important; ">
+                        <span jhiTranslate="userSelect.selection.phone">电话</span>
+                    </th>
+
+                    <th class="common_thStyle" style="width: 27% !important; ">
+                        <span jhiTranslate="userSelect.selection.mail">邮箱</span>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowDate let-i="rowIndex">
+                <tr style="line-height: 34px">
+                    <td class="common_tdStyle text-center" style="width:5% !important; ">
+                        <p-tableRadioButton [value]="rowDate" [checked]="i === 0 ? true : ''"></p-tableRadioButton>
+                    </td>
+                    <td class="common_tdStyle text-left" style="width:14% !important; ">{{rowDate.userCode}}</td>
+                    <td class="common_tdStyle text-left" style="width: 27% !important; ">{{rowDate.userName}}
+                    </td>
+                    <td class="common_tdStyle text-left" style="width: 27% !important; ">{{rowDate.userMobile}}</td>
+                    <td class="common_tdStyle text-left" style="width: 27% !important; ">{{rowDate.userMail}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <div style="margin-top:10px;margin-bottom:10px;">
+            <button pButton type="button" (click)="goBack()" label="取消"
+                class="common_pop_font ui-button-secondary float-right search_button"></button>
+            <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+                style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+        </div>
+    </div>
+</p-panel>
+</div>

@@ -1,0 +1,86 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<p-table #dt [value]="rbacUsers" [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount"
+         [scrollable]="true" scrollHeight="520px" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)">
+
+    <ng-template pTemplate="caption">
+        <div class="cnc-user-common-top">
+            <button pButton class="float-left" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                    label="{{'rbacUser.home.createLabel'| translate}}" [routerLink]="['/rbac-user/new']"></button>
+            <div class="cnc-user-common-title">
+                <span jhiTranslate="rbacUser.home.title"></span>
+            </div>
+        </div>
+        <div class="cnc-user-common-search">
+            <div class="cnc-user-common-search-input input-group-sm">
+                <input class="form-control" pInputText type="text" placeholder="{{'rbacUser.help.users'| translate}}"
+                       maxlength="30"
+                       [(ngModel)]="searchUsersMes">
+            </div>
+            <p-button (onClick)="usersSearch()" label="{{'rbacUser.home.Search'| translate}}"
+                      class="cnc-user-common-button"></p-button>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th class="cnc-user-common-th-operate">
+                <span jhiTranslate="rbacUser.operation">操作</span>
+
+            </th>
+            <!-- <th class="cnc-user-common-th" >
+                <span jhiTranslate="rbacUser.help.storeId">门店id</span>
+                <span class="fa fa-sort"></span>
+            </th> -->
+            <th class="cnc-user-common-th" jhiSortBy="userCode">
+                <span jhiTranslate="rbacUser.help.userCode">用户名</span>
+                <span class="fa fa-sort"></span>
+            </th>
+            <th class="cnc-user-common-th" jhiSortBy="userName">
+                <span jhiTranslate="rbacUser.help.userName">用户姓名</span>
+                <span class="fa fa-sort"></span>
+            </th>
+            <th class="cnc-user-common-th" jhiSortBy="userMobile">
+                <span jhiTranslate="rbacUser.help.userMobile">用户手机</span>
+                <span class="fa fa-sort"></span>
+            </th>
+
+            <th class="cnc-user-common-th-operate" jhiSortBy="userMail">
+                <span jhiTranslate="rbacUser.help.userMail">用户邮箱</span>
+                <span class="fa fa-sort"></span>
+            </th>
+            <th class="cnc-user-common-th-operate" jhiSortBy="userLastLoginTime">
+                <span jhiTranslate="rbacUser.help.userLastLoginTime">上次登录时间</span>
+                <span class="fa fa-sort"></span>
+            </th>
+            <th class="cnc-user-common-th" jhiSortBy="userLoginCount">
+                <span jhiTranslate="rbacUser.help.userLoginCount">登录次数</span>
+                <span class="fa fa-sort"></span>
+            </th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rbacUser>
+        <tr>
+            <td class="cnc-user-common-td-operate">
+                <a class="cnc-user-common-a" replaceUrl="true" jhiTranslate="entity.action.view"
+                   queryParamsHandling="merge" [routerLink]="['/rbac-user', rbacUser.id, 'view' ]"></a>
+                <a class="cnc-user-common-a" *ngIf="!(rbacUser.id === 1)" [hidden]="updateFlag" replaceUrl="true"
+                   jhiTranslate="entity.action.edit" queryParamsHandling="merge"
+                   [routerLink]="['/rbac-user', rbacUser.id, 'edit']"></a>
+                <a class="cnc-user-common-a" *ngIf="!(rbacUser.id === 1)" [hidden]="deleteFlag" replaceUrl="true"
+                   jhiTranslate="entity.action.delete" queryParamsHandling="merge" (click)="UserPop(rbacUser.id)"
+                   style="color: #0096ff;"></a>
+            </td>
+            <!-- <td class="cnc-user-common-td text-left">{{rbacUser.storeId}}</td> -->
+            <td class="cnc-user-common-td text-left">{{rbacUser.userCode}}</td>
+            <td class="cnc-user-common-td text-left">{{rbacUser.userName}}</td>
+            <td class="cnc-user-common-td text-left">{{rbacUser.userMobile}}</td>
+            <td class="cnc-user-common-td-operate text-left">{{rbacUser.userMail}}</td>
+            <td class="cnc-user-common-td-operate text-right">{{rbacUser.userLastLoginTime | date:'yyyy-MM-dd
+                HH:mm:ss'}}
+            </td>
+            <td class="cnc-user-common-td text-right">{{rbacUser.userLoginCount}}</td>
+        </tr>
+    </ng-template>
+</p-table>

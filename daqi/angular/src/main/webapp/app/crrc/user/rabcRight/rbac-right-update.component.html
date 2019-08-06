@@ -1,0 +1,61 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">权限维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>权限编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>权限名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>菜单列表</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 权限编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="rightCode" id="field_rightCode" *ngIf="this.flag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRight.rightCode" maxlength="20"
+                    required />
+
+                <input type="text" class="form-control" name="rightCode" id="field_rightCode"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRight.rightCode" maxlength="20"
+                    *ngIf="this.flag==1" [disabled]=rbacRight.id required />
+            </div>
+            <!-- 权限名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="rightName" id="field_rightName" required="true"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRight.rightName"
+                    maxlength="64" />
+            </div>
+            <!-- 菜单列表 -->
+            <div class="row">
+                <div class="cnc-role-creat-body">
+                    <p-tree [value]="files" selectionMode="checkbox" [style]="{ 'height' : '450px', 'margin-left' : '165px' ,'margin-top' :'50px','width':'400px'}"
+                        [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect()" (onNodeUnselect)="nodeUnselect()">
+                    </p-tree>
+                    <!-- <i style="font-size:2em;cursor:pointer;color:#1F89CE;padding-left: 30px;" class="fa fa-search" (click)="goToMPS()"></i> -->
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

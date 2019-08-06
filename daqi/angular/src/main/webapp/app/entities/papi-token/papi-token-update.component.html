@@ -1,0 +1,183 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-papi-token-heading" jhiTranslate="fccApp.papiToken.home.createOrEditLabel">Create or edit a Papi Token</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!papiToken.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="papiToken.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.appId" for="field_appId">App Id</label>
+                    <input type="number" class="form-control" name="appId" id="field_appId"
+                        [(ngModel)]="papiToken.appId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.storeId" for="field_storeId">Store Id</label>
+                    <input type="number" class="form-control" name="storeId" id="field_storeId"
+                        [(ngModel)]="papiToken.storeId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.apiCode" for="field_apiCode">Api Code</label>
+                    <input type="text" class="form-control" name="apiCode" id="field_apiCode"
+                        [(ngModel)]="papiToken.apiCode" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.apiCode?.dirty && editForm.controls.apiCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apiCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.apiPassword" for="field_apiPassword">Api Password</label>
+                    <input type="text" class="form-control" name="apiPassword" id="field_apiPassword"
+                        [(ngModel)]="papiToken.apiPassword" maxlength="64"/>
+                    <div [hidden]="!(editForm.controls.apiPassword?.dirty && editForm.controls.apiPassword?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apiPassword?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 64 }">
+                        This field cannot be longer than 64 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.apiToken" for="field_apiToken">Api Token</label>
+                    <input type="text" class="form-control" name="apiToken" id="field_apiToken"
+                        [(ngModel)]="papiToken.apiToken" maxlength="255"/>
+                    <div [hidden]="!(editForm.controls.apiToken?.dirty && editForm.controls.apiToken?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.apiToken?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.apiCount" for="field_apiCount">Api Count</label>
+                    <input type="number" class="form-control" name="apiCount" id="field_apiCount"
+                        [(ngModel)]="papiToken.apiCount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.apiDate" for="field_apiDate">Api Date</label>
+                    <div class="d-flex">
+                        <input id="field_apiDate" type="datetime-local" class="form-control" name="apiDate" [(ngModel)]="apiDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.stopFlag" for="field_stopFlag">Stop Flag</label>
+                    <input type="number" class="form-control" name="stopFlag" id="field_stopFlag"
+                        [(ngModel)]="papiToken.stopFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.delFlag" for="field_delFlag">Del Flag</label>
+                    <input type="number" class="form-control" name="delFlag" id="field_delFlag"
+                        [(ngModel)]="papiToken.delFlag" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.insProgarmCd" for="field_insProgarmCd">Ins Progarm Cd</label>
+                    <input type="text" class="form-control" name="insProgarmCd" id="field_insProgarmCd"
+                        [(ngModel)]="papiToken.insProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.insProgarmCd?.dirty && editForm.controls.insProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.insProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.insOperCd" for="field_insOperCd">Ins Oper Cd</label>
+                    <input type="text" class="form-control" name="insOperCd" id="field_insOperCd"
+                        [(ngModel)]="papiToken.insOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.insOperCd?.dirty && editForm.controls.insOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.insOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.insDateTime" for="field_insDateTime">Ins Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_insDateTime" type="datetime-local" class="form-control" name="insDateTime" [(ngModel)]="insDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.updProgarmCd" for="field_updProgarmCd">Upd Progarm Cd</label>
+                    <input type="text" class="form-control" name="updProgarmCd" id="field_updProgarmCd"
+                        [(ngModel)]="papiToken.updProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.updProgarmCd?.dirty && editForm.controls.updProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.updProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.updOperCd" for="field_updOperCd">Upd Oper Cd</label>
+                    <input type="text" class="form-control" name="updOperCd" id="field_updOperCd"
+                        [(ngModel)]="papiToken.updOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.updOperCd?.dirty && editForm.controls.updOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.updOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.updDateTime" for="field_updDateTime">Upd Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_updDateTime" type="datetime-local" class="form-control" name="updDateTime" [(ngModel)]="updDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.delProgarmCd" for="field_delProgarmCd">Del Progarm Cd</label>
+                    <input type="text" class="form-control" name="delProgarmCd" id="field_delProgarmCd"
+                        [(ngModel)]="papiToken.delProgarmCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.delProgarmCd?.dirty && editForm.controls.delProgarmCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.delProgarmCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.delOperCd" for="field_delOperCd">Del Oper Cd</label>
+                    <input type="text" class="form-control" name="delOperCd" id="field_delOperCd"
+                        [(ngModel)]="papiToken.delOperCd" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.delOperCd?.dirty && editForm.controls.delOperCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.delOperCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.delDateTime" for="field_delDateTime">Del Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_delDateTime" type="datetime-local" class="form-control" name="delDateTime" [(ngModel)]="delDateTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.papiToken.triggerDateTime" for="field_triggerDateTime">Trigger Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_triggerDateTime" type="datetime-local" class="form-control" name="triggerDateTime" [(ngModel)]="triggerDateTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

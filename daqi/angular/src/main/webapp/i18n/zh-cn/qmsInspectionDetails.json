@@ -1,0 +1,34 @@
+{
+    "fccApp": {
+        "qmsInspectionDetails": {
+            "home": {
+                "title": "Qms Inspection Details",
+                "createLabel": "创建新 Qms Inspection Details",
+                "createOrEditLabel": "创建或编辑 Qms Inspection Details"
+            },
+            "created": "Qms Inspection Details {{ param }} 创建成功",
+            "updated": "Qms Inspection Details {{ param }} 更新成功",
+            "deleted": "Qms Inspection Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Inspection Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Inspection Details"
+            },
+            "inspectionId": "Inspection Id",
+            "inspectionDiff": "Inspection Diff",
+            "placeDiff": "Place Diff",
+            "testValue": "Test Value",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

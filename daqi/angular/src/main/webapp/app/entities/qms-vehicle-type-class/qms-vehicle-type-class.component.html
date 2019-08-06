@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsVehicleTypeClass.home.title">Qms Vehicle Type Classes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-class" [routerLink]="['/qms-vehicle-type-class/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsVehicleTypeClass.home.createLabel">
+            Create new Qms Vehicle Type Class
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsVehicleTypeClasses">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleClass"><span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClass">Vehicle Class</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleClassName"><span jhiTranslate="fccApp.qmsVehicleTypeClass.vehicleClassName">Vehicle Class Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsVehicleTypeClass.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsVehicleTypeClass.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsVehicleTypeClass.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsVehicleTypeClass.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsVehicleTypeClass.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsVehicleTypeClass.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsVehicleTypeClass.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsVehicleTypeClass.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsVehicleTypeClass of qmsVehicleTypeClasses ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-vehicle-type-class', qmsVehicleTypeClass.id, 'view' ]">{{qmsVehicleTypeClass.id}}</a></td>
+                <td>{{qmsVehicleTypeClass.vehicleClass}}</td>
+                <td>{{qmsVehicleTypeClass.vehicleClassName}}</td>
+                <td>{{qmsVehicleTypeClass.remark}}</td>
+                <td>{{qmsVehicleTypeClass.flagStatus}}</td>
+                <td>{{qmsVehicleTypeClass.compPkid}}</td>
+                <td>{{qmsVehicleTypeClass.reserveFirst}}</td>
+                <td>{{qmsVehicleTypeClass.reserveSecond}}</td>
+                <td>{{qmsVehicleTypeClass.reserveThird}}</td>
+                <td>{{qmsVehicleTypeClass.makeUser}}</td>
+                <td>{{qmsVehicleTypeClass.makeTime | date:'medium'}}</td>
+                <td>{{qmsVehicleTypeClass.modifyUser}}</td>
+                <td>{{qmsVehicleTypeClass.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-vehicle-type-class', qmsVehicleTypeClass.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-vehicle-type-class', qmsVehicleTypeClass.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-vehicle-type-class/'+ qmsVehicleTypeClass.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsVehicleTypeClasses && qmsVehicleTypeClasses.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

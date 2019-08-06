@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsBom">
+            <h2><span jhiTranslate="fccApp.qmsBom.detail.title">Qms Bom</span> {{qmsBom.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsBom.vehicleId">Vehicle Id</span></dt>
+                <dd>
+                    <span>{{qmsBom.vehicleId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsBom.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.parentMaterielID">Parent Materiel ID</span></dt>
+                <dd>
+                    <span>{{qmsBom.parentMaterielID}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.rootMaterielId">Root Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsBom.rootMaterielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{qmsBom.sequence}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{qmsBom.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.isMust">Is Must</span></dt>
+                <dd>
+                    <span>{{qmsBom.isMust}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.supplyType">Supply Type</span></dt>
+                <dd>
+                    <span>{{qmsBom.supplyType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsBom.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsBom.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsBom.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsBom.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsBom.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsBom.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsBom.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsBom.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsBom.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBom.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsBom.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-bom', qmsBom.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

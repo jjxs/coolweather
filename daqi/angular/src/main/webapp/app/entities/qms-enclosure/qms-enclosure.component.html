@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsEnclosure.home.title">Qms Enclosures</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-enclosure" [routerLink]="['/qms-enclosure/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsEnclosure.home.createLabel">
+            Create new Qms Enclosure
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsEnclosures">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionInfoId"><span jhiTranslate="fccApp.qmsEnclosure.inspectionInfoId">Inspection Info Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inspectionKbn"><span jhiTranslate="fccApp.qmsEnclosure.inspectionKbn">Inspection Kbn</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="enclosureAddress"><span jhiTranslate="fccApp.qmsEnclosure.enclosureAddress">Enclosure Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsEnclosure.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsEnclosure.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsEnclosure.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsEnclosure.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsEnclosure of qmsEnclosures ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-enclosure', qmsEnclosure.id, 'view' ]">{{qmsEnclosure.id}}</a></td>
+                <td>{{qmsEnclosure.inspectionInfoId}}</td>
+                <td>{{qmsEnclosure.inspectionKbn}}</td>
+                <td>{{qmsEnclosure.enclosureAddress}}</td>
+                <td>{{qmsEnclosure.makeUser}}</td>
+                <td>{{qmsEnclosure.makeTime | date:'medium'}}</td>
+                <td>{{qmsEnclosure.modifyUser}}</td>
+                <td>{{qmsEnclosure.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-enclosure', qmsEnclosure.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-enclosure', qmsEnclosure.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-enclosure/'+ qmsEnclosure.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsEnclosures && qmsEnclosures.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

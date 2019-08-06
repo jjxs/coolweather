@@ -1,0 +1,119 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+    <div style="height: 660px">
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem">BOM信息</span>
+                    <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+                        icon="fa fa-fw fa-close"></button>
+                </div>
+            </p-header>
+            <p-toast position="top-left" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" key="c"
+                (onClose)="onReject()" [modal]="true" [baseZIndex]="5000"
+                [style]="{marginTop: '80px',left:'30%',width:'50%',backgroundColor:'white',position:'fixed'}">
+                <ng-template let-message pTemplate="message" class="successInfo">
+                    <div style="text-align: left;height: 141px;">
+                        <!-- <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i> -->
+                        <div class="modal-header">
+                            <h3>{{message.summary}}</h3>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <p>{{message.detail}}</p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="creatOreditCssButton">
+
+                            <button type="button" (click)="onConfirm()"
+                                class="btn btn-secondary float-right search_button_darkblue search_button Acolor_Delete">
+
+                                <span jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+
+                            <button type="button" (click)="onReject()"
+                                class="btn btn-primary float-right search_button_blue search_button Acolor_See">
+                                <span jhiTranslate="entity.action.cancel">Cancel</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </ng-template>
+            </p-toast>
+
+            <div style="height: 120px;width: 100%;">
+                <div>
+                    <div style="float: left;font-weight: bold;font-size: 18px;margin-left: 20px;margin-top: 20px">
+                        <span jhiTranslate="fccApp.bomInformation.materielCd">物料编码：</span>
+                    </div>
+                    <div style="float: left;margin-left: 20px;margin-top: 16px">
+                        <input type="text" class="form-control" style="margin-left: 0px;" pInputText
+                            [(ngModel)]="vagueOrganizationCd" />
+                    </div>
+
+                </div>
+                <div>
+                    <div style="float: left;font-weight: bold;font-size: 18px;margin-left: 20px;margin-top: 20px">
+                        <span jhiTranslate="fccApp.bomInformation.materielName">物料名称:</span>
+                    </div>
+                    <div style="float: left;margin-left: 20px;margin-top: 16px">
+                        <input type="text" class="form-control" style="margin-left: 0px;" pInputText
+                            [(ngModel)]="vagueOrganizationName" />
+                    </div>
+                    <div style="float: left;margin-top: 60px;margin-left: 360px">
+                        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                            (click)="emptyInfo()">
+                            <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+                            <span>
+                                清空
+                            </span>
+                        </button>
+                        <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                            (click)="clearInfo()">
+                            <span jhiTranslate="fccApp.bomInformation.home.query">
+                                查询
+                            </span>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <p-treeTable [value]="files4" [columns]="cols" selectionMode="single" [(selection)]="selectedNode2"
+                scrollHeight="27rem" [scrollable]="true" dataKey="id" (onNodeSelect)="nodeSelect($event)"
+                (onNodeUnselect)="nodeUnselect($event)">
+
+                <ng-template pTemplate="header" let-columns>
+
+                    <tr>
+                        <th *ngFor="let col of columns" class = "text-left">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                    <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                        <td *ngFor="let col of columns; let i = index" class = "text-left">
+                            <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-treeTable>
+
+        </p-panel>
+    </div>
+    <div style="margin-top:10px;margin-bottom:10px;">
+        <button pButton type="button" (click)="goBack()" label="取消"
+            class="common_pop_font ui-button-secondary float-right search_button"></button>
+        <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+            style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.home.title">Qms Mic Swicth Regulatto Tests</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-mic-swicth-regulatto-test" [routerLink]="['/qms-mic-swicth-regulatto-test/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.home.createLabel">
+            Create new Qms Mic Swicth Regulatto Test
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsMicSwicthRegulattoTests">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sname"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sname">Sname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stype"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.stype">Stype</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="scode"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.scode">Scode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ddate"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.ddate">Ddate</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="il0"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.il0">Il 0</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdgS"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdgS">Izdg S</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sworker"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sworker">Sworker</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ssumup"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.ssumup">Ssumup</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sneworold"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sneworold">Sneworold</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idian"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.idian">Idian</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg0"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg0">Izdg 0</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg1"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg1">Izdg 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg2"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg2">Izdg 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg3"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg3">Izdg 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg4"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg4">Izdg 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg5"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg5">Izdg 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg6"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg6">Izdg 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="izdg7"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg7">Izdg 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq0"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq0">Iztq 0</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq1"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq1">Iztq 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq2"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq2">Iztq 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq3"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq3">Iztq 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq4"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq4">Iztq 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq5"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq5">Iztq 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq6"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq6">Iztq 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq7"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq7">Iztq 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq8"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq8">Iztq 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq9"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq9">Iztq 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq10"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq10">Iztq 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iztq11"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq11">Iztq 11</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iqdl"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iqdl">Iqdl</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult0"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult0">Sresult 0</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult1"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult1">Sresult 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult2"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult2">Sresult 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult3"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult3">Sresult 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult4"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult4">Sresult 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult5"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult5">Sresult 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult6"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult6">Sresult 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sresult"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult">Sresult</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsMicSwicthRegulattoTest of qmsMicSwicthRegulattoTests ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-mic-swicth-regulatto-test', qmsMicSwicthRegulattoTest.id, 'view' ]">{{qmsMicSwicthRegulattoTest.id}}</a></td>
+                <td>{{qmsMicSwicthRegulattoTest.sname}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.stype}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.scode}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.ddate}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.il0}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdgS}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sworker}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.ssumup}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sneworold}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.idian}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg0}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg1}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg2}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg3}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg4}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg5}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg6}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.izdg7}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq0}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq1}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq2}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq3}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq4}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq5}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq6}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq7}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq8}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq9}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq10}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iztq11}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.iqdl}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult0}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult1}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult2}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult3}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult4}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult5}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult6}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.sresult}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.flagStatus}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.compPkid}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.remark}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.reserveFirst}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.reserveSecond}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.reserveThird}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.makeUser}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.makeTime | date:'medium'}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.modifyUser}}</td>
+                <td>{{qmsMicSwicthRegulattoTest.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-mic-swicth-regulatto-test', qmsMicSwicthRegulattoTest.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-mic-swicth-regulatto-test', qmsMicSwicthRegulattoTest.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-mic-swicth-regulatto-test/'+ qmsMicSwicthRegulattoTest.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsMicSwicthRegulattoTests && qmsMicSwicthRegulattoTests.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

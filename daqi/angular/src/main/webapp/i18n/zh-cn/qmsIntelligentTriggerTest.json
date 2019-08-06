@@ -1,0 +1,39 @@
+{
+    "fccApp": {
+        "qmsIntelligentTriggerTest": {
+            "home": {
+                "title": "Qms Intelligent Trigger Tests",
+                "createLabel": "创建新 Qms Intelligent Trigger Test",
+                "createOrEditLabel": "创建或编辑 Qms Intelligent Trigger Test"
+            },
+            "created": "Qms Intelligent Trigger Test {{ param }} 创建成功",
+            "updated": "Qms Intelligent Trigger Test {{ param }} 更新成功",
+            "deleted": "Qms Intelligent Trigger Test {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Intelligent Trigger Test {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Intelligent Trigger Test"
+            },
+            "num": "Num",
+            "sideframeLeft": "Sideframe Left",
+            "leftValue1": "Left Value 1",
+            "leftValue2": "Left Value 2",
+            "sideframeRight": "Sideframe Right",
+            "rightValue1": "Right Value 1",
+            "rightValue2": "Right Value 2",
+            "leftUser": "Left User",
+            "rightUser": "Right User",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

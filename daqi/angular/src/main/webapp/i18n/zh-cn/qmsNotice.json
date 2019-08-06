@@ -1,0 +1,35 @@
+{
+    "fccApp": {
+        "qmsNotice": {
+            "home": {
+                "title": "Qms Notices",
+                "createLabel": "创建新 Qms Notice",
+                "createOrEditLabel": "创建或编辑 Qms Notice"
+            },
+            "created": "Qms Notice {{ param }} 创建成功",
+            "updated": "Qms Notice {{ param }} 更新成功",
+            "deleted": "Qms Notice {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Notice {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Notice"
+            },
+            "noticeType": "Notice Type",
+            "noticeRole": "Notice Role",
+            "noticeUser": "Notice User",
+            "noticeInfo": "Notice Info",
+            "readFlag": "Read Flag",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

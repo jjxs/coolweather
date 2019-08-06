@@ -1,0 +1,123 @@
+<div *ngIf="qmsSupplier">
+    <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">供应商维护</h2>
+    <div class="lookBtn">
+        <button type="submit" (click)="previousState()"
+            class="btn btn-info float-right search_button_darkblue search_button">
+            <span>返回</span>
+        </button>
+
+        <!-- <button type="button" [routerLink]="['/qms-supplier', qmsSupplier.id, 'edit']" class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> 保存</span>
+            </button> -->
+    </div>
+    <!-- 左侧文字的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+            <span>供应商编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>供应商名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>供应商分类编码</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>供应商分类名称</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>地址</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>电话1</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>电话2</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>传真</span>
+        </div>
+        <div class="lookleftSpan">
+            <span>网址</span>
+        </div>
+    </div>
+    <!-- 左侧输入框的div -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:30px;">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.supplierCd [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.supplierName [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=this.suppkierClass [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=this.suppkierClassName [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.address [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.telNum1 [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.telNum2 [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.faxNum [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookLeftDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.urlAddress [disabled]=qmsSupplier.id />
+        </div>
+    </div>
+    <!-- 右侧文字 -->
+    <div style="float: left;">
+        <div style="margin-top:50px;margin-left:150px;font-size:18px;font-weight: bold">
+            <span>邮箱</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>联系人</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>部门职务</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>评定记录</span>
+        </div>
+        <div class="lookrightSpan">
+            <span>备注</span>
+        </div>
+    </div>
+    <!-- 右侧输入框 -->
+    <div style="float: left;margin-left: 30px">
+        <div style="margin-top:50px;">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.mailAddress [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.linkMan [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.department [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookRightDiv">
+            <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                [(ngModel)]=qmsSupplier.assRecord [disabled]=qmsSupplier.id />
+        </div>
+        <div class="lookRightDiv">
+            <textarea class="form-control" [(ngModel)]=qmsSupplier.remark
+                style="width: 500px;margin-left: 120px;height: 210px;" [disabled]=qmsSupplier.id></textarea>
+        </div>
+    </div>
+</div>

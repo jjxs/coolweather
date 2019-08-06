@@ -1,0 +1,40 @@
+{
+    "fccApp": {
+        "qmsEntryInspection": {
+            "home": {
+                "title": "Qms Entry Inspections",
+                "createLabel": "创建新 Qms Entry Inspection",
+                "createOrEditLabel": "创建或编辑 Qms Entry Inspection"
+            },
+            "created": "Qms Entry Inspection {{ param }} 创建成功",
+            "updated": "Qms Entry Inspection {{ param }} 更新成功",
+            "deleted": "Qms Entry Inspection {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Entry Inspection {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Entry Inspection"
+            },
+            "materielId": "Materiel Id",
+            "supplierId": "Supplier Id",
+            "okNumber": "Ok Number",
+            "ngNumber": "Ng Number",
+            "serialNumber": "Serial Number",
+            "productionCd": "Production Cd",
+            "checkDate": "Check Date",
+            "fileNumber": "File Number",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "entryId": "Entry Id",
+            "remark": "Remark",
+            "groupCd": "Group Cd",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

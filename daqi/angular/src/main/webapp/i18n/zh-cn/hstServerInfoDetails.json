@@ -1,0 +1,41 @@
+{
+    "fccApp": {
+        "hstServerInfoDetails": {
+            "home": {
+                "title": "Hst Server Info Details",
+                "createLabel": "创建新 Hst Server Info Details",
+                "createOrEditLabel": "创建或编辑 Hst Server Info Details"
+            },
+            "created": "Hst Server Info Details {{ param }} 创建成功",
+            "updated": "Hst Server Info Details {{ param }} 更新成功",
+            "deleted": "Hst Server Info Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Hst Server Info Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Hst Server Info Details"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "infoId": "Info Id",
+            "hostName": "Host Name",
+            "ipAddress": "Ip Address",
+            "osUser": "Os User",
+            "osName": "Os Name",
+            "osVersion": "Os Version",
+            "osArch": "Os Arch",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

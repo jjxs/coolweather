@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsMaterielType">
+            <h2><span jhiTranslate="fccApp.qmsMaterielType.detail.title">Qms Materiel Type</span> {{qmsMaterielType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.materielTypeCd">Materiel Type Cd</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.materielTypeCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.materielTypeName">Materiel Type Name</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.materielTypeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.parentCd">Parent Cd</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.parentCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielType.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielType.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-materiel-type', qmsMaterielType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+<div style="width: 100%;top:0;left:0;position:fixed;background:rgba(0, 0, 0, 0.5);z-index: 10;height: 100%;"
+    *ngIf="maskingLayer"></div>
+
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<p-toast position="top-left" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" key="c"
+    (onClose)="onReject()" [modal]="true" [baseZIndex]="5000"
+    [style]="{marginTop: '80px',left:'30%',width:'50%',backgroundColor:'white',position:'fixed'}">
+    <ng-template let-message pTemplate="message" class="successInfo">
+        <div>
+            <!-- <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i> style="text-align: left;height: 141px;"-->
+            <div class="modal-header">
+                <h3>{{message.summary}}</h3>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                {{message.detail}}
+            </div>
+
+        </div>
+        <!-- ui-g ui-fluid style="height: 71px;margin-top: 1rem;" style="height: 72px;line-height: 36px;" style="height: 69px;line-height: 34px;"-->
+        <div class="modal-footer">
+            <div class="creatOreditCssButton">
+
+                <button type="button" (click)="onConfirm()"
+                    class="btn btn-secondary float-right search_button_darkblue search_button Acolor_Delete">
+
+                    <span jhiTranslate="entity.action.delete">Delete</span>
+                </button>
+
+                <button type="button" (click)="onReject()"
+                    class="btn btn-primary float-right search_button_blue search_button Acolor_See">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+            </div>
+        </div>
+    </ng-template>
+</p-toast>
+
+<div style="width:100%;">
+    <div style="width: 40%;float: left; border-right: 1px black solid;padding-right: 5%;">
+        <h2 id="page-heading">
+            <span jhiTranslate="fccApp.qmsUnhealthy.home.title" class="title_class">Qms Organization Infos</span>
+
+        </h2>
+        <div style="height: 160px;margin-top:0.5%;width: 100%;">
+            <div class="common_div-head">
+                <div class="search_styleOne">
+                    <span jhiTranslate="fccApp.qmsUnhealthy.unhealthyCd">现象编码：</span>
+                </div>
+                <div class="search_styleTwo">
+                    <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                        [(ngModel)]="vagueOrganizationCd" />
+                </div>
+
+            </div>
+            <div class="common_div-head">
+                <div class="search_styleOne">
+                    <span jhiTranslate="fccApp.qmsUnhealthy.unhealthyName">现象名称:</span>
+                </div>
+                <div class="search_styleTwo">
+                    <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                        [(ngModel)]="vagueOrganizationName" />
+                </div>
+            </div>
+
+        </div>
+        <div style="width: 100%;float:left;">
+
+            <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+                (click)="clearInfo()">
+                <span jhiTranslate="fccApp.qmsOrganizationInfo.home.query">
+                    查询
+                </span>
+            </button>
+        </div>
+        <div style="width: 100%;float:left;height:20px;"></div>
+
+        <div style="height: 80px;border-top: 1px black solid;padding-top:20px;display: inline-block;width: 100%;">
+            <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+                (click)="deleteNode()">
+                <span jhiTranslate="fccApp.qmsOrganizationInfo.home.deleteInfo">
+                    删除
+                </span>
+            </button>
+            <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+                class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+                (click)="addInfo()">
+                <span jhiTranslate="fccApp.qmsOrganizationInfo.home.createLabel">
+                    添加
+                </span>
+            </button>
+        </div>
+        <div style="width: 100%;float:left;height: 30rem;">
+            <p-treeTable [value]="files4" [columns]="cols" selectionMode="single" [(selection)]="selectedNode2"
+                scrollHeight="27rem" [scrollable]="true" dataKey="id" (onNodeSelect)="nodeSelect($event)"
+                (onNodeUnselect)="nodeUnselect($event)">
+
+                <ng-template pTemplate="header" let-columns>
+
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                    <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                        <td *ngFor="let col of columns; let i = index">
+                            <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-treeTable>
+        </div>
+    </div>
+    <div style="width: 58%; float: left;">
+        <!-- 新增或编辑 -->
+        <div>
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+                <div style="height: 38px">
+
+                    <!-- <button pButton type="submit" class="common_pop_font float-right" icon="fa fa-save"
+                        replaceUrl="true" style="margin-right: 15px;" label="确定"></button> -->
+                    <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                        class="btn btn-primary float-right search_button search_button_blue">
+                        <span jhiTranslate="entity.action.save">Save</span>
+                    </button>
+                </div>
+                <div style="width:60%;">
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsUnhealthy.parentCd"
+                                for="field_parentCd">Parent Cd</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="parentCd" id="field_parentCd" hidden
+                                [(ngModel)]="parentCd" maxlength="10" />
+                            <input type="text" class="form-control" name="parentName" id="field_parentCd" readonly
+                                [(ngModel)]="parentName" maxlength="100" />
+                            <div [hidden]="!(editForm.controls.parentCd?.dirty && editForm.controls.parentCd?.invalid)">
+                                <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.parentCd?.errors?.maxlength"
+                                    jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                                    This field cannot be longer than 10 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsUnhealthy.unhealthyCd"
+                                for="field_unhealthyCd">Organization Cd</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="unhealthyCd" id="field_unhealthyCd" readonly
+                                [(ngModel)]="unhealthyCd" maxlength="10"
+                                *ngIf="unhealthyCd !== '' && organizationCdQF !== ''" />
+                            <input type="text" class="form-control" name="unhealthyCd" id="field_unhealthyCd" required
+                                [(ngModel)]="unhealthyCd" maxlength="10" *ngIf="organizationCdQF === ''" />
+                            <div
+                                [hidden]="!(editForm.controls.unhealthyCd?.dirty && editForm.controls.unhealthyCd?.invalid)">
+                                <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.unhealthyCd?.errors?.maxlength"
+                                    jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                                    This field cannot be longer than 10 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsUnhealthy.unhealthyName"
+                                for="field_unhealthyName">Organization Name</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="unhealthyName" id="field_unhealthyName"
+                                required [(ngModel)]="unhealthyName" maxlength="100" />
+                            <div
+                                [hidden]="!(editForm.controls.unhealthyName?.dirty && editForm.controls.unhealthyName?.invalid)">
+                                <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.unhealthyName?.errors?.maxlength"
+                                    jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                                    This field cannot be longer than 100 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 生效 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsUnhealthy.isUse"
+                                for="field_isUse">is Use</label>
+                        </div>
+                        <div class="div_right">
+                            <!-- <input type="text" class="form-control" name="isUse" id="field_isUse"
+                                    required [(ngModel)]="isUse" maxlength="100" /> -->
+                            <p-checkbox [(ngModel)]="isUse" binary="true" name="isUse"></p-checkbox>
+                        </div>
+                    </div>
+                    <!-- 备注 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsUnhealthy.remark"
+                                for="field_remark">Remark</label>
+                        </div>
+                        <div class="div_right">
+                            <textarea type="text" class="form-control" name="remark" id="field_remark"
+                                [(ngModel)]="remark" maxlength="200" style="height: 135px;">
+                                    </textarea>
+                            <!-- <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                                    <small class="form-text text-danger"
+                                    [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                                    This field cannot be longer than 200 characters.
+                                    </small>
+                                </div> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+    "fccApp": {
+        "qmsSupplierClass": {
+            "home": {
+                "title": "Qms Supplier Classes",
+                "createLabel": "创建新 Qms Supplier Class",
+                "createOrEditLabel": "创建或编辑 Qms Supplier Class"
+            },
+            "created": "Qms Supplier Class {{ param }} 创建成功",
+            "updated": "Qms Supplier Class {{ param }} 更新成功",
+            "deleted": "Qms Supplier Class {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Supplier Class {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Supplier Class"
+            },
+            "suppkierClass": "Suppkier Class",
+            "suppkierClassName": "Suppkier Class Name",
+            "remark": "Remark",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

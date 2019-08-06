@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsUnit">
+            <h2><span jhiTranslate="fccApp.qmsUnit.detail.title">Qms Unit</span> {{qmsUnit.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsUnit.unitCd">Unit Cd</span></dt>
+                <dd>
+                    <span>{{qmsUnit.unitCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.unitName">Unit Name</span></dt>
+                <dd>
+                    <span>{{qmsUnit.unitName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsUnit.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsUnit.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsUnit.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsUnit.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsUnit.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsUnit.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsUnit.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsUnit.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-unit', qmsUnit.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

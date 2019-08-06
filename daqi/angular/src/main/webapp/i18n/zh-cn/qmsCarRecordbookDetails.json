@@ -1,0 +1,34 @@
+{
+    "fccApp": {
+        "qmsCarRecordbookDetails": {
+            "home": {
+                "title": "Qms Car Recordbook Details",
+                "createLabel": "创建新 Qms Car Recordbook Details",
+                "createOrEditLabel": "创建或编辑 Qms Car Recordbook Details"
+            },
+            "created": "Qms Car Recordbook Details {{ param }} 创建成功",
+            "updated": "Qms Car Recordbook Details {{ param }} 更新成功",
+            "deleted": "Qms Car Recordbook Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Car Recordbook Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Car Recordbook Details"
+            },
+            "recordbookMainId": "Recordbook Main Id",
+            "productId": "Product Id",
+            "assemblyCd": "Assembly Cd",
+            "fileupload": "Fileupload",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

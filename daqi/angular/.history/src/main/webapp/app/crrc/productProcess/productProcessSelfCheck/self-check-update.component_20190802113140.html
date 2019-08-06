@@ -1,0 +1,373 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div>
+    <div>
+        <form name="editForm" role="form" novalidate (ngSubmit)="check()" #editForm="ngForm">
+
+            <div style="width: 80%;float: left;">
+
+                <div class="creatOreditCss">
+                    <!-- 编号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label"
+                                jhiTranslate="fccApp.qmsProductionInspection.serialNumber">编号</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="serialNumber" [disabled]=true
+                                [(ngModel)]="qmsProductionInspection.serialNumber" />
+                        </div>
+                    </div>
+                    <!-- 中梁号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.workno">中梁号</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true class="form-control" name="workno"
+                                style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="qmsProductionInspection.workno" />
+                        </div>
+                    </div>
+                    <!-- 工序名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label"
+                                jhiTranslate="fccApp.qmsProductionInspection.processName">工序名称</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="processName" disabled=true
+                                [(ngModel)]="qmsProductionInspection.processName" />
+                        </div>
+                    </div>
+                    <!-- 检验编号 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label"
+                                jhiTranslate="fccApp.qmsProductionInspection.checkNumber">检验编号</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="checkNumber"
+                                [(ngModel)]="qmsProductionInspection.checkNumber" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="creatOreditCss">
+                    <!-- 物料编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label"
+                                jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="materialCd" disabled=true
+                                [(ngModel)]="qmsProductionInspection.materielCd" />
+                        </div>
+                    </div>
+
+                    <!-- 物料名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称:</span>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" disabled=true name="materialName" class="form-control"
+                                style="width: 100%;margin-left: 0px;" pInputText
+                                [(ngModel)]="qmsProductionInspection.materielName" />
+                        </div>
+                    </div>
+
+                    <!-- 检验状态 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label"
+                                jhiTranslate="fccApp.qmsProductionInspection.isOK">检验状态</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="isOK" [(ngModel)]="isOkName" disabled=true />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="creatOreditCssButton">
+                <button id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                    class="btn float-right search_button_red search_button" (click)="deleteALL()">
+                    <span jhiTranslate="entity.action.delete">删除</span>
+                </button>
+                <button type="button" id="cancel-save"
+                    class="btn btn-secondary float-right search_button_darkblue search_button"
+                    (click)="previousState()">
+                    <span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button id="save-entity" [disabled]="editForm.form.invalid || isSaving" (click)="check()"
+                    class="btn btn-primary float-right search_button_blue search_button">
+                    <span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+
+            <div style="width: 100%;display: inline-block;height: 100%;">
+                <p-tabView >
+                    <!-- 质量检查项目 -->
+                    <p-tabPanel [header]="labelTitle.tab1">
+                        <div style="height: 36rem;">
+                            <p-table [value]="qmsQualityControlDetails" [style]="{width:'100%'}" scrollHeight="480px" [scrollable]="true">
+                                <ng-template pTemplate="colgroup">
+                                    <colgroup>
+                                        <col style="width:10%" />
+                                        <col style="width:15%" />
+                                        <col style="width:20%" />
+                                        <col style="width:15%" />
+                                        <col style="width:20%" />
+                                        <col style="width:20%" />
+                                    </colgroup>
+                                </ng-template>
+
+                                <ng-template pTemplate="header">
+                                    <tr class="common_trStyle">
+                                        <th class="common_self_thStyle">
+                                            <span jhiTranslate="fccApp.qmsProductionInspection.no">序号</span>
+
+                                        </th>
+                                        <th class="common_self_thStyle">
+                                            <span jhiTranslate="fccApp.qmsProductionInspection.testValue">实测值</span>
+                                        </th>
+
+                                        <th class="common_self_thStyle">
+                                            <span jhiTranslate="fccApp.qmsProductionInspection.inspectionItem">检查项目</span>
+                                        </th>
+
+                                        <th class="common_self_thStyle">
+                                            <span
+                                                jhiTranslate="fccApp.qmsProductionInspection.inspectionInstrument">检查器具</span>
+                                        </th>
+                                        <th class="common_self_thStyle">
+                                            <span
+                                                jhiTranslate="fccApp.qmsProductionInspection.placeDiff">位别</span>
+                                        </th>
+                                        <th class="common_self_thStyle">
+                                            <span jhiTranslate="fccApp.qmsProductionInspection.checkUser">检查人</span>
+                                        </th>
+
+                                    </tr>
+                                </ng-template>
+
+                                <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+                                    <tr class="my_tr" [ngStyle]="{'background-color': test(i)}">
+                                        <td class="common_self_tdStyle" style="justify-content: center ">
+                                            {{i+1}}</td>
+                                        <!-- 实测值 -->
+                                        <td *ngIf="rowData.inspectionResultDiff==0" class="common_self_tdStyle text-right" pEditableColumn>
+                                            <p-cellEditor >
+                                                <ng-template pTemplate="input">
+                                                    <input type="text" name="testValue"
+                                                        [(ngModel)]="rowData.testValue"
+                                                        style="width:100%;float: right;" />
+                                                </ng-template>
+                                                <ng-template pTemplate="output">
+                                                    {{rowData.testValue}}
+                                                </ng-template>
+                                            </p-cellEditor>
+                                            
+                                        </td>
+                                        <td *ngIf="rowData.inspectionResultDiff == 1" class="common_self_tdStyle text-left">
+                                            
+                                            <div>
+                                                <p-radioButton name="group1{{i}}" value="Y" label="合格"
+                                                    [(ngModel)]="rowData.testValue" ></p-radioButton>
+                                                <p-radioButton name="group1{{i}}" value="N" label="不合格"
+                                                    [(ngModel)]="rowData.testValue"></p-radioButton>
+                                            </div>
+                                        </td>
+                                        <!-- 检查项目 -->
+                                        <td class="common_self_tdStyle text-left">
+                                            <p>{{rowData.inspectionItem}}</p>
+                                        </td>
+                                        <!-- 检测器具 -->
+                                        <td class="common_self_tdStyle text-left">
+                                            <p>{{rowData.inspectionInstrument}}</p>
+                                        </td>
+                                        <!-- 位别 -->
+                                        <td class="common_self_tdStyle text-left">
+                                            <p>{{rowData.resultPlaceDiff?rowData.resultPlaceDiff:rowData.placeDiff}}</p>
+                                        </td>
+                                        <!-- 检查人 -->
+                                        <td class="common_self_tdStyle text-left">
+                                            <p>{{makeUser}}</p>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </p-tabPanel>
+
+                    <!-- 装配物料 -->
+                    <p-tabPanel [header]="labelTitle.tab2">
+                        <p-table [value]="qmsPartsAssemblyRelation" [style]="{width:'100%';height: '33rem'}" scrollHeight="480px" [scrollable]="true">
+                            <ng-template pTemplate="colgroup">
+                                <colgroup>
+                                    <col style="width:7%" />
+                                    <col style="width:7%" />
+                                    <col style="width:9%" />
+                                    <col style="width:9%" />
+                                    <col style="width:20%" />
+                                    <col style="width:20%" />
+                                    <col style="width:15%" />
+                                    <col style="width:13%" />
+                                </colgroup>
+                            </ng-template>
+
+                            <ng-template pTemplate="header">
+                                <tr class="common_trStyle">
+                                    <th class="common_self_thStyle">
+                                        <span jhiTranslate="fccApp.qmsProductionInspection.no">序号</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span >来源</span>
+                                    </th>
+
+                                    <th class="common_self_thStyle">
+                                        <span >物料名称</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span>编号</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span>供应商/制造厂代号</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span>制造年月</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span>位别</span>
+                                    </th>
+                                    <th class="common_self_thStyle">
+                                        <span>检查人</span>
+                                    </th>
+                                </tr>
+                            </ng-template>
+
+                            <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+                                <tr>
+                                    <td class="common_self_tdStyle" style="justify-content: center ">
+                                        {{i+1}}</td>
+                                    <!-- 来源 -->
+                                    <td class="common_self_tdStyle text-left">
+                                        <p >{{rowData.productMode === 'M'? '自制':(rowData.productMode === 'P'?'外购': '外协')}}</p>
+                                    </td>
+
+                                    <!-- 物料名称 -->
+                                    <td class="common_self_tdStyle text-left">
+                                        <p>{{rowData.materielName}}</p>
+                                    </td>
+     
+                                    <!-- 编号 -->
+                                    <td class="common_self_tdStyle text-left" (click)="goPop(rowData, i)">
+                                        <p>{{rowData.bianHao}}</p>
+                                    </td>
+                                    <!-- 供应商 -->
+                                    <td class="common_self_tdStyle text-left">
+                                        <p>{{rowData.madeFactoryCd}}</p>
+                                    </td>
+                                    <!-- 制造年月 -->
+                                    <td class="common_self_tdStyle text-left">
+                                        <p>{{rowData.madeYmd}}</p>
+                                    </td>
+
+                                    <!-- 位别 -->
+                                    <td class="common_self_tdStyle text-left" pEditableColumn>
+                                        <p-cellEditor>
+                                            <ng-template pTemplate="input">
+                                                <input type="text" name="placeDiff" [(ngModel)]="rowData['actualUseLocation']"
+                                                    style="width:100%;float: left;" />
+                                            </ng-template>
+                                            <ng-template pTemplate="output">
+                                                {{rowData['actualUseLocation']}}
+                                            </ng-template>
+                                        </p-cellEditor>
+                                    </td>
+                                    <!-- 检查人 -->
+                                    <td class="common_self_tdStyle text-left">
+                                        <p>{{makeUser}}</p>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-tabPanel>
+
+                    <!-- 上传附件 -->
+                    <p-tabPanel [header]="labelTitle.tab3">
+                        <div class="content" style="height: 33rem;">
+                            <div class="file_right">
+                                <div class="digiFiles">
+                                    <div class="fheader">
+                                        <span jhiTranslate="prodProcessCheck.content.digiFile"
+                                            style="font-size: 20px;font-weight: bold;color:#13245c;">Digital
+                                            Files</span>
+                                        <p-messages [(value)]="msgs"></p-messages>
+                                        <span
+                                            class="ng-star-inserted ui-button ui-fileupload-choose ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+                                            style="float:right;font-size: 18px;width: 120px;height: 47px;margin-bottom: 10px;">
+                                            <span class="ui-button-text ui-clickable"
+                                                jhiTranslate="prodProcessCheck.content.choose"
+                                                style="padding: 9px 21px;">Choose</span>
+
+                                            <input type="file" [accept]="acceptFile"
+                                                class="ng-star-inserted" (change)="tmpSaveFile($event)" />
+                                    </div>
+                                    <div class="file-ul" style="margin-top:2%;">
+                                        <p-table [value]="digiFiles" scrollHeight="400px" [scrollable]="true" [style]="{width:'100%'}">
+
+                                            <ng-template pTemplate="header">
+                                                <tr class="common_trStyle">
+                                                    <th class="common_thStyle" style="width: 16%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.serialNumber">序号</span>
+                                                    </th>
+
+                                                    <th class="common_thStyle" style="width: 64%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.tab.processDocuments">工艺文件</span>
+                                                    </th>
+                                                    <th class="common_thStyle" style="width: 20%;">
+                                                        <span
+                                                            jhiTranslate="fccApp.qmsBomTechnologyInfo.operation">操作</span>
+                                                    </th>
+                                                </tr>
+                                            </ng-template>
+
+                                            <ng-template pTemplate="body" let-i="rowIndex">
+                                                <tr style="height: 66px">
+                                                    <td
+                                                        style="width: 16%;text-align:center;font-size: 23px; font-weight: bold;">
+                                                        {{i + 1}}</td>
+                                                    <td style="width: 64%;font-size: 23px; font-weight: bold;"
+                                                        class="filename"><a title="click to view"
+                                                            (click)="viewFile(digiFiles[i%itemsPerPage].enclosureAddress, i)">{{digiFiles[i%itemsPerPage].enclosureAddress.substr(digiFiles[i%itemsPerPage]['enclosureAddress'].lastIndexOf('/') + 1)}}</a>
+                                                    </td>
+                                                    <td style="width: 20%;text-align:center;"><button pButton
+                                                            type="button" class="ui-button-danger"
+                                                            [label]="translate.get('fccApp.qmsProductionInspection.home.delete')['value']"
+                                                            (click)="deleteReady(digiFiles[i%itemsPerPage].enclosureAddress, i)"></button>
+                                                    </td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-modal" id="file-modal" [hidden]="!showModal">
+                            <div class="preview">
+                                <i class="pi pi-times close" (click)="closePreview()"></i>
+                                <h3 class="previewTitle" id="previewTitle">title</h3>
+                                <div class="previewContent" id="previewContent"></div>
+                            </div>
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+        </form>
+    </div>
+</div>

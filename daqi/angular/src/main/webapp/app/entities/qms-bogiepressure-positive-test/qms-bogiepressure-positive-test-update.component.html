@@ -1,0 +1,247 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-bogiepressure-positive-test-heading" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.home.createOrEditLabel">Create or edit a Qms Bogiepressure Positive Test</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qmsBogiepressurePositiveTest.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.place" for="field_place">Place</label>
+                    <input type="text" class="form-control" name="place" id="field_place"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.place" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.place?.dirty && editForm.controls.place?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.place?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.bolster" for="field_bolster">Bolster</label>
+                    <input type="text" class="form-control" name="bolster" id="field_bolster"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.bolster" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.bolster?.dirty && editForm.controls.bolster?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.bolster?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.sideframeLeft" for="field_sideframeLeft">Sideframe Left</label>
+                    <input type="text" class="form-control" name="sideframeLeft" id="field_sideframeLeft"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.sideframeLeft" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sideframeLeft?.dirty && editForm.controls.sideframeLeft?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sideframeLeft?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.sideframeRight" for="field_sideframeRight">Sideframe Right</label>
+                    <input type="text" class="form-control" name="sideframeRight" id="field_sideframeRight"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.sideframeRight" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sideframeRight?.dirty && editForm.controls.sideframeRight?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sideframeRight?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.crossstaffLeft" for="field_crossstaffLeft">Crossstaff Left</label>
+                    <input type="text" class="form-control" name="crossstaffLeft" id="field_crossstaffLeft"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.crossstaffLeft" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.crossstaffLeft?.dirty && editForm.controls.crossstaffLeft?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.crossstaffLeft?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.crossstaffRight" for="field_crossstaffRight">Crossstaff Right</label>
+                    <input type="text" class="form-control" name="crossstaffRight" id="field_crossstaffRight"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.crossstaffRight" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.crossstaffRight?.dirty && editForm.controls.crossstaffRight?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.crossstaffRight?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkdate" for="field_checkdate">Checkdate</label>
+                    <input type="text" class="form-control" name="checkdate" id="field_checkdate"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.checkdate" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.checkdate?.dirty && editForm.controls.checkdate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.checkdate?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checktime" for="field_checktime">Checktime</label>
+                    <input type="text" class="form-control" name="checktime" id="field_checktime"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.checktime" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.checktime?.dirty && editForm.controls.checktime?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.checktime?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.workno" for="field_workno">Workno</label>
+                    <input type="text" class="form-control" name="workno" id="field_workno"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.workno" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.workno?.dirty && editForm.controls.workno?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.workno?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkvalue1" for="field_checkvalue1">Checkvalue 1</label>
+                    <input type="text" class="form-control" name="checkvalue1" id="field_checkvalue1"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.checkvalue1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.checkvalue1?.dirty && editForm.controls.checkvalue1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.checkvalue1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkvalue2" for="field_checkvalue2">Checkvalue 2</label>
+                    <input type="text" class="form-control" name="checkvalue2" id="field_checkvalue2"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.checkvalue2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.checkvalue2?.dirty && editForm.controls.checkvalue2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.checkvalue2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.flagStatus" for="field_flagStatus">Flag Status</label>
+                    <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.flagStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagStatus?.dirty && editForm.controls.flagStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.compPkid" for="field_compPkid">Comp Pkid</label>
+                    <input type="text" class="form-control" name="compPkid" id="field_compPkid"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.compPkid" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.compPkid?.dirty && editForm.controls.compPkid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.compPkid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.remark" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveFirst" for="field_reserveFirst">Reserve First</label>
+                    <input type="text" class="form-control" name="reserveFirst" id="field_reserveFirst"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.reserveFirst" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveFirst?.dirty && editForm.controls.reserveFirst?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveFirst?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveSecond" for="field_reserveSecond">Reserve Second</label>
+                    <input type="text" class="form-control" name="reserveSecond" id="field_reserveSecond"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.reserveSecond" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveSecond?.dirty && editForm.controls.reserveSecond?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveSecond?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveThird" for="field_reserveThird">Reserve Third</label>
+                    <input type="text" class="form-control" name="reserveThird" id="field_reserveThird"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.reserveThird" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveThird?.dirty && editForm.controls.reserveThird?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveThird?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.makeUser" for="field_makeUser">Make User</label>
+                    <input type="text" class="form-control" name="makeUser" id="field_makeUser"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.makeUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.makeUser?.dirty && editForm.controls.makeUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.makeUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.makeTime" for="field_makeTime">Make Time</label>
+                    <div class="d-flex">
+                        <input id="field_makeTime" type="datetime-local" class="form-control" name="makeTime" [(ngModel)]="makeTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.modifyUser" for="field_modifyUser">Modify User</label>
+                    <input type="text" class="form-control" name="modifyUser" id="field_modifyUser"
+                        [(ngModel)]="qmsBogiepressurePositiveTest.modifyUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.modifyUser?.dirty && editForm.controls.modifyUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifyUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsBogiepressurePositiveTest.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

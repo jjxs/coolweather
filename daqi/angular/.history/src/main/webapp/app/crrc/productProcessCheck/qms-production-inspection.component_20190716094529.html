@@ -1,0 +1,182 @@
+<div style="  display: block; width: 100%;height: 238px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+      <span jhiTranslate="fccApp.qmsProductionInspection.home.title"></span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="materialCd" />
+        </div>
+  
+      </div>
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="materialName" />
+        </div>
+      </div>
+
+      <div class="common_div-head">
+        <div class="search_styleOne">
+          <span jhiTranslate="fccApp.qmsProductionInspection.describe">工序名称</span>
+        </div>
+        <div class="search_styleTwo">
+          <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+            [(ngModel)]="describe" />
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 40px;margin-top:0.5%;">
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.serialNumber">编号</span>
+          </div>
+          <div class="search_styleTwo">
+            <input type="text" class="form-control" maxlength=20 style="width: 100%;margin-left: 0px;" pInputText
+              [(ngModel)]="serialNumber" />
+          </div>
+        </div>
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.furnace">炉批号</span>
+          </div>
+          <div class="search_styleTwo">
+            <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+              [(ngModel)]="furnace" />
+          </div>
+        </div>
+  
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.remark">备注</span>
+          </div>
+          <div class="search_styleTwo">
+            <input type="text" class="form-control" maxlength=100 style="width: 100%;margin-left: 0px;" pInputText
+              [(ngModel)]="remark" />
+          </div>
+        </div>
+    </div>
+    <div style="height: 40px;margin-top:0.5%;">
+        <div class="common_div-head">
+          <div class="search_styleOne">
+            <span jhiTranslate="fccApp.qmsProductionInspection.isOK">检验状态</span>
+          </div>
+          <div class="search_styleTwo">
+            <p-dropdown #dd (onChange)=choiceSupplier($event) [options]="supplierList"
+                        [(ngModel)]="isOK" [style]="{'width':'196px'}" placeholder="请选择"
+                        [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+    </div>
+    
+
+    <div style="height: 58px;">
+      <button id="jh-create-entity" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+        [routerLink]="['/vehicle-type-class/qms-vehicle-type-class/new']">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.create">
+          添加
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+        (click)="emptyInfo()">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.empty">
+          清空
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+        (click)="loadAll()">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.query">
+          查询
+        </span>
+      </button>
+      <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+        class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info check_button search_button_red"
+        (click)="batchGeneration()">
+        <span jhiTranslate="fccApp.qmsProductionInspection.home.batchGeneration">
+            检验任务批量生成
+        </span>
+      </button>
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+  </div>
+  <p-table [value]="qmsProductionInspectiones" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+    [resizableColumns]="true" [loading]="loading" (onLazyLoad)="loadCarsLazy($event)">
+  
+  
+    <ng-template pTemplate="header">
+      <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+        <!-- 序号 -->
+        <th class="common_thStyle" style="width: 10% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.no">序号</span>
+        </th>
+        <!-- 物料编码 -->
+        <th class="common_thStyle" style="width: 20% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialCd">物料编码</span>
+        </th>
+        <!-- 车型分类名称 -->
+        <th class="common_thStyle" style="width: 25% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.materialName">物料名称</span>
+        </th> 
+        <!-- 备注 -->
+        <th class="common_thStyle" style="width: 25% !important;">
+          <span jhiTranslate="fccApp.qmsProductionInspection.remark">备注</span>
+        </th>
+        
+        <th class="common_thStyle">
+          <span jhiTranslate="fccApp.qmsProductionInspection.do">操作</span>
+        </th>
+      </tr>
+    </ng-template>
+  
+    <ng-template pTemplate="body" let-vtc let-i="rowIndex">
+      <tr>
+        <!-- 序号 -->
+        <td class="common_tdStyle text-center" style="width: 10% !important"><p>{{i+1}}</p></td>
+        <!-- 供应商编码 -->
+        <td class="common_tdStyle text-left" style="width: 20% !important"><p>{{vtc.vehicleClass}}</p></td>
+        <!-- 供应商名称 -->
+        <td class="common_tdStyle text-left" style="width: 25% !important"><p>{{vtc.vehicleClassName}}</p></td>
+        <!-- 地址 -->
+        <td class="common_tdStyle text-left" style="width: 25% !important"><p>{{vtc.remark}}</p></td>
+        
+        <!-- 操作 -->
+        <td class="common_tdStyle">
+          <button id="jh-create-entity" replaceUrl="true"
+            class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+            [routerLink]="['/vehicle-type-class/qms-vehicle-type-class', vtc.id, 'view' ]">
+            <span>
+              查看
+            </span>
+          </button>
+          <button id="jh-create-entity" replaceUrl="true"
+            class="btn btn-primary float-center jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+            [routerLink]="['/vehicle-type-class/qms-vehicle-type-class', vtc.id, 'edit' ]">
+            <span>
+              编辑
+            </span>
+          </button>
+  
+          <button id="jh-create-entity"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+            (click)="delete(vtc.id, vtc.vehicleClass)">
+            <span>
+              删除
+            </span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

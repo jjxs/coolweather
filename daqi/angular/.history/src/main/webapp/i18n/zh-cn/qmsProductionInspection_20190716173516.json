@@ -1,0 +1,54 @@
+{
+    "fccApp": {
+        "qmsProductionInspection": {
+            "home": {
+                "title": "Qms Production Inspections",
+                "createLabel": "创建新 Qms Production Inspection",
+                "createOrEditLabel": "创建或编辑 Qms Production Inspection",
+                "create": "添加",
+                "empty": "清空",
+                "query": "查询",
+                "back": "返回",
+                "batchGeneration": "检验任务批量生成"
+            },
+            "check": "生产检验任务一览",
+            "created": "Qms Production Inspection {{ param }} 创建成功",
+            "updated": "Qms Production Inspection {{ param }} 更新成功",
+            "deleted": "Qms Production Inspection {{ param }} 删除成功",
+            "delete": {
+                "question": "是否删除检验任务？"
+            },
+            "detail": {
+                "title": "Qms Production Inspection"
+            },
+            "do": "操作",
+            "no": "序号",
+            "materialCd": "物料编码",
+            "materialName": "物料名称",
+            "describe": "工序名称",
+            "serialNumber": "编号",
+            "furnace": "炉批号",
+            "remark": "备注",
+            "isOK": "检验状态",
+
+            "taskId": "Task Id",
+            "bomTechnologyId": "Bom Technology Id",
+            "materielId": "Materiel Id",
+            "saleNumber": "Sale Number",
+            "productorderNumber": "Productorder Number",
+            "finishNumber": "Finish Number",
+            "quailfiedNumber": "Quailfied Number",
+            "deffectiveNumber": "Deffective Number",
+            "inspectionDiff": "Inspection Diff",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProcessRoute">
+            <h2><span jhiTranslate="fccApp.qmsProcessRoute.detail.title">Qms Process Route</span> {{qmsProcessRoute.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.materielId">Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.materielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.orderNumber">Order Number</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.orderNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.processNumber">Process Number</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.processNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.processName">Process Name</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.processName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.timeQuota">Time Quota</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.timeQuota}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.equipmentCd">Equipment Cd</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.equipmentCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.processEquipment">Process Equipment</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.processEquipment}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.organizationCd">Organization Cd</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.organizationCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcessRoute.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProcessRoute.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-process-route', qmsProcessRoute.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

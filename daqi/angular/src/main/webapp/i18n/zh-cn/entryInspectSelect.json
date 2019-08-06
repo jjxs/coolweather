@@ -1,0 +1,23 @@
+{
+  "entryInspectionSelect": {
+    "title": "检验信息选择",
+    "condition": {
+      "code": "项目编码",
+      "inspectionItem": "检查项目"
+    },
+    "selection": {
+      "select": "选择",
+      "code": "项目编码",
+      "inspectionItem": "检查项目",
+      "inspectRequire": "技术要求",
+      "inspectIns": "检查器具",
+      "remark": "备注"
+    },
+    "button": {
+      "search": "查询",
+      "clear": "清空",
+      "confirm": "确认",
+      "close": "关闭"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsNotice">
+            <h2><span jhiTranslate="fccApp.qmsNotice.detail.title">Qms Notice</span> {{qmsNotice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsNotice.noticeType">Notice Type</span></dt>
+                <dd>
+                    <span>{{qmsNotice.noticeType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.noticeRole">Notice Role</span></dt>
+                <dd>
+                    <span>{{qmsNotice.noticeRole}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.noticeUser">Notice User</span></dt>
+                <dd>
+                    <span>{{qmsNotice.noticeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.noticeInfo">Notice Info</span></dt>
+                <dd>
+                    <span>{{qmsNotice.noticeInfo}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.readFlag">Read Flag</span></dt>
+                <dd>
+                    <span>{{qmsNotice.readFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsNotice.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsNotice.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsNotice.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsNotice.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsNotice.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsNotice.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsNotice.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsNotice.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsNotice.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsNotice.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsNotice.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-notice', qmsNotice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

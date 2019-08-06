@@ -1,0 +1,304 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-materiel-entry-heading" jhiTranslate="fccApp.qmsMaterielEntry.home.createOrEditLabel">Create or edit a Qms Materiel Entry</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qmsMaterielEntry.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qmsMaterielEntry.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.materielEntryCd" for="field_materielEntryCd">Materiel Entry Cd</label>
+                    <input type="text" class="form-control" name="materielEntryCd" id="field_materielEntryCd"
+                        [(ngModel)]="qmsMaterielEntry.materielEntryCd" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.materielEntryCd?.dirty && editForm.controls.materielEntryCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.materielEntryCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.materielId" for="field_materielId">Materiel Id</label>
+                    <input type="number" class="form-control" name="materielId" id="field_materielId"
+                        [(ngModel)]="qmsMaterielEntry.materielId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.specificationType" for="field_specificationType">Specification Type</label>
+                    <input type="text" class="form-control" name="specificationType" id="field_specificationType"
+                        [(ngModel)]="qmsMaterielEntry.specificationType" maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.specificationType?.dirty && editForm.controls.specificationType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.specificationType?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.figureNumber" for="field_figureNumber">Figure Number</label>
+                    <input type="text" class="form-control" name="figureNumber" id="field_figureNumber"
+                        [(ngModel)]="qmsMaterielEntry.figureNumber" maxlength="30"/>
+                    <div [hidden]="!(editForm.controls.figureNumber?.dirty && editForm.controls.figureNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.figureNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 30 }">
+                        This field cannot be longer than 30 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.packingQuantity" for="field_packingQuantity">Packing Quantity</label>
+                    <input type="number" class="form-control" name="packingQuantity" id="field_packingQuantity"
+                        [(ngModel)]="qmsMaterielEntry.packingQuantity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.supplierId" for="field_supplierId">Supplier Id</label>
+                    <input type="number" class="form-control" name="supplierId" id="field_supplierId"
+                        [(ngModel)]="qmsMaterielEntry.supplierId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.entryQuantity" for="field_entryQuantity">Entry Quantity</label>
+                    <input type="number" class="form-control" name="entryQuantity" id="field_entryQuantity"
+                        [(ngModel)]="qmsMaterielEntry.entryQuantity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.entryType" for="field_entryType">Entry Type</label>
+                    <input type="text" class="form-control" name="entryType" id="field_entryType"
+                        [(ngModel)]="qmsMaterielEntry.entryType" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.entryType?.dirty && editForm.controls.entryType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.entryType?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.purchaseOrderNumber" for="field_purchaseOrderNumber">Purchase Order Number</label>
+                    <input type="text" class="form-control" name="purchaseOrderNumber" id="field_purchaseOrderNumber"
+                        [(ngModel)]="qmsMaterielEntry.purchaseOrderNumber" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.purchaseOrderNumber?.dirty && editForm.controls.purchaseOrderNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.purchaseOrderNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.batchNumber" for="field_batchNumber">Batch Number</label>
+                    <input type="text" class="form-control" name="batchNumber" id="field_batchNumber"
+                        [(ngModel)]="qmsMaterielEntry.batchNumber" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.batchNumber?.dirty && editForm.controls.batchNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.batchNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.isUse" for="field_isUse">Is Use</label>
+                    <input type="text" class="form-control" name="isUse" id="field_isUse"
+                        [(ngModel)]="qmsMaterielEntry.isUse" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.isUse?.dirty && editForm.controls.isUse?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.isUse?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.madeYmd" for="field_madeYmd">Made Ymd</label>
+                    <input type="text" class="form-control" name="madeYmd" id="field_madeYmd"
+                        [(ngModel)]="qmsMaterielEntry.madeYmd" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.madeYmd?.dirty && editForm.controls.madeYmd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.madeYmd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.madeFactoryCd" for="field_madeFactoryCd">Made Factory Cd</label>
+                    <input type="text" class="form-control" name="madeFactoryCd" id="field_madeFactoryCd"
+                        [(ngModel)]="qmsMaterielEntry.madeFactoryCd" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.madeFactoryCd?.dirty && editForm.controls.madeFactoryCd?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.madeFactoryCd?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.texTure" for="field_texTure">Tex Ture</label>
+                    <input type="text" class="form-control" name="texTure" id="field_texTure"
+                        [(ngModel)]="qmsMaterielEntry.texTure" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.texTure?.dirty && editForm.controls.texTure?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.texTure?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.castingNum" for="field_castingNum">Casting Num</label>
+                    <input type="text" class="form-control" name="castingNum" id="field_castingNum"
+                        [(ngModel)]="qmsMaterielEntry.castingNum" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.castingNum?.dirty && editForm.controls.castingNum?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.castingNum?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.entryDate" for="field_entryDate">Entry Date</label>
+                    <div class="d-flex">
+                        <input id="field_entryDate" type="datetime-local" class="form-control" name="entryDate" [(ngModel)]="entryDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.flagInspect" for="field_flagInspect">Flag Inspect</label>
+                    <input type="text" class="form-control" name="flagInspect" id="field_flagInspect"
+                        [(ngModel)]="qmsMaterielEntry.flagInspect" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagInspect?.dirty && editForm.controls.flagInspect?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagInspect?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.inspectionTime" for="field_inspectionTime">Inspection Time</label>
+                    <div class="d-flex">
+                        <input id="field_inspectionTime" type="datetime-local" class="form-control" name="inspectionTime" [(ngModel)]="inspectionTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.inspectionCompletedTime" for="field_inspectionCompletedTime">Inspection Completed Time</label>
+                    <div class="d-flex">
+                        <input id="field_inspectionCompletedTime" type="datetime-local" class="form-control" name="inspectionCompletedTime" [(ngModel)]="inspectionCompletedTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.inspectionUserId" for="field_inspectionUserId">Inspection User Id</label>
+                    <input type="number" class="form-control" name="inspectionUserId" id="field_inspectionUserId"
+                        [(ngModel)]="qmsMaterielEntry.inspectionUserId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.flagStatus" for="field_flagStatus">Flag Status</label>
+                    <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                        [(ngModel)]="qmsMaterielEntry.flagStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagStatus?.dirty && editForm.controls.flagStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.compPkid" for="field_compPkid">Comp Pkid</label>
+                    <input type="text" class="form-control" name="compPkid" id="field_compPkid"
+                        [(ngModel)]="qmsMaterielEntry.compPkid" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.compPkid?.dirty && editForm.controls.compPkid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.compPkid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                        [(ngModel)]="qmsMaterielEntry.remark" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.reserveFirst" for="field_reserveFirst">Reserve First</label>
+                    <input type="text" class="form-control" name="reserveFirst" id="field_reserveFirst"
+                        [(ngModel)]="qmsMaterielEntry.reserveFirst" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveFirst?.dirty && editForm.controls.reserveFirst?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveFirst?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.reserveSecond" for="field_reserveSecond">Reserve Second</label>
+                    <input type="text" class="form-control" name="reserveSecond" id="field_reserveSecond"
+                        [(ngModel)]="qmsMaterielEntry.reserveSecond" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveSecond?.dirty && editForm.controls.reserveSecond?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveSecond?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.reserveThird" for="field_reserveThird">Reserve Third</label>
+                    <input type="text" class="form-control" name="reserveThird" id="field_reserveThird"
+                        [(ngModel)]="qmsMaterielEntry.reserveThird" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveThird?.dirty && editForm.controls.reserveThird?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveThird?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.makeUser" for="field_makeUser">Make User</label>
+                    <input type="text" class="form-control" name="makeUser" id="field_makeUser"
+                        [(ngModel)]="qmsMaterielEntry.makeUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.makeUser?.dirty && editForm.controls.makeUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.makeUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.makeTime" for="field_makeTime">Make Time</label>
+                    <div class="d-flex">
+                        <input id="field_makeTime" type="datetime-local" class="form-control" name="makeTime" [(ngModel)]="makeTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.modifyUser" for="field_modifyUser">Modify User</label>
+                    <input type="text" class="form-control" name="modifyUser" id="field_modifyUser"
+                        [(ngModel)]="qmsMaterielEntry.modifyUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.modifyUser?.dirty && editForm.controls.modifyUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifyUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMaterielEntry.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

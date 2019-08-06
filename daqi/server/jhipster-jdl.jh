@@ -1,0 +1,1068 @@
+
+// MASTER表 
+entity QmsMaster {
+    kbnCd String maxlength(10) //区分CD
+    kbnName String maxlength(30) // 区分名
+    prjCd String maxlength(10) // 项目CD
+    prjName String maxlength(30) // 项目名
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 物料分类表
+entity QmsMaterielType {
+    materielTypeCd String maxlength(10)  // 物料分类编号
+    materielTypeName String maxlength(100) // 物料分类名称
+    parentCd String maxlength(10)//上级组织编码
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 物料表
+entity QmsMateriel {
+    materielCd String maxlength(20)  // 物料编码
+    materielName String maxlength(100)  // 物料名称
+    figureNumber String maxlength(30) // 图号
+    innerCd String maxlength(100) // 快捷码
+    abcNumber String maxlength(1)// ABC码
+    productMode String maxlength(1)// 生产方式
+    materielTypeId Integer// 物料分类ID
+    propertyType String maxlength(1)// 物料属性
+    packgeUnitId Integer // 包装单位ID
+    useUnitId Integer// 使用单位ID
+    conversion Double// 包装单位与使用单位换算关系
+    specificationType String maxlength(100) // 规格型号
+    weight Double// 重量
+    density Double// 密度
+    workHours Double // 结算工时
+    taredHours Double// 额定工时
+    schedulerRoleId Integer// 调度员角色ID
+    organizationCd String maxlength(10)// 隶属单位
+    inHouseType String maxlength(1)// 入库方式
+    vesselAmount Double// 物料分批数量
+    qualityLevel String maxlength(100)// 质量等级
+    texTure String maxlength(100)// 材质
+    mhandlerRoleId Integer// 物料员角色ID
+    eightPrevention String maxlength(1)// 八防
+    ifKey String maxlength(1)// 质检关键标识
+    ubiety String maxlength(20)// 质检位置关系
+    sapCd String maxlength(20)// SAP码
+    isCheck String maxlength(1) // 是否需要试验(0:否，1：是)
+    checkType String maxlength(1)// 检验类型
+    checkRate Integer // 抽检比例
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 车型分类信息表
+entity QmsVehicleTypeClass {
+    vehicleClass String maxlength(20) // 车型分类编码
+    vehicleClassName String maxlength(100) // 车型分类名称
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 车型信息表
+entity QmsVehicleTypeInfo {
+    vehicleClassId  Integer// 车型分类ID
+    vehicleType String maxlength(20) // 车型
+    vehicleTypeName String maxlength(100) // 车型名称
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 供应商分类信息表
+entity QmsSupplierClass {
+    suppkierClass String maxlength(20) // 供应商分类编码
+    suppkierClassName String maxlength(100) // 车型分类名称
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 供应商表
+entity QmsSupplier {
+    supplierClassId Integer // 供应商分类ID
+    supplierCd String maxlength(10)  // 供应商编码
+    supplierName String maxlength(100) // 供应商名称
+    address String maxlength(100)// 地址
+    telNum1 String maxlength(20)// 电话1
+    telNum2 String maxlength(20)// 电话2
+    faxNum String maxlength(20)// 传真
+    urlAddress String maxlength(100)// 网址
+    mailAddress String maxlength(50)// 邮箱
+    linkMan String maxlength(40)// 联系人
+    department String maxlength(40)// 部门及职务
+    assRecord String maxlength(20)// 评定记录
+    flagStatus String maxlength(1)  // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10)  // 工厂ID(未使用，扩展用)
+    remark String maxlength(200)  // 备考
+    makeUser String maxlength(10)  // 登录者
+    makeTime ZonedDateTime  // 登录时间
+    modifyUser String maxlength(10)  // 更新者
+    modifyTime ZonedDateTime  // 更新时间
+}
+
+// 物料供应商关联表
+entity QmsMaterielSupplier {
+    materielId Integer  // 物料ID
+    supplierId Integer //供应商ID
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 设备表
+entity QmsEquipment {
+    equipmentCd String maxlength(10)  // 设备编号
+    equipmentName String maxlength(100) // 设备名称
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 产品表
+entity QmsProduct {
+    productBatch String maxlength(20)// 生产批号
+    productNum String maxlength(10)  // 编号
+    materielId Integer // 物料ID
+    productDiff String maxlength(1)// 生产区分
+    isUse String maxlength(1)// 使用区分 
+    isOk String maxlength(1)// 是否合格 
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 工序表
+entity QmsProcess {
+    processCd String maxlength(10)  // 工序编号
+    processName String maxlength(100) // 工序名称
+    flagStatus String maxlength(1)  // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10)  // 工厂ID(未使用，扩展用)
+    remark String maxlength(200)  // 备考
+    makeUser String maxlength(10)  // 登录者
+    makeTime ZonedDateTime  // 登录时间
+    modifyUser String maxlength(10)  // 更新者
+    modifyTime ZonedDateTime  // 更新时间
+}
+
+// 基本单位表
+entity QmsUnit {
+    unitCd String maxlength(10)  // 单位编号
+    unitName String maxlength(100) // 单位名称
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 组织表
+entity QmsOrganizationInfo {
+    parentCd String maxlength(10)//上级组织编码
+    organizationCd String maxlength(10)  // 组织编号
+    organizationName String maxlength(100) // 组织名称
+    attribute String maxlength(1)  // 属性(0:集团，1:公司，2:车间，3:部门，4:班组)
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 缺陷表
+entity QmsDefect {
+    defectCd String maxlength(10)  // 物料分类编号
+    defectName String maxlength(100) // 物料分类名称
+    parentCd String maxlength(10)//上级组织编码
+    isUse String maxlength(1) //生效区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 不良现象表
+entity QmsUnhealthy {
+    unhealthyCd String maxlength(10)  // 不良现象编码
+    unhealthyName String maxlength(100) // 不良现象名称
+    parentCd String maxlength(10)//上级编码
+    isUse String maxlength(1) //生效区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 检验点信息表
+entity QmsControlDetails {
+    inspectionCd String maxlength(10) // 检查项目编码
+    inspectionItem String maxlength(400) // 检查项目
+    technicalRequirement String maxlength(1000) // 技术要求
+    inspectionInstrument String maxlength(100) // 检查器具
+    inspectionResultDiff String maxlength(1) // 检验结果区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 物料进场检验点表
+entity QmsEntryControlDetails {
+    materielId Integer  // 物料ID
+    inspectionItem String maxlength(200) // 检查项目
+    technicalRequirement String maxlength(1000) // 质量标准
+    inspectionInstrument String maxlength(100) // 检查器具
+    standard Double // 标准值
+    upperDeviation Double // 上偏差
+    lowerDeviation Double // 下偏差
+    itemNumber Integer  // 项目编号
+    inspectionResultDiff String maxlength(1) // 检验结果区分
+    isValid String maxlength(1) //有效区分
+    loseTime ZonedDateTime //失效时间
+    isUse String maxlength(1) //使用区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 入厂检验标准管理表
+entity QmsEntryControlCriterion {
+    materielId Integer  // 物料ID
+    inspectionItem String maxlength(400) // 检查项目
+    technicalRequirement String maxlength(1000) // 质量标准
+    inspectionInstrument String maxlength(100) // 检查器具
+    standard Double // 标准值
+    upperDeviation Double // 上偏差
+    lowerDeviation Double // 下偏差
+    itemNumber Integer  // 项目编号
+    inspectionResultDiff String maxlength(1) // 检验结果区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// BOM表
+entity QmsBom {
+    vehicleId Integer // 车型ID
+    materielId Integer // 物料ID
+    parentMaterielID Integer // 上级物料ID
+    rootMaterielId Integer // 根物料ID
+    sequence Integer // 组件序号
+    quantity Integer // 组件数量
+    isMust String maxlength(1) // 是否必选
+    supplyType String maxlength(1) // 供应方式
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 工艺表
+entity QmsBomTechnology {
+    materielId Integer // 物料ID
+    technologyCd String maxlength(10) // 工艺编码
+    technologyName String maxlength(100) // 工艺名称
+    orderNo Integer// 序号
+    beforeProcessId Integer // 前工序ID
+    processId Integer // 工序ID
+    organizationCd String maxlength(10) // 隶属单位
+    schedulerRole String maxlength(20) // 调度角色
+    workUnit String maxlength(10) // 工时定额单位
+    workHours Integer // 工时定额
+    qcType String maxlength(10) // 质检类型
+    specialRole String maxlength(20) // 专检质检角色
+    proprety String maxlength(100) // 工序属性
+    machineCenterCd String maxlength(20) // 工作中心编码
+    workCd String maxlength(20) // 工种编码
+    deliverTime String maxlength(20) // 交货期
+    integerNum Double // 整体加工数量
+    integerTimeUnit String maxlength(10) // 整体加工时间单位
+    integerTime Double // 整体加工时间
+    operationVersion String maxlength(20) // 工艺版本编码
+    workFactor Double // 工时系数
+    operationType String maxlength(1) // 工序特征
+    mutualinRole String maxlength(20) // 互检质检角色
+    describe String maxlength(200) // 工序描述
+    randomRole String maxlength(20) // 抽检质检角色
+    controlRole String maxlength(20) // 控制点质检角色
+    isMain String maxlength(1) // 主要工序
+    isNewCd String maxlength(1) // 是否产生编号标识
+    newCdMaterielId Integer // 产生编号物料ID
+    workGroupCd String maxlength(20) // 作业班组
+    isControlPoint String maxlength(1) // 是否检验工序
+    isTest String maxlength(1)//是否试验工序
+    isDefault String maxlength(1) // 默认工艺
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 工序质量控制点详细表
+entity QmsQualityControlDetails {
+    bomTechnologyId Integer //BOM工艺ID
+    inspectionItem String maxlength(400) // 检查项目
+    technicalRequirement String maxlength(1000) // 技术要求
+    inspectionInstrument String maxlength(100) // 检查器具
+    placeDiff String maxlength(100) // 位别(存放值例子（1，2\1\左,右）逗号分隔)
+    standard Double // 标准值
+    upperDeviation Double // 上偏差
+    lowerDeviation Double // 下偏差
+    inspectionResultDiff String maxlength(1) // 检验结果区分0：数字，1：下拉选择（合格\不合格）
+    remark String maxlength(200) // 备考
+    inspectionType String maxlength(10) // 质检类型
+    isCheckObj String maxlength(1) // 是否检测对象
+    abcType String maxlength(1)//ABC分类
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 工序装配关系表
+entity QmsPartsAssemblyRelation {
+    bomTechnologyId Integer //BOM工艺ID
+    assemblyNum Integer // 装配序号
+    assemblyMaterielId Integer // 装配物料ID
+    assemblyCount Integer // 数量
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 附件表
+entity QmsEnclosure {
+    inspectionInfoId Integer // 业务ID
+    inspectionKbn String maxlength(1) // 业务来源(1:入厂，2:生产，3.工艺)
+    enclosureAddress String maxlength(100) // 附件地址（文件服务器地址）
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 通知信息表
+entity QmsNotice {
+    noticeType String maxlength(1) // 通知类型
+    noticeRole String maxlength(20) // 通知角色
+    noticeUser String maxlength(20) // 通知对象用户
+    noticeInfo String maxlength(400) // 通知内容
+    readFlag String maxlength(1) // 已读区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 物料进场表
+entity QmsMaterielEntry {
+    materielEntryCd String maxlength(50)// 物料进场编码
+    materielId Integer  // 物料ID
+    specificationType String maxlength(100) // 规格型号
+    figureNumber String maxlength(30) // 图号
+    packingQuantity Integer // 包装数量
+    supplierId Integer //供应商ID
+    entryQuantity Integer // 到货数量
+    entryType String maxlength(1)//到货类型
+    purchaseOrderNumber String maxlength(50) // 采购单号
+    batchNumber String maxlength(50) // 原始批号\编号
+    isUse String maxlength(50) // 使用区分
+    madeYmd String maxlength(50) // 制造年月
+    madeFactoryCd String maxlength(50) // 制造厂代号
+    texTure String maxlength(50) // 材质
+    castingNum String maxlength(50) // 铸号
+    entryDate ZonedDateTime//进场日期
+    flagInspect String maxlength(1)//检验状态
+    inspectionTime ZonedDateTime//报检时间
+    inspectionCompletedTime ZonedDateTime//检验完成时间
+    inspectionUserId Integer//检验人ID
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 物料进场明细表
+entity QmsMaterielDetails {
+    entryId Integer  // 物料进场ID
+    goodsCd String maxlength(30) // 单件号
+    flagInspect String maxlength(1) // 检验状态
+    isCheckOk String maxlength(1) // 是否通过试验
+    goodsQuantity Integer // 入厂单件数量
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 入厂检验记录表
+entity QmsEntryInspection {
+    materielId Integer  // 物料ID
+    supplierId Integer //供应商ID
+    okNumber Integer//合格数量
+    ngNumber Integer//不合格数量
+    serialNumber String maxlength(10)//原始批号编号
+    productionCd String maxlength(10)//生产追溯编号
+    checkDate ZonedDateTime//抽检日期
+    fileNumber String maxlength(10) // 文件编号
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    entryId Integer //物料进场ID
+    remark String maxlength(200) // 备考
+    groupCd String maxlength(20) // 检验分组
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 入厂检验记录明细表
+entity QmsEntryInspectionResult {
+    entryControlDetailId Integer //入厂检验ID
+    goodsCd String maxlength(10) // 抽检单件号
+    controlId Integer // 检验点ID
+    placeDiff String maxlength(10) // 位别
+    testValue String maxlength(40) // 实际检验值
+    recordNum Integer // 记录内序号
+    checkResult String maxlength(1) // 结果区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    groupCd String maxlength(20) // 检验分组
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 生产检验任务表
+entity QmsProductionTask {
+    bomTechnologyId Integer // 工艺ID
+    materielId Integer // 物料ID
+    serialNumber String maxlength(10) // 编号
+    furnace String maxlength(20) // 炉批号
+    saleNumber String maxlength(10) // 订单号
+    productorderNumber String maxlength(10) // 生产订单号
+    finishNumber Integer// 完工数量
+    quailfiedNumber Integer// 合格数量
+    deffectiveNumber Integer// 次品数量
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 生产检验表(任务)
+entity QmsProductionInspection {
+
+    bomTechnologyId Integer // 工艺ID
+    materielId Integer // 物料ID
+    serialNumber String maxlength(10) // 编号
+    furnace String maxlength(20) // 炉批号
+    workno String maxlength(20) //工作号（任务跟踪号）
+    saleNumber String maxlength(10) // 订单号
+    productorderNumber String maxlength(10) // 生产订单号
+    productId Integer//产品id
+    finishNumber Integer// 完工数量
+    quailfiedNumber Integer// 合格数量
+    deffectiveNumber Integer// 次品数量
+    inspectionDiff String maxlength(1) // 自互专区
+    isOk  String maxlength(1) // 合格区分(0：检验中,1：合格，2：不合格)
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 生产检验表
+entity QmsProductionInspectionValue {
+
+    inspectionId Integer // 生产检验ID
+    checkNumber Integer // 检验编号
+    inspectionDiff String maxlength(1) // 自互专区
+    isOk  String maxlength(1) // 合格区分(0：检验中,1：合格，2：不合格)
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 生产检验结果表
+entity QmsProductionInspectionResult {
+    inspectionValueId Integer // 检验结果表ID
+    inspectionId Integer  // 生产检验ID
+    controlId Integer // 质量控制点ID
+    inspectionDiff String maxlength(1) // 自互专区
+    placeDiff String maxlength(100) // 位别
+    testValue String maxlength(40) // 实际检验值
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 生产检验装配关系表
+entity QmsProductionRelation {
+    productionInspectionId Integer// 生产检验ID
+    assemblyId Integer// 装配ID
+    doProductId Integer//生产产品ID
+    actualUseLocation String maxlength(200) // 实际使用位置
+    assemblyMaterielId Integer // 物料进场明细ID
+    useProductId Integer//装配产品ID
+    fromDiff String maxlength(1) //来源区分
+    confirmUser1 String maxlength(10) // 确认人1
+    confirmTime1 ZonedDateTime // 确认时间1
+    confirmUser2 String maxlength(10) // 确认人2
+    confirmTime2 ZonedDateTime // 确认时间2
+    remark String maxlength(200) // 备考
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 检验信息表
+entity QmsInspectionInfo {
+    vehicleType String maxlength(20)  // 车型
+    no Integer  // 序号(同一车型下的顺番)
+    vehicleTypeName String maxlength(100) // 车型名称
+    constitutiveCoding String maxlength(20)  // 构成编码
+    constitutiveName String maxlength(100) // 构成名称
+    constitutiveCodingName String maxlength(20) // 上级构成编码
+    vehicleNumber String maxlength(20)  // 车号
+    componentNumber String maxlength(20) // 构件编号
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除）
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用）
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 国铁构成关系表
+entity QmsNrvTelation {
+    vehicleType String maxlength(20) // 车型
+    vehicleCd String maxlength(20) // 车号
+    materielCd String maxlength(10) // 物料编码
+    parentMaterielCd String maxlength(10) // 上级物料编号
+    serialNumber String maxlength(10) // 检验编号
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 车型传递记录薄主表
+entity QmsCarRecordbookMain {
+    recordbookSeq Integer  // 序号
+    recordbookName String maxlength(100) // 记录名称
+    recordbookNum  Integer// 张数
+    recordbookCheck String maxlength(1) // 核对状态
+    filecodepre String maxlength(20)// 文件表编号前缀
+    editUser String maxlength(20)// 编制人
+    checkUser String maxlength(20)// 审核人
+    standardUser String maxlength(20)// 标准化负责人
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 车型传递记录薄明细表
+entity QmsCarRecordbookDetails {
+    recordbookMainId Integer  // 车型传递记录主表ID
+    productId Integer // 产品表ID
+    assemblyCd String maxlength(30)// 编号
+    fileupload  String maxlength(100)// 文件上传路径
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 转向架压吨试验数据表
+entity QmsBogiepressureTonTest {
+
+    pkid String maxlength(50)// PKID
+    productdate String maxlength(50)// 生产日期
+    checker String maxlength(50)// 试验人
+    checkdate String maxlength(50)// 试验日期
+    x1 String maxlength(50)// 自由高检测值
+    y1 String maxlength(50)// 空车高检测值
+    z1 String maxlength(50)// z1
+    v1 String maxlength(50)// 检测结果
+    a1 String maxlength(50)// a1
+    x2 String maxlength(50)// 自由高检测值
+    y2 String maxlength(50)// 空车高检测值
+    z2 String maxlength(50)// z2
+    v2 String maxlength(50)// 检测结果
+    a2 String maxlength(50)// a2
+    judge String maxlength(50)// judge
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 转向架正位检测数据表
+entity QmsBogiepressurePositiveTest {
+
+    place String maxlength(50) // 1位或2位
+    bolster String maxlength(50) // 摇枕号
+    sideframeLeft String maxlength(50) // 侧架号(左)
+    sideframeRight String maxlength(50) // 侧架号(右)
+    crossstaffLeft String maxlength(50) // 交叉杆号（左）
+    crossstaffRight String maxlength(50) // 交叉杆号（右）
+    checkdate String maxlength(50)// 测量日期
+    checktime String maxlength(50)// 测量时间
+    workno String maxlength(50) // 检测员工号
+    checkvalue1 String maxlength(50) // 检测结果1
+    checkvalue2 String maxlength(50) // 检测结果2
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 智能扳机检测数据表
+entity QmsIntelligentTriggerTest {
+
+    num String maxlength(50)// 流水号
+    sideframeLeft String maxlength(50)// 左端侧架号
+    leftValue1 String maxlength(50)// 左端扭矩1
+    leftValue2 String maxlength(50)// 左端扭矩2
+    sideframeRight String maxlength(50)// 右端侧架号1
+    rightValue1 String maxlength(50)// 右端扭矩1
+    rightValue2 String maxlength(50)// 右端扭矩2
+    leftUser String maxlength(50)// 左端操作者
+    rightUser String maxlength(50)// 右端操作者
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 微控调闸器检测数据表
+entity QmsMicSwicthRegulattoTest {
+
+    sname String maxlength(50)// sName
+    stype String maxlength(50)// sType
+    scode String maxlength(50)// sCode
+    ddate String maxlength(50)// dDate
+    il0 String maxlength(50)// il0
+    izdgS String maxlength(50)// iZdgS
+    sworker String maxlength(50)// sWorker
+    ssumup String maxlength(50)// sSumUp
+    sneworold String maxlength(50)// sNewOrOld
+    idian String maxlength(50)// iDian
+    izdg0 String maxlength(50)// iZdg0
+    izdg1 String maxlength(50)// iZdg1
+    izdg2 String maxlength(50)// iZdg2
+    izdg3 String maxlength(50)// iZdg3
+    izdg4 String maxlength(50)// iZdg4
+    izdg5 String maxlength(50)// iZdg5
+    izdg6 String maxlength(50)// iZdg6
+    izdg7 String maxlength(50)// iZdg7
+    iztq0 String maxlength(50)// iZtq0
+    iztq1 String maxlength(50)// iZtq1
+    iztq2 String maxlength(50)// iZtq2
+    iztq3 String maxlength(50)// iZtq3
+    iztq4 String maxlength(50)// iZtq4
+    iztq5 String maxlength(50)// iZtq5
+    iztq6 String maxlength(50)// iZtq6
+    iztq7 String maxlength(50)// iZtq7
+    iztq8 String maxlength(50)// iZtq8
+    iztq9 String maxlength(50)// iZtq9
+    iztq10 String maxlength(50)// iZtq10
+    iztq11 String maxlength(50)// iZtq11
+    iqdl String maxlength(50)// iQdl
+    sresult0 String maxlength(50)// sResult0
+    sresult1 String maxlength(50)// sResult1
+    sresult2 String maxlength(50)// sResult2
+    sresult3 String maxlength(50)// sResult3
+    sresult4 String maxlength(50)// sResult4
+    sresult5 String maxlength(50)// sResult5
+    sresult6 String maxlength(50)// sResult6
+    sresult String maxlength(50)// sResult
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 呼吸式安全阀检测数据表
+entity QmsBreathingSafetyTest {
+
+    mcgsTime String maxlength(50)// 试验时间
+    mcgsTimems String maxlength(50)// 试验型号
+    mcgsDate String maxlength(50)// 试验日期
+    ctype String maxlength(50)// 车类型
+    safetyValve String maxlength(50)// 阀编号
+    respiratoryPressure String maxlength(50)// 呼气压
+    pinspl String maxlength(50)// 吸气压
+    checkUser String maxlength(50)// 登录人
+    mfyl String maxlength(50)// 气密试验压
+    mfyc String maxlength(50)// 安全阀2分钟压降
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 审批流程表
+entity QmsApproveFlow {
+    approveFlowCd String maxlength(20)  //审批流程编码
+    stepNum Integer // 步骤序号
+    stepDiff Integer // 步骤序号
+    principalUserId Integer // 责任人ID
+    controlLevel String maxlength(10) // 质量检查项目级别
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 审批结果表
+entity QmsApproveResult {
+    approveFlowId Integer //审批流程ID
+    unqualifiedProductId Integer // 不合格品管理ID
+    stepNum Integer // 步骤序号
+    principalUserId Integer // 责任人ID
+    approveTime ZonedDateTime // 审批时间
+    approveResult String maxlength(1) // 审批结果
+    approveStatus String maxlength(1) // 审批完成区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+// 不合格原材料管理表
+entity QmsUnqualifiedMateriel {
+    materielDetailsId Integer //物料进场明细ID
+    bomTechnologyId Integer // 工艺ID
+    processId Integer // 工序ID
+    discoverUserId Integer // 发现人ID
+    discoverTime ZonedDateTime // 发现时间
+    problemDescription String maxlength(1000)//问题描述
+    dealWith String maxlength(1)//处理方法
+    useDiff String maxlength(1)//业务区分
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 不合格品管理表
+entity QmsUnqualifiedProduct {
+    inspectionValueId Integer//生产检验结果ID
+    bomTechnologyId Integer // 工艺ID
+    processId Integer // 工序ID
+    materielId Integer // 物料ID
+    approveResultId Integer // 审批结果ID
+    unhealthyId Integer // 不良分类ID
+    defectId Integer //缺陷分类ID
+    controlLevel String maxlength(10) // 质量检查项目级别
+    approvePrincipalUserId Integer//评审步骤责任人ID
+    approveStepNum Integer//当前审批步骤序号
+    approveStepUserId Integer//当前步骤责任人ID
+    seriNumber String maxlength(10) //编号
+    furnace String maxlength(20) //炉批号
+    saleNumber String maxlength(10) //订单号
+    productorderNumber String maxlength(10) //生产订单号
+    inspectionDiff String maxlength(1) //自互专区
+    isApprove String maxlength(1) //评审要否区分
+    approveResultDiff String maxlength(10) //评审结果区分
+    approveUserId Integer//评审人ID
+    approveTime ZonedDateTime//评审时间
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+
+// 不合格品明细管理
+entity QmsUnqualifiedProductDetails {
+    unqualifiedProductId Integer // 不合格品管理ID
+    inspectionItem String maxlength(400) // 检查项目
+    technicalRequirement String maxlength(1000) // 技术要求
+    inspectionInstrument String maxlength(100) // 检查器具
+    standard Double // 标准值
+    upperDeviation Double // 上偏差
+    lowerDeviation Double // 下偏差
+    controlLevel String maxlength(10) // 质量检查项目级别
+    checkResult String maxlength(20) //检查结果
+    flagStatus String maxlength(1) // 删除区分(0:使用中，1:删除)
+    compPkid String maxlength(10) // 工厂ID(未使用，扩展用)
+    remark String maxlength(200) // 备考
+    reserveFirst String maxlength(20) // 预留1
+    reserveSecond String maxlength(20) // 预留2
+    reserveThird String maxlength(20) // 预留3
+    makeUser String maxlength(10) // 登录者
+    makeTime ZonedDateTime // 登录时间
+    modifyUser String maxlength(10) // 更新者
+    modifyTime ZonedDateTime // 更新时间
+}
+
+paginate * with pagination
+
+
+

@@ -1,0 +1,98 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsIntelligentTriggerTest.home.title">Qms Intelligent Trigger Tests</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-intelligent-trigger-test" [routerLink]="['/qms-intelligent-trigger-test/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsIntelligentTriggerTest.home.createLabel">
+            Create new Qms Intelligent Trigger Test
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsIntelligentTriggerTests">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="num"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.num">Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sideframeLeft"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeLeft">Sideframe Left</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="leftValue1"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue1">Left Value 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="leftValue2"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftValue2">Left Value 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sideframeRight"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.sideframeRight">Sideframe Right</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rightValue1"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue1">Right Value 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rightValue2"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightValue2">Right Value 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="leftUser"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.leftUser">Left User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rightUser"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.rightUser">Right User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsIntelligentTriggerTest.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsIntelligentTriggerTest of qmsIntelligentTriggerTests ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-intelligent-trigger-test', qmsIntelligentTriggerTest.id, 'view' ]">{{qmsIntelligentTriggerTest.id}}</a></td>
+                <td>{{qmsIntelligentTriggerTest.num}}</td>
+                <td>{{qmsIntelligentTriggerTest.sideframeLeft}}</td>
+                <td>{{qmsIntelligentTriggerTest.leftValue1}}</td>
+                <td>{{qmsIntelligentTriggerTest.leftValue2}}</td>
+                <td>{{qmsIntelligentTriggerTest.sideframeRight}}</td>
+                <td>{{qmsIntelligentTriggerTest.rightValue1}}</td>
+                <td>{{qmsIntelligentTriggerTest.rightValue2}}</td>
+                <td>{{qmsIntelligentTriggerTest.leftUser}}</td>
+                <td>{{qmsIntelligentTriggerTest.rightUser}}</td>
+                <td>{{qmsIntelligentTriggerTest.flagStatus}}</td>
+                <td>{{qmsIntelligentTriggerTest.compPkid}}</td>
+                <td>{{qmsIntelligentTriggerTest.remark}}</td>
+                <td>{{qmsIntelligentTriggerTest.reserveFirst}}</td>
+                <td>{{qmsIntelligentTriggerTest.reserveSecond}}</td>
+                <td>{{qmsIntelligentTriggerTest.reserveThird}}</td>
+                <td>{{qmsIntelligentTriggerTest.makeUser}}</td>
+                <td>{{qmsIntelligentTriggerTest.makeTime | date:'medium'}}</td>
+                <td>{{qmsIntelligentTriggerTest.modifyUser}}</td>
+                <td>{{qmsIntelligentTriggerTest.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-intelligent-trigger-test', qmsIntelligentTriggerTest.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-intelligent-trigger-test', qmsIntelligentTriggerTest.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-intelligent-trigger-test/'+ qmsIntelligentTriggerTest.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsIntelligentTriggerTests && qmsIntelligentTriggerTests.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

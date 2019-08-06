@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsBogiepressurePositiveTest">
+            <h2><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.detail.title">Qms Bogiepressure Positive Test</span> {{qmsBogiepressurePositiveTest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.place">Place</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.place}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.bolster">Bolster</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.bolster}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.sideframeLeft">Sideframe Left</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.sideframeLeft}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.sideframeRight">Sideframe Right</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.sideframeRight}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.crossstaffLeft">Crossstaff Left</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.crossstaffLeft}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.crossstaffRight">Crossstaff Right</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.crossstaffRight}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkdate">Checkdate</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.checkdate}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checktime">Checktime</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.checktime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.workno">Workno</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.workno}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkvalue1">Checkvalue 1</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.checkvalue1}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.checkvalue2">Checkvalue 2</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.checkvalue2}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsBogiepressurePositiveTest.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsBogiepressurePositiveTest.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-bogiepressure-positive-test', qmsBogiepressurePositiveTest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

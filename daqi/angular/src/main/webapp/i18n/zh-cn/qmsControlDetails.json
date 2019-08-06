@@ -1,0 +1,35 @@
+{
+    "fccApp": {
+        "qmsControlDetails": {
+            "home": {
+                "title": "Qms Control Details",
+                "createLabel": "创建新 Qms Control Details",
+                "createOrEditLabel": "创建或编辑 Qms Control Details"
+            },
+            "created": "Qms Control Details {{ param }} 创建成功",
+            "updated": "Qms Control Details {{ param }} 更新成功",
+            "deleted": "Qms Control Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Control Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Control Details"
+            },
+            "inspectionCd": "Inspection Cd",
+            "inspectionItem": "Inspection Item",
+            "technicalRequirement": "Technical Requirement",
+            "inspectionInstrument": "Inspection Instrument",
+            "inspectionResultDiff": "Inspection Result Diff",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

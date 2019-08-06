@@ -1,0 +1,22 @@
+{
+    "login": {
+        "title": "欢迎使用",
+        "subtitle": "中车大齐质量信息化管理系统",
+        "form": {
+            "username": "账号",
+            "username.placeholder": "请输入您的账号",
+            "password": "密码",
+            "password.placeholder": "请输入您的密码",
+            "rememberme": "自动登录",
+            "button": "登录"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>登录失败!</strong> 请检查您的登录信息, 并重试一次."
+            }
+        },
+        "password" : {
+            "forgot": "忘记密码?"
+        }
+    }
+}

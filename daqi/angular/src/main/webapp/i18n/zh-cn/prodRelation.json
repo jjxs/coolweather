@@ -1,0 +1,7 @@
+{
+    "prodRelation": {
+        "title": "生产关系生成",
+        "vehicleCd": "车号",
+        "serialNumber": "检验编号"
+    }
+}

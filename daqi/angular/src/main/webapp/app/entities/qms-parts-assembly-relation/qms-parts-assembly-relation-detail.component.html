@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsPartsAssemblyRelation">
+            <h2><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.detail.title">Qms Parts Assembly Relation</span> {{qmsPartsAssemblyRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.bomTechnologyId">Bom Technology Id</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.bomTechnologyId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyNum">Assembly Num</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.assemblyNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyMaterielId">Assembly Materiel Id</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.assemblyMaterielId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.assemblyCount">Assembly Count</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.assemblyCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsPartsAssemblyRelation.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsPartsAssemblyRelation.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-parts-assembly-relation', qmsPartsAssemblyRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

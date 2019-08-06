@@ -1,0 +1,57 @@
+<div>
+    <div [ngSwitch]="isAuthenticated()">
+        <div *ngSwitchCase="false">
+            <div class="row justify-content-center">
+                <h5 class="modal-title" jhiTranslate="login.title">Sign in</h5>
+            </div>
+            <div class="row justify-content-center">
+                <h3 class="modal-title" jhiTranslate="login.subtitle">subtitle</h3>
+            </div>
+            <div class="modal-header justify-content-center cnc-home-logo">
+                <span class="cnc-home-logo-img"></span>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="alert alert-danger" *ngIf="authenticationError"
+                            jhiTranslate="login.messages.error.authentication">
+                            <strong>Failed to sign in!</strong> Please check your credentials and try again.
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <form class="form" role="form" (ngSubmit)="login()">
+                            <div class="form-group">
+                                <label for="username" jhiTranslate="login.form.username">Login</label>
+                                <input type="text" class="form-control" autocomplete="off" name="username" id="username"
+                                    placeholder="{{'login.form.username.placeholder' | translate}}"
+                                    [(ngModel)]="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" jhiTranslate="login.form.password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="{{'login.form.password.placeholder' | translate}}"
+                                    [(ngModel)]="password">
+                            </div>
+                            <div class="form-check form-group">
+                                <label class="form-check-label" for="rememberMe">
+                                    <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe"
+                                        [(ngModel)]="rememberMe" checked>
+                                    <span jhiTranslate="login.form.rememberme">Remember me</span>
+                                </label>
+                            </div>
+                            <div class="justify-content-center">
+                                <button type="submit" class="btn btn-primary cnc-home-submitbutton"
+                                    jhiTranslate="login.form.button">Sign in</button>
+                            </div>
+                        </form>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-success" *ngSwitchCase="true">
+            <span *ngIf="account" jhiTranslate="home.logged.message" translateValues="{username: '{{account.login}}'}">
+                You are logged in as user "{{account.login}}". </span>
+        </div>
+    </div>
+</div>

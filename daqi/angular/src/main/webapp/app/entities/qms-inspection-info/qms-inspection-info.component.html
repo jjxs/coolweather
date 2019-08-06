@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsInspectionInfo.home.title">Qms Inspection Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-inspection-info" [routerLink]="['/qms-inspection-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsInspectionInfo.home.createLabel">
+            Create new Qms Inspection Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsInspectionInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleType"><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleType">Vehicle Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="no"><span jhiTranslate="fccApp.qmsInspectionInfo.no">No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleTypeName"><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleTypeName">Vehicle Type Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="constitutiveCoding"><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveCoding">Constitutive Coding</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="constitutiveName"><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveName">Constitutive Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="constitutiveCodingName"><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveCodingName">Constitutive Coding Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleNumber"><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleNumber">Vehicle Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="componentNumber"><span jhiTranslate="fccApp.qmsInspectionInfo.componentNumber">Component Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsInspectionInfo.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsInspectionInfo.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsInspectionInfo.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsInspectionInfo.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsInspectionInfo.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsInspectionInfo.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsInspectionInfo of qmsInspectionInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-inspection-info', qmsInspectionInfo.id, 'view' ]">{{qmsInspectionInfo.id}}</a></td>
+                <td>{{qmsInspectionInfo.vehicleType}}</td>
+                <td>{{qmsInspectionInfo.no}}</td>
+                <td>{{qmsInspectionInfo.vehicleTypeName}}</td>
+                <td>{{qmsInspectionInfo.constitutiveCoding}}</td>
+                <td>{{qmsInspectionInfo.constitutiveName}}</td>
+                <td>{{qmsInspectionInfo.constitutiveCodingName}}</td>
+                <td>{{qmsInspectionInfo.vehicleNumber}}</td>
+                <td>{{qmsInspectionInfo.componentNumber}}</td>
+                <td>{{qmsInspectionInfo.flagStatus}}</td>
+                <td>{{qmsInspectionInfo.compPkid}}</td>
+                <td>{{qmsInspectionInfo.makeUser}}</td>
+                <td>{{qmsInspectionInfo.makeTime | date:'medium'}}</td>
+                <td>{{qmsInspectionInfo.modifyUser}}</td>
+                <td>{{qmsInspectionInfo.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-inspection-info', qmsInspectionInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-inspection-info', qmsInspectionInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-inspection-info/'+ qmsInspectionInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsInspectionInfos && qmsInspectionInfos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "userSelect": {
+    "title": "用户选择",
+    "condition": {
+      "userName": "用户名",
+      "name": "用户姓名"
+    },
+    "selection": {
+      "select": "选择",
+      "userName": "用户名",
+      "name": "用户姓名",
+      "phone": "电话",
+      "mail": "邮箱"
+    },
+    "button": {
+      "search": "查询",
+      "clear": "清空",
+      "confirm": "确认",
+      "close": "关闭"
+    }
+  }
+}

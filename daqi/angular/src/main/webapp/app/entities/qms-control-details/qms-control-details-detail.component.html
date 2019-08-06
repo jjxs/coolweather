@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsControlDetails">
+            <h2><span jhiTranslate="fccApp.qmsControlDetails.detail.title">Qms Control Details</span> {{qmsControlDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.inspectionCd">Inspection Cd</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.inspectionCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.inspectionItem">Inspection Item</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.inspectionItem}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.technicalRequirement">Technical Requirement</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.technicalRequirement}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.inspectionInstrument">Inspection Instrument</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.inspectionInstrument}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.inspectionResultDiff">Inspection Result Diff</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.inspectionResultDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsControlDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsControlDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-control-details', qmsControlDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

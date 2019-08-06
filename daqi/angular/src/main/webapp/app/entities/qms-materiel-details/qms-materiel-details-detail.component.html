@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsMaterielDetails">
+            <h2><span jhiTranslate="fccApp.qmsMaterielDetails.detail.title">Qms Materiel Details</span> {{qmsMaterielDetails.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.entryId">Entry Id</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.entryId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.goodsCd">Goods Cd</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.goodsCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.flagInspect">Flag Inspect</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.flagInspect}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.isCheckOk">Is Check Ok</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.isCheckOk}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.goodsQuantity">Goods Quantity</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.goodsQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsMaterielDetails.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsMaterielDetails.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-materiel-details', qmsMaterielDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

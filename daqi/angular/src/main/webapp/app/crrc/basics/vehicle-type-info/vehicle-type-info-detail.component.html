@@ -1,0 +1,102 @@
+<div>
+    <div>
+        <div *ngIf="qmsVehicleTypeInfo">
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+                <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class"
+                    jhiTranslate="fccApp.qmsVehicleTypeInfo.detail.title">Qms Vehicle Type Info</h2>
+
+                <div style="width: 80%;float: left;">
+
+                    <div class="form-group page_hidden" [hidden]="!qmsVehicleTypeInfo.id">
+                        <label for="id" jhiTranslate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id" [(ngModel)]="qmsVehicleTypeInfo.id"
+                            readonly />
+                    </div>
+                    <!-- 车型和车型名称 -->
+                    <div class="creatOreditCss">
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label" jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleType"
+                                    for="field_vehicleType">Vehicle Type</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="vehicleType" id="field_vehicleType"
+                                     [disabled]="qmsVehicleTypeInfo.id"
+                                    [(ngModel)]="qmsVehicleTypeInfo.vehicleType" maxlength="20" />
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label"
+                                    jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleTypeName"
+                                    for="field_vehicleTypeName">Vehicle Type Name</label>
+                            </div>
+                            <div class="div_right">
+                                <input type="text" class="form-control" name="vehicleTypeName" [disabled]="qmsVehicleTypeInfo.id"
+                                    id="field_vehicleTypeName"  [(ngModel)]="qmsVehicleTypeInfo.vehicleTypeName"
+                                    maxlength="100" />
+                            </div>
+                        </div>
+                        <!-- 车型分类编码 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleClassCoding"
+                                for="field_vehicleType">Vehicle Type</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="vehicleClass" id="field_vehicleType" readonly 
+                                [(ngModel)]="vehicleClass" maxlength="20" />
+                                
+                                <input type="text" class="form-control" name="vehicleClassId" id="field_vehicleType" hidden
+                                [(ngModel)]="qmsVehicleTypeInfo.vehicleClassId" maxlength="20" />
+                                   
+                    </div>
+                  
+                    </div>
+
+                    <!-- 车型分类名称 -->
+                    <div class="form-group">
+                        <div class="div_left">
+                            <label class="form-control-label" jhiTranslate="fccApp.qmsVehicleTypeInfo.vehicleClassName"
+                                for="field_vehicleType">Vehicle Type</label>
+                        </div>
+                        <div class="div_right">
+                            <input type="text" class="form-control" name="vehicleClassName" id="field_vehicleType" readonly
+                                [(ngModel)]="vehicleClassName" maxlength="20" />
+                                   
+                        <div
+                            [hidden]="!(editForm.controls.vehicleType?.dirty && editForm.controls.vehicleType?.invalid)">
+                            <small class="form-text text-danger"
+                                [hidden]="!editForm.controls.vehicleType?.errors?.maxlength"
+                                jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                                This field cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                    </div>
+                    </div>
+                        <!-- 备考 -->
+                        <div class="form-group">
+                            <div class="div_left">
+                                <label class="form-control-label" jhiTranslate="fccApp.qmsVehicleTypeInfo.remark"
+                                    for="field_remark">Remark</label>
+                            </div>
+                            <div class="div_right">
+                                <textarea type="text" class="form-control" name="remark" id="field_remark" [disabled]="qmsVehicleTypeInfo.id"
+                                    style="width: 500px;height:210px;" [(ngModel)]="qmsVehicleTypeInfo.remark"
+                                    maxlength="200">
+                        </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+            </form>
+            <div class="creatOreditCssButton">
+                <button type="submit" (click)="previousState()"
+                    class="btn btn-info float-right search_button_darkblue search_button">
+                    <span jhiTranslate="entity.action.back"> Back</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

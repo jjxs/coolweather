@@ -1,0 +1,138 @@
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+<div class="modal-lg">
+  <p-panel>
+    <p-header>
+      <div class="ui-helper-clearfix">
+        <span class="ui-panel-title" style="font-weight: bold;font-size:1.2rem">物料进场明细选择</span>
+        <button pButton type="button" class="ui-button-secondary" (click)="goBack()" style="float:right"
+          icon="fa fa-fw fa-close"></button>
+      </div>
+    </p-header>
+    <div style="height:39rem;margin: 0;">
+      <p-table #dt [value]="qmsMaterielTypes" [(selection)]="qmsMaterielTypeBack" scrollHeight="20rem"
+        [paginator]="true" [rows]="itemsPerPage" [totalRecords]="queryCount" [lazy]="true" [loading]="loading"
+        (onLazyLoad)="loadCarsLazy($event)">
+        <ng-template pTemplate="caption" style="padding-left:0px">
+          <div style="height: 50px;margin-top:0.5%;width: 100%;">
+            <div class="common_div-head">
+              <div class="search_styleOne">
+                <span>物料编码</span>
+              </div>
+              <div class="search_styleTwo">
+                <input type="text" class="form-control" maxlength=20 style="width: 175px;margin-left: 0px;" pInputText
+                  disabled [(ngModel)]="bianMa" />
+              </div>
+            </div>
+            <div class="common_div-head" style="margin-left: 3%;">
+              <div class="search_styleOne">
+                <span>物料名称</span>
+              </div>
+              <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                  disabled [(ngModel)]="gongName" />
+              </div>
+            </div>
+
+            <div class="common_div-head" style="margin-left: 3%;">
+              <div class="search_styleOne">
+                <span>供应商名称</span>
+              </div>
+              <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 175px;height:35px;margin-left: 0px;" pInputText
+                  [(ngModel)]="supplierName" />
+              </div>
+            </div>
+
+          </div>
+
+          <div style="height: 46px">
+            <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+              class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+              (click)="emptyInfo()">
+              <!-- <fa-icon [icon]="'plus'"></fa-icon> -->
+              <span>
+                清空
+              </span>
+            </button>
+            <button id="jh-create-entity" icon="fa fa-plus" iconPos="left"
+              class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+              (click)="loadAll()">
+              <!-- <fa-icon [icon]="'search'"></fa-icon> -->
+              <span>
+                查询
+              </span>
+            </button>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="header">
+          <tr jhiSort [(ascending)]="reverse" [callback]="transition.bind(this)" class="common_trStyle">
+            <!-- 序号 -->
+            <th class="common_thStyle" style="width: 10% !important;">
+              <span>选择</span>
+            </th>
+
+            <!-- 单件号 -->
+            <th class="common_thStyle" style="width: 20% !important;">
+              <span>单价号</span>
+            </th>
+            <!-- 入厂单件数量 -->
+            <th class="common_thStyle" style="width: 15% !important;">
+              <span>入厂单件数量</span>
+            </th>
+            <!-- 到货类型 -->
+            <th class="common_thStyle" style="width: 15% !important;">
+              <span>到货类型</span>
+            </th>
+
+            <!-- 制造年月 -->
+            <th class="common_thStyle" style="width: 20% !important;">
+              <span>制造年月</span>
+            </th>
+            <!-- 制造厂代号 -->
+            <th class="common_thStyle" style="width: 20% !important;">
+              <span>制造厂代号</span>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-vtc let-i="rowIndex">
+          <tr>
+            <!-- 序号 -->
+            <td class="common_tdStyle text-center">
+              <p-tableRadioButton [value]="vtc" [checked]="i === 0 ? true : ''"></p-tableRadioButton>
+            </td>
+
+            <!-- 单件号 -->
+            <td class="common_tdStyle text-left" style="width: 20% !important">
+              <p>{{vtc.goodsCd}}</p>
+            </td>
+
+            <!-- 入厂单件数量 -->
+            <td class="common_tdStyle text-left" style="width: 15% !important">
+              <p>{{vtc.entryQuantity}}</p>
+            </td>
+            <!-- 到货类型 -->
+            <td class="common_tdStyle text-left" style="width: 15% !important">
+              <p *ngIf="vtc.entryType === '0'">单件</p>
+              <p *ngIf="vtc.entryType === '1'">批次</p>
+            </td>
+            <!-- 制造年月 -->
+            <td class="common_tdStyle text-left" style="width: 20% !important">
+              <p>{{vtc.madeYMD}}</p>
+            </td>
+            <!-- 制造厂代号 -->
+            <td class="common_tdStyle text-left" style="width: 20% !important">
+              <p>{{vtc.madeFactoryCd}}</p>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <div style="margin-top:10px;margin-bottom:10px;">
+        <button pButton type="button" (click)="goBack()" label="取消"
+          class="common_pop_font ui-button-secondary float-right search_button"></button>
+        <button pButton type="submit" class="common_pop_font float-right search_button" replaceUrl="true"
+          style="margin-right: 15px;" label="确定" (click)="selected(this)"></button>
+      </div>
+    </div>
+  </p-panel>
+</div>

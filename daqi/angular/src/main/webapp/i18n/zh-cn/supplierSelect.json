@@ -1,0 +1,23 @@
+{
+  "supplierSelect": {
+    "title": "供应商选择",
+    "condition": {
+      "code": "供应商编码",
+      "name": "供应商名称"
+    },
+    "selection": {
+      "select": "选择",
+      "supplierCd": "供应商编码",
+      "supplierName": "供应商名称",
+      "supplierType": "供应商分类",
+      "record": "评定记录",
+      "remark": "备注"
+    },
+    "button": {
+      "search": "查询",
+      "clear": "清空",
+      "confirm": "确认",
+      "close": "关闭"
+    }
+  }
+}

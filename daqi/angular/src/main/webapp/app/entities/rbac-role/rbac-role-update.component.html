@@ -1,0 +1,78 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+    <div class="cnc-user-creat-title">
+        <span *ngIf="!rbacRole.id"  jhiTranslate="rbacRole.home.createLabel" class="cnc-user-common-title"></span>
+        <span *ngIf="rbacRole.id" jhiTranslate="rbacRole.home.editLabel" class="cnc-user-common-title"></span>
+    </div>
+    <div>
+        <div class="row">
+             <!--门店名称  -->
+            <!-- <div class="cnc-user-creat-body col-md-4">
+               
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRole.help.storeName">Goods Name</label>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                            <select class="cnc-user-creat-input form-control">
+                                <option ></option>
+                                <option ></option>
+                            </select>
+                    </div>
+                </div>    
+            </div> -->
+            <div class="cnc-user-creat-body col-md-4">
+                <!--权限名称  -->
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRole.help.rightName" >roleName</label>
+                </div>
+                <div class="col-md-8">
+                   
+                        <!-- <select class="cnc-user-creat-input form-control" name="rbacRight" id="field_rightCode" required [(ngModel)]="selectListVal">
+                            <option [ngValue]=""></option>
+                            <option [ngValue]="rbacRight.id" *ngFor="let rbacRight of rbacRights">{{rbacRight.rightName}}</option>
+                        </select> -->
+                        <p-dropdown [options]="rightsList" class="cnc-user-creat-dropdown" [style]="{'width' : '100%'}" name="rbacRight"  [(ngModel)]="selectListVal" required="true"></p-dropdown>
+                  
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <!-- <div class="cnc-user-creat-body col-md-4">
+                // 角色Code 
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRole.help.roleCode">Goods Name</label>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="cnc-user-creat-input form-control"  name="roleCode" id="field_roleCode"
+                            [(ngModel)]="rbacRole.roleCode"  required maxlength="18"  />
+                    </div>
+                </div>
+            </div>  -->
+            <div class="cnc-user-creat-body col-md-4">
+                <!--角色名称  -->
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRole.help.roleName">Goods Name</label>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="cnc-user-creat-input form-control"  name="roleName" id="field_roleName"
+                            [(ngModel)]="rbacRole.roleName"  required maxlength="18"  />
+                    </div>
+                </div>
+            </div>                   
+        </div>
+       
+    <div class="modal-footer">
+        <button type="button" id="cancel-save"  class="common_pop_font btn btn-secondary" data-dismiss="modal" (click)="previousState()">
+            <span class="fa fa-ban"></span>&nbsp;
+            <span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="common_pop_font btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;
+            <span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

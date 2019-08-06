@@ -1,0 +1,25 @@
+
+<div *ngIf="rbacRole">
+    <h2><span class="cnc-user-detail-title" jhiTranslate="rbacRole.detail.title"></span>:{{rbacRole.roleName}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="cnc-user-detail-body">
+        <div class="cnc-user-detail-row">
+            <!-- <div class="col-md-2"><span jhiTranslate="rbacRole.help.storeName" [ngbTooltip]="'rbacRole.help.storeName' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacRole.storeId}}</span></div> -->
+            <div class="col-md-2"><span jhiTranslate="rbacRole.help.rightName" [ngbTooltip]="'rbacRole.help.rightName' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rightName}}</span></div>
+        </div>
+        <div class="cnc-user-detail-row">
+            <div class="col-md-2"><span jhiTranslate="rbacRole.help.roleCode" [ngbTooltip]="'rbacRole.help.roleCode' | translate">storeId</span></div>
+            <div class="col-md-4"><span>{{rbacRole.roleCode}}</span></div>
+            <div class="col-md-2"><span jhiTranslate="rbacRole.help.roleName" [ngbTooltip]="'rbacRole.help.roleName' | translate">userCode</span></div>
+            <div class="col-md-4"><span>{{rbacRole.roleName}}</span></div>
+        </div>
+        
+    </dl>
+    <button pButton class="ui-button-secondary" (click)="previousState()" type="submit" icon="fa fa-arrow-left" iconPos="left"
+    label="{{'entity.action.back'| translate}}"></button>
+    <button pButton queryParamsHandling="merge" [routerLink]="['/rbac-role', rbacRole.id, 'edit']" icon="fa fa-pencil"
+    iconPos="left" *ngIf="!(rbacRole.id === 1)" label="{{'entity.action.edit'| translate}}"></button>
+</div>

@@ -1,0 +1,313 @@
+<div style="  display: block; width: 100%;height: 140px;height: 255px;">
+
+    <h2 id="page-heading" class="text-left title_class">
+        <span jhiTranslate="fccApp.MaterielEntry.home.title"></span>
+    </h2>
+    <div style="height: 40px;margin-top:0.5%;">
+        <!-- 物料编码 -->
+        <div class="common_div-head" style="margin-left: 50px;">
+            <div class="search_styleOne ">
+                <span jhiTranslate="materialSelect.condition.code">物料编码</span>
+            </div>
+            <div class="search_styleTwo float-left">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;    " pInputText
+                    [(ngModel)]="materielCd" />
+            </div>
+        </div>
+        <i style="float: left;line-height:38px;font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search"
+            (click)="materielPop()"></i>
+        <!-- 物料名称 -->
+        <div class="common_div-head" style="margin-left: 20px;">
+            <div class="search_styleOne">
+                <span jhiTranslate="materialSelect.condition.name">物料名称</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="materielName" />
+            </div>
+        </div>
+        <!-- 产品图号 -->
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.MaterielEntry.figureNumber">产品图号</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="figureNumber" />
+            </div>
+        </div>
+    </div>
+    <div style="height: 40px;margin-top:0.5%;">
+        <!-- 供应商编码 -->
+        <div class="common_div-head" style="margin-left: 50px;">
+            <div class="search_styleOne ">
+                <span jhiTranslate="fccApp.MaterielEntry.supplierCd">供应商编码</span>
+            </div>
+            <div class="search_styleTwo float-left">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;    " pInputText
+                    [(ngModel)]="supplierCd" />
+            </div>
+        </div>
+        <i style="float: left;line-height:38px;font-size:2em;cursor:pointer;color:#1F89CE;" class="fa fa-search"
+            (click)="supplierPop()"></i>
+        <!-- 供应商名称 -->
+        <div class="common_div-head" style="margin-left: 20px;">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.MaterielEntry.supplierName">供应商名称</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="supplierName" />
+            </div>
+        </div>
+        <!-- 规格型号 -->
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.MaterielEntry.specificationType">规格型号</span>
+            </div>
+            <div class="search_styleTwo">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;" pInputText
+                    [(ngModel)]="specificationType" />
+            </div>
+        </div>
+    </div>
+    <div style="height: 40px;margin-top:0.5%;">
+        <!-- 采购单号 -->
+        <div class="common_div-head" style="margin-left: 50px;">
+            <div class="search_styleOne ">
+                <span jhiTranslate="fccApp.MaterielEntry.purchaseOrderNumber">采购单号</span>
+            </div>
+            <div class="search_styleTwo float-left">
+                <input type="text" class="form-control" style="width: 100%;margin-left: 0px;    " pInputText
+                    [(ngModel)]="purchaseOrderNumber" />
+            </div>
+        </div>
+        <!-- 检验状态 -->
+        <div class="common_div-head" style="margin-left: 50px;">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.MaterielEntry.flagInspect">检验状态</span>
+            </div>
+            <div class="search_styleTwo">
+                <p-dropdown [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da', 'text-align':'left'}"
+                    [options]="flagInspects" [(ngModel)]="flagInspect">
+                </p-dropdown>
+            </div>
+        </div>
+        <!-- 附件 -->
+        <div class="common_div-head">
+            <div class="search_styleOne">
+                <span jhiTranslate="fccApp.MaterielEntry.enclosure">附件</span>
+            </div>
+            <div class="search_styleTwo">
+                <p-dropdown [style]="{'width':'100%','height':'40px','border':'1px solid #ced4da', 'text-align':'left'}"
+                    [options]="enclosures" [(ngModel)]="enclosure">
+                </p-dropdown>
+            </div>
+        </div>
+    </div>
+    <div style="height: 58px;margin-top: 10px;">
+        <button id="dic" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            style="padding: 0;" (click)="openFile()">
+            <span>
+                模板下载
+            </span>
+        </button>
+        <input hidden id="file" type="file" (change)="upload($event)" accept=".xls" />
+        <button id="import" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            (click)="ImportExcelFile()">
+            <span>
+                导入
+            </span>
+        </button>
+        <button icon="fa fa-plus" replaceUrl="true" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_blue"
+            (click)="loadAll()" [routerLink]="['/qms-materiel-entry/new']">
+            <span jhiTranslate="fccApp.qmsVehicleTypeInfo.home.createLabel">
+                添加
+            </span>
+        </button>
+        <button id="clear" icon="fa fa-plus" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_red"
+            (click)="emptyInfo()">
+            <span>
+                清空
+            </span>
+        </button>
+        <button id="search" icon="fa fa-plus" replaceUrl="true" iconPos="left"
+            class="btn btn-primary float-right jh-create-entity create-qms-vehicle-type-info search_button search_button_darkblue"
+            (click)="loadAll()">
+            <span>
+                查询
+            </span>
+        </button>
+    </div>
+    <div style="width: 100%;border-bottom: 1px black solid;float: left;"></div>
+</div>
+<p-table [value]="managerDatas" [paginator]="true" [rows]="itemsPerPage" [lazy]="true" [totalRecords]="queryCount"
+    [loading]="loading" (onLazyLoad)="loadCarsLazy($event)" [scrollable]="true" [style]="{width:'1644px'}">
+    <ng-template pTemplate="colgroup">
+        <colgroup>
+            <col style="width:80px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:80px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:200px !important;">
+            <col style="width:396px !important;">
+        </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header">
+
+        <tr class="common_trStyle">
+            <!-- 序号 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>序号</span>
+            </th>
+            <!-- 物料编码 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>物料编码</span>
+            </th>
+            <!-- 物料名称 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>物料名称</span>
+            </th>
+            <!-- 供应商编码 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>供应商编码</span>
+            </th>
+            <!-- 供应商名称 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>供应商名称</span>
+            </th>
+            <!-- 产品图号 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>产品图号</span>
+            </th>
+            <!-- 规格型号 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>规格型号</span>
+            </th>
+            <!-- 附件 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>附件</span>
+            </th>
+            <!-- 采购单号 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>采购单号</span>
+            </th>
+            <!-- 进场日期 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>进场日期</span>
+            </th>
+            <!-- 检验类型 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>检验类型</span>
+            </th>
+            <!-- 检验状态 -->
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>检验状态</span>
+            </th>
+            <th class="common_thStyle" style="padding-right: 0;padding-left: 0;">
+                <span>操作</span>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-managerData let-i="rowIndex">
+        <tr style="line-height: 40px;">
+            <!-- 序号 -->
+            <td class="common_tdStyle text-center">
+                <p>{{i+1}}</p>
+            </td>
+            <!-- 物料编码 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.materielCd}}</p>
+            </td>
+            <!-- 物料名称 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.materielName}}</p>
+            </td>
+            <!-- 供应商编码 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.supplierCd}}</p>
+            </td>
+            <!-- 供应商名称 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.supplierName}}</p>
+            </td>
+            <!-- 产品图号 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.figureNumber}}</p>
+            </td>
+            <!-- 规格型号 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.specificationType}}</p>
+            </td>
+            <!-- 附件 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.enclosure}}</p>
+            </td>
+            <!-- 采购单号 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.purchaseOrderNumber}}</p>
+            </td>
+            <!-- 进场日期 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.entryDate}}</p>
+            </td>
+            <!-- 检验类型 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.checkType}}</p>
+            </td>
+            <!-- 检验状态 -->
+            <td class="common_tdStyle text-left">
+                <p>{{managerData.flagInspect}}</p>
+            </td>
+            <!-- 操作 -->
+            <td class="common_tdStyle" style=" padding-right: 0">
+                <button id="jh-create-entity" replaceUrl="true"
+                    class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+                    (click)="inspect(managerData)"
+                    [disabled]="((managerData.flagInspect!=='未检'||managerData.flagInspect==='-')&&managerData.flagInspect!==null)">
+                    <span>
+                        报检
+                    </span>
+                </button>
+                <button id="jh-create-entity" replaceUrl="true"
+                    class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_See"
+                    [routerLink]="['/qms-materiel-entry', managerData.id, 'view' ]">
+                    <span>
+                        查看
+                    </span>
+                </button>
+                <button id="jh-create-entity" replaceUrl="true"
+                    class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_Edit"
+                    [routerLink]="['/qms-materiel-entry', managerData.id, 'edit' ]"
+                    [disabled]="((managerData.flagInspect!=='未检'&&managerData.flagInspect!=='-')&&managerData.flagInspect!==null)">
+                    <span>
+                        编辑
+                    </span>
+                </button>
+                <button id="jh-create-entity"
+                    class="btn btn-primary float-left jh-create-entity create-qms-vehicle-type-info search_button Acolor_Delete"
+                    [disabled]="((managerData.flagInspect!=='未检'&&managerData.flagInspect!=='-')&&managerData.flagInspect!==null)"
+                    (click)="delete(managerData)">
+                    <span>
+                        删除
+                    </span>
+                </button>
+
+                <!-- [routerLink]="['./', { outlets: { popup: 'qms-materiel-entry/'+ managerData.id + '/delete'} }]" -->
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-growl [(value)]="msgs1" [immutable]="false" life="300000"></p-growl>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

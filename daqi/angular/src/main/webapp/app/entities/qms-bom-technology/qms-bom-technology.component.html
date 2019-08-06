@@ -1,0 +1,146 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsBomTechnology.home.title">Qms Bom Technologies</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-bom-technology" [routerLink]="['/qms-bom-technology/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsBomTechnology.home.createLabel">
+            Create new Qms Bom Technology
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsBomTechnologies">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsBomTechnology.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="technologyCd"><span jhiTranslate="fccApp.qmsBomTechnology.technologyCd">Technology Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="technologyName"><span jhiTranslate="fccApp.qmsBomTechnology.technologyName">Technology Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="orderNo"><span jhiTranslate="fccApp.qmsBomTechnology.orderNo">Order No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="beforeProcessId"><span jhiTranslate="fccApp.qmsBomTechnology.beforeProcessId">Before Process Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="processId"><span jhiTranslate="fccApp.qmsBomTechnology.processId">Process Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationCd"><span jhiTranslate="fccApp.qmsBomTechnology.organizationCd">Organization Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="schedulerRole"><span jhiTranslate="fccApp.qmsBomTechnology.schedulerRole">Scheduler Role</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workUnit"><span jhiTranslate="fccApp.qmsBomTechnology.workUnit">Work Unit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workHours"><span jhiTranslate="fccApp.qmsBomTechnology.workHours">Work Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="qcType"><span jhiTranslate="fccApp.qmsBomTechnology.qcType">Qc Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="specialRole"><span jhiTranslate="fccApp.qmsBomTechnology.specialRole">Special Role</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="proprety"><span jhiTranslate="fccApp.qmsBomTechnology.proprety">Proprety</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="machineCenterCd"><span jhiTranslate="fccApp.qmsBomTechnology.machineCenterCd">Machine Center Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workCd"><span jhiTranslate="fccApp.qmsBomTechnology.workCd">Work Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliverTime"><span jhiTranslate="fccApp.qmsBomTechnology.deliverTime">Deliver Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerNum"><span jhiTranslate="fccApp.qmsBomTechnology.integerNum">Integer Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerTimeUnit"><span jhiTranslate="fccApp.qmsBomTechnology.integerTimeUnit">Integer Time Unit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerTime"><span jhiTranslate="fccApp.qmsBomTechnology.integerTime">Integer Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operationVersion"><span jhiTranslate="fccApp.qmsBomTechnology.operationVersion">Operation Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workFactor"><span jhiTranslate="fccApp.qmsBomTechnology.workFactor">Work Factor</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operationType"><span jhiTranslate="fccApp.qmsBomTechnology.operationType">Operation Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mutualinRole"><span jhiTranslate="fccApp.qmsBomTechnology.mutualinRole">Mutualin Role</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="describe"><span jhiTranslate="fccApp.qmsBomTechnology.describe">Describe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="randomRole"><span jhiTranslate="fccApp.qmsBomTechnology.randomRole">Random Role</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="controlRole"><span jhiTranslate="fccApp.qmsBomTechnology.controlRole">Control Role</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isMain"><span jhiTranslate="fccApp.qmsBomTechnology.isMain">Is Main</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isNewCd"><span jhiTranslate="fccApp.qmsBomTechnology.isNewCd">Is New Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="newCdMaterielId"><span jhiTranslate="fccApp.qmsBomTechnology.newCdMaterielId">New Cd Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workGroupCd"><span jhiTranslate="fccApp.qmsBomTechnology.workGroupCd">Work Group Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isControlPoint"><span jhiTranslate="fccApp.qmsBomTechnology.isControlPoint">Is Control Point</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isTest"><span jhiTranslate="fccApp.qmsBomTechnology.isTest">Is Test</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isDefault"><span jhiTranslate="fccApp.qmsBomTechnology.isDefault">Is Default</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsBomTechnology.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsBomTechnology.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsBomTechnology.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsBomTechnology.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsBomTechnology.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsBomTechnology.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsBomTechnology.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsBomTechnology.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsBomTechnology.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsBomTechnology.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsBomTechnology of qmsBomTechnologies ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-bom-technology', qmsBomTechnology.id, 'view' ]">{{qmsBomTechnology.id}}</a></td>
+                <td>{{qmsBomTechnology.materielId}}</td>
+                <td>{{qmsBomTechnology.technologyCd}}</td>
+                <td>{{qmsBomTechnology.technologyName}}</td>
+                <td>{{qmsBomTechnology.orderNo}}</td>
+                <td>{{qmsBomTechnology.beforeProcessId}}</td>
+                <td>{{qmsBomTechnology.processId}}</td>
+                <td>{{qmsBomTechnology.organizationCd}}</td>
+                <td>{{qmsBomTechnology.schedulerRole}}</td>
+                <td>{{qmsBomTechnology.workUnit}}</td>
+                <td>{{qmsBomTechnology.workHours}}</td>
+                <td>{{qmsBomTechnology.qcType}}</td>
+                <td>{{qmsBomTechnology.specialRole}}</td>
+                <td>{{qmsBomTechnology.proprety}}</td>
+                <td>{{qmsBomTechnology.machineCenterCd}}</td>
+                <td>{{qmsBomTechnology.workCd}}</td>
+                <td>{{qmsBomTechnology.deliverTime}}</td>
+                <td>{{qmsBomTechnology.integerNum}}</td>
+                <td>{{qmsBomTechnology.integerTimeUnit}}</td>
+                <td>{{qmsBomTechnology.integerTime}}</td>
+                <td>{{qmsBomTechnology.operationVersion}}</td>
+                <td>{{qmsBomTechnology.workFactor}}</td>
+                <td>{{qmsBomTechnology.operationType}}</td>
+                <td>{{qmsBomTechnology.mutualinRole}}</td>
+                <td>{{qmsBomTechnology.describe}}</td>
+                <td>{{qmsBomTechnology.randomRole}}</td>
+                <td>{{qmsBomTechnology.controlRole}}</td>
+                <td>{{qmsBomTechnology.isMain}}</td>
+                <td>{{qmsBomTechnology.isNewCd}}</td>
+                <td>{{qmsBomTechnology.newCdMaterielId}}</td>
+                <td>{{qmsBomTechnology.workGroupCd}}</td>
+                <td>{{qmsBomTechnology.isControlPoint}}</td>
+                <td>{{qmsBomTechnology.isTest}}</td>
+                <td>{{qmsBomTechnology.isDefault}}</td>
+                <td>{{qmsBomTechnology.flagStatus}}</td>
+                <td>{{qmsBomTechnology.compPkid}}</td>
+                <td>{{qmsBomTechnology.remark}}</td>
+                <td>{{qmsBomTechnology.reserveFirst}}</td>
+                <td>{{qmsBomTechnology.reserveSecond}}</td>
+                <td>{{qmsBomTechnology.reserveThird}}</td>
+                <td>{{qmsBomTechnology.makeUser}}</td>
+                <td>{{qmsBomTechnology.makeTime | date:'medium'}}</td>
+                <td>{{qmsBomTechnology.modifyUser}}</td>
+                <td>{{qmsBomTechnology.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-bom-technology', qmsBomTechnology.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-bom-technology', qmsBomTechnology.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-bom-technology/'+ qmsBomTechnology.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsBomTechnologies && qmsBomTechnologies.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div [ngSwitch]="isAuthenticated()">
+    <div *ngSwitchCase="true">
+        <p-panelMenu [model]="items" [style]="{'width':'200px'}" [multiple]="false"></p-panelMenu>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "materialSelect": {
+    "title": "物料选择",
+    "condition": {
+      "code": "物料编码",
+      "name": "物料名称",
+      "mapName": "图号",
+      "type": "规格型号",
+      "supplier": "供应商"
+    },
+    "selection": {
+      "select": "选择",
+      "material-code": "物料编码",
+      "material-name": "物料名称",
+      "supplier": "供应商",
+      "mapName": "图号",
+      "type": "规格型号"
+    },
+    "button": {
+      "search": "查询",
+      "clear": "清空",
+      "confirm": "确认",
+      "close": "关闭"
+    }
+  }
+}

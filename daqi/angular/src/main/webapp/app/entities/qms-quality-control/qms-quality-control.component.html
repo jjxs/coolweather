@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsQualityControl.home.title">Qms Quality Controls</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-quality-control" [routerLink]="['/qms-quality-control/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsQualityControl.home.createLabel">
+            Create new Qms Quality Control
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsQualityControls">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleType"><span jhiTranslate="fccApp.qmsQualityControl.vehicleType">Vehicle Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="qualityControlNumber"><span jhiTranslate="fccApp.qmsQualityControl.qualityControlNumber">Quality Control Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="qualityControlName"><span jhiTranslate="fccApp.qmsQualityControl.qualityControlName">Quality Control Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsQualityControl.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsQualityControl.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsQualityControl.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsQualityControl.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsQualityControl.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsQualityControl.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsQualityControl.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsQualityControl.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsQualityControl.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsQualityControl.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsQualityControl of qmsQualityControls ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-quality-control', qmsQualityControl.id, 'view' ]">{{qmsQualityControl.id}}</a></td>
+                <td>{{qmsQualityControl.vehicleType}}</td>
+                <td>{{qmsQualityControl.qualityControlNumber}}</td>
+                <td>{{qmsQualityControl.qualityControlName}}</td>
+                <td>{{qmsQualityControl.remark}}</td>
+                <td>{{qmsQualityControl.flagStatus}}</td>
+                <td>{{qmsQualityControl.compPkid}}</td>
+                <td>{{qmsQualityControl.reserveFirst}}</td>
+                <td>{{qmsQualityControl.reserveSecond}}</td>
+                <td>{{qmsQualityControl.reserveThird}}</td>
+                <td>{{qmsQualityControl.makeUser}}</td>
+                <td>{{qmsQualityControl.makeTime | date:'medium'}}</td>
+                <td>{{qmsQualityControl.modifyUser}}</td>
+                <td>{{qmsQualityControl.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-quality-control', qmsQualityControl.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-quality-control', qmsQualityControl.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-quality-control/'+ qmsQualityControl.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsQualityControls && qmsQualityControls.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

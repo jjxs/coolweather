@@ -1,0 +1,27 @@
+{
+    "fccApp": {
+        "qmsEnclosure": {
+            "home": {
+                "title": "Qms Enclosures",
+                "createLabel": "创建新 Qms Enclosure",
+                "createOrEditLabel": "创建或编辑 Qms Enclosure"
+            },
+            "created": "Qms Enclosure {{ param }} 创建成功",
+            "updated": "Qms Enclosure {{ param }} 更新成功",
+            "deleted": "Qms Enclosure {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Enclosure {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Enclosure"
+            },
+            "inspectionInfoId": "Inspection Info Id",
+            "inspectionKbn": "Inspection Kbn",
+            "enclosureAddress": "Enclosure Address",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

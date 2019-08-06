@@ -1,0 +1,170 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">供应商维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>供应商编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商分类编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>供应商分类名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>地址</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>电话1</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>电话2</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>传真</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>网址</span>
+            </div>
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 供应商编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="supplierCd" id="field_supplierCd" *ngIf="this.flag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsSupplier.supplierCd"
+                    maxlength="10" required />
+
+                <input type="text" class="form-control" name="supplierCd" id="field_supplierCd"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsSupplier.supplierCd"
+                    maxlength="10" *ngIf="this.flag==1" [disabled]=qmsSupplier.id required />
+            </div>
+            <!-- 供应商名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="supplierName" id="field_supplierName"
+                    style="width: 300px;margin-left: 120px;" pInputText 
+                    [(ngModel)]="qmsSupplier.supplierName" maxlength="100" />
+
+            </div>
+            <!-- 供应商分类id 隐藏 -->
+            <input type="text" class="form-control float-left" style="width: 300px;margin-left: 120px;" pInputText
+                name=supplierClassId id="field_supplierClassId" [(ngModel)]="qmsSupplier.supplierClassId" [hidden]=true />
+
+            <!-- 供应商分类编码 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control float-left" style="width: 300px;margin-left: 120px;" pInputText
+                    name=this.suppkierClass [(ngModel)]=this.suppkierClass required  (blur)=blurSuppkierClass() />
+                <i style="font-size:2em;cursor:pointer;color:#1F89CE;padding-left: 30px;" class="fa fa-search" (click)="goToMPS()"></i>
+            </div>
+            <!-- 供应商分类编码名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" style="width: 300px;margin-left: 120px;" pInputText
+                    name=this.suppkierClassName [(ngModel)]=this.suppkierClassName [disabled]=true />
+            </div>
+            <!-- 地址 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="address" id="field_address"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.address
+                    [(ngModel)]="qmsSupplier.address" maxlength="100" />
+            </div>
+            <!-- 电话1 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="telNum1" id="field_telNum1"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.telNum1
+                    [(ngModel)]="qmsSupplier.telNum1" maxlength="20" />
+            </div>
+            <!-- 电话2 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="telNum2" id="field_telNum2"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.telNum2
+                    [(ngModel)]="qmsSupplier.telNum2" maxlength="20" />
+            </div>
+            <!-- 传真 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="faxNum" id="field_faxNum"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.faxNum
+                    [(ngModel)]="qmsSupplier.faxNum" maxlength="20" />
+            </div>
+            <!-- 网址 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="urlAddress" id="field_urlAddress"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.urlAddress
+                    [(ngModel)]="qmsSupplier.urlAddress" maxlength="100" />
+            </div>
+            <!-- 隐藏的flag -->
+            <div [hidden]="true">
+                <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsSupplier.flagStatus"
+                    maxlength="100" />
+            </div>
+        </div>
+        <!-- 右侧文字 -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:120px;font-size:18px;font-weight: bold">
+                <span>邮箱</span>
+            </div>
+            <div class="lookrightSpan">
+                <span>联系人</span>
+            </div>
+            <div class="lookrightSpan">
+                <span>部门职务</span>
+            </div>
+            <div class="lookrightSpan">
+                <span>评定记录</span>
+            </div>
+            <div class="lookrightSpan">
+                <span>备注</span>
+            </div>
+        </div>
+        <!-- 右侧输入框 -->
+        <div style="float: left;margin-left: 30px">
+            <!-- 邮箱 -->
+            <div>
+                <input type="text" class="form-control" name="mailAddress" id="field_mailAddress"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.mailAddress
+                    [(ngModel)]="qmsSupplier.mailAddress" maxlength="50" />
+            </div>
+            <!-- 联系人 -->
+            <div class="lookRightDiv">
+                <input type="text" class="form-control" name="linkMan" id="field_linkMan"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.linkMan
+                    [(ngModel)]="qmsSupplier.linkMan" maxlength="40" />
+            </div>
+            <!-- 部门职务 -->
+            <div class="lookRightDiv">
+                <input type="text" class="form-control" name="department" id="field_department"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.department
+                    [(ngModel)]="qmsSupplier.department" maxlength="40" />
+            </div>
+            <!-- 评定记录 -->
+            <div class="lookRightDiv">
+                <input type="text" class="form-control" name="assRecord" id="field_assRecord"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]=qmsSupplier.assRecord
+                    [(ngModel)]="qmsSupplier.assRecord" maxlength="20" />
+            </div>
+            <div class="lookRightDiv">
+                <textarea pInputTextarea [(ngModel)]="qmsSupplier.remark" maxlength="200"
+                    style="width: 500px;margin-left: 120px;height: 210px;" name="remark" id="field_remark"
+                    class="form-control"></textarea>
+            </div>
+        </div>
+    </form>
+
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

@@ -1,0 +1,57 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">角色维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>角色编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>角色名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>权限</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 权限编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="RoleCode" id="field_roleCode" *ngIf="this.flag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRole.roleCode" maxlength="20"
+                    required />
+
+                <input type="text" class="form-control" name="RoleCode" id="field_roleCode"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRole.roleCode" maxlength="20"
+                    *ngIf="this.flag==1" [disabled]=rbacRole.id required />
+            </div>
+            <!-- 权限名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="roleName" id="field_roleName" required="true"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="rbacRole.roleName"
+                    maxlength="64" />
+            </div>
+            <!-- 菜单列表 -->
+            <div class="lookLeftDiv">
+                <p-dropdown [options]="rightsList" class="cnc-user-creat-dropdown" [style]="{'width':'300px','height':'38px','margin-left' : '120px'}"
+                        name="rbacRight" [(ngModel)]="selectListVal" [showClear]="true" placeholder="请选择"></p-dropdown>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

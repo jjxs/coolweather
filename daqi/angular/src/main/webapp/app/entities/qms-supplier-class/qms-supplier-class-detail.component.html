@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsSupplierClass">
+            <h2><span jhiTranslate="fccApp.qmsSupplierClass.detail.title">Qms Supplier Class</span> {{qmsSupplierClass.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.suppkierClass">Suppkier Class</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.suppkierClass}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.suppkierClassName">Suppkier Class Name</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.suppkierClassName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsSupplierClass.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsSupplierClass.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-supplier-class', qmsSupplierClass.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

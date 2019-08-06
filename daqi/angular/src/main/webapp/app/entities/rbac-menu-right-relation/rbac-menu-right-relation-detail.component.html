@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rbacMenuRightRelation">
+            <h2><span jhiTranslate="fccApp.rbacMenuRightRelation.detail.title">Rbac Menu Right Relation</span> {{rbacMenuRightRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.appId">App Id</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.menuId">Menu Id</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.menuId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.rightId">Right Id</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.rightId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.rbacMenuRightRelation.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{rbacMenuRightRelation.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rbac-menu-right-relation', rbacMenuRightRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

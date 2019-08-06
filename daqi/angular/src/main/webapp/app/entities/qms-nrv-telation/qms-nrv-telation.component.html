@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsNrvTelation.home.title">Qms Nrv Telations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-nrv-telation" [routerLink]="['/qms-nrv-telation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsNrvTelation.home.createLabel">
+            Create new Qms Nrv Telation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsNrvTelations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleType"><span jhiTranslate="fccApp.qmsNrvTelation.vehicleType">Vehicle Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vehicleCd"><span jhiTranslate="fccApp.qmsNrvTelation.vehicleCd">Vehicle Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielCd"><span jhiTranslate="fccApp.qmsNrvTelation.materielCd">Materiel Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentMaterielCd"><span jhiTranslate="fccApp.qmsNrvTelation.parentMaterielCd">Parent Materiel Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serialNumber"><span jhiTranslate="fccApp.qmsNrvTelation.serialNumber">Serial Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsNrvTelation.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsNrvTelation.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsNrvTelation.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsNrvTelation.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsNrvTelation.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsNrvTelation.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsNrvTelation.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsNrvTelation.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsNrvTelation.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsNrvTelation.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsNrvTelation of qmsNrvTelations ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-nrv-telation', qmsNrvTelation.id, 'view' ]">{{qmsNrvTelation.id}}</a></td>
+                <td>{{qmsNrvTelation.vehicleType}}</td>
+                <td>{{qmsNrvTelation.vehicleCd}}</td>
+                <td>{{qmsNrvTelation.materielCd}}</td>
+                <td>{{qmsNrvTelation.parentMaterielCd}}</td>
+                <td>{{qmsNrvTelation.serialNumber}}</td>
+                <td>{{qmsNrvTelation.flagStatus}}</td>
+                <td>{{qmsNrvTelation.compPkid}}</td>
+                <td>{{qmsNrvTelation.remark}}</td>
+                <td>{{qmsNrvTelation.reserveFirst}}</td>
+                <td>{{qmsNrvTelation.reserveSecond}}</td>
+                <td>{{qmsNrvTelation.reserveThird}}</td>
+                <td>{{qmsNrvTelation.makeUser}}</td>
+                <td>{{qmsNrvTelation.makeTime | date:'medium'}}</td>
+                <td>{{qmsNrvTelation.modifyUser}}</td>
+                <td>{{qmsNrvTelation.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-nrv-telation', qmsNrvTelation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-nrv-telation', qmsNrvTelation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-nrv-telation/'+ qmsNrvTelation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsNrvTelations && qmsNrvTelations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

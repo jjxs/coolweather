@@ -1,0 +1,42 @@
+{
+    "fccApp": {
+        "qmsQualityControlDetails": {
+            "home": {
+                "title": "Qms Quality Control Details",
+                "createLabel": "创建新 Qms Quality Control Details",
+                "createOrEditLabel": "创建或编辑 Qms Quality Control Details"
+            },
+            "created": "Qms Quality Control Details {{ param }} 创建成功",
+            "updated": "Qms Quality Control Details {{ param }} 更新成功",
+            "deleted": "Qms Quality Control Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Quality Control Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Quality Control Details"
+            },
+            "bomTechnologyId": "Bom Technology Id",
+            "inspectionItem": "Inspection Item",
+            "technicalRequirement": "Technical Requirement",
+            "inspectionInstrument": "Inspection Instrument",
+            "placeDiff": "Place Diff",
+            "standard": "Standard",
+            "upperDeviation": "Upper Deviation",
+            "lowerDeviation": "Lower Deviation",
+            "inspectionResultDiff": "Inspection Result Diff",
+            "remark": "Remark",
+            "inspectionType": "Inspection Type",
+            "isCheckObj": "Is Check Obj",
+            "abcType": "Abc Type",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

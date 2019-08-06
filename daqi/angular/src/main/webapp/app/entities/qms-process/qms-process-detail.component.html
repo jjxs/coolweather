@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsProcess">
+            <h2><span jhiTranslate="fccApp.qmsProcess.detail.title">Qms Process</span> {{qmsProcess.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsProcess.processCd">Process Cd</span></dt>
+                <dd>
+                    <span>{{qmsProcess.processCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.processName">Process Name</span></dt>
+                <dd>
+                    <span>{{qmsProcess.processName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsProcess.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsProcess.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsProcess.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsProcess.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsProcess.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsProcess.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsProcess.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsProcess.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-process', qmsProcess.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

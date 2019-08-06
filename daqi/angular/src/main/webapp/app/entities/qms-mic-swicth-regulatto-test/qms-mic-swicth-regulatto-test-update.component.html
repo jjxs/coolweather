@@ -1,0 +1,555 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qms-mic-swicth-regulatto-test-heading" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.home.createOrEditLabel">Create or edit a Qms Mic Swicth Regulatto Test</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qmsMicSwicthRegulattoTest.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sname" for="field_sname">Sname</label>
+                    <input type="text" class="form-control" name="sname" id="field_sname"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sname" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sname?.dirty && editForm.controls.sname?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sname?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.stype" for="field_stype">Stype</label>
+                    <input type="text" class="form-control" name="stype" id="field_stype"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.stype" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.stype?.dirty && editForm.controls.stype?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stype?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.scode" for="field_scode">Scode</label>
+                    <input type="text" class="form-control" name="scode" id="field_scode"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.scode" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.scode?.dirty && editForm.controls.scode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.scode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.ddate" for="field_ddate">Ddate</label>
+                    <input type="text" class="form-control" name="ddate" id="field_ddate"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.ddate" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.ddate?.dirty && editForm.controls.ddate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ddate?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.il0" for="field_il0">Il 0</label>
+                    <input type="text" class="form-control" name="il0" id="field_il0"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.il0" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.il0?.dirty && editForm.controls.il0?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.il0?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdgS" for="field_izdgS">Izdg S</label>
+                    <input type="text" class="form-control" name="izdgS" id="field_izdgS"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdgS" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdgS?.dirty && editForm.controls.izdgS?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdgS?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sworker" for="field_sworker">Sworker</label>
+                    <input type="text" class="form-control" name="sworker" id="field_sworker"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sworker" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sworker?.dirty && editForm.controls.sworker?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sworker?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.ssumup" for="field_ssumup">Ssumup</label>
+                    <input type="text" class="form-control" name="ssumup" id="field_ssumup"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.ssumup" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.ssumup?.dirty && editForm.controls.ssumup?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ssumup?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sneworold" for="field_sneworold">Sneworold</label>
+                    <input type="text" class="form-control" name="sneworold" id="field_sneworold"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sneworold" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sneworold?.dirty && editForm.controls.sneworold?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sneworold?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.idian" for="field_idian">Idian</label>
+                    <input type="text" class="form-control" name="idian" id="field_idian"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.idian" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.idian?.dirty && editForm.controls.idian?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.idian?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg0" for="field_izdg0">Izdg 0</label>
+                    <input type="text" class="form-control" name="izdg0" id="field_izdg0"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg0" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg0?.dirty && editForm.controls.izdg0?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg0?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg1" for="field_izdg1">Izdg 1</label>
+                    <input type="text" class="form-control" name="izdg1" id="field_izdg1"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg1?.dirty && editForm.controls.izdg1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg2" for="field_izdg2">Izdg 2</label>
+                    <input type="text" class="form-control" name="izdg2" id="field_izdg2"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg2?.dirty && editForm.controls.izdg2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg3" for="field_izdg3">Izdg 3</label>
+                    <input type="text" class="form-control" name="izdg3" id="field_izdg3"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg3" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg3?.dirty && editForm.controls.izdg3?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg3?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg4" for="field_izdg4">Izdg 4</label>
+                    <input type="text" class="form-control" name="izdg4" id="field_izdg4"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg4" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg4?.dirty && editForm.controls.izdg4?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg4?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg5" for="field_izdg5">Izdg 5</label>
+                    <input type="text" class="form-control" name="izdg5" id="field_izdg5"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg5" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg5?.dirty && editForm.controls.izdg5?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg5?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg6" for="field_izdg6">Izdg 6</label>
+                    <input type="text" class="form-control" name="izdg6" id="field_izdg6"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg6" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg6?.dirty && editForm.controls.izdg6?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg6?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.izdg7" for="field_izdg7">Izdg 7</label>
+                    <input type="text" class="form-control" name="izdg7" id="field_izdg7"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.izdg7" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.izdg7?.dirty && editForm.controls.izdg7?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.izdg7?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq0" for="field_iztq0">Iztq 0</label>
+                    <input type="text" class="form-control" name="iztq0" id="field_iztq0"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq0" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq0?.dirty && editForm.controls.iztq0?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq0?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq1" for="field_iztq1">Iztq 1</label>
+                    <input type="text" class="form-control" name="iztq1" id="field_iztq1"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq1?.dirty && editForm.controls.iztq1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq2" for="field_iztq2">Iztq 2</label>
+                    <input type="text" class="form-control" name="iztq2" id="field_iztq2"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq2?.dirty && editForm.controls.iztq2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq3" for="field_iztq3">Iztq 3</label>
+                    <input type="text" class="form-control" name="iztq3" id="field_iztq3"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq3" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq3?.dirty && editForm.controls.iztq3?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq3?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq4" for="field_iztq4">Iztq 4</label>
+                    <input type="text" class="form-control" name="iztq4" id="field_iztq4"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq4" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq4?.dirty && editForm.controls.iztq4?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq4?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq5" for="field_iztq5">Iztq 5</label>
+                    <input type="text" class="form-control" name="iztq5" id="field_iztq5"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq5" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq5?.dirty && editForm.controls.iztq5?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq5?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq6" for="field_iztq6">Iztq 6</label>
+                    <input type="text" class="form-control" name="iztq6" id="field_iztq6"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq6" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq6?.dirty && editForm.controls.iztq6?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq6?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq7" for="field_iztq7">Iztq 7</label>
+                    <input type="text" class="form-control" name="iztq7" id="field_iztq7"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq7" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq7?.dirty && editForm.controls.iztq7?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq7?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq8" for="field_iztq8">Iztq 8</label>
+                    <input type="text" class="form-control" name="iztq8" id="field_iztq8"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq8" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq8?.dirty && editForm.controls.iztq8?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq8?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq9" for="field_iztq9">Iztq 9</label>
+                    <input type="text" class="form-control" name="iztq9" id="field_iztq9"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq9" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq9?.dirty && editForm.controls.iztq9?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq9?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq10" for="field_iztq10">Iztq 10</label>
+                    <input type="text" class="form-control" name="iztq10" id="field_iztq10"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq10" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq10?.dirty && editForm.controls.iztq10?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq10?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iztq11" for="field_iztq11">Iztq 11</label>
+                    <input type="text" class="form-control" name="iztq11" id="field_iztq11"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iztq11" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iztq11?.dirty && editForm.controls.iztq11?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iztq11?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.iqdl" for="field_iqdl">Iqdl</label>
+                    <input type="text" class="form-control" name="iqdl" id="field_iqdl"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.iqdl" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.iqdl?.dirty && editForm.controls.iqdl?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.iqdl?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult0" for="field_sresult0">Sresult 0</label>
+                    <input type="text" class="form-control" name="sresult0" id="field_sresult0"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult0" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult0?.dirty && editForm.controls.sresult0?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult0?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult1" for="field_sresult1">Sresult 1</label>
+                    <input type="text" class="form-control" name="sresult1" id="field_sresult1"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult1" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult1?.dirty && editForm.controls.sresult1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult1?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult2" for="field_sresult2">Sresult 2</label>
+                    <input type="text" class="form-control" name="sresult2" id="field_sresult2"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult2" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult2?.dirty && editForm.controls.sresult2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult2?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult3" for="field_sresult3">Sresult 3</label>
+                    <input type="text" class="form-control" name="sresult3" id="field_sresult3"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult3" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult3?.dirty && editForm.controls.sresult3?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult3?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult4" for="field_sresult4">Sresult 4</label>
+                    <input type="text" class="form-control" name="sresult4" id="field_sresult4"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult4" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult4?.dirty && editForm.controls.sresult4?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult4?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult5" for="field_sresult5">Sresult 5</label>
+                    <input type="text" class="form-control" name="sresult5" id="field_sresult5"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult5" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult5?.dirty && editForm.controls.sresult5?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult5?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult6" for="field_sresult6">Sresult 6</label>
+                    <input type="text" class="form-control" name="sresult6" id="field_sresult6"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult6" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult6?.dirty && editForm.controls.sresult6?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult6?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.sresult" for="field_sresult">Sresult</label>
+                    <input type="text" class="form-control" name="sresult" id="field_sresult"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.sresult" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.sresult?.dirty && editForm.controls.sresult?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sresult?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.flagStatus" for="field_flagStatus">Flag Status</label>
+                    <input type="text" class="form-control" name="flagStatus" id="field_flagStatus"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.flagStatus" maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.flagStatus?.dirty && editForm.controls.flagStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.flagStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.compPkid" for="field_compPkid">Comp Pkid</label>
+                    <input type="text" class="form-control" name="compPkid" id="field_compPkid"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.compPkid" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.compPkid?.dirty && editForm.controls.compPkid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.compPkid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.remark" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.remark?.dirty && editForm.controls.remark?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.remark?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveFirst" for="field_reserveFirst">Reserve First</label>
+                    <input type="text" class="form-control" name="reserveFirst" id="field_reserveFirst"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.reserveFirst" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveFirst?.dirty && editForm.controls.reserveFirst?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveFirst?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveSecond" for="field_reserveSecond">Reserve Second</label>
+                    <input type="text" class="form-control" name="reserveSecond" id="field_reserveSecond"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.reserveSecond" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveSecond?.dirty && editForm.controls.reserveSecond?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveSecond?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.reserveThird" for="field_reserveThird">Reserve Third</label>
+                    <input type="text" class="form-control" name="reserveThird" id="field_reserveThird"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.reserveThird" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.reserveThird?.dirty && editForm.controls.reserveThird?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reserveThird?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.makeUser" for="field_makeUser">Make User</label>
+                    <input type="text" class="form-control" name="makeUser" id="field_makeUser"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.makeUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.makeUser?.dirty && editForm.controls.makeUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.makeUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.makeTime" for="field_makeTime">Make Time</label>
+                    <div class="d-flex">
+                        <input id="field_makeTime" type="datetime-local" class="form-control" name="makeTime" [(ngModel)]="makeTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.modifyUser" for="field_modifyUser">Modify User</label>
+                    <input type="text" class="form-control" name="modifyUser" id="field_modifyUser"
+                        [(ngModel)]="qmsMicSwicthRegulattoTest.modifyUser" maxlength="10"/>
+                    <div [hidden]="!(editForm.controls.modifyUser?.dirty && editForm.controls.modifyUser?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifyUser?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="fccApp.qmsMicSwicthRegulattoTest.modifyTime" for="field_modifyTime">Modify Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifyTime" type="datetime-local" class="form-control" name="modifyTime" [(ngModel)]="modifyTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

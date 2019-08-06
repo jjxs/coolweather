@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsProduct.home.title">Qms Products</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-product" [routerLink]="['/qms-product/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsProduct.home.createLabel">
+            Create new Qms Product
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsProducts">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productBatch"><span jhiTranslate="fccApp.qmsProduct.productBatch">Product Batch</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productNum"><span jhiTranslate="fccApp.qmsProduct.productNum">Product Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="materielId"><span jhiTranslate="fccApp.qmsProduct.materielId">Materiel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="productDiff"><span jhiTranslate="fccApp.qmsProduct.productDiff">Product Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isUse"><span jhiTranslate="fccApp.qmsProduct.isUse">Is Use</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="isOk"><span jhiTranslate="fccApp.qmsProduct.isOk">Is Ok</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsProduct.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsProduct.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsProduct.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsProduct.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsProduct.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsProduct.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsProduct.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsProduct.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsProduct.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsProduct.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsProduct of qmsProducts ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-product', qmsProduct.id, 'view' ]">{{qmsProduct.id}}</a></td>
+                <td>{{qmsProduct.productBatch}}</td>
+                <td>{{qmsProduct.productNum}}</td>
+                <td>{{qmsProduct.materielId}}</td>
+                <td>{{qmsProduct.productDiff}}</td>
+                <td>{{qmsProduct.isUse}}</td>
+                <td>{{qmsProduct.isOk}}</td>
+                <td>{{qmsProduct.flagStatus}}</td>
+                <td>{{qmsProduct.compPkid}}</td>
+                <td>{{qmsProduct.remark}}</td>
+                <td>{{qmsProduct.reserveFirst}}</td>
+                <td>{{qmsProduct.reserveSecond}}</td>
+                <td>{{qmsProduct.reserveThird}}</td>
+                <td>{{qmsProduct.makeUser}}</td>
+                <td>{{qmsProduct.makeTime | date:'medium'}}</td>
+                <td>{{qmsProduct.modifyUser}}</td>
+                <td>{{qmsProduct.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-product', qmsProduct.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-product', qmsProduct.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-product/'+ qmsProduct.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsProducts && qmsProducts.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

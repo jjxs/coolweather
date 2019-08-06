@@ -1,0 +1,94 @@
+{
+   
+        "rbacUser": {
+            "home": {
+                "title": "员工管理",
+                "createLabel": "创建新 员工",
+                "editLabel": "编辑 员工",
+                "createOrEditLabel": "创建或编辑 Rbac User",
+                "Search": "查询"
+            },
+            "created": "Rbac User {{ param }} 创建成功",
+            "updated": "Rbac User {{ param }} 更新成功",
+            "deleted": "Rbac User {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除员工{{ id }} 吗？"
+            },
+            "detail": {
+                "title": "员工"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "userCode": "User Code",
+            "userPassword": "User Password",
+            "userName": "User Name",
+            "userMobile": "User Mobile",
+            "userMail": "User Mail",
+            "userLastLoginTime": "User Last Login Time",
+            "userLoginCount": "User Login Count",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "操作",
+            "help": {
+                "appId": "商户id",
+                "storeId": "门店id",
+                "storeName": "门店名称",
+                "roleName": "角色名称",
+                "userCode": "用户名",
+                "userPassword": "用户密码",
+                "userPasswordo": "旧密码",
+                "userPasswordn": "新密码",
+                "userPasswordc": "确认密码",
+                "userName": "用户姓名",
+                "userMobile": "用户手机",
+                "userMail": "用户邮箱",
+                "userLastLoginTime": "上次登录时间",
+                "userLoginCount": "登录次数",
+                "stopFlag": "停用标识",
+                "delFlag": "删除标识",
+                "search": "查询",
+                "users": "用户名/用户姓名"
+
+            },
+            "message":{
+                "unsame": "确认密码与新密码不一致",
+                "passwordPattern" : "字母和数字",
+                "telPattern" : "手机号",
+                "mailPattern" : "邮箱"
+
+            }
+        },
+            "alertInfo": {
+                "addfail": "新增失败",
+                "error": "错误",
+                "usercoderepeat": "用户名重复",
+                "tip": "提示",
+                "selectMenuRight":"请选择菜单权限",
+                "addRights":"新增权限成功",
+                "updRights":"更新权限成功",
+                "addRoles":"新增角色成功",
+                "updRoles":"更新角色成功",
+                "addUsers":"新增员工成功",
+                "updUsers":"更新员工成功",
+                "updRightf":"更新权限失败",
+                "addRightf":"新增权限失败",
+                "Righthasupd":"该权限已被更新",
+                "updRolef":"更新角色失败",
+                "addRolef":"新增角色失败",
+                "Rolehasupd":"该角色已被更新",
+                "updUserf":"更新员工失败",
+                "addUserf":"新增员工失败",
+                "Userhasupd":"该员工已被更新"
+        }
+    }
+

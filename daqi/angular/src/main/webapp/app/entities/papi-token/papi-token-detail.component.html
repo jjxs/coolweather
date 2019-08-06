@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="papiToken">
+            <h2><span jhiTranslate="fccApp.papiToken.detail.title">Papi Token</span> {{papiToken.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.papiToken.appId">App Id</span></dt>
+                <dd>
+                    <span>{{papiToken.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{papiToken.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.apiCode">Api Code</span></dt>
+                <dd>
+                    <span>{{papiToken.apiCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.apiPassword">Api Password</span></dt>
+                <dd>
+                    <span>{{papiToken.apiPassword}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.apiToken">Api Token</span></dt>
+                <dd>
+                    <span>{{papiToken.apiToken}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.apiCount">Api Count</span></dt>
+                <dd>
+                    <span>{{papiToken.apiCount}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.apiDate">Api Date</span></dt>
+                <dd>
+                    <span>{{papiToken.apiDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{papiToken.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{papiToken.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{papiToken.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{papiToken.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{papiToken.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{papiToken.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.papiToken.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{papiToken.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/papi-token', papiToken.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "prodProcessCheck": {
+    "title": "生产过程检验",
+    "condition": {
+      "code": "编号",
+      "materialName": "物料名称",
+      "fileCode": "车号",
+      "vehicleType": "车型",
+      "technologyName": "工艺名称"
+    },
+    "content": {
+      "digiFile": "电子文档",
+      "relationship": "装配关系",
+      "serial": "序号",
+      "materialCode": "物料编码",
+      "materialName": "物料名称",
+      "location": "位置",
+      "materialCodeInUse": "使用物料编码",
+      "materialNameInUse": "使用物料名称",
+      "supplier": "供应商",
+      "choose": "选择文件"
+    },
+    "button": {
+      "save": "保存",
+      "back": "返回",
+      "select": "文件选择",
+      "delete": "删除"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "fccApp": {
+        "qmsVehicleTypeInfo": {
+            "home": {
+                "title": "车型信息",
+                "createLabel": "添加",
+                "createLabelInfo": "车型维护",
+                "EditLabelInfo": "车型维护",
+                "query": "查询",
+                "empty": "清空",
+                "popTitle": "车型选择",
+                "choice": "选择"
+            },
+            "created": "车型 {{ param }} 创建成功",
+            "updated": "车型 {{ param }} 更新成功",
+            "deleted": "车型 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 车型 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "车型信息"
+            },
+            "vehicleClassName": "车型分类名称",
+            "vehicleType": "车型编码",
+            "serialNumber": "序号",
+            "vehicleTypeName": "车型名称",
+            "vehicleClassCoding": "车型分类编码",
+            "vehicleClassName": "车型分类名称",
+            "remark": "备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注",
+            "flagStatus": "删除区分",
+            "compPkid": "工厂ID",
+            "reserveFirst": "预留1",
+            "reserveSecond": "预留2",
+            "reserveThird": "预留3",
+            "makeUser": "登录者",
+            "makeTime": "登录时间",
+            "modifyUser": "更新者",
+            "modifyTime": "更新时间",
+            "operation": "操作",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            "vehicleTypeNoTrim": "车型"
+        }
+    }
+}

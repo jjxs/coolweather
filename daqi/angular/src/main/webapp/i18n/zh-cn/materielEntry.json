@@ -1,0 +1,53 @@
+{
+    "fccApp": {
+        "MaterielEntry": {
+            "home": {
+                "title": "采购到货单管理",
+                "createLabel": "创建新 Qms Materiel Entry",
+                "createOrEditLabel": "创建或编辑 Qms Materiel Entry"
+            },
+            "created": "Qms Materiel Entry {{ param }} 创建成功",
+            "updated": "Qms Materiel Entry {{ param }} 更新成功",
+            "deleted": "Qms Materiel Entry {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Materiel Entry {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel Entry"
+            },
+            "materielId": "Materiel Id",
+            "specificationType": "规格型号",
+            "figureNumber": "产品图号",
+            "packingQuantity": "Packing Quantity",
+            "supplierId": "Supplier Id",
+            "supplierCd": "供应商编码",
+            "supplierName": "供应商名称",
+            "entryQuantity": "Entry Quantity",
+            "entryType": "Entry Type",
+            "purchaseOrderNumber": "采购单号",
+            "batchNumber": "Batch Number",
+            "isUse": "Is Use",
+            "madeYmd": "Made Ymd",
+            "madeFactoryCd": "Made Factory Cd",
+            "texTure": "Tex Ture",
+            "castingNum": "Casting Num",
+            "flagInspect": "检验状态",
+            "inspectionTime": "Inspection Time",
+            "inspectionCompletedTime": "Inspection Completed Time",
+            "inspectionUserId": "Inspection User Id",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time",
+            "enclosure": "附件",
+            "checkType": "检验类型",
+            "entryDate": "进场日期"
+        }
+    }
+}

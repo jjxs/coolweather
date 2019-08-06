@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="fccApp.qmsApproveFlow.home.title">Qms Approve Flows</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qms-approve-flow" [routerLink]="['/qms-approve-flow/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="fccApp.qmsApproveFlow.home.createLabel">
+            Create new Qms Approve Flow
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qmsApproveFlows">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="approveFlowCd"><span jhiTranslate="fccApp.qmsApproveFlow.approveFlowCd">Approve Flow Cd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stepNum"><span jhiTranslate="fccApp.qmsApproveFlow.stepNum">Step Num</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stepDiff"><span jhiTranslate="fccApp.qmsApproveFlow.stepDiff">Step Diff</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="principalUserId"><span jhiTranslate="fccApp.qmsApproveFlow.principalUserId">Principal User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="controlLevel"><span jhiTranslate="fccApp.qmsApproveFlow.controlLevel">Control Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="flagStatus"><span jhiTranslate="fccApp.qmsApproveFlow.flagStatus">Flag Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="compPkid"><span jhiTranslate="fccApp.qmsApproveFlow.compPkid">Comp Pkid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="remark"><span jhiTranslate="fccApp.qmsApproveFlow.remark">Remark</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveFirst"><span jhiTranslate="fccApp.qmsApproveFlow.reserveFirst">Reserve First</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveSecond"><span jhiTranslate="fccApp.qmsApproveFlow.reserveSecond">Reserve Second</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="reserveThird"><span jhiTranslate="fccApp.qmsApproveFlow.reserveThird">Reserve Third</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeUser"><span jhiTranslate="fccApp.qmsApproveFlow.makeUser">Make User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="makeTime"><span jhiTranslate="fccApp.qmsApproveFlow.makeTime">Make Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyUser"><span jhiTranslate="fccApp.qmsApproveFlow.modifyUser">Modify User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifyTime"><span jhiTranslate="fccApp.qmsApproveFlow.modifyTime">Modify Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qmsApproveFlow of qmsApproveFlows ;trackBy: trackId">
+                <td><a [routerLink]="['/qms-approve-flow', qmsApproveFlow.id, 'view' ]">{{qmsApproveFlow.id}}</a></td>
+                <td>{{qmsApproveFlow.approveFlowCd}}</td>
+                <td>{{qmsApproveFlow.stepNum}}</td>
+                <td>{{qmsApproveFlow.stepDiff}}</td>
+                <td>{{qmsApproveFlow.principalUserId}}</td>
+                <td>{{qmsApproveFlow.controlLevel}}</td>
+                <td>{{qmsApproveFlow.flagStatus}}</td>
+                <td>{{qmsApproveFlow.compPkid}}</td>
+                <td>{{qmsApproveFlow.remark}}</td>
+                <td>{{qmsApproveFlow.reserveFirst}}</td>
+                <td>{{qmsApproveFlow.reserveSecond}}</td>
+                <td>{{qmsApproveFlow.reserveThird}}</td>
+                <td>{{qmsApproveFlow.makeUser}}</td>
+                <td>{{qmsApproveFlow.makeTime | date:'medium'}}</td>
+                <td>{{qmsApproveFlow.modifyUser}}</td>
+                <td>{{qmsApproveFlow.modifyTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qms-approve-flow', qmsApproveFlow.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qms-approve-flow', qmsApproveFlow.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qms-approve-flow/'+ qmsApproveFlow.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="qmsApproveFlows && qmsApproveFlows.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

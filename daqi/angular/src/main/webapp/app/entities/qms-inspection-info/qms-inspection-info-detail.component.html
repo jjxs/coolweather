@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsInspectionInfo">
+            <h2><span jhiTranslate="fccApp.qmsInspectionInfo.detail.title">Qms Inspection Info</span> {{qmsInspectionInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleType">Vehicle Type</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.vehicleType}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.no">No</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.no}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleTypeName">Vehicle Type Name</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.vehicleTypeName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveCoding">Constitutive Coding</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.constitutiveCoding}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveName">Constitutive Name</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.constitutiveName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.constitutiveCodingName">Constitutive Coding Name</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.constitutiveCodingName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.vehicleNumber">Vehicle Number</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.vehicleNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.componentNumber">Component Number</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.componentNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsInspectionInfo.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsInspectionInfo.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-inspection-info', qmsInspectionInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

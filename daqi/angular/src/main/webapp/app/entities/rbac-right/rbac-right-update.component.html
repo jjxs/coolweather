@@ -1,0 +1,74 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>
+    <div class="cnc-user-creat-title">
+        <span *ngIf="!rbacRight.id"  jhiTranslate="rbacRight.home.createLabel" class="cnc-user-common-title"></span>
+        <span *ngIf="rbacRight.id" jhiTranslate="rbacRight.home.editLabel" class="cnc-user-common-title"></span>
+    </div>
+    <div>
+         <!--门店名称  -->
+        <!-- <div class="row">
+            <div class="cnc-user-creat-body col-md-4">
+               
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRight.help.storeName">Goods Name</label>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                            <select class="cnc-user-creat-input form-control">
+                                <option ></option>
+                                <option ></option>
+                            </select>
+                    </div>
+                </div>    
+            </div>
+        </div> -->
+        </div>
+        <div class="row">
+            <!-- <div class="cnc-user-creat-body col-md-4">
+               
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRight.help.rightCode"></label>
+                </div>
+                 <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="cnc-user-creat-input form-control"  name="rightCode" id="field_rightCode"
+                            [(ngModel)]="rbacRight.rightCode" maxlength="18"  />
+                    </div>
+                </div>
+            </div> -->
+            <div class="cnc-user-creat-body col-md-4">
+                <div class="col-md-3">
+                    <label class="cnc-user-creat-lable form-control-label" jhiTranslate="rbacRight.help.rightName"></label>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="cnc-user-creat-input form-control"  name="rightName" id="field_rightName"
+                            [(ngModel)]="rbacRight.rightName"  required maxlength="18"  />
+                    </div>
+                </div>
+            </div>                   
+        </div>
+        
+        <div class="row">
+            <div class="cnc-user-creat-body col-md-5">
+                <div class="col-md-3">
+                    <label class="form-control-label" jhiTranslate="rbacRight.help.actionList" for="field_actionList">Action List</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class= "cnc-role-creat-body">
+                    <p-tree [value]="files" selectionMode="checkbox" [style]="{ 'height' : '300px'}" [(selection)]="selectedFiles" (onNodeSelect)="nodeSelect()" (onNodeUnselect)="nodeUnselect()"></p-tree>
+                </div>
+        </div>
+    <div class="modal-footer">
+        <button type="button" id="cancel-save"  class="common_pop_font btn btn-secondary" data-dismiss="modal" (click)="previousState()">
+            <span class="fa fa-ban"></span>&nbsp;
+            <span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="common_pop_font btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;
+            <span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

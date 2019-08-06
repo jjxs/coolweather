@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsApproveFlow">
+            <h2><span jhiTranslate="fccApp.qmsApproveFlow.detail.title">Qms Approve Flow</span> {{qmsApproveFlow.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.approveFlowCd">Approve Flow Cd</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.approveFlowCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.stepNum">Step Num</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.stepNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.stepDiff">Step Diff</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.stepDiff}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.principalUserId">Principal User Id</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.principalUserId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.controlLevel">Control Level</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.controlLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.reserveFirst">Reserve First</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.reserveFirst}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.reserveSecond">Reserve Second</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.reserveSecond}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.reserveThird">Reserve Third</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.reserveThird}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsApproveFlow.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsApproveFlow.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-approve-flow', qmsApproveFlow.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<div id="navDiv" class="cnc-main-nav-div-none">
+    <router-outlet name="navbar"></router-outlet>
+</div>
+
+<div id="mainDiv" class="container-fluid cnc-main-div-center">
+    <div id="menuDiv" class="cnc-main-panelmenu">    
+        <router-outlet name="panelmenu"></router-outlet>
+    </div>
+    <div class="card jh-card" [style.height]="pageHeight">
+        <router-outlet></router-outlet>
+        <router-outlet name="popup"></router-outlet>
+</div>
+</div>

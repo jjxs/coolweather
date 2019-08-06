@@ -1,0 +1,33 @@
+{
+    "fccApp": {
+        "qmsDefect": {
+            "home": {
+                "title": "缺陷信息",
+                "createLabel": "添加",
+                "query":"查询",
+                "deleteInfo":"删除",
+                "createOrEditLabel": "创建或编辑 Qms Defect"
+            },
+            "created": "Qms Defect {{ param }} 创建成功",
+            "updated": "Qms Defect {{ param }} 更新成功",
+            "deleted": "Qms Defect {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Defect {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Defect"
+            },
+            "defectCd": "缺陷编码",
+            "defectName": "缺陷名称",
+            "parentCd": "上级缺陷",
+            "isUse": "生效",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "备注",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="hstServerInfo">
+            <h2><span jhiTranslate="fccApp.hstServerInfo.detail.title">Hst Server Info</span> {{hstServerInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.hstServerInfo.appId">App Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.storeId">Store Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.storeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.hostSlaveFlag">Host Slave Flag</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.hostSlaveFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.nodeId">Node Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.nodeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.pNodeId">P Node Id</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.pNodeId}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.nodeUrl">Node Url</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.nodeUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.nodeJoinTime">Node Join Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.nodeJoinTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.stopFlag">Stop Flag</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.stopFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.delFlag">Del Flag</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.delFlag}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.insProgarmCd">Ins Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.insProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.insOperCd">Ins Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.insOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.insDateTime">Ins Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.insDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.updProgarmCd">Upd Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.updProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.updOperCd">Upd Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.updOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.updDateTime">Upd Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.updDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.delProgarmCd">Del Progarm Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.delProgarmCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.delOperCd">Del Oper Cd</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.delOperCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.delDateTime">Del Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.delDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.hstServerInfo.triggerDateTime">Trigger Date Time</span></dt>
+                <dd>
+                    <span>{{hstServerInfo.triggerDateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/hst-server-info', hstServerInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div>
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+        <h2 id="jhi-qms-vehicle-type-info-heading" class="title_class">单位维护</h2>
+
+        <div class="creatOreditCssButton">
+            <button type="button" id="cancel-save"
+                class="btn btn-secondary float-right search_button_darkblue search_button" (click)="previousState()">
+                <span>取消</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving"
+                class="btn btn-primary float-right search_button_blue search_button">
+                <span>保存</span>
+            </button>
+        </div>
+        <!-- 左侧文字的div -->
+        <div style="float: left;">
+            <div style="margin-top:50px;margin-left:45px;font-size:18px;font-weight: bold">
+                <span>单位编码</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>单位名称</span>
+            </div>
+            <div class="lookleftSpan">
+                <span>备注</span>
+            </div>
+
+        </div>
+        <!-- 左侧输入框的div -->
+        <div style="float: left;">
+            <!-- 供应商编码 -->
+            <div style="margin-top:50px;margin-left:30px;">
+                <input type="text" class="form-control" name="unitCd" id="field_unitCd" *ngIf="this.flag==0"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsUnit.unitCd" maxlength="10"
+                    required />
+
+                <input type="text" class="form-control" name="unitCd" id="field_unitCd"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsUnit.unitCd" maxlength="10"
+                    *ngIf="this.flag==1" [disabled]=qmsUnit.id required />
+            </div>
+            <!-- 供应商名称 -->
+            <div class="lookLeftDiv">
+                <input type="text" class="form-control" name="unitName" id="field_unitName"
+                    style="width: 300px;margin-left: 120px;" pInputText [(ngModel)]="qmsUnit.unitName"
+                    maxlength="100" />
+            </div>
+            <!-- 备注 -->
+            <div class="lookLeftDiv">
+                <textarea class="form-control" [(ngModel)]=qmsUnit.remark maxlength="200"
+                    style="width: 500px;margin-left: 120px;height: 210px;" name="remark" id="field_remark"></textarea>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+<p-growl [(value)]="msgs" [immutable]="false" life="3000"></p-growl>

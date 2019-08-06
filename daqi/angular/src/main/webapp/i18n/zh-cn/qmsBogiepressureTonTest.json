@@ -1,0 +1,45 @@
+{
+    "fccApp": {
+        "qmsBogiepressureTonTest": {
+            "home": {
+                "title": "Qms Bogiepressure Ton Tests",
+                "createLabel": "创建新 Qms Bogiepressure Ton Test",
+                "createOrEditLabel": "创建或编辑 Qms Bogiepressure Ton Test"
+            },
+            "created": "Qms Bogiepressure Ton Test {{ param }} 创建成功",
+            "updated": "Qms Bogiepressure Ton Test {{ param }} 更新成功",
+            "deleted": "Qms Bogiepressure Ton Test {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Bogiepressure Ton Test {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Bogiepressure Ton Test"
+            },
+            "pkid": "Pkid",
+            "productdate": "Productdate",
+            "checker": "Checker",
+            "checkdate": "Checkdate",
+            "x1": "X 1",
+            "y1": "Y 1",
+            "z1": "Z 1",
+            "v1": "V 1",
+            "a1": "A 1",
+            "x2": "X 2",
+            "y2": "Y 2",
+            "z2": "Z 2",
+            "v2": "V 2",
+            "a2": "A 2",
+            "judge": "Judge",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

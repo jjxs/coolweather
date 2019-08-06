@@ -1,0 +1,60 @@
+{
+    "fccApp": {
+        "qmsMateriel": {
+            "home": {
+                "title": "Qms Materiels",
+                "createLabel": "创建新 Qms Materiel",
+                "createOrEditLabel": "创建或编辑 Qms Materiel"
+            },
+            "created": "Qms Materiel {{ param }} 创建成功",
+            "updated": "Qms Materiel {{ param }} 更新成功",
+            "deleted": "Qms Materiel {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Materiel {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel"
+            },
+            "materielCd": "Materiel Cd",
+            "materielName": "Materiel Name",
+            "figureNumber": "Figure Number",
+            "innerCd": "Inner Cd",
+            "abcNumber": "Abc Number",
+            "productMode": "Product Mode",
+            "materielTypeId": "Materiel Type Id",
+            "propertyType": "Property Type",
+            "packgeUnitId": "Packge Unit Id",
+            "useUnitId": "Use Unit Id",
+            "conversion": "Conversion",
+            "specificationType": "Specification Type",
+            "weight": "Weight",
+            "density": "Density",
+            "workHours": "Work Hours",
+            "taredHours": "Tared Hours",
+            "schedulerRoleId": "Scheduler Role Id",
+            "organizationCd": "Organization Cd",
+            "inHouseType": "In House Type",
+            "vesselAmount": "Vessel Amount",
+            "qualityLevel": "Quality Level",
+            "texTure": "Tex Ture",
+            "mhandlerRoleId": "Mhandler Role Id",
+            "eightPrevention": "Eight Prevention",
+            "ifKey": "If Key",
+            "ubiety": "Ubiety",
+            "sapCd": "Sap Cd",
+            "isCheck": "Is Check",
+            "checkType": "Check Type",
+            "checkRate": "Check Rate",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

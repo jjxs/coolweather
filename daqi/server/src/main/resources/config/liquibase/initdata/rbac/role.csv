@@ -1,0 +1,3 @@
+id,app_id,store_id,role_code,role_name,stop_flag,del_flag,ins_progarm_cd,ins_oper_cd,ins_date_time,upd_progarm_cd,upd_oper_cd,upd_date_time,del_progarm_cd,del_oper_cd,del_date_time,trigger_date_time
+1,null,null,OA001,系统管理员,0,0,InitData,System,null,,,null,,,null,2019/2/11 09:04:45
+2,null,null,OA002,管理员,0,0,InitData,System,null,,,null,,,null,2019/4/17 17:15:24

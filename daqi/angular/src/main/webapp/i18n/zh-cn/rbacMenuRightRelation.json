@@ -1,0 +1,36 @@
+{
+    "fccApp": {
+        "rbacMenuRightRelation": {
+            "home": {
+                "title": "Rbac Menu Right Relations",
+                "createLabel": "创建新 Rbac Menu Right Relation",
+                "createOrEditLabel": "创建或编辑 Rbac Menu Right Relation"
+            },
+            "created": "Rbac Menu Right Relation {{ param }} 创建成功",
+            "updated": "Rbac Menu Right Relation {{ param }} 更新成功",
+            "deleted": "Rbac Menu Right Relation {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Rbac Menu Right Relation {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Rbac Menu Right Relation"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "menuId": "Menu Id",
+            "rightId": "Right Id",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time"
+        }
+    }
+}

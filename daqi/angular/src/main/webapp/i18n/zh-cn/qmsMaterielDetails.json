@@ -1,0 +1,35 @@
+{
+    "fccApp": {
+        "qmsMaterielDetails": {
+            "home": {
+                "title": "Qms Materiel Details",
+                "createLabel": "创建新 Qms Materiel Details",
+                "createOrEditLabel": "创建或编辑 Qms Materiel Details"
+            },
+            "created": "Qms Materiel Details {{ param }} 创建成功",
+            "updated": "Qms Materiel Details {{ param }} 更新成功",
+            "deleted": "Qms Materiel Details {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Qms Materiel Details {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Qms Materiel Details"
+            },
+            "entryId": "Entry Id",
+            "goodsCd": "Goods Cd",
+            "flagInspect": "Flag Inspect",
+            "isCheckOk": "Is Check Ok",
+            "goodsQuantity": "Goods Quantity",
+            "flagStatus": "Flag Status",
+            "compPkid": "Comp Pkid",
+            "remark": "Remark",
+            "reserveFirst": "Reserve First",
+            "reserveSecond": "Reserve Second",
+            "reserveThird": "Reserve Third",
+            "makeUser": "Make User",
+            "makeTime": "Make Time",
+            "modifyUser": "Modify User",
+            "modifyTime": "Modify Time"
+        }
+    }
+}

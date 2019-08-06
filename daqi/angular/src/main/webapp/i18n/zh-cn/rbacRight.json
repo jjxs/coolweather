@@ -1,0 +1,47 @@
+{
+
+        "rbacRight": {
+            "home": {
+                "title": "权限管理",
+                "createLabel": "创建新 权限",
+                "editLabel": "编辑 权限",
+                "createOrEditLabel": "创建或编辑 Rbac Right"
+            },
+            "created": "Rbac Right {{ param }} 创建成功",
+            "updated": "Rbac Right {{ param }} 更新成功",
+            "deleted": "Rbac Right {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除权限 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "权限"
+            },
+            "appId": "App Id",
+            "storeId": "Store Id",
+            "rightCode": "Right Code",
+            "rightName": "Right Name",
+            "stopFlag": "Stop Flag",
+            "delFlag": "Del Flag",
+            "insProgarmCd": "Ins Progarm Cd",
+            "insOperCd": "Ins Oper Cd",
+            "insDateTime": "Ins Date Time",
+            "updProgarmCd": "Upd Progarm Cd",
+            "updOperCd": "Upd Oper Cd",
+            "updDateTime": "Upd Date Time",
+            "delProgarmCd": "Del Progarm Cd",
+            "delOperCd": "Del Oper Cd",
+            "delDateTime": "Del Date Time",
+            "triggerDateTime": "Trigger Date Time",
+            "operation": "操作",
+            "help": {
+                "appId": "商户id",
+                "storeName": "门店名称",
+                "rightName": "权限名称",
+                "rightCode": "权限编号",
+                "roleName":"角色名称",
+                "roleCode":"角色编号",
+                "actionList":"菜单列表"
+            }
+        }
+    }
+

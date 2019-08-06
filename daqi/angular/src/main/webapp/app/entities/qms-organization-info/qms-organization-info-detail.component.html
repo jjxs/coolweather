@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qmsOrganizationInfo">
+            <h2><span jhiTranslate="fccApp.qmsOrganizationInfo.detail.title">Qms Organization Info</span> {{qmsOrganizationInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.parentCd">Parent Cd</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.parentCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.organizationCd">Organization Cd</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.organizationCd}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.organizationName">Organization Name</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.organizationName}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.attribute">Attribute</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.attribute}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.flagStatus">Flag Status</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.flagStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.compPkid">Comp Pkid</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.compPkid}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.remark">Remark</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.remark}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.makeUser">Make User</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.makeUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.makeTime">Make Time</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.makeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.modifyUser">Modify User</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.modifyUser}}</span>
+                </dd>
+                <dt><span jhiTranslate="fccApp.qmsOrganizationInfo.modifyTime">Modify Time</span></dt>
+                <dd>
+                    <span>{{qmsOrganizationInfo.modifyTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qms-organization-info', qmsOrganizationInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
