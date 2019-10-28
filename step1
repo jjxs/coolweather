@@ -1,1 +1,342 @@
 
+目录
+Grocer 说明	2
+搭建开发环境	3
+前端使用工具	5
+创建项目	6
+配置vue.config.js 文件	11
+编译项目	12
+项目目录-front说明	13
+Vue生命周期	14
+vue 小例子表格创建	15
+数据交互axios	17
+
+
+
+
+
+Grocer 说明
+早期人工使用Excel记录打印机管理票的信息，为了解決人工手动录入的弊端使用自动化来提高實用性，实现分布式，减少错误和数据的可维护性等，出現了grocer整合系統，包含打印机所有parameter、meun、status与opid。
+grocer系統分类：
+-PST
+-MST
+-SST
+-OST
+-PST
+记录打印中的所有parameter
+-MST
+记录打印中的menu菜单
+-SST
+记录打印中的各种状态
+-OST
+记录opid
+为了统一前端技术栈（不同种类的技术）问题，Grocer系统开发采用了Vue为主。
+首先做产品不只是为了实现功能，还要考虑到以后的优化升级，那么就需要一套标准的开发规范，使得代码易懂，养成良好的规范习惯，有助于程序员自身的成长。以下编写前端开发流程以及前端开发规范。
+Grocer系統使用技术：服务器端（简：后台）的技术为python，客户端（简：前端）。 
+
+
+
+
+搭建开发环境
+技术	版本	查看命令	官方文档	API文档	下载地址
+node	v10.11.0	node -v	http://nodejs.cn/api/
+/	http://nodejs.cn/download/
+
+npm	6.4.1	npm -v	https://www.npmjs.com/
+/	/
+vue	3.0.5	vue -V (大写)	https://cn.vuejs.org/v2/guide/
+https://cn.vuejs.org/v2/api/ 
+/
+vue-cli	3.0.5	/	https://cli.vuejs.org/zh/guide/ 
+https://cli.vuejs.org/zh/config/ 
+/
+webpack	4.23.1	/	https://www.webpackjs.com/concepts/ 
+https://www.webpackjs.com/api/ 
+/
+element-ui	2.4.9	/	https://element.eleme.cn/#/zh-CN/guide/design 
+https://element.eleme.cn/#/zh-CN/component/installation 
+/
+axios	0.18.0	/	http://www.axios-js.com/zh-cn/docs/
+	/
+Node下载安装完成。
+ 
+Node.js command prompt 窗口下配置以下内容：
+1.	配置代理
+a)	发现node.js没有走环境代理，需要单独配置代理
+i.	npm config set proxy http://proxy.company.com:8080
+ii.	npm config set https-proxy http://proxy.company.com:8080
+b)	如果公司代理需要登陆，那么设置账号密码如下
+i.	npm config set proxy http://username:password@yourproxy.com:port
+ii.	npm config set https-proxy http://username:password@yourproxy.com:port
+ 
+2.	取消代理
+a)	npm config delete proxy
+b)	npm config delete https-proxy
+3.	Vue-cli全局安装
+a)	npm install –g @vue/cli
+说明：vue.js提供的一个开箱即用的构建工具配置，带来了现代化的前端开发流程。
+b)	安装如报错：
+	 
+		执行 npm install 完成。
+	再次报同错：
+  Error：Cannot find module ‘chalk’
+请手动删除 c:\users\ Administrator\AppData\Roaming\npm\ 下所有文件，重新执行 npm install –g @vue/cli。
+4.	element-ui 安装
+a)	npm i element-ui –S
+说明：能更好的和webpack打包工具配合使用。
+b)	安装如报错：
+ 
+请重新执行 npm i element-ui –S
+5.	axios 安装
+a)	npm install axios
+说明：与后台做交互。
+前端使用工具
+	webstorm
+		file-settings > Keymap：设置编码风格，一般选择Eclipse编码格式。
+		Terminal：命令行，创建项目可在此窗口下执行。
+		TODO：重要注释可在代码行中编写，在窗口查看所有。
+		Version Control-log：可查看git分支，以及更新信息。
+创建项目
+1.	创建项目命令：
+		vue create my-project
+说明：my-project 项目名称。
+a)	选择手动创建项目：回车Enter
+ 
+b)	选项中使用键盘空格键进行选择，回车Enter下一步提示 Use history mode for router？（y/N）填y 。
+ 
+回车Enter 下一步提示 Pick a CSS pre-processors： 选择 Sass/Scss(with node-sass)。
+ 
+回车Enter下一步提示Pick a liner / formatter config（语法检查）: 选择 EsLint + Standard config（标准配置）。 
+回车 Enter选择 Lint on save（保存时检查）。
+回车 Enter 提示 Where do you prefer placing config for Babel，PostCSS，ESlint，etc.?（需要把配置文件存在哪里？）选择 In package.json 。
+ 
+回车 Enter 提示 Save this as a preset for future projects？（保存当前配置？）（y/N）填y。
+回车 Enter 提示 Save preset as：回车 Enter 开始安装。
+c)	安装成功。
+ 
+2.	执行安装依赖：
+		npm install
+3.	运行项目
+a)	npm run serve，界面运行显示：
+ 
+b)	项目初创成功。
+ 
+4.	创建项目报错提示：
+ 
+a)	首先排除nodejs与npm的版本问题。然后执行命令：
+npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+b)	修改 c:\users\ Administrator\.vuerc
+			"useTaobaoRegistry": true
+说明：true 改成 false。
+c)	清除npm 缓存
+			npm cache clean --force
+d)	再次执行 vue create my-project 创建成功。
+配置vue.config.js 文件
+在项目my-project跟目录下创建vue.config.js，内容如下： 
+module.exports = { // 导出包含选项的对象 
+  publicPath: '/', // 部署的url
+  outputDir: 'dist', // build生产环境构建文件目录
+  assetsDir: 'assets', // 放置生成的静态文件
+  lintOnSave: true, // 是否在每次保存的时候检查代码
+  productionSourceMap: true, // 打包后是够生成js.map文件
+  css: {
+    extract: true, //是否将组件中的css提取到独立的css文件中
+    sourceMap: false, //打包后是否生成css.map文件
+    modules: false 
+	//去掉文件中的.module并将所有的*.(css|scss|sass|less|styl(us)?)文件视为CSS Modules模块
+  }
+}
+参数说明：https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
+编译项目
+	基于webpack 打包项目文件命令：
+		npm run build 
+			说明：在项目目录下会生成dist文件夹。
+		 
+dist 文件需要在node环境下运行。
+
+项目目录-front说明
+ 
+Vue生命周期
+          
+初始化的钩子函数：beforeCreate、created、beforeMount、 mounted;
+beforeCreate：开始初始化，项目中一般不用。
+Created、 beforeMount: created初始化data数据，还没有真实的dom数据。
+Mounted：真实DOM渲染完成，实例化第三方库。
+运行中阶段： beforeUpdate、 updated。
+当data选项中的数据发生改变时触发，beforeUpdate即时更新中，updated才算更新完成。
+一般在vue中直接写方法就可以。
+销毁阶段： beforeDestroy、 destroyed。
+一般使用v-if手动开关方式删除dom。因为调用$destroy()销毁只是删除了组件，并没有真正删除dom与html节点。
+数据请求：created
+DOM操作： mounted
+数据修改： beforeMount created mounted
+官网生命周期的讲解： https://cn.vuejs.org/v2/guide/instance.html
+vue 小例子表格创建
+1.	首先在main.js中引入element-ui
+import ElementUI form ‘element-ui’
+import ‘element-ui/lib/theme-chalk/index.css’
+Vue.use(ElementUI)
+2.	在src/components/TablePage.vue 创建TablePage.vue，使用element-ui组件
+<template>
+  <section style="width: 80%;margin:0 auto">
+    <el-table
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </section>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }]
+      }
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
+3.	下一步配置router路由，在 src/router.js 中配置
+{
+  path: '/tablePage, //页面中使用的参数
+  component: resolve => require(['./components/TablePage.vue'], resolve) //按需加载
+}
+4.	接下来App.vue 添加路由
+<router-link to="/tablePage"> TablePage </router-link>
+5.	返回浏览器自动刷新点击TablePage显示 TablePage.vue页面级内容，完成。
+数据交互axios
+1.	main.js中配置axios 
+import Vue from 'vue'
+import axios from 'axios'
+Vue.prototype.$axios = axios;
+文件中使用
+		import $axios form ‘axios’
+		this.$axios.get(”路径”, params:{参数})……
+2.	与后台交互代码
+async queryList( ) {   //方法
+try {
+				let result = await this.$axios.get(‘/grocer/api/v1/parameters/dev/eepVersion/’, {params: param});
+this.commonTable = result.data.results;  
+说明：获取的result数据传给前端控件呈现表格
+} catch (e) {
+console.log(e.message || e); 
+}
+}
+参数	说明
+async await	http://es6.ruanyifeng.com/#docs/async
+
+axios其他请求方法说明	http://www.axios-js.com/zh-cn/docs/#%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E7%9A%84%E5%88%AB%E5%90%8D
+
+try{}catch(e){}	捕获状态码异常
+3.	模仿后台数据交互小例子
+a)	首先在public 目录下创建测试文件 test-json-data/tsconfig.json
+JSON教程文档：https://www.w3school.com.cn/json/index.asp 
+{
+  "DataTable": [
+    {
+      "date": "2016-05-02",
+      "name": "王小虎",
+      "address": "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date": "2016-05-04",
+      "name": "王小虎",
+      "address": "上海市普陀区金沙江路 1517 弄"
+    },
+    {
+      "date": "2016-05-01",
+      "name": "王小虎",
+      "address": "上海市普陀区金沙江路 1519 弄"
+    },
+    {
+      "date": "2016-05-03",
+      "name": "王小虎",
+      "address": "上海市普陀区金沙江路 1516 弄"
+    }
+  ]
+}
+b)	TablePage.vue 使用<script> axios交互 </script>
+<template>
+  <section style="width: 80%;margin:0 auto">
+    <el-table
+      :data="DataTable"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </section>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        DataTable: []
+      }
+    },
+    methods: {
+      async getList () { //创建交互方法
+        try {
+	// test-json-data/tsconfig.json 测试数据
+          let result = await this.$axios.get('http://127.0.0.1:8000/api/login/')
+          this.DataTable = result.data; //获取后台数据赋值给页面显示
+        } catch (e) {
+          this.$message.error('没数据')
+        }
+      }
+    },
+    mounted () { //立即执行
+      this.getList();
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
+
