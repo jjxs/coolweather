@@ -499,4 +499,30 @@ ii.	DJANGO_SETTINGS_MODULE=myproject.settings
  
 c)	OK保存。
 d)	在pycharm右上方点击启动按钮或者debug模式启动
+
+
+
+
+ 
+Grocer 克隆
+1、	确保安装git程序
+2、	在本地某盘中的适当位置clone系统：
+git colne git@10.215.3.47:revolution/grocer.git
+ 
+在盘中：
+	 
+clone下载成功。
+在pycharm导入项目，进入back文件夹下执行python manage.py runserver 会提示需要安装很多插件，按照提示安装。
+插件均在svn://10.215.3.13/Torimatome/Project/12_ACT/07_Develop/Innovation/20191015 技術向け開発説明書/02 Tools/Django下可找到。
+执行数据迁移:
+	python manage.py makemigrations
+	python manage.py migrate
+这时候项目的数据表已经在数据控建设完成。下一步导入数据。
+在导入之前需要把.xls文件放入media的执行目录：
+	例如pst的导入文件：media/pst/imports/PX770_Parameter_Import_1.0_2019.03.01.xls
+执行：
+	python manage.py 按照步骤执行。
+启动项目即可。
+前端使用接口创建票信息，成功。
+
  
