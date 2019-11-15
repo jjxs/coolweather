@@ -1,6 +1,8 @@
 # Django框架使用指南
 基于python3.6 和 django2.1
-### 创建项目和应用
+#### [drf官网](https://www.django-rest-framework.org/)
+
+#### 创建项目和应用
 新建一个项目
 ```python
 django-admin.py startproject back
@@ -20,12 +22,12 @@ models.py
 serializer.py
     用于序列化数据, 验证数据
 
-templates 
+templates
     放置html模板, drf一般用不到
 
 filter.py
     用于过滤, 有需求时候会用上
-    
+
 admin.py
     后台，可以用很少量的代码就拥有一个强大的后台。
 
@@ -34,11 +36,11 @@ settings.py
 ```
 
 ### django常用命令
-- python manage.py runserver 0.0.0.0:80000 启动服务器 
-- python manage.py makemigrations          生成迁移文件 
-- python manage.py migrate                 迁移数据库 
-- python manage.py migrate                 --fake 迁移数据库遇到冲突 
-- python manage.py inspectdb               反向生模型(models) 
+- python manage.py runserver 0.0.0.0:80000 启动服务器
+- python manage.py makemigrations          生成迁移文件
+- python manage.py migrate                 迁移数据库
+- python manage.py migrate                 --fake 迁移数据库遇到冲突
+- python manage.py inspectdb               反向生模型(models)
 - python manage.py collectstatic           收集静态文件
 - python manage.py createsuperuser         创建管理员
 - python manage.py flush                   清空数据库
@@ -253,6 +255,31 @@ class Pagination(LimitOffsetPagination):
         return Response(OrderedDict([('count', self.count), ('results', data)]))
 ```
 
+
+
+
+#### 错误消息通知
+
+[Sentry官网](https://sentry.io/welcome/)
+Sentry是一个实时事件的日志聚合平台。它专门监测错误并提取所有有用信息用于分析，不再麻烦地依赖用户反馈来定位问题。
+
+Sentry发展多年，几乎没有同类产品可与其媲美。它能覆盖大部分的主流编程语言与框架，很适合应用到实际生产环境中采集异常日志。
+
+公司可以自己安装服务器，也可以在它官网上注册账号(量大收费)
+安装`sentry-sdk`:
+```
+$ pip install --upgrade 'sentry-sdk==0.13.2'
+```
+`setting.py`中配置
+```
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://<key>@sentry.io/<project>",
+    integrations=[DjangoIntegration()]
+)
+```
 
 #### 更多功能请看这里
 [api指南](http://drf.jiuyou.info/#/)
